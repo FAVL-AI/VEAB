@@ -1,0 +1,37 @@
+VEAB v0.4.0 — ASSURANCE CONTROLS (ADDITIVE RESEARCH RELEASE)
+12 November 2026
+
+INPUT SOURCE: locally accessible VEAB v0.3.0 archive; NOT the user-reported newer native worktree.
+
+IMPLEMENTED IN THIS PACKAGE
+- Standalone Python-standard-library external monitor (no VEAB simulator/verifier imports).
+- 17 controlled synthetic episodes: 11 known invalid, 6 known valid.
+- Four comparator modes including a reconstructed safety-aware terminal comparator.
+- Pose/path geometry, deadline, speed, stop-time and event-order checks.
+- Explicit coherent-forgery negative finding; no source authenticity claim.
+- Reviewer packet generator and Cohen's kappa evaluator; no actual human labels collected.
+- Scene-level illustrative power calculation and prospective validation protocol.
+- 12 new automated tests on top of 43 passing base tests: 54 passed in current environment.
+
+CONTROL-FIXTURE RESULTS (NOT EXTERNAL RESEARCH VALIDATION)
+- Terminal status: detected 0/11 invalid, accepted 6/6 valid.
+- Terminal self-reported safety flag: detected 1/11 invalid, accepted 5/6 valid.
+- Reconstructed safety-aware terminal: detected 8/11 invalid, accepted 6/6 valid.
+- Process monitor: detected 11/11 invalid, accepted 6/6 valid.
+- All 7 purpose-built physically/temporally unsafe cases were already detected by reconstructed safety-aware terminal grading. Incremental process detections concern evidence/recovery claims, NOT additional unsafe actions.
+
+NOT ESTABLISHED
+- User-reported 93 tests and Rust/C++/Go native binaries unavailable in the accessible source tree.
+- Simulator, vision/photoreal rendering, ROS 2, Isaac Lab, MuJoCo or real-robot native runs in this release.
+- Separate ground-truth sensing, custody, blinded human labels or physical safety certification.
+- Generalizing detection rates from synthetic controls to unseen real tasks.
+- Significance, external benchmark superiority or SOTA status.
+
+RUN
+python -m pytest -q
+python assurance_controls/generate_fixtures.py
+python assurance_controls/run_controls.py
+python assurance_controls/adjudication.py template
+python assurance_controls/scene_power.py --mde 0.2 --scene-sd 0.4
+
+IMPORTANT: This is a mechanism regression and scientific design upgrade, not a validated embodied benchmark.

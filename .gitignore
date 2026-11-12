@@ -8,6 +8,8 @@ artifacts/*
 !artifacts/.gitkeep
 !artifacts/research/
 !artifacts/research/**
+!artifacts/assurance/
+!artifacts/assurance/**
 *.sqlite3*
 backend/rust_verifier/target/
 *.egg-info/
