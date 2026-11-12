@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+.DS_Store
+artifacts/*
+!artifacts/.gitkeep
+!artifacts/research/
+!artifacts/research/**
+*.sqlite3*
+backend/rust_verifier/target/
+*.egg-info/

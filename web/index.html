@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#090d18" />
+  <meta name="description" content="VEAB: evidence-first agent benchmark and simulation operations console" />
+  <title>VEAB / Verifiable Agent Observatory</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brandline">
+      <div class="brandmark"><span></span><span></span><span></span><span></span></div>
+      <div><strong>VEAB<span class="accent">.</span></strong><small>AGENT OBSERVATORY</small></div>
+    </div>
+    <div class="side-section-label">WORKSPACE</div>
+    <nav class="nav" aria-label="Main navigation">
+      <button type="button" class="navitem active" data-page="overview"><span class="navicon">◈</span>Mission control<span class="navshort">01</span></button>
+      <button type="button" class="navitem" data-page="scenarios"><span class="navicon">▦</span>Scenario library<span class="navshort">02</span></button>
+      <button type="button" class="navitem" data-page="evidence"><span class="navicon">⌁</span>Evidence ledger<span class="navshort">03</span></button>
+      <button type="button" class="navitem" data-page="agents"><span class="navicon">◇</span>Agent harness<span class="navshort">04</span></button>
+      <button type="button" class="navitem" data-page="research"><span class="navicon">▤</span>Research & ablations<span class="navshort">05</span></button>
+    </nav>
+    <div class="side-section-label">RESEARCH PRINCIPLE</div>
+    <div class="side-quote"><span class="quote-icon">“</span> An outcome is not evidence unless the trajectory can be independently checked. <div class="quote-credit">VEAB DESIGN CONTRACT / V0.1</div></div>
+    <div class="sidebar-footer"><div class="footer-status"><span class="status-dot"></span><span>LOCAL SIMULATION</span><span class="footer-version">v0.1.0</span></div><p>Read-only evaluation surface.<br/>No physical robot actuation.</p></div>
+  </aside>
+  <div class="workarea">
+    <header class="topbar">
+      <div class="breadcrumbs">RESEARCH LAB <span>/</span> <b id="breadcrumb">MISSION CONTROL</b></div>
+      <div class="top-actions"><span class="top-clock" id="live-clock">SESSION / LOCAL</span><div class="head-chip"><span class="pulse-dot"></span> Simulator online</div><button type="button" id="auth-button" class="avatar" title="Set API access token">VA</button></div>
+    </header>
+    <main id="page-overview" class="page active">
+      <div class="page-heading">
+        <div><div class="eyebrow"><span class="eyebrow-line"></span> RESEARCH / AUTONOMY ASSURANCE</div><h1>Verified autonomy<span class="title-dot">.</span><br/><span class="muted-title">Made observable.</span></h1><p class="intro">A reproducible proving ground for agent decisions, safety boundaries, fault recovery, and the evidence behind every outcome.</p></div>
+        <div class="heading-actions"><button type="button" class="button-secondary" id="compare-trigger"><span>⇄</span> Compare policies</button><button type="button" class="button-primary" id="run-top">▶ &nbsp; Run experiment</button></div>
+      </div>
+      <div class="stats" aria-label="Observed metrics">
+        <div class="stat-card"><div class="stat-label">VERIFIED COMPLETION <span class="stat-glyph">◈</span></div><div class="stat-number" id="metric-rate">—</div><div class="stat-detail" id="metric-rate-note">No evaluated trials yet</div></div>
+        <div class="stat-card"><div class="stat-label">UNSAFE EXECUTION EVENTS <span class="stat-glyph orange">△</span></div><div class="stat-number" id="metric-violations">—</div><div class="stat-detail" id="metric-violations-note">Computed by independent verifier</div></div>
+        <div class="stat-card"><div class="stat-label">SAFETY INTERVENTIONS <span class="stat-glyph teal">✳</span></div><div class="stat-number" id="metric-shields">—</div><div class="stat-detail" id="metric-shields-note">Actions modified by safety gate</div></div>
+        <div class="stat-card"><div class="stat-label">EVIDENCE EVENTS <span class="stat-glyph violet">⌁</span></div><div class="stat-number" id="metric-events">—</div><div class="stat-detail" id="metric-events-note">Hash-linked trajectory records</div></div>
+      </div>
+      <div class="main-grid">
+        <section class="panel viewport-panel">
+          <div class="panel-heading"><div><div class="overline">ENVIRONMENT / WORLD VIEW</div><h2>Mission visualizer <span id="scenario-label" class="muted-label">Warehouse · multi-stop transfer</span></h2></div><div class="status-indicator"><span class="green-dot"></span> <span id="scene-status">PREVIEW</span></div></div>
+          <div class="world-container"><canvas id="world" role="img" aria-label="Interactive isometric simulation of map, hazards, objectives, robot, and verified trajectory"></canvas>
+            <div class="world-label-top"><span class="live-mini">● WORLD MODEL</span><span class="world-spec">2D DYNAMICS · 3D PROJECTION</span></div>
+            <div class="world-compass"><b>N</b><span class="compass-cross">✣</span><small>ROTATE</small></div>
+            <div class="world-bottom"><span><i class="legend-dot robot"></i> Agent</span><span><i class="legend-dot objective"></i> Objective</span><span><i class="legend-dot hazard"></i> Restricted zone</span><span><i class="legend-dot trail"></i> Trajectory</span></div>
+            <div class="world-help">DRAG TO ORBIT · SCROLL TO ZOOM</div>
+          </div>
+          <div class="playback-strip"><button id="play-pause" type="button" class="play-button" aria-label="Play or pause trajectory">▶</button><div class="playback-time" id="playback-time">T+ 00.0s</div><input id="scrubber" type="range" min="0" max="100" value="0" aria-label="Trajectory playback progress" /><div class="playback-time" id="playback-total">—</div><button id="reset-camera" type="button" class="tiny-button" title="Reset camera orbit">⟲</button></div>
+        </section>
+        <section class="panel run-panel"><div class="panel-heading"><div><div class="overline">CONFIGURATION / EXPERIMENT</div><h2>Run control</h2></div><span class="tiny-label">EXPERIMENT 01</span></div>
+          <div class="panel-body"><label class="field-label" for="scenario-select">SCENARIO CONTRACT</label><select id="scenario-select" class="field"><option>Loading scenarios...</option></select><div class="field-hint" id="scenario-description">Reproducible benchmark environment</div>
+            <div class="field-two"><div><label class="field-label" for="policy-select">AGENT BASELINE</label><select id="policy-select" class="field"><option value="route">Route planner</option><option value="greedy">Greedy baseline</option></select></div><div><label class="field-label" for="seed-input">DETERMINISTIC SEED</label><input id="seed-input" class="field" type="number" min="0" max="4294967295" value="17" /></div></div>
+            <div class="toggle-row"><div><strong>Geometric safety gate</strong><p>Filter proposed velocities before execution</p></div><label class="switch"><input id="shield-toggle" type="checkbox" checked /><span class="switch-track"></span></label></div>
+            <button type="button" class="button-primary full-button" id="run-control">▶ &nbsp; Execute benchmark run</button>
+            <div class="line-divider"></div><div class="verification-heading"><span>INDEPENDENT VERIFICATION</span><span class="verif-state" id="verif-status">AWAITING EVIDENCE</span></div>
+            <div class="gate" data-gate="chain"><span class="gate-icon">◆</span><span>Event-chain integrity</span><b>—</b></div>
+            <div class="gate" data-gate="postcondition"><span class="gate-icon">⊙</span><span>Task postconditions</span><b>—</b></div>
+            <div class="gate" data-gate="safety"><span class="gate-icon">⬡</span><span>Constraint satisfaction</span><b>—</b></div>
+            <div class="gate" data-gate="attestation"><span class="gate-icon">⌘</span><span>External attestation</span><b>—</b></div>
+            <button type="button" class="outline-button full-button" id="download-evidence" disabled>⇩ &nbsp; Export evidence bundle</button>
+          </div>
+        </section>
+      </div>
+      <div class="lower-grid"><section class="panel events-panel"><div class="panel-heading"><div><div class="overline">EXECUTION / INSTRUMENTATION</div><h2>Evidence stream</h2></div><span id="event-count" class="tiny-label">0 EVENTS</span></div><div class="events-list" id="events-list"><div class="empty-message">Select a scenario and execute a benchmark to generate trace events.</div></div></section>
+      <section class="panel analytics-panel"><div class="panel-heading"><div><div class="overline">EVALUATION / LAST RUN</div><h2>Assurance metrics</h2></div><span class="tiny-label" id="analysis-run-tag">NO RUN</span></div><div class="analysis-body"><div class="assurance-score"><div><span class="subtle">VERIFIED PROGRESS</span><strong id="run-progress">—</strong></div><div class="progress-track"><div id="run-progress-bar" class="progress-fill"></div></div></div><div class="metric-row"><span>Minimum obstacle clearance</span><b id="last-clearance">—</b></div><div class="metric-row"><span>Faults / recovered</span><b id="last-faults">—</b></div><div class="metric-row"><span>Simulated episode duration</span><b id="last-duration">—</b></div><div class="metric-row"><span>Energy proxy <small>(not J)</small></span><b id="last-energy">—</b></div><p class="scope-note">These measurements come from a planar toy simulator. They do not establish real-world safety or physics validity.</p></div></section></div>
+    </main>
+    <main id="page-scenarios" class="page subpage"><div class="section-head"><div class="eyebrow">DATASETS / EVALUATION TASKS</div><h1>Scenario library<span class="title-dot">.</span></h1><p>Immutable, split-labelled task definitions. Evaluation uses independently checked postconditions.</p></div><div id="scenario-cards" class="scenario-cards"></div></main>
+    <main id="page-evidence" class="page subpage"><div class="section-head"><div class="eyebrow">PROVENANCE / AUDIT</div><h1>Evidence ledger<span class="title-dot">.</span></h1><p>Inspectable action-observation chains and downloadable deterministic run bundles.</p></div><section class="panel"><div class="panel-heading"><div><div class="overline">AUDIT / RECORDS</div><h2>Recorded experiments</h2></div><span id="run-count" class="tiny-label">0 RUNS</span></div><div class="table-wrap"><table><thead><tr><th>RUN ID</th><th>SCENARIO</th><th>POLICY</th><th>SHIELD</th><th>VERIFIED</th><th>VIOLATIONS</th><th>RECORDED</th></tr></thead><tbody id="run-table"><tr><td colspan="7">No runs recorded.</td></tr></tbody></table></div></section><section class="panel trace-panel"><div class="panel-heading"><div><div class="overline">PROVENANCE / RAW EVENTS</div><h2>Selected event trace</h2></div><button class="outline-button slim" type="button" id="evidence-export" disabled>⇩ Export JSON</button></div><pre class="trace-preview" id="trace-preview">Choose a completed run to inspect event provenance.</pre></section></main>
+    <main id="page-agents" class="page subpage"><div class="section-head"><div class="eyebrow">HARNESS / EXECUTION ROLES</div><h1>Agent architecture<span class="title-dot">.</span></h1><p>Separating decisions, execution control, and verification reduces self-grading and enables controlled ablations.</p></div><div class="agent-pipeline"><div class="agent-node"><div class="node-nr">01 / DECISION</div><div class="node-symbol">◇</div><h3>Planning agent</h3><p>Greedy and A* reference policies; bounded velocity proposals and inspectable decisions.</p><span>REFERENCE BASELINES · LIVE</span></div><div class="pipeline-link">→</div><div class="agent-node"><div class="node-nr">02 / CONTROL</div><div class="node-symbol">⌁</div><h3>Execution harness</h3><p>Deterministic clock, noisy observations, injected faults, and state transitions.</p><span>TOY SIMULATOR · LIVE</span></div><div class="pipeline-link">→</div><div class="agent-node"><div class="node-nr">03 / SAFETY</div><div class="node-symbol">⬡</div><h3>Safety monitor</h3><p>Independent geometric gate can clamp, redirect, or stop unsafe proposed motions.</p><span>NOT A FORMAL CBF · LIVE</span></div><div class="pipeline-link">→</div><div class="agent-node"><div class="node-nr">04 / AUDIT</div><div class="node-symbol">◈</div><h3>Evidence verifier</h3><p>Separately recomputes hazard contact, milestones, velocity consistency, and integrity.</p><span>READ-ONLY AUDITOR · LIVE</span></div></div><section class="panel explanation"><div class="overline">EXTENSION BOUNDARY</div><h2>Simulator, model, and device adapters</h2><p>Physical robot commands are deliberately excluded. The next adapter layer consumes ROS 2/MCAP or Isaac Lab evidence as read-only observations. Real robot actuation must remain behind a separately reviewed, hardware-enforced safety supervisor.</p></section></main>
+    <main id="page-research" class="page subpage"><div class="section-head"><div class="eyebrow">METHODOLOGY / EXPERIMENTAL CONTROL</div><h1>Research & ablations<span class="title-dot">.</span></h1><p>Compare matched baselines with safety gate on/off, fixed scenarios and reproducible seeds.</p></div><section class="panel research-panel"><div class="panel-heading"><div><div class="overline">COMPARISON / OBSERVED RECORDS</div><h2>Verified completion by harness configuration</h2></div><button class="button-secondary slim" id="research-compare" type="button">Run paired comparison</button></div><div id="comparison-bars" class="comparison-bars"><p>No experiments yet. Run both policies against the same scenario and seed.</p></div></section><section class="panel explanation"><div class="overline">RESEARCH VALIDITY</div><h2>Publication gates—not satisfied by this demo</h2><div class="research-gates"><div><b>01.</b> Benchmark validity audit</div><div><b>02.</b> Held-out contamination control</div><div><b>03.</b> Multi-seed confidence intervals</div><div><b>04.</b> External physics / hardware tests</div><div><b>05.</b> Independent safety assurance</div><div><b>06.</b> Latency, energy, and cost instrumentation</div></div><p>Run <code>python -m veab suite --seeds 0 1 2</code> to export the demo ablation matrix. Do not interpret toy-world scores as SOTA.</p></section></main>
+    <footer class="copyright"><span>VEAB / VERSION 0.1.0</span><span>TRACEABLE BY DESIGN · NOT A CERTIFIED SAFETY SYSTEM</span><span>LOCAL RESEARCH BUILD</span></footer>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="auth-modal" class="modal-wrap hidden" role="dialog" aria-modal="true" aria-labelledby="auth-title"><div class="modal"><div class="eyebrow">PRIVATE CONTROL PLANE</div><h2 id="auth-title">API access token</h2><p>For authenticated deployments, enter the VEAB_ADMIN_TOKEN set on the server. The token stays in this page's memory, not browser storage.</p><input type="password" id="auth-input" class="field" placeholder="Bearer token" autocomplete="off" /><div class="modal-actions"><button class="button-secondary" id="auth-cancel">Cancel</button><button class="button-primary" id="auth-save">Connect</button></div></div></div>
+</body></html>

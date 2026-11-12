@@ -1,0 +1,11 @@
+{
+  "id":"campus-patrol", "title":"Campus · training patrol",
+  "description":"Training-split navigation with marked intermediate checkpoints and modest obstacle clearance.",
+  "family":"navigation","split":"train","width":11,"height":8,
+  "dt":0.2,"max_steps":220,"max_speed":1.1,"robot_radius":0.22,"waypoint_tolerance":0.42,
+  "start":{"x":1.0,"y":1.0,"label":"Patrol origin"},
+  "waypoints":[{"x":2.3,"y":6.3,"label":"West crossing"},{"x":7.8,"y":6.2,"label":"East crossing"},{"x":9.4,"y":1.4,"label":"Finish"}],
+  "obstacles":[{"x":3.4,"y":3.5,"radius":0.7,"label":"Planter"},{"x":6.3,"y":3.9,"radius":1.0,"label":"Structure"}],
+  "forbidden_zones":[],
+  "faults":[{"kind":"actuator_stall","start_step":35,"duration_steps":5}],"target_present":true
+}

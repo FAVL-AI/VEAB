@@ -1,0 +1,3627 @@
+{
+  "manifest": {
+    "schema_version": "veab-bundle/1",
+    "source": "deterministic_toy_simulation",
+    "environment": "VEAB toy planar simulator v0.1 (not Isaac/ROS2)",
+    "scenario": {
+      "schema_version": "veab-scenario/1",
+      "id": "warehouse-transfer",
+      "title": "Warehouse · multi-stop transfer",
+      "description": "Cross a mapped warehouse, inspect intermediate stations, then reach the dispatch bay.",
+      "family": "navigation",
+      "split": "validation",
+      "width": 13.0,
+      "height": 9.0,
+      "dt": 0.2,
+      "max_steps": 290,
+      "max_speed": 1.2,
+      "robot_radius": 0.22,
+      "waypoint_tolerance": 0.4,
+      "start": {
+        "x": 1.2,
+        "y": 1.3,
+        "label": "Receiving"
+      },
+      "waypoints": [
+        {
+          "x": 3.6,
+          "y": 6.9,
+          "label": "Scan station"
+        },
+        {
+          "x": 9.4,
+          "y": 6.7,
+          "label": "Quality gate"
+        },
+        {
+          "x": 11.4,
+          "y": 2.0,
+          "label": "Dispatch bay"
+        }
+      ],
+      "obstacles": [
+        {
+          "x": 3.0,
+          "y": 3.4,
+          "radius": 0.85,
+          "label": "Rack A"
+        },
+        {
+          "x": 6.5,
+          "y": 4.5,
+          "radius": 1.1,
+          "label": "Rack B"
+        },
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "radius": 0.8,
+          "label": "Rack C"
+        }
+      ],
+      "forbidden_zones": [
+        {
+          "x1": 5.1,
+          "y1": 0.8,
+          "x2": 7.7,
+          "y2": 2.2,
+          "label": "No-entry workcell"
+        }
+      ],
+      "faults": [
+        {
+          "kind": "sensor_dropout",
+          "start_step": 55,
+          "duration_steps": 8
+        }
+      ],
+      "target_present": true
+    },
+    "scenario_sha256": "7803186e84f8e73d5d44098dab67ad351b01e1349a894a4c9a5423c5d6903e23",
+    "policy": "route",
+    "seed": 17,
+    "shield_enabled": true,
+    "harness_version": "0.1.0",
+    "dt_seconds": 0.2,
+    "simulation_steps": 81,
+    "ledger_root_sha256": "f83278ef6f385ff56ba21f805a3b74a4140f0ea07033f39cdaf241edca251a2a"
+  },
+  "events": [
+    {
+      "seq": 0,
+      "tick": 0,
+      "kind": "state",
+      "payload": {
+        "x": 1.2,
+        "y": 1.3,
+        "vx": 0.0,
+        "vy": 0.0,
+        "stage": 0
+      },
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "4303a5f750cc9698109a0d46c146d11ce91f8e8c56b7c591e7b3ae6c44f65bb8"
+    },
+    {
+      "seq": 1,
+      "tick": 1,
+      "kind": "observation",
+      "payload": {
+        "x": 1.2,
+        "y": 1.3,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "4303a5f750cc9698109a0d46c146d11ce91f8e8c56b7c591e7b3ae6c44f65bb8",
+      "hash": "9f177a0c3b0feb6a870763166cb1512dd7de6bb3acebb127752e94f997f6ed87"
+    },
+    {
+      "seq": 2,
+      "tick": 1,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.108643,
+        "vy": 1.195072,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "9f177a0c3b0feb6a870763166cb1512dd7de6bb3acebb127752e94f997f6ed87",
+      "hash": "29b9f95a2c30a325511ba1485da75a68c03952580965dda18f39789fa7b11288"
+    },
+    {
+      "seq": 3,
+      "tick": 1,
+      "kind": "state",
+      "payload": {
+        "x": 1.22173,
+        "y": 1.53901,
+        "vx": 0.108643,
+        "vy": 1.195072,
+        "stage": 0
+      },
+      "prev_hash": "29b9f95a2c30a325511ba1485da75a68c03952580965dda18f39789fa7b11288",
+      "hash": "1bcc113569799a5d20b833498f0f5dcb5a0d937ff92f125267bb610ecb8e160f"
+    },
+    {
+      "seq": 4,
+      "tick": 2,
+      "kind": "observation",
+      "payload": {
+        "x": 1.22173,
+        "y": 1.53901,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "1bcc113569799a5d20b833498f0f5dcb5a0d937ff92f125267bb610ecb8e160f",
+      "hash": "784d07e5264b14c01b50812acf01ab842afbbb8aee6d2271c1a442f035d9080d"
+    },
+    {
+      "seq": 5,
+      "tick": 2,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.810179,
+        "vy": 0.885218,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "784d07e5264b14c01b50812acf01ab842afbbb8aee6d2271c1a442f035d9080d",
+      "hash": "fd6aa32979f555119ae15413d783538cc6611a071fbaef096b1eda0e798d8bfd"
+    },
+    {
+      "seq": 6,
+      "tick": 2,
+      "kind": "state",
+      "payload": {
+        "x": 1.38377,
+        "y": 1.71605,
+        "vx": 0.810179,
+        "vy": 0.885218,
+        "stage": 0
+      },
+      "prev_hash": "fd6aa32979f555119ae15413d783538cc6611a071fbaef096b1eda0e798d8bfd",
+      "hash": "d8d0de900d8381d48ed3524083669f9b5f662806f32aaf27f0a59d532cd57061"
+    },
+    {
+      "seq": 7,
+      "tick": 3,
+      "kind": "observation",
+      "payload": {
+        "x": 1.38377,
+        "y": 1.71605,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "d8d0de900d8381d48ed3524083669f9b5f662806f32aaf27f0a59d532cd57061",
+      "hash": "459addf9e1b9f0c1076f0c800548fbb6d718e9543160dd98e358951aeb687cc6"
+    },
+    {
+      "seq": 8,
+      "tick": 3,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.810161,
+        "vy": 0.885234,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "459addf9e1b9f0c1076f0c800548fbb6d718e9543160dd98e358951aeb687cc6",
+      "hash": "224473be0dac3b29cd0fe9cb7c6fd47199fde0e7bd32ec10edcbe087c54b2f3c"
+    },
+    {
+      "seq": 9,
+      "tick": 3,
+      "kind": "state",
+      "payload": {
+        "x": 1.5458,
+        "y": 1.8931,
+        "vx": 0.810161,
+        "vy": 0.885234,
+        "stage": 0
+      },
+      "prev_hash": "224473be0dac3b29cd0fe9cb7c6fd47199fde0e7bd32ec10edcbe087c54b2f3c",
+      "hash": "791cbcfa6b98ee55eb184ea8375aafbbfa0eaa126a217876c1f15e8e447aa74b"
+    },
+    {
+      "seq": 10,
+      "tick": 4,
+      "kind": "observation",
+      "payload": {
+        "x": 1.5458,
+        "y": 1.8931,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "791cbcfa6b98ee55eb184ea8375aafbbfa0eaa126a217876c1f15e8e447aa74b",
+      "hash": "9220543cf9c45a14d8d99e0886fb5f275432b573cf5aad7a0eeddff2d4504f88"
+    },
+    {
+      "seq": 11,
+      "tick": 4,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.091485,
+        "vy": 1.196508,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "9220543cf9c45a14d8d99e0886fb5f275432b573cf5aad7a0eeddff2d4504f88",
+      "hash": "a96c62dba7699a2d3df6ff113edc3054f6476f6d8b8e75cabe0eca26426e04dc"
+    },
+    {
+      "seq": 12,
+      "tick": 4,
+      "kind": "state",
+      "payload": {
+        "x": 1.5641,
+        "y": 2.1324,
+        "vx": 0.091485,
+        "vy": 1.196508,
+        "stage": 0
+      },
+      "prev_hash": "a96c62dba7699a2d3df6ff113edc3054f6476f6d8b8e75cabe0eca26426e04dc",
+      "hash": "741499f591f8f8a73bc0ab7db5420715d0464e78e959afd82df7b5a95cfcac9b"
+    },
+    {
+      "seq": 13,
+      "tick": 5,
+      "kind": "observation",
+      "payload": {
+        "x": 1.5641,
+        "y": 2.1324,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "741499f591f8f8a73bc0ab7db5420715d0464e78e959afd82df7b5a95cfcac9b",
+      "hash": "9f2f74b0025a8b206069a3aa6c440ec7b3d451e558500791046b397f541dceb8"
+    },
+    {
+      "seq": 14,
+      "tick": 5,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.026546,
+        "vy": 1.199706,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "9f2f74b0025a8b206069a3aa6c440ec7b3d451e558500791046b397f541dceb8",
+      "hash": "dd6c5c0d6f3909387e9c6bb00e5e1da68acdb66a9eae1a64a55dab8fb10773f2"
+    },
+    {
+      "seq": 15,
+      "tick": 5,
+      "kind": "state",
+      "payload": {
+        "x": 1.56941,
+        "y": 2.37234,
+        "vx": 0.026546,
+        "vy": 1.199706,
+        "stage": 0
+      },
+      "prev_hash": "dd6c5c0d6f3909387e9c6bb00e5e1da68acdb66a9eae1a64a55dab8fb10773f2",
+      "hash": "82527b6ed3b34e3d894bd4d745f10d08a18996149a2a990c19cb6b32fdc37142"
+    },
+    {
+      "seq": 16,
+      "tick": 6,
+      "kind": "observation",
+      "payload": {
+        "x": 1.56941,
+        "y": 2.37234,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "82527b6ed3b34e3d894bd4d745f10d08a18996149a2a990c19cb6b32fdc37142",
+      "hash": "169013a22b3ec3c16afce5e447fe936cbb7a39d0643256837e238414499635c1"
+    },
+    {
+      "seq": 17,
+      "tick": 6,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.026543,
+        "vy": 1.199706,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "169013a22b3ec3c16afce5e447fe936cbb7a39d0643256837e238414499635c1",
+      "hash": "5d69a09e66ca8df00d6657ece76a00c964a83c330355d5fa4b3792ced2231c79"
+    },
+    {
+      "seq": 18,
+      "tick": 6,
+      "kind": "state",
+      "payload": {
+        "x": 1.57472,
+        "y": 2.61228,
+        "vx": 0.026543,
+        "vy": 1.199706,
+        "stage": 0
+      },
+      "prev_hash": "5d69a09e66ca8df00d6657ece76a00c964a83c330355d5fa4b3792ced2231c79",
+      "hash": "f066c60043aab895eb6aa405958cf3e7368beeff1768654232836b211fe976a1"
+    },
+    {
+      "seq": 19,
+      "tick": 7,
+      "kind": "observation",
+      "payload": {
+        "x": 1.57472,
+        "y": 2.61228,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "f066c60043aab895eb6aa405958cf3e7368beeff1768654232836b211fe976a1",
+      "hash": "4e5e67b5925207051c4c8152abe76922467237421091368acf20afbdd30b9994"
+    },
+    {
+      "seq": 20,
+      "tick": 7,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.000926,
+        "vy": 1.2,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "4e5e67b5925207051c4c8152abe76922467237421091368acf20afbdd30b9994",
+      "hash": "724ed6fa95206fe3885b30fbcf146005edbff569cce34a362469fa5a8ee6a1b4"
+    },
+    {
+      "seq": 21,
+      "tick": 7,
+      "kind": "state",
+      "payload": {
+        "x": 1.57491,
+        "y": 2.85228,
+        "vx": 0.000926,
+        "vy": 1.2,
+        "stage": 0
+      },
+      "prev_hash": "724ed6fa95206fe3885b30fbcf146005edbff569cce34a362469fa5a8ee6a1b4",
+      "hash": "5a9c11323efa5d1d767b8d2726679ede0fcdfe6f126193502c4fc4fe1c258fcf"
+    },
+    {
+      "seq": 22,
+      "tick": 8,
+      "kind": "observation",
+      "payload": {
+        "x": 1.57491,
+        "y": 2.85228,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "5a9c11323efa5d1d767b8d2726679ede0fcdfe6f126193502c4fc4fe1c258fcf",
+      "hash": "8a467f61901e39b710f664ae99221f54b23f4d0df573251cb5d712c32a293f14"
+    },
+    {
+      "seq": 23,
+      "tick": 8,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.000228,
+        "vy": 1.2,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "8a467f61901e39b710f664ae99221f54b23f4d0df573251cb5d712c32a293f14",
+      "hash": "6d1a4d89147f1a9a56391e119b3a856a51278a93a9e89d3eb1abbaac870830fe"
+    },
+    {
+      "seq": 24,
+      "tick": 8,
+      "kind": "state",
+      "payload": {
+        "x": 1.57496,
+        "y": 3.09228,
+        "vx": 0.000228,
+        "vy": 1.2,
+        "stage": 0
+      },
+      "prev_hash": "6d1a4d89147f1a9a56391e119b3a856a51278a93a9e89d3eb1abbaac870830fe",
+      "hash": "fdbabe43ccbe67fb63ba4eaf9649ba69618fbe27dbc15e0d6d3270d3e051a2b3"
+    },
+    {
+      "seq": 25,
+      "tick": 9,
+      "kind": "observation",
+      "payload": {
+        "x": 1.57496,
+        "y": 3.09228,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "fdbabe43ccbe67fb63ba4eaf9649ba69618fbe27dbc15e0d6d3270d3e051a2b3",
+      "hash": "8e876f52eb13607a09e7bd3a9a9452607a983ef6201f138d8176f463379bba20"
+    },
+    {
+      "seq": 26,
+      "tick": 9,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.0002,
+        "vy": 1.1636,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "8e876f52eb13607a09e7bd3a9a9452607a983ef6201f138d8176f463379bba20",
+      "hash": "ebcd06423bac844857d4fabf0681cee9f95dc6488cbf435ce891f8b5aef788c0"
+    },
+    {
+      "seq": 27,
+      "tick": 9,
+      "kind": "state",
+      "payload": {
+        "x": 1.575,
+        "y": 3.325,
+        "vx": 0.0002,
+        "vy": 1.1636,
+        "stage": 0
+      },
+      "prev_hash": "ebcd06423bac844857d4fabf0681cee9f95dc6488cbf435ce891f8b5aef788c0",
+      "hash": "3479771175c575e139ecd1832bdd2fa5f3ecb051ac939f166f9c56faa5940a94"
+    },
+    {
+      "seq": 28,
+      "tick": 10,
+      "kind": "observation",
+      "payload": {
+        "x": 1.575,
+        "y": 3.325,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "3479771175c575e139ecd1832bdd2fa5f3ecb051ac939f166f9c56faa5940a94",
+      "hash": "6ed4a5837c97ccd4f9bd31f61c52d381c4ebb26d9a9c12c5e41238c860bd0fea"
+    },
+    {
+      "seq": 29,
+      "tick": 10,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.0,
+        "vy": 1.2,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "6ed4a5837c97ccd4f9bd31f61c52d381c4ebb26d9a9c12c5e41238c860bd0fea",
+      "hash": "8af4183725ac9df952e4f78161df7ba51caf1db95f751fccf7dfd0a27d57c436"
+    },
+    {
+      "seq": 30,
+      "tick": 10,
+      "kind": "state",
+      "payload": {
+        "x": 1.575,
+        "y": 3.565,
+        "vx": 0.0,
+        "vy": 1.2,
+        "stage": 0
+      },
+      "prev_hash": "8af4183725ac9df952e4f78161df7ba51caf1db95f751fccf7dfd0a27d57c436",
+      "hash": "a1c47a435fd0df3119bc87ef1c7105d170bdc987f5caacd17ddfad21d8282d6c"
+    },
+    {
+      "seq": 31,
+      "tick": 11,
+      "kind": "observation",
+      "payload": {
+        "x": 1.575,
+        "y": 3.565,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "a1c47a435fd0df3119bc87ef1c7105d170bdc987f5caacd17ddfad21d8282d6c",
+      "hash": "ce733d9ab72ac3b48410af2d1555fe1b1cb4d02cafb84047cd003daa1c80b0fc"
+    },
+    {
+      "seq": 32,
+      "tick": 11,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.0,
+        "vy": 1.2,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "ce733d9ab72ac3b48410af2d1555fe1b1cb4d02cafb84047cd003daa1c80b0fc",
+      "hash": "51705550221022d4198f278b0f76bbdab9e29de0946ef1e9c0849303ab4460ff"
+    },
+    {
+      "seq": 33,
+      "tick": 11,
+      "kind": "state",
+      "payload": {
+        "x": 1.575,
+        "y": 3.805,
+        "vx": 0.0,
+        "vy": 1.2,
+        "stage": 0
+      },
+      "prev_hash": "51705550221022d4198f278b0f76bbdab9e29de0946ef1e9c0849303ab4460ff",
+      "hash": "59dfe5b4da75f81f88e42cd1948c98f2551dd71f1c7555b022a764c48739ac0b"
+    },
+    {
+      "seq": 34,
+      "tick": 12,
+      "kind": "observation",
+      "payload": {
+        "x": 1.575,
+        "y": 3.805,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "59dfe5b4da75f81f88e42cd1948c98f2551dd71f1c7555b022a764c48739ac0b",
+      "hash": "89b4b4e63ef96f506e54f5225ff3d643bd5ae0df9d61959997d229dd39badd17"
+    },
+    {
+      "seq": 35,
+      "tick": 12,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.0,
+        "vy": 1.1,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "89b4b4e63ef96f506e54f5225ff3d643bd5ae0df9d61959997d229dd39badd17",
+      "hash": "3af69a59d2b3fd3e2ecebffd85dc0b72d164d85d4b6dafd03122c470e933393b"
+    },
+    {
+      "seq": 36,
+      "tick": 12,
+      "kind": "state",
+      "payload": {
+        "x": 1.575,
+        "y": 4.025,
+        "vx": 0.0,
+        "vy": 1.1,
+        "stage": 0
+      },
+      "prev_hash": "3af69a59d2b3fd3e2ecebffd85dc0b72d164d85d4b6dafd03122c470e933393b",
+      "hash": "3df13287ab8147d087c5ca532b9e52bf6c532896ec4fdf72f0a9ad621e61b354"
+    },
+    {
+      "seq": 37,
+      "tick": 13,
+      "kind": "observation",
+      "payload": {
+        "x": 1.575,
+        "y": 4.025,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "3df13287ab8147d087c5ca532b9e52bf6c532896ec4fdf72f0a9ad621e61b354",
+      "hash": "5877eb9532b02ce9d97cdc244d21bc733194a2a8d3b026a1c22e0de85442f6b9"
+    },
+    {
+      "seq": 38,
+      "tick": 13,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "5877eb9532b02ce9d97cdc244d21bc733194a2a8d3b026a1c22e0de85442f6b9",
+      "hash": "138f6f98ed0d97dc79c56f25319f23ba81b87cdc011410bc74c17eca4b8cd1d4"
+    },
+    {
+      "seq": 39,
+      "tick": 13,
+      "kind": "state",
+      "payload": {
+        "x": 1.74471,
+        "y": 4.19471,
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "stage": 0
+      },
+      "prev_hash": "138f6f98ed0d97dc79c56f25319f23ba81b87cdc011410bc74c17eca4b8cd1d4",
+      "hash": "5fcce662c698a25c7eacb2dfaba6f0c96cbd0da7f8cec93e46c1a863f4e646e8"
+    },
+    {
+      "seq": 40,
+      "tick": 14,
+      "kind": "observation",
+      "payload": {
+        "x": 1.74471,
+        "y": 4.19471,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "5fcce662c698a25c7eacb2dfaba6f0c96cbd0da7f8cec93e46c1a863f4e646e8",
+      "hash": "9fdf4da04610e106a76dc46d11e3462bde49e212d6218dfec2dd61f1cff752c7"
+    },
+    {
+      "seq": 41,
+      "tick": 14,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "9fdf4da04610e106a76dc46d11e3462bde49e212d6218dfec2dd61f1cff752c7",
+      "hash": "7d6ac6b816f3321bedf616a6176b66de4c6ec735ae02a2956aa46b973544d0ca"
+    },
+    {
+      "seq": 42,
+      "tick": 14,
+      "kind": "state",
+      "payload": {
+        "x": 1.91442,
+        "y": 4.36442,
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "stage": 0
+      },
+      "prev_hash": "7d6ac6b816f3321bedf616a6176b66de4c6ec735ae02a2956aa46b973544d0ca",
+      "hash": "954a33df91d5f08ac34d09276953eae5090fb0be70316c48384a63a22296decb"
+    },
+    {
+      "seq": 43,
+      "tick": 15,
+      "kind": "observation",
+      "payload": {
+        "x": 1.91442,
+        "y": 4.36442,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "954a33df91d5f08ac34d09276953eae5090fb0be70316c48384a63a22296decb",
+      "hash": "47fc6530934203b3a03a382e7f6035d43aefe39faba247ff7f42ef09a63f44ad"
+    },
+    {
+      "seq": 44,
+      "tick": 15,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "47fc6530934203b3a03a382e7f6035d43aefe39faba247ff7f42ef09a63f44ad",
+      "hash": "b9b1e236e3672fb7de4a8e7f297926f975ec247d9e79d6a3a939b8c5b89467c0"
+    },
+    {
+      "seq": 45,
+      "tick": 15,
+      "kind": "state",
+      "payload": {
+        "x": 2.08413,
+        "y": 4.53413,
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "stage": 0
+      },
+      "prev_hash": "b9b1e236e3672fb7de4a8e7f297926f975ec247d9e79d6a3a939b8c5b89467c0",
+      "hash": "e22ba361f7c428f8fc665abde2afdd59c7fca8ce880aab07fce020173185d09b"
+    },
+    {
+      "seq": 46,
+      "tick": 16,
+      "kind": "observation",
+      "payload": {
+        "x": 2.08413,
+        "y": 4.53413,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "e22ba361f7c428f8fc665abde2afdd59c7fca8ce880aab07fce020173185d09b",
+      "hash": "8aa20301f41693c9f8fa7bc74e4c73ceb56b416b2a89950b22aaa89243cd8f55"
+    },
+    {
+      "seq": 47,
+      "tick": 16,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "8aa20301f41693c9f8fa7bc74e4c73ceb56b416b2a89950b22aaa89243cd8f55",
+      "hash": "9a0f214e720d8448bf88cbc2fba2cd338938124932065fd4966c17be248104a1"
+    },
+    {
+      "seq": 48,
+      "tick": 16,
+      "kind": "state",
+      "payload": {
+        "x": 2.25384,
+        "y": 4.70384,
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "stage": 0
+      },
+      "prev_hash": "9a0f214e720d8448bf88cbc2fba2cd338938124932065fd4966c17be248104a1",
+      "hash": "4934d2c94132c74019dcf7b8f423508ff0e48512879d8774295612b7e04cb7df"
+    },
+    {
+      "seq": 49,
+      "tick": 17,
+      "kind": "observation",
+      "payload": {
+        "x": 2.25384,
+        "y": 4.70384,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "4934d2c94132c74019dcf7b8f423508ff0e48512879d8774295612b7e04cb7df",
+      "hash": "172e6bcc55c88fae6fdec6d7cadd83a066eb4cf8cc99739a21446e90430ef7b7"
+    },
+    {
+      "seq": 50,
+      "tick": 17,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "172e6bcc55c88fae6fdec6d7cadd83a066eb4cf8cc99739a21446e90430ef7b7",
+      "hash": "59c18bda877fd1006d56161b8d7d51421ea7768b49222b5f222b92a0a0eb435b"
+    },
+    {
+      "seq": 51,
+      "tick": 17,
+      "kind": "state",
+      "payload": {
+        "x": 2.42355,
+        "y": 4.87355,
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "stage": 0
+      },
+      "prev_hash": "59c18bda877fd1006d56161b8d7d51421ea7768b49222b5f222b92a0a0eb435b",
+      "hash": "7396650ec33e63aec2d7a7a52b79f9b7219a611a709c343ccd721b31c9ae57f2"
+    },
+    {
+      "seq": 52,
+      "tick": 18,
+      "kind": "observation",
+      "payload": {
+        "x": 2.42355,
+        "y": 4.87355,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "7396650ec33e63aec2d7a7a52b79f9b7219a611a709c343ccd721b31c9ae57f2",
+      "hash": "43bab8653eca347ce0e37945c2976abf42424f625be439a4380933a2414a4332"
+    },
+    {
+      "seq": 53,
+      "tick": 18,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "43bab8653eca347ce0e37945c2976abf42424f625be439a4380933a2414a4332",
+      "hash": "b0131a19dac0706b3e798a87f92c7dc216fbe66f976c53a3fb92ecaf30df2210"
+    },
+    {
+      "seq": 54,
+      "tick": 18,
+      "kind": "state",
+      "payload": {
+        "x": 2.59326,
+        "y": 5.04326,
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "stage": 0
+      },
+      "prev_hash": "b0131a19dac0706b3e798a87f92c7dc216fbe66f976c53a3fb92ecaf30df2210",
+      "hash": "efd98a1594314608d5aac9b17d4aaaca44a9cf1357eb433cb6ae34483599848e"
+    },
+    {
+      "seq": 55,
+      "tick": 19,
+      "kind": "observation",
+      "payload": {
+        "x": 2.59326,
+        "y": 5.04326,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "efd98a1594314608d5aac9b17d4aaaca44a9cf1357eb433cb6ae34483599848e",
+      "hash": "ae718e618fc897aa9813cc82521bf2b0de1009e19eef2629fac9c971e33ddffd"
+    },
+    {
+      "seq": 56,
+      "tick": 19,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "ae718e618fc897aa9813cc82521bf2b0de1009e19eef2629fac9c971e33ddffd",
+      "hash": "ec7a1c1c13b19587ed2996ac82459e86550a83f04515a80f6a144a100cf8aeab"
+    },
+    {
+      "seq": 57,
+      "tick": 19,
+      "kind": "state",
+      "payload": {
+        "x": 2.76297,
+        "y": 5.21297,
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "stage": 0
+      },
+      "prev_hash": "ec7a1c1c13b19587ed2996ac82459e86550a83f04515a80f6a144a100cf8aeab",
+      "hash": "393ed81a35b75d60570e5f80b2c2c5cb7dc79c0b539fd995a34caeabad5e906e"
+    },
+    {
+      "seq": 58,
+      "tick": 20,
+      "kind": "observation",
+      "payload": {
+        "x": 2.76297,
+        "y": 5.21297,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "393ed81a35b75d60570e5f80b2c2c5cb7dc79c0b539fd995a34caeabad5e906e",
+      "hash": "07883dd2f28b82d33d82476ba97363851937302ebdab08f1d5e1e86ddfb7d353"
+    },
+    {
+      "seq": 59,
+      "tick": 20,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "07883dd2f28b82d33d82476ba97363851937302ebdab08f1d5e1e86ddfb7d353",
+      "hash": "acdca483d52bf6a5f8b6743f7896e9d5a74e70652af018a0aed5017e9c29c61d"
+    },
+    {
+      "seq": 60,
+      "tick": 20,
+      "kind": "state",
+      "payload": {
+        "x": 2.93268,
+        "y": 5.38268,
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "stage": 0
+      },
+      "prev_hash": "acdca483d52bf6a5f8b6743f7896e9d5a74e70652af018a0aed5017e9c29c61d",
+      "hash": "2d3f9d58a52aabeb8e6f7ef66d295e7e33316fa2e71cb766d6419889405ac24f"
+    },
+    {
+      "seq": 61,
+      "tick": 21,
+      "kind": "observation",
+      "payload": {
+        "x": 2.93268,
+        "y": 5.38268,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "2d3f9d58a52aabeb8e6f7ef66d295e7e33316fa2e71cb766d6419889405ac24f",
+      "hash": "2812acb6670cde8429aae70a804c3c6be9d528d77230905ff89ceac0e2df88fd"
+    },
+    {
+      "seq": 62,
+      "tick": 21,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "2812acb6670cde8429aae70a804c3c6be9d528d77230905ff89ceac0e2df88fd",
+      "hash": "d9ba61d59da178b1d8d071a947a293f38eed89ec2e61a73277910ecd31e21b30"
+    },
+    {
+      "seq": 63,
+      "tick": 21,
+      "kind": "state",
+      "payload": {
+        "x": 3.10239,
+        "y": 5.55239,
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "stage": 0
+      },
+      "prev_hash": "d9ba61d59da178b1d8d071a947a293f38eed89ec2e61a73277910ecd31e21b30",
+      "hash": "efa70335095d368a77540b96293bf3677e16366853c60aa2a097c20b940fd7e1"
+    },
+    {
+      "seq": 64,
+      "tick": 22,
+      "kind": "observation",
+      "payload": {
+        "x": 3.10239,
+        "y": 5.55239,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "efa70335095d368a77540b96293bf3677e16366853c60aa2a097c20b940fd7e1",
+      "hash": "629d3149ff6a75698cb1240e09503a2da4ae8ceacaf0f5fa3b87fef886b68b57"
+    },
+    {
+      "seq": 65,
+      "tick": 22,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "629d3149ff6a75698cb1240e09503a2da4ae8ceacaf0f5fa3b87fef886b68b57",
+      "hash": "c49fd7b92747bb5b16fa0e1022ace7dc5d0ffcd2f381581625b227aed683fde0"
+    },
+    {
+      "seq": 66,
+      "tick": 22,
+      "kind": "state",
+      "payload": {
+        "x": 3.2721,
+        "y": 5.7221,
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "stage": 0
+      },
+      "prev_hash": "c49fd7b92747bb5b16fa0e1022ace7dc5d0ffcd2f381581625b227aed683fde0",
+      "hash": "b3b6ca52883110fdebeccdfcd2ca6bb4fdb6557d02824a2fe6b041b5c68e68fc"
+    },
+    {
+      "seq": 67,
+      "tick": 23,
+      "kind": "observation",
+      "payload": {
+        "x": 3.2721,
+        "y": 5.7221,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "b3b6ca52883110fdebeccdfcd2ca6bb4fdb6557d02824a2fe6b041b5c68e68fc",
+      "hash": "acb4baef854c61e24db800f1a692205636426cc13ccf4abda9a87e71f2de3925"
+    },
+    {
+      "seq": 68,
+      "tick": 23,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.156217,
+        "vy": 1.189788,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "acb4baef854c61e24db800f1a692205636426cc13ccf4abda9a87e71f2de3925",
+      "hash": "89c9abc5a7faa330b11b2789cd7a6efc7493a6c0c3217897e2739fcbaf0b00fb"
+    },
+    {
+      "seq": 69,
+      "tick": 23,
+      "kind": "state",
+      "payload": {
+        "x": 3.30334,
+        "y": 5.96006,
+        "vx": 0.156217,
+        "vy": 1.189788,
+        "stage": 0
+      },
+      "prev_hash": "89c9abc5a7faa330b11b2789cd7a6efc7493a6c0c3217897e2739fcbaf0b00fb",
+      "hash": "20724a95f90acbb59100e3e73db173318e0d6d3486f8727c64bb2d4d5ba0a85d"
+    },
+    {
+      "seq": 70,
+      "tick": 24,
+      "kind": "observation",
+      "payload": {
+        "x": 3.30334,
+        "y": 5.96006,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "20724a95f90acbb59100e3e73db173318e0d6d3486f8727c64bb2d4d5ba0a85d",
+      "hash": "53c086410a62589427d1ca5c0eb71d5c38d3ad51716d3b39121db1057ea6c03b"
+    },
+    {
+      "seq": 71,
+      "tick": 24,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.050431,
+        "vy": 1.19894,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "53c086410a62589427d1ca5c0eb71d5c38d3ad51716d3b39121db1057ea6c03b",
+      "hash": "e012e683595dd336ea85b32b2ae69a368171775f53ab24b5cd91fb4ad7cffb77"
+    },
+    {
+      "seq": 72,
+      "tick": 24,
+      "kind": "state",
+      "payload": {
+        "x": 3.31343,
+        "y": 6.19985,
+        "vx": 0.050431,
+        "vy": 1.19894,
+        "stage": 0
+      },
+      "prev_hash": "e012e683595dd336ea85b32b2ae69a368171775f53ab24b5cd91fb4ad7cffb77",
+      "hash": "8b085b0031bef7b8dfb3716eb4f31d1c73a4d6595a9ad07ffcf7ea3e1791ff13"
+    },
+    {
+      "seq": 73,
+      "tick": 25,
+      "kind": "observation",
+      "payload": {
+        "x": 3.31343,
+        "y": 6.19985,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "8b085b0031bef7b8dfb3716eb4f31d1c73a4d6595a9ad07ffcf7ea3e1791ff13",
+      "hash": "785c6daab3d626994716d7885e2f756c789a37d094c3677e1046ff53fd6d736f"
+    },
+    {
+      "seq": 74,
+      "tick": 25,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.050415,
+        "vy": 1.19894,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "785c6daab3d626994716d7885e2f756c789a37d094c3677e1046ff53fd6d736f",
+      "hash": "c5f5c665573c5a74d1c63e295d166d773f1e1c8e4975c0ef30cc14a2bec0112d"
+    },
+    {
+      "seq": 75,
+      "tick": 25,
+      "kind": "state",
+      "payload": {
+        "x": 3.32351,
+        "y": 6.43964,
+        "vx": 0.050415,
+        "vy": 1.19894,
+        "stage": 0
+      },
+      "prev_hash": "c5f5c665573c5a74d1c63e295d166d773f1e1c8e4975c0ef30cc14a2bec0112d",
+      "hash": "e960fa2d5af87781088f12fc59ac15655e4c99b5c1db001846dbb6b86d648139"
+    },
+    {
+      "seq": 76,
+      "tick": 26,
+      "kind": "observation",
+      "payload": {
+        "x": 3.32351,
+        "y": 6.43964,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "e960fa2d5af87781088f12fc59ac15655e4c99b5c1db001846dbb6b86d648139",
+      "hash": "47807b606f5717115a5cee4d5437242ecb238683d844411d533294deed044adf"
+    },
+    {
+      "seq": 77,
+      "tick": 26,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.808671,
+        "vy": 0.886595,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 1
+      },
+      "prev_hash": "47807b606f5717115a5cee4d5437242ecb238683d844411d533294deed044adf",
+      "hash": "bada24913301ba7d5d4a374d3d81264775388237a8b59e3c8216f2c7e817f315"
+    },
+    {
+      "seq": 78,
+      "tick": 26,
+      "kind": "state",
+      "payload": {
+        "x": 3.48524,
+        "y": 6.61696,
+        "vx": 0.808671,
+        "vy": 0.886595,
+        "stage": 0
+      },
+      "prev_hash": "bada24913301ba7d5d4a374d3d81264775388237a8b59e3c8216f2c7e817f315",
+      "hash": "10536324fb2964abadbcfd01803c6939b31ce000caaccec3e49390940b82b7a6"
+    },
+    {
+      "seq": 79,
+      "tick": 26,
+      "kind": "milestone",
+      "payload": {
+        "index": 0,
+        "label": "Scan station"
+      },
+      "prev_hash": "10536324fb2964abadbcfd01803c6939b31ce000caaccec3e49390940b82b7a6",
+      "hash": "5c92e59b4c0690175f3f8e032e67a36de526a4880f770e2a3e44efa0af5d6a0f"
+    },
+    {
+      "seq": 80,
+      "tick": 27,
+      "kind": "observation",
+      "payload": {
+        "x": 3.48524,
+        "y": 6.61696,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "5c92e59b4c0690175f3f8e032e67a36de526a4880f770e2a3e44efa0af5d6a0f",
+      "hash": "a5f4ff24ef58610aada1ecfe46528d826d72a9516fff96bd30bca34247ab8fbf"
+    },
+    {
+      "seq": 81,
+      "tick": 27,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.9488,
+        "vy": -0.7098,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "a5f4ff24ef58610aada1ecfe46528d826d72a9516fff96bd30bca34247ab8fbf",
+      "hash": "cee83fa7c793b88047ec26c2a53026d0098f23d65891f7d2c83ebba48a000405"
+    },
+    {
+      "seq": 82,
+      "tick": 27,
+      "kind": "state",
+      "payload": {
+        "x": 3.675,
+        "y": 6.475,
+        "vx": 0.9488,
+        "vy": -0.7098,
+        "stage": 1
+      },
+      "prev_hash": "cee83fa7c793b88047ec26c2a53026d0098f23d65891f7d2c83ebba48a000405",
+      "hash": "3985074d12344a236a1ebea100a538fb77a8ab3c04868124c913c61a47b60e22"
+    },
+    {
+      "seq": 83,
+      "tick": 28,
+      "kind": "observation",
+      "payload": {
+        "x": 3.675,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "3985074d12344a236a1ebea100a538fb77a8ab3c04868124c913c61a47b60e22",
+      "hash": "d53914aca11b04f2c9f23baad2d78c7397ca37a371c76e6aa5673d9632fea75d"
+    },
+    {
+      "seq": 84,
+      "tick": 28,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "d53914aca11b04f2c9f23baad2d78c7397ca37a371c76e6aa5673d9632fea75d",
+      "hash": "b5338c94cc88e6f529d945015d9c5be8facb79fe8b8a9dab33421086f53a31ae"
+    },
+    {
+      "seq": 85,
+      "tick": 28,
+      "kind": "state",
+      "payload": {
+        "x": 3.915,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "b5338c94cc88e6f529d945015d9c5be8facb79fe8b8a9dab33421086f53a31ae",
+      "hash": "b533aa1511b648f62c901b849a5bde9dc6a880e8c0e9f2565ace45db33d09f1b"
+    },
+    {
+      "seq": 86,
+      "tick": 29,
+      "kind": "observation",
+      "payload": {
+        "x": 3.915,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "b533aa1511b648f62c901b849a5bde9dc6a880e8c0e9f2565ace45db33d09f1b",
+      "hash": "028397e921c084aaa548a7bdfbd0eba6693fa24e7bb3c83bf82ac48bcbdcdfb4"
+    },
+    {
+      "seq": 87,
+      "tick": 29,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "028397e921c084aaa548a7bdfbd0eba6693fa24e7bb3c83bf82ac48bcbdcdfb4",
+      "hash": "363c2837f91e174d60367cf57ea1846aee2bde4a4b84120fad919170b2ffd783"
+    },
+    {
+      "seq": 88,
+      "tick": 29,
+      "kind": "state",
+      "payload": {
+        "x": 4.155,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "363c2837f91e174d60367cf57ea1846aee2bde4a4b84120fad919170b2ffd783",
+      "hash": "f7043a7169c3c22de34a6aa5cdb4d8a03d2d2e3205a23acd053d5fe8f9a4df65"
+    },
+    {
+      "seq": 89,
+      "tick": 30,
+      "kind": "observation",
+      "payload": {
+        "x": 4.155,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "f7043a7169c3c22de34a6aa5cdb4d8a03d2d2e3205a23acd053d5fe8f9a4df65",
+      "hash": "59233c0b1d5578f95c74c1bf2e0904765dc569c7bd66938777c4e2aba63a2409"
+    },
+    {
+      "seq": 90,
+      "tick": 30,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "59233c0b1d5578f95c74c1bf2e0904765dc569c7bd66938777c4e2aba63a2409",
+      "hash": "77a4b54dfd773a9ff87ba31e9f8d7cb1ad7b4b42c0bf293392d7b31b43f0c8b6"
+    },
+    {
+      "seq": 91,
+      "tick": 30,
+      "kind": "state",
+      "payload": {
+        "x": 4.395,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "77a4b54dfd773a9ff87ba31e9f8d7cb1ad7b4b42c0bf293392d7b31b43f0c8b6",
+      "hash": "6d6269ecd3a584a7b031c35c941e3f14721c121fb6bce184a89008c2b985111d"
+    },
+    {
+      "seq": 92,
+      "tick": 31,
+      "kind": "observation",
+      "payload": {
+        "x": 4.395,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "6d6269ecd3a584a7b031c35c941e3f14721c121fb6bce184a89008c2b985111d",
+      "hash": "1e2246081b3794c6f72f3461e085664ba2caa3240dc13a388daa0c943a6f7b1c"
+    },
+    {
+      "seq": 93,
+      "tick": 31,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "1e2246081b3794c6f72f3461e085664ba2caa3240dc13a388daa0c943a6f7b1c",
+      "hash": "29cf147eecacb024fb1ad6c00ffa281d717e50093b0a99b1954d67d6670e2f86"
+    },
+    {
+      "seq": 94,
+      "tick": 31,
+      "kind": "state",
+      "payload": {
+        "x": 4.635,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "29cf147eecacb024fb1ad6c00ffa281d717e50093b0a99b1954d67d6670e2f86",
+      "hash": "f759c6d97f94491015f4b527574e41807ae7f1a398febc80ce14b7363204ca35"
+    },
+    {
+      "seq": 95,
+      "tick": 32,
+      "kind": "observation",
+      "payload": {
+        "x": 4.635,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "f759c6d97f94491015f4b527574e41807ae7f1a398febc80ce14b7363204ca35",
+      "hash": "08c383250e5ccf6b750d6c41affdbafebd2221d959bafd08ec24c1c44ac37072"
+    },
+    {
+      "seq": 96,
+      "tick": 32,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "08c383250e5ccf6b750d6c41affdbafebd2221d959bafd08ec24c1c44ac37072",
+      "hash": "42bffa20b4bb8ee90a96db9e47b7f0b7d2a5330afc2670113ede0a039004b539"
+    },
+    {
+      "seq": 97,
+      "tick": 32,
+      "kind": "state",
+      "payload": {
+        "x": 4.875,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "42bffa20b4bb8ee90a96db9e47b7f0b7d2a5330afc2670113ede0a039004b539",
+      "hash": "d6f48f048a86b93dd13b3691dd40f97ef7a5577d766b6ca8409e5c0ea13df080"
+    },
+    {
+      "seq": 98,
+      "tick": 33,
+      "kind": "observation",
+      "payload": {
+        "x": 4.875,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "d6f48f048a86b93dd13b3691dd40f97ef7a5577d766b6ca8409e5c0ea13df080",
+      "hash": "dab04fe2facf4ce0c55d990920038e99354510e4b15d6077f4d8b5a8c0720d43"
+    },
+    {
+      "seq": 99,
+      "tick": 33,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "dab04fe2facf4ce0c55d990920038e99354510e4b15d6077f4d8b5a8c0720d43",
+      "hash": "759dd70f77eb28a42f1ab537785929d9db8587add7bcffcf8ef76375c9423ae5"
+    },
+    {
+      "seq": 100,
+      "tick": 33,
+      "kind": "state",
+      "payload": {
+        "x": 5.115,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "759dd70f77eb28a42f1ab537785929d9db8587add7bcffcf8ef76375c9423ae5",
+      "hash": "a397110436d544596bbb52364022c4884b7bc472f9c90c4f2845d46b953edce8"
+    },
+    {
+      "seq": 101,
+      "tick": 34,
+      "kind": "observation",
+      "payload": {
+        "x": 5.115,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "a397110436d544596bbb52364022c4884b7bc472f9c90c4f2845d46b953edce8",
+      "hash": "01889fcc0a18036afbd0856f2fc0edd371faac4ca00a8fff7233d3644489ead2"
+    },
+    {
+      "seq": 102,
+      "tick": 34,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "01889fcc0a18036afbd0856f2fc0edd371faac4ca00a8fff7233d3644489ead2",
+      "hash": "ddfb4e8d7bc47d66a81982e795e41e0a40b5867558eacf72f1c82e36579cdf70"
+    },
+    {
+      "seq": 103,
+      "tick": 34,
+      "kind": "state",
+      "payload": {
+        "x": 5.355,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "ddfb4e8d7bc47d66a81982e795e41e0a40b5867558eacf72f1c82e36579cdf70",
+      "hash": "7c71abb7bf3c9e4bf25a1ea574f003801a8f588148304fc55bffa9fed34aed6c"
+    },
+    {
+      "seq": 104,
+      "tick": 35,
+      "kind": "observation",
+      "payload": {
+        "x": 5.355,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "7c71abb7bf3c9e4bf25a1ea574f003801a8f588148304fc55bffa9fed34aed6c",
+      "hash": "95dffe5fc057164fa73af7537a5c4776ec0f1e53b33640b1c1ddaa9c9a7e3827"
+    },
+    {
+      "seq": 105,
+      "tick": 35,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "95dffe5fc057164fa73af7537a5c4776ec0f1e53b33640b1c1ddaa9c9a7e3827",
+      "hash": "1cdf4cbf14168e486ac683698c11de0f5dc3c44c88abfe3b19d4759441339b4c"
+    },
+    {
+      "seq": 106,
+      "tick": 35,
+      "kind": "state",
+      "payload": {
+        "x": 5.595,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "1cdf4cbf14168e486ac683698c11de0f5dc3c44c88abfe3b19d4759441339b4c",
+      "hash": "78575cdace59e7941fb0b94c0504e92d0fe84331de8d6be3441559446d7dbd7b"
+    },
+    {
+      "seq": 107,
+      "tick": 36,
+      "kind": "observation",
+      "payload": {
+        "x": 5.595,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "78575cdace59e7941fb0b94c0504e92d0fe84331de8d6be3441559446d7dbd7b",
+      "hash": "24c6329b41733208a475d6def0915abd263d8f1a1f7b0f3e1312f2a55f001d0c"
+    },
+    {
+      "seq": 108,
+      "tick": 36,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "24c6329b41733208a475d6def0915abd263d8f1a1f7b0f3e1312f2a55f001d0c",
+      "hash": "53b3439e930b8ba8e3d9912ed52e8f1d878a3c45290ffc01e23dddf7f16ab8d1"
+    },
+    {
+      "seq": 109,
+      "tick": 36,
+      "kind": "state",
+      "payload": {
+        "x": 5.835,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "53b3439e930b8ba8e3d9912ed52e8f1d878a3c45290ffc01e23dddf7f16ab8d1",
+      "hash": "f674d377b15df0bcc34af0259aad1190972b18b8127bd8881a62fb43282b38ea"
+    },
+    {
+      "seq": 110,
+      "tick": 37,
+      "kind": "observation",
+      "payload": {
+        "x": 5.835,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "f674d377b15df0bcc34af0259aad1190972b18b8127bd8881a62fb43282b38ea",
+      "hash": "b2b3a8faf3748fa4b3efcb59e86c636243c040fa2fc05e1046bc09bdbf63b992"
+    },
+    {
+      "seq": 111,
+      "tick": 37,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "b2b3a8faf3748fa4b3efcb59e86c636243c040fa2fc05e1046bc09bdbf63b992",
+      "hash": "f99aa3361310fcb756b6263748fe6f48bd5895ad6304ddd4af107137dad29781"
+    },
+    {
+      "seq": 112,
+      "tick": 37,
+      "kind": "state",
+      "payload": {
+        "x": 6.075,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "f99aa3361310fcb756b6263748fe6f48bd5895ad6304ddd4af107137dad29781",
+      "hash": "d9c440d0d9205e629f9e2b1c86d727218e67ee45dc4bbb7150dc1fc1dd59357e"
+    },
+    {
+      "seq": 113,
+      "tick": 38,
+      "kind": "observation",
+      "payload": {
+        "x": 6.075,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "d9c440d0d9205e629f9e2b1c86d727218e67ee45dc4bbb7150dc1fc1dd59357e",
+      "hash": "acea0a450cdfd407d213446440b5d00f2b43f66b1a6dc45903634edd96a9299f"
+    },
+    {
+      "seq": 114,
+      "tick": 38,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "acea0a450cdfd407d213446440b5d00f2b43f66b1a6dc45903634edd96a9299f",
+      "hash": "bf7a56644ce36491a03d2e4768af0698e531896cdb82ad82fe0b98ab46e9939c"
+    },
+    {
+      "seq": 115,
+      "tick": 38,
+      "kind": "state",
+      "payload": {
+        "x": 6.315,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "bf7a56644ce36491a03d2e4768af0698e531896cdb82ad82fe0b98ab46e9939c",
+      "hash": "15e01a8ea82958b6f6e827bf0136e082ef6d7d47b30fd3cd1699729d07b0e7ad"
+    },
+    {
+      "seq": 116,
+      "tick": 39,
+      "kind": "observation",
+      "payload": {
+        "x": 6.315,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "15e01a8ea82958b6f6e827bf0136e082ef6d7d47b30fd3cd1699729d07b0e7ad",
+      "hash": "2c23fcd14527043c51055a0c86887ffb10ba54e2b673d5556ca53de65d07546a"
+    },
+    {
+      "seq": 117,
+      "tick": 39,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "2c23fcd14527043c51055a0c86887ffb10ba54e2b673d5556ca53de65d07546a",
+      "hash": "57eeb7a9a4aca15f7aa2e5788418a610336edde51b1b62f950838dda6529af21"
+    },
+    {
+      "seq": 118,
+      "tick": 39,
+      "kind": "state",
+      "payload": {
+        "x": 6.555,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "57eeb7a9a4aca15f7aa2e5788418a610336edde51b1b62f950838dda6529af21",
+      "hash": "f16e012f85202063411f0a69c6b50c5ccec9fdb8e2fe5ad39abf912939e64c10"
+    },
+    {
+      "seq": 119,
+      "tick": 40,
+      "kind": "observation",
+      "payload": {
+        "x": 6.555,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "f16e012f85202063411f0a69c6b50c5ccec9fdb8e2fe5ad39abf912939e64c10",
+      "hash": "79b9f6543c017f4a54850352dd6debf2a406e5469baf655f9b40644e8eb8062d"
+    },
+    {
+      "seq": 120,
+      "tick": 40,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "79b9f6543c017f4a54850352dd6debf2a406e5469baf655f9b40644e8eb8062d",
+      "hash": "b2e593fd0a7eb461046416f88124552b0fa6a5e40cbc477f4b6fbea98726ef3f"
+    },
+    {
+      "seq": 121,
+      "tick": 40,
+      "kind": "state",
+      "payload": {
+        "x": 6.795,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "b2e593fd0a7eb461046416f88124552b0fa6a5e40cbc477f4b6fbea98726ef3f",
+      "hash": "ae905de99796d986997f8572e40dc4bcbef330eeb2dbee1c622c5aee546dfdd2"
+    },
+    {
+      "seq": 122,
+      "tick": 41,
+      "kind": "observation",
+      "payload": {
+        "x": 6.795,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "ae905de99796d986997f8572e40dc4bcbef330eeb2dbee1c622c5aee546dfdd2",
+      "hash": "51ed144b5e094fbed85fa19d3c00ef1a785c289112e0010bc4d3d39b967ac30f"
+    },
+    {
+      "seq": 123,
+      "tick": 41,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "51ed144b5e094fbed85fa19d3c00ef1a785c289112e0010bc4d3d39b967ac30f",
+      "hash": "eddf49db8a51d7acc43699f742d582c340f891e9aac640c557a19e80cc85e40c"
+    },
+    {
+      "seq": 124,
+      "tick": 41,
+      "kind": "state",
+      "payload": {
+        "x": 7.035,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "eddf49db8a51d7acc43699f742d582c340f891e9aac640c557a19e80cc85e40c",
+      "hash": "06c18b6004544e14ef8e0d7ff0c3174ca72e46e48ec4fa9f93ca066dccb0b39e"
+    },
+    {
+      "seq": 125,
+      "tick": 42,
+      "kind": "observation",
+      "payload": {
+        "x": 7.035,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "06c18b6004544e14ef8e0d7ff0c3174ca72e46e48ec4fa9f93ca066dccb0b39e",
+      "hash": "5a9075551f607476cc69817264158c307cd2e080a068e10fd4878f881ac5bf08"
+    },
+    {
+      "seq": 126,
+      "tick": 42,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "5a9075551f607476cc69817264158c307cd2e080a068e10fd4878f881ac5bf08",
+      "hash": "86d5b8c2e6dec8734c22ab31898d6ba3a82e158390c8900ba3764df14ae1660b"
+    },
+    {
+      "seq": 127,
+      "tick": 42,
+      "kind": "state",
+      "payload": {
+        "x": 7.275,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "86d5b8c2e6dec8734c22ab31898d6ba3a82e158390c8900ba3764df14ae1660b",
+      "hash": "5ea7d7066c0bcca340b33e77cf87dc16b097206993a49c9d6175202895928915"
+    },
+    {
+      "seq": 128,
+      "tick": 43,
+      "kind": "observation",
+      "payload": {
+        "x": 7.275,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "5ea7d7066c0bcca340b33e77cf87dc16b097206993a49c9d6175202895928915",
+      "hash": "3d663d29b57f87fb40c4da1c9bcaad80c0055de9ee6289ad69d04ba99f544e9c"
+    },
+    {
+      "seq": 129,
+      "tick": 43,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "3d663d29b57f87fb40c4da1c9bcaad80c0055de9ee6289ad69d04ba99f544e9c",
+      "hash": "9d69b1d89f5b48362b1b5ca08cee0409918f4dd439cab410547e6ba4a4361e2b"
+    },
+    {
+      "seq": 130,
+      "tick": 43,
+      "kind": "state",
+      "payload": {
+        "x": 7.515,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "9d69b1d89f5b48362b1b5ca08cee0409918f4dd439cab410547e6ba4a4361e2b",
+      "hash": "5f5c2d6a05133ba777d3de9f0538437c201232d76ce0b9be354f4d1ee8b6c685"
+    },
+    {
+      "seq": 131,
+      "tick": 44,
+      "kind": "observation",
+      "payload": {
+        "x": 7.515,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "5f5c2d6a05133ba777d3de9f0538437c201232d76ce0b9be354f4d1ee8b6c685",
+      "hash": "a9b9c49746f30a56cdba64a2a7b1394edbc0f7d5063af8dc3007e4ad0d07aae9"
+    },
+    {
+      "seq": 132,
+      "tick": 44,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "a9b9c49746f30a56cdba64a2a7b1394edbc0f7d5063af8dc3007e4ad0d07aae9",
+      "hash": "70cbefda8b9738b3bf872b44c09bd668ec3b5f9e242bb5681c8dc7b17b6bb579"
+    },
+    {
+      "seq": 133,
+      "tick": 44,
+      "kind": "state",
+      "payload": {
+        "x": 7.755,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "70cbefda8b9738b3bf872b44c09bd668ec3b5f9e242bb5681c8dc7b17b6bb579",
+      "hash": "93e6eef4764fefa4d7e3e628e2848a440df0bd8ebe59c5f0382f1eb82798ee3a"
+    },
+    {
+      "seq": 134,
+      "tick": 45,
+      "kind": "observation",
+      "payload": {
+        "x": 7.755,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "93e6eef4764fefa4d7e3e628e2848a440df0bd8ebe59c5f0382f1eb82798ee3a",
+      "hash": "2522226a4517b552150f8470fefca358188a35461b75481096bac45839e56041"
+    },
+    {
+      "seq": 135,
+      "tick": 45,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "2522226a4517b552150f8470fefca358188a35461b75481096bac45839e56041",
+      "hash": "bf0e2c2ca1647f97356d880de1ed57eff0f45354d3d6af652a59edfeb2daa5c5"
+    },
+    {
+      "seq": 136,
+      "tick": 45,
+      "kind": "state",
+      "payload": {
+        "x": 7.995,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "bf0e2c2ca1647f97356d880de1ed57eff0f45354d3d6af652a59edfeb2daa5c5",
+      "hash": "625722dda954aaeda5edd70f1986d91804839d2ad4c34d70e701617e7a046d47"
+    },
+    {
+      "seq": 137,
+      "tick": 46,
+      "kind": "observation",
+      "payload": {
+        "x": 7.995,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "625722dda954aaeda5edd70f1986d91804839d2ad4c34d70e701617e7a046d47",
+      "hash": "9ffe664e452264264ee45b40866afedf750285cd3dc9ef60978752fb598b41bd"
+    },
+    {
+      "seq": 138,
+      "tick": 46,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.15,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "9ffe664e452264264ee45b40866afedf750285cd3dc9ef60978752fb598b41bd",
+      "hash": "dee434e8f07a830c13c4be0aa2ee4b18d9a2961911a102b6e3fd0dc1229d5ad4"
+    },
+    {
+      "seq": 139,
+      "tick": 46,
+      "kind": "state",
+      "payload": {
+        "x": 8.225,
+        "y": 6.475,
+        "vx": 1.15,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "dee434e8f07a830c13c4be0aa2ee4b18d9a2961911a102b6e3fd0dc1229d5ad4",
+      "hash": "c09b8416ea57c7fbafff8d3883cb2d39de6145abbab6f6d400a38d7bd2c2d3a4"
+    },
+    {
+      "seq": 140,
+      "tick": 47,
+      "kind": "observation",
+      "payload": {
+        "x": 8.225,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "c09b8416ea57c7fbafff8d3883cb2d39de6145abbab6f6d400a38d7bd2c2d3a4",
+      "hash": "96cfca04f67259e0aeb35fbad1b78abca6c7a5bf9fbe8f025703ba20cc1bbd4a"
+    },
+    {
+      "seq": 141,
+      "tick": 47,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "96cfca04f67259e0aeb35fbad1b78abca6c7a5bf9fbe8f025703ba20cc1bbd4a",
+      "hash": "51bf10157990333ea69d23497773593d57a7141cb5a32a386aa26f2b683c816a"
+    },
+    {
+      "seq": 142,
+      "tick": 47,
+      "kind": "state",
+      "payload": {
+        "x": 8.465,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "51bf10157990333ea69d23497773593d57a7141cb5a32a386aa26f2b683c816a",
+      "hash": "00aee3c1cafddd096c42969dd710c2fcea716ea01199b52f6f63f6fcb078bae1"
+    },
+    {
+      "seq": 143,
+      "tick": 48,
+      "kind": "observation",
+      "payload": {
+        "x": 8.465,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "00aee3c1cafddd096c42969dd710c2fcea716ea01199b52f6f63f6fcb078bae1",
+      "hash": "fee4127fc598f27c995bd032a9939cdc80cf2bce183f11c6abcbd34189a4ca6b"
+    },
+    {
+      "seq": 144,
+      "tick": 48,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.2,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "fee4127fc598f27c995bd032a9939cdc80cf2bce183f11c6abcbd34189a4ca6b",
+      "hash": "acc5ed81984f55bb413ba6b5f78daa46bd436bc284dc540b85abf05e909489e8"
+    },
+    {
+      "seq": 145,
+      "tick": 48,
+      "kind": "state",
+      "payload": {
+        "x": 8.705,
+        "y": 6.475,
+        "vx": 1.2,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "acc5ed81984f55bb413ba6b5f78daa46bd436bc284dc540b85abf05e909489e8",
+      "hash": "d07e877d25e9ba57fe124c16a3344756bdbb3725957214bfab072ea5dc8356b0"
+    },
+    {
+      "seq": 146,
+      "tick": 49,
+      "kind": "observation",
+      "payload": {
+        "x": 8.705,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "d07e877d25e9ba57fe124c16a3344756bdbb3725957214bfab072ea5dc8356b0",
+      "hash": "281a1848f9add0f96bb36d8cc1301d2a03af976e3173626c08c131fd23e656e5"
+    },
+    {
+      "seq": 147,
+      "tick": 49,
+      "kind": "proposal",
+      "payload": {
+        "vx": 1.1,
+        "vy": 0.0,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "281a1848f9add0f96bb36d8cc1301d2a03af976e3173626c08c131fd23e656e5",
+      "hash": "3799ac06bb6fe29a46f458a832b3cf5202fbc1c3a84ebbf43758acdd9d6817d6"
+    },
+    {
+      "seq": 148,
+      "tick": 49,
+      "kind": "state",
+      "payload": {
+        "x": 8.925,
+        "y": 6.475,
+        "vx": 1.1,
+        "vy": 0.0,
+        "stage": 1
+      },
+      "prev_hash": "3799ac06bb6fe29a46f458a832b3cf5202fbc1c3a84ebbf43758acdd9d6817d6",
+      "hash": "f3280d42c11088e30664f6112086ad3032ff9a721e1c2f07d373a323feb7ea87"
+    },
+    {
+      "seq": 149,
+      "tick": 50,
+      "kind": "observation",
+      "payload": {
+        "x": 8.925,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "f3280d42c11088e30664f6112086ad3032ff9a721e1c2f07d373a323feb7ea87",
+      "hash": "3b7cdd206f2a072e23a9dc34c4f902b947aabc9c875359c751ade732b810f4ce"
+    },
+    {
+      "seq": 150,
+      "tick": 50,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 2
+      },
+      "prev_hash": "3b7cdd206f2a072e23a9dc34c4f902b947aabc9c875359c751ade732b810f4ce",
+      "hash": "e10662c5949ee25e37ead12dcf4cefaf3e4dc6b2bb0b384e53d51cb6295c5877"
+    },
+    {
+      "seq": 151,
+      "tick": 50,
+      "kind": "state",
+      "payload": {
+        "x": 9.09471,
+        "y": 6.64471,
+        "vx": 0.848528,
+        "vy": 0.848528,
+        "stage": 1
+      },
+      "prev_hash": "e10662c5949ee25e37ead12dcf4cefaf3e4dc6b2bb0b384e53d51cb6295c5877",
+      "hash": "81d35916698c4f207fd95a3bacebb54885906a851c0616aca68211ff25bf699f"
+    },
+    {
+      "seq": 152,
+      "tick": 50,
+      "kind": "milestone",
+      "payload": {
+        "index": 1,
+        "label": "Quality gate"
+      },
+      "prev_hash": "81d35916698c4f207fd95a3bacebb54885906a851c0616aca68211ff25bf699f",
+      "hash": "652b8a56879baa2c165df54649865de9c5a16e9a1fccb37451654a2d28d3f467"
+    },
+    {
+      "seq": 153,
+      "tick": 51,
+      "kind": "observation",
+      "payload": {
+        "x": 9.09471,
+        "y": 6.64471,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "652b8a56879baa2c165df54649865de9c5a16e9a1fccb37451654a2d28d3f467",
+      "hash": "7ddd446d4d6c46d4d0d6c396f371152851b18a6a8e599e3bf643360bbcc884ca"
+    },
+    {
+      "seq": 154,
+      "tick": 51,
+      "kind": "proposal",
+      "payload": {
+        "vx": -0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "7ddd446d4d6c46d4d0d6c396f371152851b18a6a8e599e3bf643360bbcc884ca",
+      "hash": "0c9f141ae13809c95c8f8cdf399fbb01687d293aa4a73bbe654a49badd152621"
+    },
+    {
+      "seq": 155,
+      "tick": 51,
+      "kind": "state",
+      "payload": {
+        "x": 8.925,
+        "y": 6.475,
+        "vx": -0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "0c9f141ae13809c95c8f8cdf399fbb01687d293aa4a73bbe654a49badd152621",
+      "hash": "9b44f9107c53986f9183b2ccc852a36aa5fff3b1880004860bb86aec0669c164"
+    },
+    {
+      "seq": 156,
+      "tick": 52,
+      "kind": "observation",
+      "payload": {
+        "x": 8.925,
+        "y": 6.475,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "9b44f9107c53986f9183b2ccc852a36aa5fff3b1880004860bb86aec0669c164",
+      "hash": "6e19887d4587e25488e022f37b61de5f50ab43dd5c6c2bb4cb78984ab99c3d0f"
+    },
+    {
+      "seq": 157,
+      "tick": 52,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "6e19887d4587e25488e022f37b61de5f50ab43dd5c6c2bb4cb78984ab99c3d0f",
+      "hash": "bae9f1ea2ada9f309827f729a45e783f5b37a47659cf421c551bef14ea230fcb"
+    },
+    {
+      "seq": 158,
+      "tick": 52,
+      "kind": "state",
+      "payload": {
+        "x": 9.09471,
+        "y": 6.30529,
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "bae9f1ea2ada9f309827f729a45e783f5b37a47659cf421c551bef14ea230fcb",
+      "hash": "b5c371d49f23c9a75385ef0fa9ada96265a9e0995b80b18ce09b9d2577a8cc7d"
+    },
+    {
+      "seq": 159,
+      "tick": 53,
+      "kind": "observation",
+      "payload": {
+        "x": 9.09471,
+        "y": 6.30529,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "b5c371d49f23c9a75385ef0fa9ada96265a9e0995b80b18ce09b9d2577a8cc7d",
+      "hash": "85706d66cbd9e148d00f0248a71f016e82e30233a906cac13dd8067a6451f6da"
+    },
+    {
+      "seq": 160,
+      "tick": 53,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "85706d66cbd9e148d00f0248a71f016e82e30233a906cac13dd8067a6451f6da",
+      "hash": "9a8a50a7ac1a6536a15c65ab18db513d6b2422af4d11c114b2054d21dbf869b6"
+    },
+    {
+      "seq": 161,
+      "tick": 53,
+      "kind": "state",
+      "payload": {
+        "x": 9.26442,
+        "y": 6.13558,
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "9a8a50a7ac1a6536a15c65ab18db513d6b2422af4d11c114b2054d21dbf869b6",
+      "hash": "4b7e47cf3063482f34b1a1d7853f8332597b06ace5c00f5125c42716787b8c87"
+    },
+    {
+      "seq": 162,
+      "tick": 54,
+      "kind": "observation",
+      "payload": {
+        "x": 9.26442,
+        "y": 6.13558,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "4b7e47cf3063482f34b1a1d7853f8332597b06ace5c00f5125c42716787b8c87",
+      "hash": "f039e8a09fd2b3442e5ed72c8f1e5e5601abaf8bde47a50afea07b1d6f70b1f5"
+    },
+    {
+      "seq": 163,
+      "tick": 54,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "f039e8a09fd2b3442e5ed72c8f1e5e5601abaf8bde47a50afea07b1d6f70b1f5",
+      "hash": "c65b732b927b625e055da4eb0a93930d4d17c61847ee54200227f425a3d857b3"
+    },
+    {
+      "seq": 164,
+      "tick": 54,
+      "kind": "state",
+      "payload": {
+        "x": 9.43413,
+        "y": 5.96587,
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "c65b732b927b625e055da4eb0a93930d4d17c61847ee54200227f425a3d857b3",
+      "hash": "072a3fe13297748c0f7a3eb909716b709d83fd09d1d94dfa415413a7a5b81ca2"
+    },
+    {
+      "seq": 165,
+      "tick": 55,
+      "kind": "fault",
+      "payload": {
+        "kind": "sensor_dropout",
+        "phase": "start",
+        "duration_steps": 8
+      },
+      "prev_hash": "072a3fe13297748c0f7a3eb909716b709d83fd09d1d94dfa415413a7a5b81ca2",
+      "hash": "29cb6f063ad6b6d41957479a5d5220d6f58538a46eac8b6ea4d044e734cf23fb"
+    },
+    {
+      "seq": 166,
+      "tick": 55,
+      "kind": "observation",
+      "payload": {
+        "x": 9.26442,
+        "y": 6.13558,
+        "sensor_ok": false,
+        "target_present": null
+      },
+      "prev_hash": "29cb6f063ad6b6d41957479a5d5220d6f58538a46eac8b6ea4d044e734cf23fb",
+      "hash": "3349de84f1fa6dfe6058b02b9be071123d7912703361565798c15316be6c79bc"
+    },
+    {
+      "seq": 167,
+      "tick": 55,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "3349de84f1fa6dfe6058b02b9be071123d7912703361565798c15316be6c79bc",
+      "hash": "41a91021771a53e93c773407c52ad4ca636234c0acd2a3ba70272b48f1721768"
+    },
+    {
+      "seq": 168,
+      "tick": 55,
+      "kind": "intervention",
+      "payload": {
+        "reason": "sensor integrity emergency hold",
+        "proposed_vx": 0.848528,
+        "proposed_vy": -0.848528,
+        "applied_vx": 0.0,
+        "applied_vy": 0.0
+      },
+      "prev_hash": "41a91021771a53e93c773407c52ad4ca636234c0acd2a3ba70272b48f1721768",
+      "hash": "aa37e64f7d1f0fb4d90b5b0a272b84af9fd788420c8d673f9ee199744077de0a"
+    },
+    {
+      "seq": 169,
+      "tick": 55,
+      "kind": "state",
+      "payload": {
+        "x": 9.43413,
+        "y": 5.96587,
+        "vx": 0.0,
+        "vy": 0.0,
+        "stage": 2
+      },
+      "prev_hash": "aa37e64f7d1f0fb4d90b5b0a272b84af9fd788420c8d673f9ee199744077de0a",
+      "hash": "a4946476e05d2d49b2a27069f9b8302afc0b431fcb132b5455fea9956448a08d"
+    },
+    {
+      "seq": 170,
+      "tick": 56,
+      "kind": "observation",
+      "payload": {
+        "x": 9.26442,
+        "y": 6.13558,
+        "sensor_ok": false,
+        "target_present": null
+      },
+      "prev_hash": "a4946476e05d2d49b2a27069f9b8302afc0b431fcb132b5455fea9956448a08d",
+      "hash": "7d0be056267afad3027eec78713b9d870bc2a2606b677bb42fb239f0e643894f"
+    },
+    {
+      "seq": 171,
+      "tick": 56,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "7d0be056267afad3027eec78713b9d870bc2a2606b677bb42fb239f0e643894f",
+      "hash": "ea2e8874f34547d739ada78d59d682174690245ae33d6da601c0274b3b5f2196"
+    },
+    {
+      "seq": 172,
+      "tick": 56,
+      "kind": "intervention",
+      "payload": {
+        "reason": "sensor integrity emergency hold",
+        "proposed_vx": 0.848528,
+        "proposed_vy": -0.848528,
+        "applied_vx": 0.0,
+        "applied_vy": 0.0
+      },
+      "prev_hash": "ea2e8874f34547d739ada78d59d682174690245ae33d6da601c0274b3b5f2196",
+      "hash": "e7eb05e5c8ce63756965c19900846e008f4891aaa660ff005634f2c0f2f62fe6"
+    },
+    {
+      "seq": 173,
+      "tick": 56,
+      "kind": "state",
+      "payload": {
+        "x": 9.43413,
+        "y": 5.96587,
+        "vx": 0.0,
+        "vy": 0.0,
+        "stage": 2
+      },
+      "prev_hash": "e7eb05e5c8ce63756965c19900846e008f4891aaa660ff005634f2c0f2f62fe6",
+      "hash": "d873f28f5865a3ac6c023d4ea294eccca1da2cdff25aeaf2d56ab2481a668826"
+    },
+    {
+      "seq": 174,
+      "tick": 57,
+      "kind": "observation",
+      "payload": {
+        "x": 9.26442,
+        "y": 6.13558,
+        "sensor_ok": false,
+        "target_present": null
+      },
+      "prev_hash": "d873f28f5865a3ac6c023d4ea294eccca1da2cdff25aeaf2d56ab2481a668826",
+      "hash": "82464e7e8f01f1f9a8986139b5fe960eef10eadb40079bd771a0275d24f6cbad"
+    },
+    {
+      "seq": 175,
+      "tick": 57,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "82464e7e8f01f1f9a8986139b5fe960eef10eadb40079bd771a0275d24f6cbad",
+      "hash": "6e323cb814899e5620c787e5c87e540aacffacf4b460f4a51bb194923ab7aba2"
+    },
+    {
+      "seq": 176,
+      "tick": 57,
+      "kind": "intervention",
+      "payload": {
+        "reason": "sensor integrity emergency hold",
+        "proposed_vx": 0.848528,
+        "proposed_vy": -0.848528,
+        "applied_vx": 0.0,
+        "applied_vy": 0.0
+      },
+      "prev_hash": "6e323cb814899e5620c787e5c87e540aacffacf4b460f4a51bb194923ab7aba2",
+      "hash": "bc09815dc6827c5422071782f3fe2e035b3513016dc703af72144a2ab6acc061"
+    },
+    {
+      "seq": 177,
+      "tick": 57,
+      "kind": "state",
+      "payload": {
+        "x": 9.43413,
+        "y": 5.96587,
+        "vx": 0.0,
+        "vy": 0.0,
+        "stage": 2
+      },
+      "prev_hash": "bc09815dc6827c5422071782f3fe2e035b3513016dc703af72144a2ab6acc061",
+      "hash": "fdecbf25da7bd91f885ceaa8f32d8af820e2d7912351591866e8bddeed1e9acd"
+    },
+    {
+      "seq": 178,
+      "tick": 58,
+      "kind": "observation",
+      "payload": {
+        "x": 9.26442,
+        "y": 6.13558,
+        "sensor_ok": false,
+        "target_present": null
+      },
+      "prev_hash": "fdecbf25da7bd91f885ceaa8f32d8af820e2d7912351591866e8bddeed1e9acd",
+      "hash": "f2d873fa8c5dbf426030e087cb089482d2132e44cffb4b2374ac1d0f300c7d8f"
+    },
+    {
+      "seq": 179,
+      "tick": 58,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "f2d873fa8c5dbf426030e087cb089482d2132e44cffb4b2374ac1d0f300c7d8f",
+      "hash": "028e36d3d3b31d59ad7ea457004ea8f7fd154e2193b4c1622cffe83718930bda"
+    },
+    {
+      "seq": 180,
+      "tick": 58,
+      "kind": "intervention",
+      "payload": {
+        "reason": "sensor integrity emergency hold",
+        "proposed_vx": 0.848528,
+        "proposed_vy": -0.848528,
+        "applied_vx": 0.0,
+        "applied_vy": 0.0
+      },
+      "prev_hash": "028e36d3d3b31d59ad7ea457004ea8f7fd154e2193b4c1622cffe83718930bda",
+      "hash": "2a38b1f802d941c07c6df641e36eae1f038f8304047f493afe79a18c8bf86b64"
+    },
+    {
+      "seq": 181,
+      "tick": 58,
+      "kind": "state",
+      "payload": {
+        "x": 9.43413,
+        "y": 5.96587,
+        "vx": 0.0,
+        "vy": 0.0,
+        "stage": 2
+      },
+      "prev_hash": "2a38b1f802d941c07c6df641e36eae1f038f8304047f493afe79a18c8bf86b64",
+      "hash": "c9f02d9805e673cf038366979c0456e63beeea8dd887d343a813233779dddf1d"
+    },
+    {
+      "seq": 182,
+      "tick": 59,
+      "kind": "observation",
+      "payload": {
+        "x": 9.26442,
+        "y": 6.13558,
+        "sensor_ok": false,
+        "target_present": null
+      },
+      "prev_hash": "c9f02d9805e673cf038366979c0456e63beeea8dd887d343a813233779dddf1d",
+      "hash": "5e52a46a8c18198a24a50f3d6d54841087f801c8174c1915537d9db76e010fa8"
+    },
+    {
+      "seq": 183,
+      "tick": 59,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "5e52a46a8c18198a24a50f3d6d54841087f801c8174c1915537d9db76e010fa8",
+      "hash": "e14ed86ce987e2384642e8680d937fb9e649128f845ef6c68d0cb2edc04500bd"
+    },
+    {
+      "seq": 184,
+      "tick": 59,
+      "kind": "intervention",
+      "payload": {
+        "reason": "sensor integrity emergency hold",
+        "proposed_vx": 0.848528,
+        "proposed_vy": -0.848528,
+        "applied_vx": 0.0,
+        "applied_vy": 0.0
+      },
+      "prev_hash": "e14ed86ce987e2384642e8680d937fb9e649128f845ef6c68d0cb2edc04500bd",
+      "hash": "19d2ac799bd6d65e72e91bb5682bcd71cc86231602a71f8ccd64c2bc33bdb842"
+    },
+    {
+      "seq": 185,
+      "tick": 59,
+      "kind": "state",
+      "payload": {
+        "x": 9.43413,
+        "y": 5.96587,
+        "vx": 0.0,
+        "vy": 0.0,
+        "stage": 2
+      },
+      "prev_hash": "19d2ac799bd6d65e72e91bb5682bcd71cc86231602a71f8ccd64c2bc33bdb842",
+      "hash": "1e0891009e418ae825163eedb43855315bd0b13eac5256f04d94458eec53e67b"
+    },
+    {
+      "seq": 186,
+      "tick": 60,
+      "kind": "observation",
+      "payload": {
+        "x": 9.26442,
+        "y": 6.13558,
+        "sensor_ok": false,
+        "target_present": null
+      },
+      "prev_hash": "1e0891009e418ae825163eedb43855315bd0b13eac5256f04d94458eec53e67b",
+      "hash": "940e4c50e15d771d97a884ae7294a915816eb7ba34fc5c49b6fc4d916efc53f3"
+    },
+    {
+      "seq": 187,
+      "tick": 60,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "940e4c50e15d771d97a884ae7294a915816eb7ba34fc5c49b6fc4d916efc53f3",
+      "hash": "3ced1c900e125f50a4c1512170f647b314a5efcf900753b8039e4447ec792894"
+    },
+    {
+      "seq": 188,
+      "tick": 60,
+      "kind": "intervention",
+      "payload": {
+        "reason": "sensor integrity emergency hold",
+        "proposed_vx": 0.848528,
+        "proposed_vy": -0.848528,
+        "applied_vx": 0.0,
+        "applied_vy": 0.0
+      },
+      "prev_hash": "3ced1c900e125f50a4c1512170f647b314a5efcf900753b8039e4447ec792894",
+      "hash": "58e3a34fc237c67815117011285070a83f303ed7b1627877d058eb71397fd183"
+    },
+    {
+      "seq": 189,
+      "tick": 60,
+      "kind": "state",
+      "payload": {
+        "x": 9.43413,
+        "y": 5.96587,
+        "vx": 0.0,
+        "vy": 0.0,
+        "stage": 2
+      },
+      "prev_hash": "58e3a34fc237c67815117011285070a83f303ed7b1627877d058eb71397fd183",
+      "hash": "08b8ca83c07cdaabedd51a56dac9e1d513db46a502ea20c30332063a2be9fb06"
+    },
+    {
+      "seq": 190,
+      "tick": 61,
+      "kind": "observation",
+      "payload": {
+        "x": 9.26442,
+        "y": 6.13558,
+        "sensor_ok": false,
+        "target_present": null
+      },
+      "prev_hash": "08b8ca83c07cdaabedd51a56dac9e1d513db46a502ea20c30332063a2be9fb06",
+      "hash": "c1bd1c32f962e929c89660a93dc6eb21496591feb75bb697e89fee1da5adf226"
+    },
+    {
+      "seq": 191,
+      "tick": 61,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "c1bd1c32f962e929c89660a93dc6eb21496591feb75bb697e89fee1da5adf226",
+      "hash": "ad9792844d0d315c4e482c645aad929bed51a66fed92c0c048947289f99dceb0"
+    },
+    {
+      "seq": 192,
+      "tick": 61,
+      "kind": "intervention",
+      "payload": {
+        "reason": "sensor integrity emergency hold",
+        "proposed_vx": 0.848528,
+        "proposed_vy": -0.848528,
+        "applied_vx": 0.0,
+        "applied_vy": 0.0
+      },
+      "prev_hash": "ad9792844d0d315c4e482c645aad929bed51a66fed92c0c048947289f99dceb0",
+      "hash": "2eea845ab44a9c8f32fac974d974d2590899330dd489b4a051c637f73f6f9776"
+    },
+    {
+      "seq": 193,
+      "tick": 61,
+      "kind": "state",
+      "payload": {
+        "x": 9.43413,
+        "y": 5.96587,
+        "vx": 0.0,
+        "vy": 0.0,
+        "stage": 2
+      },
+      "prev_hash": "2eea845ab44a9c8f32fac974d974d2590899330dd489b4a051c637f73f6f9776",
+      "hash": "56934727636bf19bf4345f22ca9a97297020c1098d60fe4ba41f05a791060701"
+    },
+    {
+      "seq": 194,
+      "tick": 62,
+      "kind": "observation",
+      "payload": {
+        "x": 9.26442,
+        "y": 6.13558,
+        "sensor_ok": false,
+        "target_present": null
+      },
+      "prev_hash": "56934727636bf19bf4345f22ca9a97297020c1098d60fe4ba41f05a791060701",
+      "hash": "0d123dccc5484373456f55ee5e0b7323965abc5803e18dee12f7d70993c16caf"
+    },
+    {
+      "seq": 195,
+      "tick": 62,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "0d123dccc5484373456f55ee5e0b7323965abc5803e18dee12f7d70993c16caf",
+      "hash": "1a318aa6e03839a1290b72005e1fda58c6776e7c6b722fa2269df09e08f2d9f4"
+    },
+    {
+      "seq": 196,
+      "tick": 62,
+      "kind": "intervention",
+      "payload": {
+        "reason": "sensor integrity emergency hold",
+        "proposed_vx": 0.848528,
+        "proposed_vy": -0.848528,
+        "applied_vx": 0.0,
+        "applied_vy": 0.0
+      },
+      "prev_hash": "1a318aa6e03839a1290b72005e1fda58c6776e7c6b722fa2269df09e08f2d9f4",
+      "hash": "38035108084cd1701392d424ba97a4e2b80b99a08f71e32608db366dfcf82cd7"
+    },
+    {
+      "seq": 197,
+      "tick": 62,
+      "kind": "state",
+      "payload": {
+        "x": 9.43413,
+        "y": 5.96587,
+        "vx": 0.0,
+        "vy": 0.0,
+        "stage": 2
+      },
+      "prev_hash": "38035108084cd1701392d424ba97a4e2b80b99a08f71e32608db366dfcf82cd7",
+      "hash": "2e2ead0e37121c91e2270bd875b94e8f673c8104869ddd02460bc7b01be9189a"
+    },
+    {
+      "seq": 198,
+      "tick": 63,
+      "kind": "fault",
+      "payload": {
+        "kind": "sensor_dropout",
+        "phase": "end"
+      },
+      "prev_hash": "2e2ead0e37121c91e2270bd875b94e8f673c8104869ddd02460bc7b01be9189a",
+      "hash": "f1791a1587df7bf841f8500283935a4fd51365203755441b3eb72083de447ef7"
+    },
+    {
+      "seq": 199,
+      "tick": 63,
+      "kind": "observation",
+      "payload": {
+        "x": 9.43413,
+        "y": 5.96587,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "f1791a1587df7bf841f8500283935a4fd51365203755441b3eb72083de447ef7",
+      "hash": "24058b0626acddb87c4aa9b6947a4207de61a64691e030ce029c9beef3135138"
+    },
+    {
+      "seq": 200,
+      "tick": 63,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "24058b0626acddb87c4aa9b6947a4207de61a64691e030ce029c9beef3135138",
+      "hash": "e12a0828eab053acb9e5d6879fcfdcdfab7bedb1477d7dde8f44fd308e2e89a8"
+    },
+    {
+      "seq": 201,
+      "tick": 63,
+      "kind": "state",
+      "payload": {
+        "x": 9.60384,
+        "y": 5.79616,
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "e12a0828eab053acb9e5d6879fcfdcdfab7bedb1477d7dde8f44fd308e2e89a8",
+      "hash": "e8cf26863c7e5587cbb783695482e11f4e782a0cda6f6ec682aa107d8791bd3e"
+    },
+    {
+      "seq": 202,
+      "tick": 64,
+      "kind": "observation",
+      "payload": {
+        "x": 9.60384,
+        "y": 5.79616,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "e8cf26863c7e5587cbb783695482e11f4e782a0cda6f6ec682aa107d8791bd3e",
+      "hash": "bd7569f5acf9bbc0504dbb76ab9327ff1e15da1bdc61fc36f56a8e6a627f2263"
+    },
+    {
+      "seq": 203,
+      "tick": 64,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "bd7569f5acf9bbc0504dbb76ab9327ff1e15da1bdc61fc36f56a8e6a627f2263",
+      "hash": "5d486b5f859a789d5dae06c32a9981d6f2c77737f689d2af12f93457771f577a"
+    },
+    {
+      "seq": 204,
+      "tick": 64,
+      "kind": "state",
+      "payload": {
+        "x": 9.77355,
+        "y": 5.62645,
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "5d486b5f859a789d5dae06c32a9981d6f2c77737f689d2af12f93457771f577a",
+      "hash": "80b8601f87fb1ddb1893fe858b56dc904eeef58bc89ffa0ce51aa161228b6248"
+    },
+    {
+      "seq": 205,
+      "tick": 65,
+      "kind": "observation",
+      "payload": {
+        "x": 9.77355,
+        "y": 5.62645,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "80b8601f87fb1ddb1893fe858b56dc904eeef58bc89ffa0ce51aa161228b6248",
+      "hash": "6db677168cf082db0c8a09537c375cfc0b18cd80b90d1f57d7eb5f862a63507f"
+    },
+    {
+      "seq": 206,
+      "tick": 65,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "6db677168cf082db0c8a09537c375cfc0b18cd80b90d1f57d7eb5f862a63507f",
+      "hash": "9564399bb6876d2d8c97cbc3cb0ca1ab7b1a4649038dff8ea261aaf0d36c231f"
+    },
+    {
+      "seq": 207,
+      "tick": 65,
+      "kind": "state",
+      "payload": {
+        "x": 9.94326,
+        "y": 5.45674,
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "9564399bb6876d2d8c97cbc3cb0ca1ab7b1a4649038dff8ea261aaf0d36c231f",
+      "hash": "d53263c4cdad8b67329a4db344fcf82f4bcdd4019f439d85264f043fefc23bb2"
+    },
+    {
+      "seq": 208,
+      "tick": 66,
+      "kind": "observation",
+      "payload": {
+        "x": 9.94326,
+        "y": 5.45674,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "d53263c4cdad8b67329a4db344fcf82f4bcdd4019f439d85264f043fefc23bb2",
+      "hash": "27a5c42faf6f4359de73f3e826177859829a380c3de4ccbf10f03bcadb4a975b"
+    },
+    {
+      "seq": 209,
+      "tick": 66,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "27a5c42faf6f4359de73f3e826177859829a380c3de4ccbf10f03bcadb4a975b",
+      "hash": "7d43b93c187537e83be1dbfa040e6a50b0ab74a995b0269542c40d92c4307966"
+    },
+    {
+      "seq": 210,
+      "tick": 66,
+      "kind": "state",
+      "payload": {
+        "x": 10.11297,
+        "y": 5.28703,
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "7d43b93c187537e83be1dbfa040e6a50b0ab74a995b0269542c40d92c4307966",
+      "hash": "a3a4e539f4674aa10585d8c3dc9585827dec9b9ea4e954d6948ff62d7bd725df"
+    },
+    {
+      "seq": 211,
+      "tick": 67,
+      "kind": "observation",
+      "payload": {
+        "x": 10.11297,
+        "y": 5.28703,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "a3a4e539f4674aa10585d8c3dc9585827dec9b9ea4e954d6948ff62d7bd725df",
+      "hash": "480cd8af807de261699df80f3d3606e5231f741d92b96382d29ef6ff574f62e6"
+    },
+    {
+      "seq": 212,
+      "tick": 67,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "480cd8af807de261699df80f3d3606e5231f741d92b96382d29ef6ff574f62e6",
+      "hash": "0f1e0c7c65a24a437a9c46b70224ea84f2c74c501ef7d82dd3e073862fc9d474"
+    },
+    {
+      "seq": 213,
+      "tick": 67,
+      "kind": "state",
+      "payload": {
+        "x": 10.28268,
+        "y": 5.11732,
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "0f1e0c7c65a24a437a9c46b70224ea84f2c74c501ef7d82dd3e073862fc9d474",
+      "hash": "9dcae0730fdadfdd127fbf5b3fddfc53212a6de9865d9df0d9245bc1a08ffe38"
+    },
+    {
+      "seq": 214,
+      "tick": 68,
+      "kind": "observation",
+      "payload": {
+        "x": 10.28268,
+        "y": 5.11732,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "9dcae0730fdadfdd127fbf5b3fddfc53212a6de9865d9df0d9245bc1a08ffe38",
+      "hash": "d084db69da32ea4c8085602e87026b2421061a575bfc65f9bc4ded5f6715ef91"
+    },
+    {
+      "seq": 215,
+      "tick": 68,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "d084db69da32ea4c8085602e87026b2421061a575bfc65f9bc4ded5f6715ef91",
+      "hash": "ed12fa3b6806dfe220c71a0178833b6883b2df9e1f757b70db8f642084169371"
+    },
+    {
+      "seq": 216,
+      "tick": 68,
+      "kind": "state",
+      "payload": {
+        "x": 10.45239,
+        "y": 4.94761,
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "ed12fa3b6806dfe220c71a0178833b6883b2df9e1f757b70db8f642084169371",
+      "hash": "fc9808d68e2479c142027418335d653b5b8340ecd4c27fb1a525cd1789febdb2"
+    },
+    {
+      "seq": 217,
+      "tick": 69,
+      "kind": "observation",
+      "payload": {
+        "x": 10.45239,
+        "y": 4.94761,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "fc9808d68e2479c142027418335d653b5b8340ecd4c27fb1a525cd1789febdb2",
+      "hash": "bc7caee0e6d0b2aa7544b870bfcbccda25a8082bc9112632aa404ad291c05d54"
+    },
+    {
+      "seq": 218,
+      "tick": 69,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "bc7caee0e6d0b2aa7544b870bfcbccda25a8082bc9112632aa404ad291c05d54",
+      "hash": "ed2517a9e3819f36ea49d37f9c9eba2cf9fd02843a058d099bd125f4495b0923"
+    },
+    {
+      "seq": 219,
+      "tick": 69,
+      "kind": "state",
+      "payload": {
+        "x": 10.6221,
+        "y": 4.7779,
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "ed2517a9e3819f36ea49d37f9c9eba2cf9fd02843a058d099bd125f4495b0923",
+      "hash": "3de9614ce3c2c7b0d96eecc7024697c6a9c6a2d8480a9eb5671f22d85a0859b0"
+    },
+    {
+      "seq": 220,
+      "tick": 70,
+      "kind": "observation",
+      "payload": {
+        "x": 10.6221,
+        "y": 4.7779,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "3de9614ce3c2c7b0d96eecc7024697c6a9c6a2d8480a9eb5671f22d85a0859b0",
+      "hash": "258dc7863f05ae860c6c2d43a286414c7151a3eb98eceb7363ad966ce67d0788"
+    },
+    {
+      "seq": 221,
+      "tick": 70,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "258dc7863f05ae860c6c2d43a286414c7151a3eb98eceb7363ad966ce67d0788",
+      "hash": "0d9e66d71e964a0509da5fc24aed18aeeae390e5458c82682b90f065099679ca"
+    },
+    {
+      "seq": 222,
+      "tick": 70,
+      "kind": "state",
+      "payload": {
+        "x": 10.79181,
+        "y": 4.60819,
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "0d9e66d71e964a0509da5fc24aed18aeeae390e5458c82682b90f065099679ca",
+      "hash": "f209981fe8930fd9cfd3cc74ba2b5d47c97e4bbb04c8411e515db215602fd1fc"
+    },
+    {
+      "seq": 223,
+      "tick": 71,
+      "kind": "observation",
+      "payload": {
+        "x": 10.79181,
+        "y": 4.60819,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "f209981fe8930fd9cfd3cc74ba2b5d47c97e4bbb04c8411e515db215602fd1fc",
+      "hash": "5ec52d1b36de14f008d4776fc05c9531ac6987173ba9c3157345925aabf62615"
+    },
+    {
+      "seq": 224,
+      "tick": 71,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "5ec52d1b36de14f008d4776fc05c9531ac6987173ba9c3157345925aabf62615",
+      "hash": "13bb592016d8c9fe8139a66ae9020706822ebe813ba7c924fa265e3cad44a9f6"
+    },
+    {
+      "seq": 225,
+      "tick": 71,
+      "kind": "state",
+      "payload": {
+        "x": 10.96152,
+        "y": 4.43848,
+        "vx": 0.848528,
+        "vy": -0.848528,
+        "stage": 2
+      },
+      "prev_hash": "13bb592016d8c9fe8139a66ae9020706822ebe813ba7c924fa265e3cad44a9f6",
+      "hash": "784bf0a0847df93fb3f6c8dd5ba45abe20c8c15811188656454a4a607d687fbc"
+    },
+    {
+      "seq": 226,
+      "tick": 72,
+      "kind": "observation",
+      "payload": {
+        "x": 10.96152,
+        "y": 4.43848,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "784bf0a0847df93fb3f6c8dd5ba45abe20c8c15811188656454a4a607d687fbc",
+      "hash": "bb6f9b57a9e6f06b60f4f519ac8ac12266df12b3e174ff5460b41f74afefe7ff"
+    },
+    {
+      "seq": 227,
+      "tick": 72,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.182098,
+        "vy": -1.186103,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "bb6f9b57a9e6f06b60f4f519ac8ac12266df12b3e174ff5460b41f74afefe7ff",
+      "hash": "2dceab319375c053a074a765f9d814467fbe545fbc39252e8c5e682fcdbd08fe"
+    },
+    {
+      "seq": 228,
+      "tick": 72,
+      "kind": "state",
+      "payload": {
+        "x": 10.99794,
+        "y": 4.20126,
+        "vx": 0.182098,
+        "vy": -1.186103,
+        "stage": 2
+      },
+      "prev_hash": "2dceab319375c053a074a765f9d814467fbe545fbc39252e8c5e682fcdbd08fe",
+      "hash": "ef814c517981ecc628dff1912bd55f4f582815744f26a393ec4f8c7eab7295c8"
+    },
+    {
+      "seq": 229,
+      "tick": 73,
+      "kind": "observation",
+      "payload": {
+        "x": 10.99794,
+        "y": 4.20126,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "ef814c517981ecc628dff1912bd55f4f582815744f26a393ec4f8c7eab7295c8",
+      "hash": "e74f2da1ce5bcb53ef84585f454556f350093459e09538775be0ec3bb54fb694"
+    },
+    {
+      "seq": 230,
+      "tick": 73,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.061622,
+        "vy": -1.198417,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "e74f2da1ce5bcb53ef84585f454556f350093459e09538775be0ec3bb54fb694",
+      "hash": "5202d1d447b221d2b483ccb250eaa49bdcb9f1a6fd38ba12a43b8761a8914180"
+    },
+    {
+      "seq": 231,
+      "tick": 73,
+      "kind": "state",
+      "payload": {
+        "x": 11.01026,
+        "y": 3.96158,
+        "vx": 0.061622,
+        "vy": -1.198417,
+        "stage": 2
+      },
+      "prev_hash": "5202d1d447b221d2b483ccb250eaa49bdcb9f1a6fd38ba12a43b8761a8914180",
+      "hash": "a0bb74b2869bf00563234ab7914646da01bff01e3142bd7c1cc7b9c4769994de"
+    },
+    {
+      "seq": 232,
+      "tick": 74,
+      "kind": "observation",
+      "payload": {
+        "x": 11.01026,
+        "y": 3.96158,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "a0bb74b2869bf00563234ab7914646da01bff01e3142bd7c1cc7b9c4769994de",
+      "hash": "d2eef788229429ab5a46d361fc8a255e1aa80c2b8b0bf317b500713dd929a271"
+    },
+    {
+      "seq": 233,
+      "tick": 74,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.06164,
+        "vy": -1.198416,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "d2eef788229429ab5a46d361fc8a255e1aa80c2b8b0bf317b500713dd929a271",
+      "hash": "b334e1da9d7b3e1e951a3089332afe918fc61bd518803371f29ef080c3e2f7da"
+    },
+    {
+      "seq": 234,
+      "tick": 74,
+      "kind": "state",
+      "payload": {
+        "x": 11.02259,
+        "y": 3.7219,
+        "vx": 0.06164,
+        "vy": -1.198416,
+        "stage": 2
+      },
+      "prev_hash": "b334e1da9d7b3e1e951a3089332afe918fc61bd518803371f29ef080c3e2f7da",
+      "hash": "9ac5eeb863b8e878bd36b2e9cc5484673270813b55d74e67b5b594469f1b669f"
+    },
+    {
+      "seq": 235,
+      "tick": 75,
+      "kind": "observation",
+      "payload": {
+        "x": 11.02259,
+        "y": 3.7219,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "9ac5eeb863b8e878bd36b2e9cc5484673270813b55d74e67b5b594469f1b669f",
+      "hash": "7c820cf14a04052155a31f035f59fc3c9bde7afed8eb06cd488ebc69be456e51"
+    },
+    {
+      "seq": 236,
+      "tick": 75,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.007286,
+        "vy": -1.199978,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "7c820cf14a04052155a31f035f59fc3c9bde7afed8eb06cd488ebc69be456e51",
+      "hash": "26422e90de9160c751e5ad7abe01fe45f07f9bfd3237b6f3223b73466cb5b458"
+    },
+    {
+      "seq": 237,
+      "tick": 75,
+      "kind": "state",
+      "payload": {
+        "x": 11.02405,
+        "y": 3.4819,
+        "vx": 0.007286,
+        "vy": -1.199978,
+        "stage": 2
+      },
+      "prev_hash": "26422e90de9160c751e5ad7abe01fe45f07f9bfd3237b6f3223b73466cb5b458",
+      "hash": "cf58d0b558114c36d7540a0abe559519e84c935608c264d8d63f4b0b48eacaef"
+    },
+    {
+      "seq": 238,
+      "tick": 76,
+      "kind": "observation",
+      "payload": {
+        "x": 11.02405,
+        "y": 3.4819,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "cf58d0b558114c36d7540a0abe559519e84c935608c264d8d63f4b0b48eacaef",
+      "hash": "0632ddfcbf4170f692d8f076aef3574e8487add546dec26fb22eb09de3d06bef"
+    },
+    {
+      "seq": 239,
+      "tick": 76,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.002249,
+        "vy": -1.199998,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "0632ddfcbf4170f692d8f076aef3574e8487add546dec26fb22eb09de3d06bef",
+      "hash": "9660abd52e518e06ee779c18ea13777c3831639a571a46a30054143948795d01"
+    },
+    {
+      "seq": 240,
+      "tick": 76,
+      "kind": "state",
+      "payload": {
+        "x": 11.0245,
+        "y": 3.2419,
+        "vx": 0.002249,
+        "vy": -1.199998,
+        "stage": 2
+      },
+      "prev_hash": "9660abd52e518e06ee779c18ea13777c3831639a571a46a30054143948795d01",
+      "hash": "a650cff6b186d76c33383535ece219664f4f3cbdcf036b935d3c999d0698dc5c"
+    },
+    {
+      "seq": 241,
+      "tick": 77,
+      "kind": "observation",
+      "payload": {
+        "x": 11.0245,
+        "y": 3.2419,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "a650cff6b186d76c33383535ece219664f4f3cbdcf036b935d3c999d0698dc5c",
+      "hash": "a52722d5e71466c433afbf191feec1be91e3928d1f623960672cdb2f1ecd8184"
+    },
+    {
+      "seq": 242,
+      "tick": 77,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.002248,
+        "vy": -1.199998,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "a52722d5e71466c433afbf191feec1be91e3928d1f623960672cdb2f1ecd8184",
+      "hash": "4c489b1f457d25d35a1cea932f17ff26806dcbc1e742a30f3a65a66fce56bb5e"
+    },
+    {
+      "seq": 243,
+      "tick": 77,
+      "kind": "state",
+      "payload": {
+        "x": 11.02495,
+        "y": 3.0019,
+        "vx": 0.002248,
+        "vy": -1.199998,
+        "stage": 2
+      },
+      "prev_hash": "4c489b1f457d25d35a1cea932f17ff26806dcbc1e742a30f3a65a66fce56bb5e",
+      "hash": "72b16b9b8ebf74716076d294ab8f4eb107ad5ceca917bf5fd49ba94ed1317c58"
+    },
+    {
+      "seq": 244,
+      "tick": 78,
+      "kind": "observation",
+      "payload": {
+        "x": 11.02495,
+        "y": 3.0019,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "72b16b9b8ebf74716076d294ab8f4eb107ad5ceca917bf5fd49ba94ed1317c58",
+      "hash": "582006ef4267b4ed564041114deb86ddff92279375b6d9471536d29802248b2a"
+    },
+    {
+      "seq": 245,
+      "tick": 78,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.000159,
+        "vy": -1.2,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "582006ef4267b4ed564041114deb86ddff92279375b6d9471536d29802248b2a",
+      "hash": "4d569ccc4a46528db81fca3f0e7fac8a9e799c34de2790f1667c06277d6330d4"
+    },
+    {
+      "seq": 246,
+      "tick": 78,
+      "kind": "state",
+      "payload": {
+        "x": 11.02498,
+        "y": 2.7619,
+        "vx": 0.000159,
+        "vy": -1.2,
+        "stage": 2
+      },
+      "prev_hash": "4d569ccc4a46528db81fca3f0e7fac8a9e799c34de2790f1667c06277d6330d4",
+      "hash": "588c8c937b1cc56f22da2f39ff1b1f8827aff2e93bd030a26eb9f1f98cb1d321"
+    },
+    {
+      "seq": 247,
+      "tick": 79,
+      "kind": "observation",
+      "payload": {
+        "x": 11.02498,
+        "y": 2.7619,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "588c8c937b1cc56f22da2f39ff1b1f8827aff2e93bd030a26eb9f1f98cb1d321",
+      "hash": "7bf123253dece49a2013b26b909338734fcfd5d60e74386c42cc87e89eb8c263"
+    },
+    {
+      "seq": 248,
+      "tick": 79,
+      "kind": "proposal",
+      "payload": {
+        "vx": 4.9e-05,
+        "vy": -1.2,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "7bf123253dece49a2013b26b909338734fcfd5d60e74386c42cc87e89eb8c263",
+      "hash": "a28c93a4fbf0718c796ec2048674a7bcd9b4f1f95134e2a7a86168d7890ed212"
+    },
+    {
+      "seq": 249,
+      "tick": 79,
+      "kind": "state",
+      "payload": {
+        "x": 11.02499,
+        "y": 2.5219,
+        "vx": 4.9e-05,
+        "vy": -1.2,
+        "stage": 2
+      },
+      "prev_hash": "a28c93a4fbf0718c796ec2048674a7bcd9b4f1f95134e2a7a86168d7890ed212",
+      "hash": "377aee26adb4fb010840e5bc44d38458bf306513578419036ecd76a69cde35b2"
+    },
+    {
+      "seq": 250,
+      "tick": 80,
+      "kind": "observation",
+      "payload": {
+        "x": 11.02499,
+        "y": 2.5219,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "377aee26adb4fb010840e5bc44d38458bf306513578419036ecd76a69cde35b2",
+      "hash": "dda6461f170c948fcb17bec6a6db6fdebe44233cd43839b46d92b6af086d86b4"
+    },
+    {
+      "seq": 251,
+      "tick": 80,
+      "kind": "proposal",
+      "payload": {
+        "vx": 4.9e-05,
+        "vy": -1.2,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "dda6461f170c948fcb17bec6a6db6fdebe44233cd43839b46d92b6af086d86b4",
+      "hash": "34556ee4e5ff3bc5ed065a4b2f038cfe7e508542dc4a686a8ca061131ac23048"
+    },
+    {
+      "seq": 252,
+      "tick": 80,
+      "kind": "state",
+      "payload": {
+        "x": 11.025,
+        "y": 2.2819,
+        "vx": 4.9e-05,
+        "vy": -1.2,
+        "stage": 2
+      },
+      "prev_hash": "34556ee4e5ff3bc5ed065a4b2f038cfe7e508542dc4a686a8ca061131ac23048",
+      "hash": "32913db08a5841de68ada1ddec39b07f4a3ee07b6ed671aee18c7e3ab49d6461"
+    },
+    {
+      "seq": 253,
+      "tick": 81,
+      "kind": "observation",
+      "payload": {
+        "x": 11.025,
+        "y": 2.2819,
+        "sensor_ok": true,
+        "target_present": true
+      },
+      "prev_hash": "32913db08a5841de68ada1ddec39b07f4a3ee07b6ed671aee18c7e3ab49d6461",
+      "hash": "9ea5d3f820b70b98dc12210daf6c3408d6b6299c2a17ef0d345c42622e23058c"
+    },
+    {
+      "seq": 254,
+      "tick": 81,
+      "kind": "proposal",
+      "payload": {
+        "vx": 0.840206,
+        "vy": -0.85677,
+        "policy": "route",
+        "decision": "navigate",
+        "replans": 3
+      },
+      "prev_hash": "9ea5d3f820b70b98dc12210daf6c3408d6b6299c2a17ef0d345c42622e23058c",
+      "hash": "87b1231eab8c7b8ac8ce61c360d63cbc23b52680f5933d7b86c0bcf6ab61148b"
+    },
+    {
+      "seq": 255,
+      "tick": 81,
+      "kind": "state",
+      "payload": {
+        "x": 11.19304,
+        "y": 2.11055,
+        "vx": 0.840206,
+        "vy": -0.85677,
+        "stage": 2
+      },
+      "prev_hash": "87b1231eab8c7b8ac8ce61c360d63cbc23b52680f5933d7b86c0bcf6ab61148b",
+      "hash": "bd507feb1c8cfc41d0c782853b05b44e1709893080e79e886105ad53caa8e275"
+    },
+    {
+      "seq": 256,
+      "tick": 81,
+      "kind": "milestone",
+      "payload": {
+        "index": 2,
+        "label": "Dispatch bay"
+      },
+      "prev_hash": "bd507feb1c8cfc41d0c782853b05b44e1709893080e79e886105ad53caa8e275",
+      "hash": "208434a1121ca611f7686726abc886e3bdb7a44bc7db6a15b694c1338a5705c9"
+    },
+    {
+      "seq": 257,
+      "tick": 81,
+      "kind": "terminal",
+      "payload": {
+        "claimed": "completed",
+        "claimed_stage": 3
+      },
+      "prev_hash": "208434a1121ca611f7686726abc886e3bdb7a44bc7db6a15b694c1338a5705c9",
+      "hash": "f83278ef6f385ff56ba21f805a3b74a4140f0ea07033f39cdaf241edca251a2a"
+    }
+  ],
+  "attestation": null,
+  "verification": {
+    "verified": true,
+    "trace_integrity": true,
+    "evaluation_valid": true,
+    "task_completed": true,
+    "progress": 1.0,
+    "safety_violations": 0,
+    "interventions": 8,
+    "sim_time_seconds": 16.2,
+    "energy_proxy": 20.8841,
+    "min_clearance_m": 0.3002,
+    "faults": 1,
+    "recovered_faults": 1,
+    "steps": 81,
+    "failure_reasons": [],
+    "violations": [],
+    "provenance": "deterministic_toy_simulation",
+    "attestation_verified": null,
+    "energy_unit": "(m/s)^2·s; not Joules",
+    "note": "Local geometric and trace verification only; no hardware/physics validation."
+  }
+}

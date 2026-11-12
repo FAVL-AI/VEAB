@@ -1,0 +1,12 @@
+{
+  "id": "distribution-shift", "title": "Unseen layout · perturbation",
+  "description": "Hold-out navigation layout with narrow clearances and transient perception distortion.",
+  "family":"navigation","split":"test","width":13,"height":10,
+  "dt":0.2,"max_steps":320,"max_speed":1.2,"robot_radius":0.22,"waypoint_tolerance":0.43,
+  "start":{"x":1.2,"y":7.9,"label":"Loading dock"},
+  "waypoints":[{"x":5.0,"y":8.1,"label":"Waypoint α"},{"x":9.7,"y":7.9,"label":"Waypoint β"},{"x":11.6,"y":2.1,"label":"Destination"}],
+  "obstacles":[{"x":2.9,"y":5.7,"radius":1.1,"label":"Barrier A"},{"x":6.4,"y":6.7,"radius":0.9,"label":"Barrier B"},{"x":9.4,"y":4.7,"radius":1.0,"label":"Barrier C"},{"x":5.0,"y":3.4,"radius":0.9,"label":"Barrier D"}],
+  "forbidden_zones":[{"x1":6.5,"y1":1.1,"x2":8.6,"y2":3.2,"label":"Hazard zone"}],
+  "faults":[{"kind":"perception_noise","start_step":41,"duration_steps":9}],
+  "target_present":true
+}

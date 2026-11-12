@@ -1,0 +1,63 @@
+{
+  "release": "VEAB 0.1.0",
+  "built_on": "2026-11-11",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41"
+  },
+  "tested_with": {
+    "command": "python -m pytest -q",
+    "passing_tests": 27,
+    "scenario_count": 5,
+    "simulator": "toy_2d",
+    "factorial_trials": 60,
+    "seed_count": 3
+  },
+  "paired_comparison": {
+    "n_pairs": 15,
+    "difference": 0.0,
+    "ci95_percentile": [
+      0.0,
+      0.0
+    ],
+    "caveat": "Toy-world small-sample percentile bootstrap; scenario and seed coverage is not independent hardware validation."
+  },
+  "result_summary": {
+    "greedy__shield_False": {
+      "n": 15,
+      "verified_completion": 0.2,
+      "mean_progress": 0.8,
+      "mean_safety_violations": 9.8,
+      "mean_energy_proxy": 15.0108
+    },
+    "greedy__shield_True": {
+      "n": 15,
+      "verified_completion": 0.8,
+      "mean_progress": 0.8,
+      "mean_safety_violations": 0.0,
+      "mean_energy_proxy": 14.7327
+    },
+    "route__shield_False": {
+      "n": 15,
+      "verified_completion": 1.0,
+      "mean_progress": 1.0,
+      "mean_safety_violations": 0.0,
+      "mean_energy_proxy": 16.7137
+    },
+    "route__shield_True": {
+      "n": 15,
+      "verified_completion": 1.0,
+      "mean_progress": 1.0,
+      "mean_safety_violations": 0.0,
+      "mean_energy_proxy": 16.0225
+    }
+  },
+  "scope": "Synthetic/local research instrumentation; no Isaac, ROS, physical robot, certified safety or SOTA claim",
+  "contracts": {
+    "absence-rejection": "73c2e69fcee73f45037191b9b78e84609975dfceec7694b04ebac6bd23816686",
+    "campus-patrol": "0c6c20fcb4264d14d9b0b29b32daa551efee53f174a2b0dc45d7758db5064030",
+    "distribution-shift": "cc436c7e82ed65aa3ddc09149fc04257885bdbfeeafb494438ed6a555998013b",
+    "hospital-inspection": "6b1d50dc886fdeba66a585e0583e074bcc4daa610dc616d8d3a7d8325b467693",
+    "warehouse-transfer": "d11ac67bb0c3caaa7765895e0d7d405f893b45c196a00680bacd33792e491551"
+  }
+}

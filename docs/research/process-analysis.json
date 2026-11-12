@@ -1,0 +1,230 @@
+{
+  "schema_version": "veab-research-analysis/1",
+  "scope": "public 2D deterministic demonstration; methodology smoke test",
+  "source_provenance": "record-level summary only, not externally witnessed sensor truth",
+  "data_audit": {
+    "n_trial_rows": 60,
+    "n_scene_seed_pairs": 15,
+    "n_complete_factorial_units": 15,
+    "n_distinct_scenarios": 5,
+    "seeds_per_scene": {
+      "absence-rejection": 3,
+      "campus-patrol": 3,
+      "distribution-shift": 3,
+      "hospital-inspection": 3,
+      "warehouse-transfer": 3
+    },
+    "trial_rows_are_not_independent_hardware_replications": true,
+    "caveat": "All scenarios are public fixed toy-world demonstrations. Seeds may have identical paths: treating n trial rows as independent environmental replications is invalid."
+  },
+  "comparisons": {
+    "greedy_gate_effect": {
+      "arm_a": {
+        "policy": "greedy",
+        "shield": true
+      },
+      "arm_b": {
+        "policy": "greedy",
+        "shield": false
+      },
+      "n_matched_pairs": 15,
+      "n_distinct_scenarios": 5,
+      "a": {
+        "n": 15,
+        "task_success": 12,
+        "verified_success": 12,
+        "task_success_rate": 0.8,
+        "verified_success_rate": 0.8,
+        "task_complete_with_unsafe_trace": 0,
+        "task_complete_rejected_by_verifier": 0,
+        "violations": 0,
+        "violations_per_1000_sim_steps": 0.0,
+        "mean_sim_seconds": 15.680000000000001,
+        "mean_energy_proxy": 14.732660000000001,
+        "energy_proxy_per_verified_completion": 18.415825,
+        "faults": 12,
+        "recovered_faults_posthoc_proxy": 12
+      },
+      "b": {
+        "n": 15,
+        "task_success": 12,
+        "verified_success": 3,
+        "task_success_rate": 0.8,
+        "verified_success_rate": 0.2,
+        "task_complete_with_unsafe_trace": 9,
+        "task_complete_rejected_by_verifier": 9,
+        "violations": 147,
+        "violations_per_1000_sim_steps": 133.1521739130435,
+        "mean_sim_seconds": 14.72,
+        "mean_energy_proxy": 15.0108,
+        "energy_proxy_per_verified_completion": 75.054,
+        "faults": 12,
+        "recovered_faults_posthoc_proxy": 12
+      },
+      "equal_aggregate_task_success": true,
+      "verified_success_rate_difference_a_minus_b": 0.6,
+      "per_scene_verified_difference": {
+        "absence-rejection": 0.0,
+        "campus-patrol": 0.0,
+        "distribution-shift": 1.0,
+        "hospital-inspection": 1.0,
+        "warehouse-transfer": 1.0
+      },
+      "scene_equal_weight_verified_difference": 0.6,
+      "exploratory_scene_cluster_bootstrap_ci95": [
+        0.2,
+        1.0
+      ],
+      "exploratory_scenario_signflip_p_two_sided": 0.25,
+      "inference_status": "exploratory, NOT preregistered or independent",
+      "validity_warnings": [
+        "Fixed public demonstration scenarios; no blinded held-out scene families",
+        "Repeated seeds are not guaranteed to produce distinct trajectories",
+        "Verifier reads simulator-generated state, not independent physical ground truth",
+        "Safety-gated and ungated arms execute different controls by construction",
+        "Posthoc fault-recovery proxy does not prove a bounded-time safe recovery",
+        "Energy proxy is not electrical/physical Joules",
+        "Never present exploratory p-values as confirmatory significance"
+      ]
+    },
+    "route_gate_effect": {
+      "arm_a": {
+        "policy": "route",
+        "shield": true
+      },
+      "arm_b": {
+        "policy": "route",
+        "shield": false
+      },
+      "n_matched_pairs": 15,
+      "n_distinct_scenarios": 5,
+      "a": {
+        "n": 15,
+        "task_success": 15,
+        "verified_success": 15,
+        "task_success_rate": 1.0,
+        "verified_success_rate": 1.0,
+        "task_complete_with_unsafe_trace": 0,
+        "task_complete_rejected_by_verifier": 0,
+        "violations": 0,
+        "violations_per_1000_sim_steps": 0.0,
+        "mean_sim_seconds": 13.186666666666667,
+        "mean_energy_proxy": 16.02250666666667,
+        "energy_proxy_per_verified_completion": 16.02250666666667,
+        "faults": 12,
+        "recovered_faults_posthoc_proxy": 12
+      },
+      "b": {
+        "n": 15,
+        "task_success": 15,
+        "verified_success": 15,
+        "task_success_rate": 1.0,
+        "verified_success_rate": 1.0,
+        "task_complete_with_unsafe_trace": 0,
+        "task_complete_rejected_by_verifier": 0,
+        "violations": 0,
+        "violations_per_1000_sim_steps": 0.0,
+        "mean_sim_seconds": 13.346666666666668,
+        "mean_energy_proxy": 16.713706666666667,
+        "energy_proxy_per_verified_completion": 16.713706666666667,
+        "faults": 12,
+        "recovered_faults_posthoc_proxy": 12
+      },
+      "equal_aggregate_task_success": true,
+      "verified_success_rate_difference_a_minus_b": 0.0,
+      "per_scene_verified_difference": {
+        "absence-rejection": 0.0,
+        "campus-patrol": 0.0,
+        "distribution-shift": 0.0,
+        "hospital-inspection": 0.0,
+        "warehouse-transfer": 0.0
+      },
+      "scene_equal_weight_verified_difference": 0.0,
+      "exploratory_scene_cluster_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "exploratory_scenario_signflip_p_two_sided": 1.0,
+      "inference_status": "exploratory, NOT preregistered or independent",
+      "validity_warnings": [
+        "Fixed public demonstration scenarios; no blinded held-out scene families",
+        "Repeated seeds are not guaranteed to produce distinct trajectories",
+        "Verifier reads simulator-generated state, not independent physical ground truth",
+        "Safety-gated and ungated arms execute different controls by construction",
+        "Posthoc fault-recovery proxy does not prove a bounded-time safe recovery",
+        "Energy proxy is not electrical/physical Joules",
+        "Never present exploratory p-values as confirmatory significance"
+      ]
+    },
+    "policy_effect_without_gate": {
+      "arm_a": {
+        "policy": "route",
+        "shield": false
+      },
+      "arm_b": {
+        "policy": "greedy",
+        "shield": false
+      },
+      "n_matched_pairs": 15,
+      "n_distinct_scenarios": 5,
+      "a": {
+        "n": 15,
+        "task_success": 15,
+        "verified_success": 15,
+        "task_success_rate": 1.0,
+        "verified_success_rate": 1.0,
+        "task_complete_with_unsafe_trace": 0,
+        "task_complete_rejected_by_verifier": 0,
+        "violations": 0,
+        "violations_per_1000_sim_steps": 0.0,
+        "mean_sim_seconds": 13.346666666666668,
+        "mean_energy_proxy": 16.713706666666667,
+        "energy_proxy_per_verified_completion": 16.713706666666667,
+        "faults": 12,
+        "recovered_faults_posthoc_proxy": 12
+      },
+      "b": {
+        "n": 15,
+        "task_success": 12,
+        "verified_success": 3,
+        "task_success_rate": 0.8,
+        "verified_success_rate": 0.2,
+        "task_complete_with_unsafe_trace": 9,
+        "task_complete_rejected_by_verifier": 9,
+        "violations": 147,
+        "violations_per_1000_sim_steps": 133.1521739130435,
+        "mean_sim_seconds": 14.72,
+        "mean_energy_proxy": 15.0108,
+        "energy_proxy_per_verified_completion": 75.054,
+        "faults": 12,
+        "recovered_faults_posthoc_proxy": 12
+      },
+      "equal_aggregate_task_success": false,
+      "verified_success_rate_difference_a_minus_b": 0.8,
+      "per_scene_verified_difference": {
+        "absence-rejection": 1.0,
+        "campus-patrol": 0.0,
+        "distribution-shift": 1.0,
+        "hospital-inspection": 1.0,
+        "warehouse-transfer": 1.0
+      },
+      "scene_equal_weight_verified_difference": 0.8,
+      "exploratory_scene_cluster_bootstrap_ci95": [
+        0.4,
+        1.0
+      ],
+      "exploratory_scenario_signflip_p_two_sided": 0.125,
+      "inference_status": "exploratory, NOT preregistered or independent",
+      "validity_warnings": [
+        "Fixed public demonstration scenarios; no blinded held-out scene families",
+        "Repeated seeds are not guaranteed to produce distinct trajectories",
+        "Verifier reads simulator-generated state, not independent physical ground truth",
+        "Safety-gated and ungated arms execute different controls by construction",
+        "Posthoc fault-recovery proxy does not prove a bounded-time safe recovery",
+        "Energy proxy is not electrical/physical Joules",
+        "Never present exploratory p-values as confirmatory significance"
+      ]
+    }
+  },
+  "scientific_claim": "No SOTA or external safety generalisation is supported by this experiment."
+}

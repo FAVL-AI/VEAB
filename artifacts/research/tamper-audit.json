@@ -1,0 +1,14 @@
+{
+  "tamper_regression": {
+    "unkeyed_edits_rejected_count": 4,
+    "test_1_payload_tamper_rejected": true,
+    "test_2_event_deletion_rejected": true,
+    "test_3_sequence_swap_rejected": true,
+    "test_4_manifest_mismatch_rejected": true,
+    "all_unkeyed_tampering_caught": true
+  },
+  "rehashed_spoof_vulnerability_demonstrated": {
+    "recomputed_chain_appears_valid_without_hmac": true,
+    "security_implication": "An attacker with custody over the trace generation process can forge history if only unkeyed hashes are used. External key custody (HMAC / digital signature) and --require-attestation are required to guarantee original source authenticity."
+  }
+}

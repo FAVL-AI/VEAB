@@ -1,0 +1,12 @@
+{
+  "id": "hospital-inspection", "title": "Hospital · corridor inspection",
+  "description": "Complete a three-stage facilities inspection while recovering from a stalled drive.",
+  "family": "inspection", "split": "test", "width": 14, "height": 10,
+  "dt": 0.2, "max_steps": 340, "max_speed": 1.1, "robot_radius": 0.22, "waypoint_tolerance": 0.42,
+  "start": {"x":1.1,"y":1.1,"label":"Robot dock"},
+  "waypoints": [{"x":2.0,"y":8.3,"label":"Ward entrance"}, {"x":8.3,"y":7.7,"label":"Maintenance cabinet"}, {"x":12.4,"y":2.3,"label":"Return checkpoint"}],
+  "obstacles": [{"x":4.8,"y":3.6,"radius":0.85,"label":"Equipment cart"}, {"x":7.0,"y":5.2,"radius":1.1,"label":"Nurse station"}, {"x":10.9,"y":5.1,"radius":0.9,"label":"Medical trolley"}],
+  "forbidden_zones": [{"x1":8.5,"y1":0.9,"x2":10.5,"y2":3.2,"label":"Sterile boundary"}],
+  "faults": [{"kind":"actuator_stall","start_step":63,"duration_steps":7},{"kind":"perception_noise","start_step":115,"duration_steps":8}],
+  "target_present": true
+}
