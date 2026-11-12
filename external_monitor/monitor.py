@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Standalone read-only VEAB monitor, using only Python's standard library.
 
-It deliberately imports NOTHING from veab, the simulator, or the VEAB verifier.
+It deliberately has zero imports from the veab package, the simulator, or the VEAB verifier.
 Consumes exported pose/event records, not model self-reports. It is independently
 implemented software, NOT independent sensor ground truth or safety certification.
 """

@@ -1,17 +1,21 @@
-VEAB v0.4.0 — ASSURANCE CONTROLS (ADDITIVE RESEARCH RELEASE)
+VEAB v0.4 — assurance-controls integration: internal validation only; no external, embodied, or deployment validation claimed.
 12 November 2026
 
-INPUT SOURCE: locally accessible VEAB v0.3.0 archive; NOT the user-reported newer native worktree.
-
-IMPLEMENTED IN THIS PACKAGE
-- Standalone Python-standard-library external monitor (no VEAB simulator/verifier imports).
-- 17 controlled synthetic episodes: 11 known invalid, 6 known valid.
-- Four comparator modes including a reconstructed safety-aware terminal comparator.
-- Pose/path geometry, deadline, speed, stop-time and event-order checks.
-- Explicit coherent-forgery negative finding; no source authenticity claim.
-- Reviewer packet generator and Cohen's kappa evaluator; no actual human labels collected.
-- Scene-level illustrative power calculation and prospective validation protocol.
-- 12 new automated tests on top of 43 passing base tests: 54 passed in current environment.
+Status: INTERNAL ENGINEERING VALIDATION ONLY
+Implemented:
+- 17-episode synthetic assurance fixtures
+- External monitor with no VEAB simulator/verifier imports
+- Comparator runner
+- Adjudication template generator
+- Scene power-calculation utility
+- 12 new assurance-control tests
+- Documentation, prospective protocol, and native-backend integration guide
+Not established:
+- Calibrated detection performance
+- External or blinded adjudication
+- Isaac Lab, MuJoCo, Gazebo, ROS 2/MCAP, or physical-robot validation
+- Physical safety, certification, trusted provenance, or SOTA performance
+- Production SLA or enterprise readiness
 
 CONTROL-FIXTURE RESULTS (NOT EXTERNAL RESEARCH VALIDATION)
 - Terminal status: detected 0/11 invalid, accepted 6/6 valid.

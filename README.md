@@ -1,6 +1,24 @@
 # VEAB — Verifiable Embodied Agent Benchmark
 
-**Version 0.1.0 · Open, local research prototype · 11 November 2026**
+**VEAB v0.4 — assurance-controls integration: internal validation only; no external, embodied, or deployment validation claimed.**
+
+```
+Status: INTERNAL ENGINEERING VALIDATION ONLY
+Implemented:
+- 17-episode synthetic assurance fixtures
+- External monitor with no VEAB simulator/verifier imports
+- Comparator runner
+- Adjudication template generator
+- Scene power-calculation utility
+- 12 new assurance-control tests
+- Documentation, prospective protocol, and native-backend integration guide
+Not established:
+- Calibrated detection performance
+- External or blinded adjudication
+- Isaac Lab, MuJoCo, Gazebo, ROS 2/MCAP, or physical-robot validation
+- Physical safety, certification, trusted provenance, or SOTA performance
+- Production SLA or enterprise readiness
+```
 
 An executable **evidence-first benchmarking platform**: deterministic toy-world tasks; distinct baseline planners, control gates, and trace verifier; auditable trajectories; split-labelled scenarios; a live isometric 3D-projection dashboard; and a reproducible ablation CLI.
 

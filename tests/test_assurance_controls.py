@@ -39,6 +39,12 @@ def test_standalone_monitor_no_veab_package_imports():
     assert all(not name.startswith(('veab','mujoco','isaac')) for name in imports)
 
 
+def test_external_monitor_has_no_veab_imports():
+    source = Path(MONITOR).read_text()
+    assert "import veab" not in source
+    assert "from veab" not in source
+
+
 def test_missing_proposal_rejected(tmp_path):
     write_fixtures(tmp_path)
     case=tmp_path/'missing_proposal.json'
