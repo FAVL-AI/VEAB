@@ -129,10 +129,10 @@
   "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
   "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
   "scenario_id": "warehouse-transfer",
-  "scenario_sha256": "6a94778e3011903e699c7763b78c55d51c17aa1f23badf639bce7f498fd438b2",
-  "scene_sha256": "ab1e28f6d34ad467eef9709b8eeaacf439bd40e8ec4cef5353ec69ca8b2f013f",
+  "scenario_sha256": "7803186e84f8e73d5d44098dab67ad351b01e1349a894a4c9a5423c5d6903e23",
+  "scene_sha256": "3d71701f88f547f12beb35d4e9c7516e4bfd4f049f000fadd382543269fafce8",
   "schema_version": "veab-control-tape/1",
   "seed": 17,
   "source_split": "validation",
-  "tape_sha256": "e5ae45fdc159f4fc10223e711ecd73faa7310a4ee35b9f462b7ad9dedff4d8a5"
+  "tape_sha256": "ba0d2388943e76304dc21435b5ac2c1cd434258e75b3e90daece749bddd62d6e"
 }
