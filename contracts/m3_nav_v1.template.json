@@ -1,0 +1,21 @@
+{
+  "schema_version": "veab.m3.contract/1",
+  "id": "m3_nav_topic_evidence_example_v1",
+  "purpose": "read_only_evidence_audit",
+  "source_trust": "unattested",
+  "calibration_status": "UNVALIDATED_EXAMPLE",
+  "window": {"mode": "observed"},
+  "channels": {
+    "odometry": {"topic": "/odom", "ros_type": "nav_msgs/msg/Odometry", "required": true, "max_gap_ns": 500000000, "max_header_lag_ns": null, "frame_id": null},
+    "command": {"topic": "/cmd_vel", "ros_type": "geometry_msgs/msg/Twist", "required": true, "max_gap_ns": 500000000, "max_header_lag_ns": null, "frame_id": null},
+    "lidar": {"topic": "/scan", "ros_type": "sensor_msgs/msg/LaserScan", "required": true, "max_gap_ns": 500000000, "max_header_lag_ns": null, "frame_id": null},
+    "tf": {"topic": "/tf", "ros_type": "tf2_msgs/msg/TFMessage", "required": false, "max_gap_ns": 1000000000, "max_header_lag_ns": null, "frame_id": null},
+    "imu": {"topic": "/imu/data_raw", "ros_type": "sensor_msgs/msg/Imu", "required": false, "max_gap_ns": 500000000, "max_header_lag_ns": null, "frame_id": null}
+  },
+  "limitations": [
+    "TOPIC NAMES ARE EXAMPLES. Inspect ros2 topic list -t or recorded ros2 bag info before using on M3 Pro.",
+    "Gap thresholds are synthetic-example settings, not calibrated robot safety limits.",
+    "MCAP metadata auditing does not decode ROS header clocks or TF and cannot establish ground truth.",
+    "This contract must never be used to command motors or certify physical safety."
+  ]
+}

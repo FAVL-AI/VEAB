@@ -1,0 +1,43 @@
+name: VEAB M3 Evidence Contract
+on:
+  push:
+    paths:
+      - 'veab/m3_replay/**'
+      - 'external_monitor/m3_record_monitor.py'
+      - 'contracts/m3_nav_v1.template.json'
+      - 'tests/test_m3_contract.py'
+      - 'examples/m3/**'
+      - '.github/workflows/veab-m3-evidence.yml'
+  pull_request:
+    paths:
+      - 'veab/m3_replay/**'
+      - 'external_monitor/m3_record_monitor.py'
+      - 'contracts/m3_nav_v1.template.json'
+      - 'tests/test_m3_contract.py'
+      - 'examples/m3/**'
+  workflow_dispatch:
+jobs:
+  synthetic-contract-tests:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.11']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Test metadata contract without ROS or physics engines
+        run: |
+          python -m pip install 'pytest>=8,<10'
+          python -m pytest -q tests/test_m3_contract.py
+      - name: Generate and audit bounded synthetic control set
+        run: |
+          python scripts/generate_m3_fixture_set.py
+          python scripts/run_m3_controls.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m3-synthetic-report-py${{ matrix.python-version }}
+          path: examples/m3/synthetic-control-results.json
+          retention-days: 14

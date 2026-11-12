@@ -1,0 +1,22 @@
+VEAB M3 Replay — Source-side execution evidence
+DATE: 2026-11-12
+BASE: VEAB v0.6 research snapshot
+SCOPE: Synthetic evidence metadata contracts, separate implementation monitor,
+       Python contract CLI and mock rosbag2 Python interfaces.
+
+NEW FOCUSED TESTS: 44 passed (tests/test_m3_contract.py)
+FULL COMBINED TESTS: 147 passed, 1 skipped, 0 failed, 31.44 seconds
+SKIP: Native MuJoCo is not installed in this execution container.
+
+CONTROL FIXTURES: 11 constructed JSONL cases, 7 invalid, 4 valid.
+Results: 7/7 invalid rejected; 4/4 valid accepted in this fixture set.
+Separate monitor decisions agree in this fixture set.
+
+IMPORTANT NEGATIVE CONTROL: Early-truncated recording passes if the expected
+mission window is inferred solely from the truncated recording. Require an
+independently recorded expected start/end time to address this blind spot.
+
+NOT TESTED: Native ROS2 rosbag2_py with actual MCAP, Isaac Lab, MuJoCo on the
+user's machine, Yahboom M3 Pro device topic mapping, independent physical
+measurements, reviewer agreement, real faults or SOTA superiority.
+No source authenticity or safety certification claims.

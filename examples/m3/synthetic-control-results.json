@@ -1,0 +1,114 @@
+{
+  "cases": [
+    {
+      "error_codes": [],
+      "fixture": "clean",
+      "known_invalid_in_synthetic_contract": false,
+      "process_rejected": false,
+      "separate_monitor_rejected": false
+    },
+    {
+      "error_codes": [
+        "REQUIRED_TOPIC_MISSING"
+      ],
+      "fixture": "no_odom",
+      "known_invalid_in_synthetic_contract": true,
+      "process_rejected": true,
+      "separate_monitor_rejected": true
+    },
+    {
+      "error_codes": [
+        "REQUIRED_TOPIC_MISSING"
+      ],
+      "fixture": "no_cmd",
+      "known_invalid_in_synthetic_contract": true,
+      "process_rejected": true,
+      "separate_monitor_rejected": true
+    },
+    {
+      "error_codes": [
+        "REQUIRED_TOPIC_MISSING"
+      ],
+      "fixture": "no_scan",
+      "known_invalid_in_synthetic_contract": true,
+      "process_rejected": true,
+      "separate_monitor_rejected": true
+    },
+    {
+      "error_codes": [
+        "TYPE_MISMATCH"
+      ],
+      "fixture": "wrong_type",
+      "known_invalid_in_synthetic_contract": true,
+      "process_rejected": true,
+      "separate_monitor_rejected": true
+    },
+    {
+      "error_codes": [
+        "TIME_REVERSED"
+      ],
+      "fixture": "backwards_timestamp",
+      "known_invalid_in_synthetic_contract": true,
+      "process_rejected": true,
+      "separate_monitor_rejected": true
+    },
+    {
+      "error_codes": [
+        "TOPIC_GAP",
+        "TOPIC_GAP",
+        "TOPIC_GAP",
+        "TOPIC_GAP",
+        "TOPIC_GAP"
+      ],
+      "fixture": "large_gap",
+      "known_invalid_in_synthetic_contract": true,
+      "process_rejected": true,
+      "separate_monitor_rejected": true
+    },
+    {
+      "error_codes": [],
+      "fixture": "missing_header",
+      "known_invalid_in_synthetic_contract": false,
+      "process_rejected": false,
+      "separate_monitor_rejected": false
+    },
+    {
+      "error_codes": [],
+      "fixture": "unknown_extra_topic",
+      "known_invalid_in_synthetic_contract": false,
+      "process_rejected": false,
+      "separate_monitor_rejected": false
+    },
+    {
+      "error_codes": [
+        "TYPE_MISMATCH"
+      ],
+      "fixture": "type_flip_lidar",
+      "known_invalid_in_synthetic_contract": true,
+      "process_rejected": true,
+      "separate_monitor_rejected": true
+    },
+    {
+      "error_codes": [],
+      "fixture": "truncated_one_sample",
+      "known_invalid_in_synthetic_contract": false,
+      "process_rejected": false,
+      "separate_monitor_rejected": false
+    }
+  ],
+  "confusion": {
+    "fn": 0,
+    "fp": 0,
+    "tn": 4,
+    "tp": 7
+  },
+  "external_ground_truth": false,
+  "robot_data_used": false,
+  "sample_size": 11,
+  "schema_version": "veab.m3.synthetic-controls/1",
+  "scientific_performance_estimate": false,
+  "sensitivity_synthetic": 1.0,
+  "separate_monitor_disagreements": [],
+  "specificity_synthetic": 1.0,
+  "status": "SYNTHETIC_MECHANISM_TEST_ONLY"
+}

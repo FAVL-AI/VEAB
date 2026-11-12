@@ -1,0 +1,97 @@
+{
+  "schema_version": "veab.m3.contract/1",
+  "id": "m3_pro_bringup_provisional_v1",
+  "purpose": "read_only_evidence_audit",
+  "source_trust": "unattested",
+  "calibration_status": "UNVALIDATED_EXAMPLE",
+  "window": {
+    "mode": "observed"
+  },
+  "channels": {
+    "odometry_raw": {
+      "topic": "/odom_raw",
+      "ros_type": "nav_msgs/msg/Odometry",
+      "required": true,
+      "max_gap_ns": null,
+      "max_header_lag_ns": null,
+      "frame_id": null
+    },
+    "command": {
+      "topic": "/cmd_vel",
+      "ros_type": "geometry_msgs/msg/Twist",
+      "required": true,
+      "max_gap_ns": null,
+      "max_header_lag_ns": null,
+      "frame_id": null
+    },
+    "lidar0": {
+      "topic": "/scan0",
+      "ros_type": "sensor_msgs/msg/LaserScan",
+      "required": true,
+      "max_gap_ns": null,
+      "max_header_lag_ns": null,
+      "frame_id": null
+    },
+    "lidar1": {
+      "topic": "/scan1",
+      "ros_type": "sensor_msgs/msg/LaserScan",
+      "required": true,
+      "max_gap_ns": null,
+      "max_header_lag_ns": null,
+      "frame_id": null
+    },
+    "imu": {
+      "topic": "/imu/data_raw",
+      "ros_type": "sensor_msgs/msg/Imu",
+      "required": true,
+      "max_gap_ns": null,
+      "max_header_lag_ns": null,
+      "frame_id": null
+    },
+    "odometry_filtered": {
+      "topic": "/odom",
+      "ros_type": "nav_msgs/msg/Odometry",
+      "required": false,
+      "max_gap_ns": null,
+      "max_header_lag_ns": null,
+      "frame_id": null
+    },
+    "lidar_merged": {
+      "topic": "/scan_multi",
+      "ros_type": "sensor_msgs/msg/LaserScan",
+      "required": false,
+      "max_gap_ns": null,
+      "max_header_lag_ns": null,
+      "frame_id": null
+    },
+    "tf": {
+      "topic": "/tf",
+      "ros_type": "tf2_msgs/msg/TFMessage",
+      "required": false,
+      "max_gap_ns": null,
+      "max_header_lag_ns": null,
+      "frame_id": null
+    },
+    "camera_info": {
+      "topic": "/camera/color/camera_info",
+      "ros_type": "sensor_msgs/msg/CameraInfo",
+      "required": false,
+      "max_gap_ns": null,
+      "max_header_lag_ns": null,
+      "frame_id": null
+    }
+  },
+  "limitations": [
+    "Topic mappings are derived from local configuration, not live measurements.",
+    "Timing limits, clock offsets and TF geometry remain uncalibrated.",
+    "Observed recording windows cannot reliably detect early truncation.",
+    "Evidence is UNATTESTED; no physical safety validation is claimed."
+  ],
+  "configured_frame_hints": {
+    "lidar0": "laser0_frame",
+    "lidar1": "laser1_frame",
+    "lidar_merged": "base_link",
+    "imu": "imu_frame",
+    "camera_info": "camera_color_optical_frame"
+  }
+}
