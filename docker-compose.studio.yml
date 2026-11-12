@@ -1,0 +1,25 @@
+# Single-host local pilot. No public ports, no high availability, no robot actuation.
+services:
+  studio:
+    build:
+      context: .
+      dockerfile: Dockerfile.studio
+    environment:
+      VEAB_STUDIO_AUTH_MODE: dev-token
+      VEAB_STUDIO_RELEASE: pilot
+      VEAB_STUDIO_DATA_DIR: /app/studio-data
+    volumes:
+      - ./studio-data:/app/studio-data
+    ports:
+      - "127.0.0.1:8010:8010"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    pids_limit: 128
+    mem_limit: 1g
+    cpus: 2
+    restart: "no"

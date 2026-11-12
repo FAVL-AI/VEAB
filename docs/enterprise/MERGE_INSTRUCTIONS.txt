@@ -1,0 +1,26 @@
+VEAB ASSURANCE STUDIO v0.5 — ADDITIVE PATCH FOR THE USER'S NATIVE WORKTREE
+
+This package was built against an available v0.4 source snapshot (55 legacy tests),
+NOT the user's newer local native Rust/C++/Go tree reportedly passing 105 tests.
+It must NOT overwrite or replace that native tree.
+
+1. Make a clean feature branch in the up-to-date native repository:
+     git switch -c feat/veab-assurance-studio-v05
+2. Extract VEAB_Assurance_Studio_v0.5_Additive_Patch.zip in the parent directory
+   containing the 'veab-platform' folder. The patch adds only new files.
+3. Add the following optional dependency to pyproject.toml [project.optional-dependencies]:
+     enterprise = ["PyJWT[crypto]>=2.9,<3"]
+   (for OIDC validation; not required for local dev-token mode).
+4. Add to .gitignore:
+     studio-data/
+     *.mcap
+5. Run:
+     pip install -e '.[test]'
+     python -m pytest -q
+     python -m veab.enterprise.cli bootstrap --org "Pilot" --email owner@example.org
+     python -m uvicorn veab.enterprise.api:app --host 127.0.0.1 --port 8010
+6. Inspect docs/enterprise/VALIDATION_SUMMARY.json for exact evidence limits.
+7. Review staged changes and local test outcomes BEFORE committing or pushing.
+
+This patch adds a separate FastAPI application; it does NOT modify legacy API
+routes or any C++/Go/Rust native source. Default use remains loopback-only.

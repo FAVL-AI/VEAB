@@ -1,0 +1,275 @@
+{
+  "schema_version": "veab-scene/2",
+  "scene_id": "campus-patrol",
+  "source_scenario_sha256": "d1968d30e36a3e61fc912787c41c48d673254c9782549aa316ed33c7230d5de1",
+  "coordinate_frame": "ENU_z_up_m",
+  "meters_per_unit": 1,
+  "dt_seconds": 0.2,
+  "bounds_m": [
+    11.0,
+    8.0,
+    3.0
+  ],
+  "source_split": "train",
+  "objects": [
+    {
+      "id": "factory-floor",
+      "label": "Factory floor",
+      "shape": "box",
+      "position_m": [
+        5.5,
+        4.0,
+        -0.075
+      ],
+      "size_m": [
+        11.0,
+        8.0,
+        0.15
+      ],
+      "rgba": [
+        0.16,
+        0.21,
+        0.27,
+        1
+      ],
+      "role": "floor",
+      "collision": true
+    },
+    {
+      "id": "west-boundary",
+      "label": "West boundary",
+      "shape": "box",
+      "position_m": [
+        -0.08,
+        4.0,
+        0.65
+      ],
+      "size_m": [
+        0.16,
+        8.0,
+        1.3
+      ],
+      "rgba": [
+        0.3,
+        0.36,
+        0.46,
+        0.68
+      ],
+      "role": "boundary",
+      "collision": true
+    },
+    {
+      "id": "east-boundary",
+      "label": "East boundary",
+      "shape": "box",
+      "position_m": [
+        11.08,
+        4.0,
+        0.65
+      ],
+      "size_m": [
+        0.16,
+        8.0,
+        1.3
+      ],
+      "rgba": [
+        0.3,
+        0.36,
+        0.46,
+        0.68
+      ],
+      "role": "boundary",
+      "collision": true
+    },
+    {
+      "id": "south-boundary",
+      "label": "South boundary",
+      "shape": "box",
+      "position_m": [
+        5.5,
+        -0.08,
+        0.65
+      ],
+      "size_m": [
+        11.0,
+        0.16,
+        1.3
+      ],
+      "rgba": [
+        0.3,
+        0.36,
+        0.46,
+        0.68
+      ],
+      "role": "boundary",
+      "collision": true
+    },
+    {
+      "id": "north-boundary",
+      "label": "North boundary",
+      "shape": "box",
+      "position_m": [
+        5.5,
+        8.08,
+        0.65
+      ],
+      "size_m": [
+        11.0,
+        0.16,
+        1.3
+      ],
+      "rgba": [
+        0.3,
+        0.36,
+        0.46,
+        0.68
+      ],
+      "role": "boundary",
+      "collision": true
+    },
+    {
+      "id": "planter",
+      "label": "Planter",
+      "shape": "cylinder",
+      "position_m": [
+        3.4,
+        3.5,
+        0.8
+      ],
+      "size_m": [
+        0.7,
+        1.6
+      ],
+      "rgba": [
+        0.9,
+        0.52,
+        0.2,
+        1
+      ],
+      "role": "obstacle",
+      "collision": true
+    },
+    {
+      "id": "structure",
+      "label": "Structure",
+      "shape": "cylinder",
+      "position_m": [
+        6.3,
+        3.9,
+        0.8
+      ],
+      "size_m": [
+        1.0,
+        1.6
+      ],
+      "rgba": [
+        0.9,
+        0.52,
+        0.2,
+        1
+      ],
+      "role": "obstacle",
+      "collision": true
+    },
+    {
+      "id": "checkpoint-1-west-crossing",
+      "label": "Checkpoint 1 West crossing",
+      "shape": "cylinder",
+      "position_m": [
+        2.3,
+        6.3,
+        0.035
+      ],
+      "size_m": [
+        0.16,
+        0.07
+      ],
+      "rgba": [
+        0.16,
+        0.83,
+        0.71,
+        0.8
+      ],
+      "role": "waypoint",
+      "collision": false
+    },
+    {
+      "id": "checkpoint-2-east-crossing",
+      "label": "Checkpoint 2 East crossing",
+      "shape": "cylinder",
+      "position_m": [
+        7.8,
+        6.2,
+        0.035
+      ],
+      "size_m": [
+        0.16,
+        0.07
+      ],
+      "rgba": [
+        0.16,
+        0.83,
+        0.71,
+        0.8
+      ],
+      "role": "waypoint",
+      "collision": false
+    },
+    {
+      "id": "checkpoint-3-finish",
+      "label": "Checkpoint 3 Finish",
+      "shape": "cylinder",
+      "position_m": [
+        9.4,
+        1.4,
+        0.035
+      ],
+      "size_m": [
+        0.16,
+        0.07
+      ],
+      "rgba": [
+        0.16,
+        0.83,
+        0.71,
+        0.8
+      ],
+      "role": "waypoint",
+      "collision": false
+    }
+  ],
+  "robot": {
+    "id": "veab-scout-surrogate",
+    "display_name": "VEAB Scout (research surrogate; not vendor-calibrated)",
+    "initial_pose_xyz_m": [
+      1.0,
+      1.0,
+      0.16
+    ],
+    "yaw_rad": 0.0,
+    "footprint_radius_m": 0.22,
+    "height_m": 0.27,
+    "mass_kg": 8.0,
+    "max_speed_m_s": 1.1,
+    "control_mode": "planar_velocity_reference"
+  },
+  "waypoints_xyz_m": [
+    [
+      2.3,
+      6.3,
+      0.16
+    ],
+    [
+      7.8,
+      6.2,
+      0.16
+    ],
+    [
+      9.4,
+      1.4,
+      0.16
+    ]
+  ],
+  "disclosure": "Geometric surrogate scene; masses/friction/sensors are not measured hardware properties.",
+  "content_sha256": "18eccfbe0412e922700218e1942c8bb4af42ad824e368adf99f4de8bc7f35df0"
+}

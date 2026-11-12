@@ -1,0 +1,45 @@
+{
+  "schema_version": "veab-assets/1",
+  "scene_id": "absence-rejection",
+  "scene_sha256": "5ba2f2aa501993f1bca832046d98ec799235056589751dea82f5ee3ffd1c310e",
+  "source_scenario_sha256": "45501b835cddde9e7c77d1b1427a473c22aab793e67ff62112118bbe7046270e",
+  "engine_readiness": {
+    "mjcf": "exported; native MuJoCo loading and dynamic calibration required",
+    "sdf": "exported; Gazebo plugin, joints and native dynamics require verification",
+    "urdf": "static visual/collision descriptor, not an actuated robot description",
+    "usda": "visual geometry; Isaac/Unreal physics authoring and import checks outstanding",
+    "glb": "3D visual preview only"
+  },
+  "files": {
+    "mjcf": {
+      "name": "absence-rejection.xml",
+      "sha256": "b12397044541d437b4e587513d9e19c598b7cd20e81a5fd555d2e50fc0c1cf41",
+      "bytes": 1994
+    },
+    "sdf": {
+      "name": "absence-rejection.sdf",
+      "sha256": "738a8ac40652e40b7747deeb622afa3650b3bda7689271bf0e0cbc7d3b564f37",
+      "bytes": 5962
+    },
+    "urdf": {
+      "name": "absence-rejection.urdf",
+      "sha256": "0d4bbd1afe55e385818b7ecad61da853f56648cdd148e10c01b862462fa0d64b",
+      "bytes": 4892
+    },
+    "usda": {
+      "name": "absence-rejection.usda",
+      "sha256": "4237040d89290dfe62c29b8a1d16e1839ede20df75b8cc7d9537d45ec8a33a7b",
+      "bytes": 2889
+    },
+    "glb": {
+      "name": "absence-rejection.glb",
+      "sha256": "d47db3af37cea81eea60a2c3f1927ce058690ffefc08623ddde3fce8ab20e349",
+      "bytes": 9284
+    },
+    "scene": {
+      "name": "absence-rejection.scene.json",
+      "sha256": "f4169cf0e2b470366bc3926e5cf498ab65ea260b8fa4410915f394ae54d87b9b",
+      "bytes": 3464
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "veab-cad/1",
+  "model": "VEAB Scout surrogate (not calibrated to commercial robot)",
+  "units": "m",
+  "chassis_width_m": 0.38,
+  "chassis_depth_m": 0.26,
+  "chassis_thickness_m": 0.1,
+  "wheel_radius_m": 0.085,
+  "wheel_width_m": 0.035,
+  "wheel_track_m": 0.3,
+  "mast_radius_m": 0.018,
+  "mast_height_m": 0.18,
+  "lidar_radius_m": 0.055,
+  "lidar_height_m": 0.038,
+  "source": "original parametric research-surrogate geometry",
+  "parts": {
+    "chassis": {
+      "step": "chassis.step",
+      "stl": "chassis.stl",
+      "step_sha256": "0417bc204c7d14272a6747427ef9ed193f6d76e175a321a9fd512f7c272a4f53",
+      "stl_sha256": "70f70feef077e0567e57255ccd289f5f7356dcf730ee34acd0c1dbed9e01a2e4",
+      "solid_volume_mm3": 9852187.6
+    },
+    "top_lid": {
+      "step": "top_lid.step",
+      "stl": "top_lid.stl",
+      "step_sha256": "7fd0b5b4da924928c00ede05c1024997f7cc1cf851255dee24d02a962bc80c5f",
+      "stl_sha256": "491d3887c95272c39f8b12df94a43805526f5dbf3c004796010205d7c86a6011",
+      "solid_volume_mm3": 1188305.84
+    },
+    "wheel": {
+      "step": "wheel.step",
+      "stl": "wheel.stl",
+      "step_sha256": "77675ace602c3036e3a04d62e10221ddf1dd1ec839b59bdb1f840b9bbb4da7f5",
+      "stl_sha256": "1eb56f9d194270367debb481385a605aa814c30cf94e88112353f7f2b8402d99",
+      "solid_volume_mm3": 794430.24
+    },
+    "wheel_hub": {
+      "step": "wheel_hub.step",
+      "stl": "wheel_hub.stl",
+      "step_sha256": "34cf24b1c3dd51584f611fca76a994a3feaca305e99b175ac7c4f39f8c1f0041",
+      "stl_sha256": "a99d402070931f8235f8db0d987f017b418e89ba95ed77ab2a29f167aa7552a6",
+      "solid_volume_mm3": 101787.6
+    },
+    "lidar_housing": {
+      "step": "lidar_housing.step",
+      "stl": "lidar_housing.stl",
+      "step_sha256": "bbe04178c8c7079f5473fc966398e5ef567d702c7feab606eba54b81507506de",
+      "stl_sha256": "b4de0c29b9a7cc299846d99f34f9f80ef3b771c1111721cf1a7cdb62ef614403",
+      "solid_volume_mm3": 361126.08
+    },
+    "sensor_mast": {
+      "step": "sensor_mast.step",
+      "stl": "sensor_mast.stl",
+      "step_sha256": "82fc72fd88d40dedae351d1249624615234428057d18e82488a7015a114b98ac",
+      "stl_sha256": "a4802b923ee31cc747c820f5dfab63d6dc99f663373dfc68c190a55c8b3e648b",
+      "solid_volume_mm3": 183217.68
+    }
+  },
+  "limitations": [
+    "Not a vendor model",
+    "Unspecified tolerances and materials",
+    "Wheel joints and dynamical inertias require calibration",
+    "CAD is millimetres; scene contract is metres"
+  ]
+}

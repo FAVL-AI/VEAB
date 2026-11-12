@@ -1,0 +1,26 @@
+{
+  "schema":"veab-enterprise-gates/1",
+  "release":"0.5.0-dev",
+  "as_of":"2026-11-12",
+  "decision":"NOT_PRODUCTION_QUALIFIED",
+  "explanation":"Software integration coverage is distinct from independent safety assurance and enterprise operations.",
+  "gates":[
+    {"id":"R0-01","description":"Tenant-scoped project/run API with regression coverage","status":"IMPLEMENTED_IN_LOCAL_PILOT","evidence":"tests/test_enterprise_studio.py"},
+    {"id":"R0-02","description":"Agent-independent verifier for deterministic toy-world evidence","status":"IMPLEMENTED_IN_LOCAL_PILOT","evidence":"veab/verifier.py"},
+    {"id":"R0-03","description":"Independent scene-level confirmatory benchmark with blinded labels","status":"NOT_PASSED","evidence":"Prospective protocol only"},
+    {"id":"R1-01","description":"Isaac Lab native execution with contacts, timing, calibration","status":"NOT_PASSED","evidence":"Export/runtime probe only"},
+    {"id":"R1-02","description":"MuJoCo native equivalent calibrated physics and sim-to-sim tests","status":"NOT_PASSED","evidence":"MJCF export/adapter only in this runtime"},
+    {"id":"R1-03","description":"Gazebo/ROS 2 compatibility and native MCAP decoding","status":"NOT_PASSED","evidence":"Read-only header validation; no native runtime"},
+    {"id":"R2-01","description":"Live identity provider SSO with review and external penetration test","status":"NOT_PASSED","evidence":"OIDC integration boundary implemented, live provider untested"},
+    {"id":"R2-02","description":"Tenant isolation under adversarial integration tests","status":"PARTIAL_LOCAL_EVIDENCE","evidence":"tests/test_enterprise_studio.py"},
+    {"id":"R2-03","description":"PostgreSQL, HA worker queue, durable job leases, quotas","status":"NOT_PASSED","evidence":"SQLite and local worker only"},
+    {"id":"R2-04","description":"Tamper-evident externally anchored retention and KMS custody","status":"NOT_PASSED","evidence":"SHA-256 and optional local HMAC only"},
+    {"id":"R2-05","description":"Encrypted offsite backup and successful restore exercise","status":"NOT_PASSED","evidence":"Runbook only"},
+    {"id":"R2-06","description":"Independent vulnerability assessment and remediations","status":"NOT_PASSED","evidence":"Pending"},
+    {"id":"R3-01","description":"Real ROS 2/MCAP with sensor calibration and trusted timestamps","status":"NOT_PASSED","evidence":"Opaque file intake only"},
+    {"id":"R3-02","description":"Physical emergency stop and geofence witness test","status":"NOT_PASSED","evidence":"No physical testing from this release"},
+    {"id":"R4-01","description":"Measured 99.9% monthly availability against acceptance SLA","status":"NOT_PASSED","evidence":"No production observation period"},
+    {"id":"R4-02","description":"Contracted deployer pilot with customer acceptance","status":"NOT_PASSED","evidence":"No customer contract provided"},
+    {"id":"R4-03","description":"Rights and licensing due diligence","status":"NOT_PASSED","evidence":"Ownership and chain-of-title unverified"}
+  ]
+}

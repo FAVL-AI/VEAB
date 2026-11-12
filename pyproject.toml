@@ -4,13 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "veab-platform"
-version = "0.1.0"
+version = "0.5.0.dev0"
 description = "Verifiable Embodied Agent Benchmark: reproducible simulation, independent evidence verification, and audit dashboard"
 requires-python = ">=3.10"
 dependencies = ["fastapi>=0.110,<1", "uvicorn>=0.28,<1", "pydantic>=2,<3"]
 
 [project.optional-dependencies]
 test = ["pytest>=8,<10", "httpx>=0.27,<1"]
+enterprise = ["PyJWT[crypto]>=2.9,<3"]
+geometry = ["trimesh>=4,<5", "numpy>=1.26,<3", "cadquery>=2,<3"]
+physics = ["mujoco>=3.3,<4", "numpy>=1.26,<3", "trimesh>=4,<5"]
 
 [project.scripts]
 veab = "veab.cli:main"

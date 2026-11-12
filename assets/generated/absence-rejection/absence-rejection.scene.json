@@ -1,0 +1,194 @@
+{
+  "schema_version": "veab-scene/2",
+  "scene_id": "absence-rejection",
+  "source_scenario_sha256": "45501b835cddde9e7c77d1b1427a473c22aab793e67ff62112118bbe7046270e",
+  "coordinate_frame": "ENU_z_up_m",
+  "meters_per_unit": 1,
+  "dt_seconds": 0.2,
+  "bounds_m": [
+    12.0,
+    8.0,
+    3.0
+  ],
+  "source_split": "test",
+  "objects": [
+    {
+      "id": "factory-floor",
+      "label": "Factory floor",
+      "shape": "box",
+      "position_m": [
+        6.0,
+        4.0,
+        -0.075
+      ],
+      "size_m": [
+        12.0,
+        8.0,
+        0.15
+      ],
+      "rgba": [
+        0.16,
+        0.21,
+        0.27,
+        1
+      ],
+      "role": "floor",
+      "collision": true
+    },
+    {
+      "id": "west-boundary",
+      "label": "West boundary",
+      "shape": "box",
+      "position_m": [
+        -0.08,
+        4.0,
+        0.65
+      ],
+      "size_m": [
+        0.16,
+        8.0,
+        1.3
+      ],
+      "rgba": [
+        0.3,
+        0.36,
+        0.46,
+        0.68
+      ],
+      "role": "boundary",
+      "collision": true
+    },
+    {
+      "id": "east-boundary",
+      "label": "East boundary",
+      "shape": "box",
+      "position_m": [
+        12.08,
+        4.0,
+        0.65
+      ],
+      "size_m": [
+        0.16,
+        8.0,
+        1.3
+      ],
+      "rgba": [
+        0.3,
+        0.36,
+        0.46,
+        0.68
+      ],
+      "role": "boundary",
+      "collision": true
+    },
+    {
+      "id": "south-boundary",
+      "label": "South boundary",
+      "shape": "box",
+      "position_m": [
+        6.0,
+        -0.08,
+        0.65
+      ],
+      "size_m": [
+        12.0,
+        0.16,
+        1.3
+      ],
+      "rgba": [
+        0.3,
+        0.36,
+        0.46,
+        0.68
+      ],
+      "role": "boundary",
+      "collision": true
+    },
+    {
+      "id": "north-boundary",
+      "label": "North boundary",
+      "shape": "box",
+      "position_m": [
+        6.0,
+        8.08,
+        0.65
+      ],
+      "size_m": [
+        12.0,
+        0.16,
+        1.3
+      ],
+      "rgba": [
+        0.3,
+        0.36,
+        0.46,
+        0.68
+      ],
+      "role": "boundary",
+      "collision": true
+    },
+    {
+      "id": "static-fixture",
+      "label": "Static fixture",
+      "shape": "cylinder",
+      "position_m": [
+        6.0,
+        4.0,
+        0.8
+      ],
+      "size_m": [
+        1.1,
+        1.6
+      ],
+      "rgba": [
+        0.9,
+        0.52,
+        0.2,
+        1
+      ],
+      "role": "obstacle",
+      "collision": true
+    },
+    {
+      "id": "restricted-zone",
+      "label": "Restricted zone",
+      "shape": "box",
+      "position_m": [
+        9.55,
+        2.0,
+        0.025
+      ],
+      "size_m": [
+        2.1,
+        2.0,
+        0.05
+      ],
+      "rgba": [
+        0.9,
+        0.18,
+        0.32,
+        0.25
+      ],
+      "role": "forbidden",
+      "collision": false
+    }
+  ],
+  "robot": {
+    "id": "veab-scout-surrogate",
+    "display_name": "VEAB Scout (research surrogate; not vendor-calibrated)",
+    "initial_pose_xyz_m": [
+      2.0,
+      2.0,
+      0.16
+    ],
+    "yaw_rad": 0.0,
+    "footprint_radius_m": 0.22,
+    "height_m": 0.27,
+    "mass_kg": 8.0,
+    "max_speed_m_s": 1.0,
+    "control_mode": "planar_velocity_reference"
+  },
+  "waypoints_xyz_m": [],
+  "disclosure": "Geometric surrogate scene; masses/friction/sensors are not measured hardware properties.",
+  "content_sha256": "5ba2f2aa501993f1bca832046d98ec799235056589751dea82f5ee3ffd1c310e"
+}
