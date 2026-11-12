@@ -10,6 +10,8 @@ artifacts/*
 !artifacts/research/**
 !artifacts/assurance/
 !artifacts/assurance/**
+artifacts/assurance/PRIVATE*
+artifacts/assurance/reviewer-packets/
 *.sqlite3*
 backend/rust_verifier/target/
 *.egg-info/
