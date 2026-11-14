@@ -22,11 +22,17 @@ Native MuJoCo physics, native Isaac Lab/PhysX physics, calibrated cross-engine d
 python -m pip install -e '.[test]' trimesh numpy
 python -m pytest -q tests/test_locked_replay_v06.py tests/test_claims_v06.py
 python scripts/check_claims.py
-python scripts/veab_v06.py tape --scenario warehouse-transfer --steps 24 --out artifacts/v06/control-tape.json
+python scripts/veap_v06.py tape --scenario warehouse-transfer --steps 24 --out artifacts/v06/control-tape.json
 # Requires a real native MuJoCo installation and does not fall back:
-python scripts/veab_v06.py run-mujoco --tape artifacts/v06/control-tape.json --out artifacts/v06/mujoco
+python scripts/veap_v06.py run-mujoco --tape artifacts/v06/control-tape.json --out artifacts/v06/mujoco
+# Per-tick divergence localization on paired native traces:
+python scripts/veap_v06.py diagnose \
+  --tape artifacts/research/v06-control-tape.json \
+  --left artifacts/research/v06-mujoco-locked-replay.json \
+  --right artifacts/research/v06-isaaclab-locked-replay.json \
+  --out artifacts/research/v06-pilot-per-tick-diagnostic.json
 ```
 
-For science and release gates see [V06_NATIVE_ACCEPTANCE_PROTOCOL.md](docs/release/V06_NATIVE_ACCEPTANCE_PROTOCOL.md) and [VEAB_RELEASE_TRAIN_v0.6_to_v1.0.md](docs/release/VEAB_RELEASE_TRAIN_v0.6_to_v1.0.md).
+For science and release gates see [V06_NATIVE_ACCEPTANCE_PROTOCOL.md](docs/release/V06_NATIVE_ACCEPTANCE_PROTOCOL.md) and [VEAP_RELEASE_TRAIN_v0.6_to_v1.0.md](docs/release/VEAP_RELEASE_TRAIN_v0.6_to_v1.0.md).
 
 Every claim must have an artifact, scope and limitations: [CLAIMS_POLICY.md](docs/CLAIMS_POLICY.md).

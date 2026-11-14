@@ -9,6 +9,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from veap.spec import load_scenario
 from veap.simulation.locked_replay import (
+    diagnose_paired_replay,
     paired_physics_report,
     standard_tape,
     validate_execution,
@@ -49,6 +50,16 @@ def main(argv=None):
     diff.add_argument("--right", required=True)
     diff.add_argument("--rmse-target", type=float, default=0.1)
     diff.add_argument("--out", default="artifacts/v06/cross-engine-report.json")
+    diag = sub.add_parser("diagnose", help="Produce per-tick divergence localization and repeatability report")
+    diag.add_argument("--tape", required=True)
+    diag.add_argument("--left", required=True)
+    diag.add_argument("--right", required=True)
+    diag.add_argument("--repeat-left", default=None)
+    diag.add_argument("--repeat-right", default=None)
+    diag.add_argument("--pos-threshold", type=float, default=0.001)
+    diag.add_argument("--vel-threshold", type=float, default=0.01)
+    diag.add_argument("--rmse-target", type=float, default=0.1)
+    diag.add_argument("--out", default="artifacts/v06/pilot-per-tick-diagnostic.json")
     args = parser.parse_args(argv)
     try:
         if args.command == "tape":
@@ -78,6 +89,25 @@ def main(argv=None):
             result = paired_physics_report(s, t, l.get("trace", l), r.get("trace", r), max_position_rmse_m=args.rmse_target)
             save(args.out, result)
             print(json.dumps(result, indent=2))
+            return 0
+        if args.command == "diagnose":
+            l = load(args.left)
+            r = load(args.right)
+            rep_l = load(args.repeat_left) if args.repeat_left else None
+            rep_r = load(args.repeat_right) if args.repeat_right else None
+            result = diagnose_paired_replay(
+                s,
+                t,
+                l.get("trace", l),
+                r.get("trace", r),
+                position_divergence_threshold_m=args.pos_threshold,
+                velocity_divergence_threshold_m_s=args.vel_threshold,
+                max_position_rmse_m=args.rmse_target,
+                repeat_left=rep_l.get("trace", rep_l) if rep_l else None,
+                repeat_right=rep_r.get("trace", rep_r) if rep_r else None,
+            )
+            save(args.out, result)
+            print(json.dumps({"summary": result["summary"], "localization": result["localization"], "repeatability": result["repeatability"]}, indent=2))
             return 0
     except (ValueError, RuntimeError, OSError, KeyError, TypeError) as error:
         parser.exit(3, "VEAP locked replay blocked: " + str(error) + "\n")

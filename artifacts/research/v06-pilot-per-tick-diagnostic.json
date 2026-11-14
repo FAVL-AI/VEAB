@@ -1,0 +1,1508 @@
+{
+  "localization": {
+    "commanded_motion_ticks": 18,
+    "contact_observation_counts": {
+      "both_observed_disagree": 0,
+      "both_observed_match": 0,
+      "missing_both": 0,
+      "missing_left": 0,
+      "missing_right": 25
+    },
+    "first_planar_divergence_m": 0.0195783,
+    "first_planar_divergence_tick": 2,
+    "first_planar_velocity_divergence_m_s": 0.0141189,
+    "first_planar_velocity_divergence_tick": 1,
+    "first_position_divergence_m": 0.0028649,
+    "first_position_divergence_tick": 0,
+    "first_target_exceedance_m": 0.11704287,
+    "first_target_exceedance_tick": 5,
+    "first_velocity_divergence_m_s": 0.1903532,
+    "first_velocity_divergence_tick": 0,
+    "initial_pose_diverged_at_tick_0": true,
+    "peak_position_error_m": 0.27508361,
+    "peak_position_error_tick": 13,
+    "position_divergence_threshold_m": 0.001,
+    "stalled_planar_motion_ticks_left": [],
+    "stalled_planar_motion_ticks_right": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "tick_0_planar_error_m": 0.0,
+    "tick_0_position_error_m": 0.0028649,
+    "tick_0_velocity_error_m_s": 0.1903532,
+    "tick_0_vertical_delta_m": 0.0028649,
+    "tick_0_vertical_velocity_delta_m_s": 0.1903532,
+    "velocity_divergence_threshold_m_s": 0.01
+  },
+  "repeatability": {
+    "divergence_repeats_identically": true,
+    "left": {
+      "engine": "mujoco",
+      "engine_version_candidate": "4.0.1",
+      "engine_version_reference": "4.0.1",
+      "max_position_diff_m": 0.0,
+      "max_velocity_diff_m_s": 0.0,
+      "max_yaw_rate_diff_rad_s": 0.0,
+      "repeats_deterministically": true,
+      "sample_chain_sha256_matches": true
+    },
+    "repeat_position_rmse_m": 0.20182817,
+    "right": {
+      "engine": "isaaclab",
+      "engine_version_candidate": "isaacsim-5.1.0.0/isaaclab-0.54.3",
+      "engine_version_reference": "isaacsim-5.1.0.0/isaaclab-0.54.3",
+      "max_position_diff_m": 0.0,
+      "max_velocity_diff_m_s": 0.0,
+      "max_yaw_rate_diff_rad_s": 0.0,
+      "repeats_deterministically": true,
+      "sample_chain_sha256_matches": true
+    }
+  },
+  "scenario_id": "warehouse-transfer",
+  "scene_sha256": "3d71701f88f547f12beb35d4e9c7516e4bfd4f049f000fadd382543269fafce8",
+  "schema_version": "veap-paired-physics-diagnostic/1",
+  "summary": {
+    "calibration_status": "unmeasured_research_surrogate",
+    "contact_count_disagreement_samples": 0,
+    "contact_observed_samples": 0,
+    "contacts_comparable": false,
+    "control_timegrid_max_error_s": 0.0,
+    "eligible_for_physics_equivalence_claim": false,
+    "engine_left": "mujoco",
+    "engine_right": "isaaclab",
+    "engine_versions": [
+      "4.0.1",
+      "isaacsim-5.1.0.0/isaaclab-0.54.3"
+    ],
+    "independently_attested_ground_truth": false,
+    "matched_controls": true,
+    "position_max_m": 0.27508361,
+    "position_p90_m": 0.26211512,
+    "position_rmse_m": 0.20182817,
+    "position_rmse_tolerance_m": 0.1,
+    "position_rmse_within_target": false,
+    "samples": 25,
+    "scene_sha256": "3d71701f88f547f12beb35d4e9c7516e4bfd4f049f000fadd382543269fafce8",
+    "schema_version": "veab-locked-physics-comparison/1",
+    "scope": "paired cross-simulator trace discrepancy; not accuracy, reliability, real-world safety, or SOTA",
+    "tape_sha256": "ba0d2388943e76304dc21435b5ac2c1cd434258e75b3e90daece749bddd62d6e"
+  },
+  "tape_sha256": "ba0d2388943e76304dc21435b5ac2c1cd434258e75b3e90daece749bddd62d6e",
+  "ticks": [
+    {
+      "angular_z_error_rad_s": 0.0,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": 0.0,
+      "command_tracking_error_left_xy_m_s": 0.0,
+      "command_tracking_error_right_xy_m_s": 0.0,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.0,
+      "planar_velocity_error_m_s": 0.0,
+      "position_delta_xyz_m": [
+        0.0,
+        0.0,
+        -0.0028649
+      ],
+      "position_error_m": 0.0028649,
+      "position_left_xyz_m": [
+        1.2,
+        1.3,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2,
+        1.3,
+        0.1571351
+      ],
+      "tick": 0,
+      "time_s": 0.0,
+      "velocity_delta_xyz_m_s": [
+        0.0,
+        0.0,
+        -0.1903532
+      ],
+      "velocity_error_m_s": 0.1903532,
+      "velocity_left_xyz_m_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        0.0,
+        0.0,
+        -0.1903532
+      ],
+      "vertical_position_error_m": 0.0028649,
+      "vertical_velocity_error_m_s": 0.1903532,
+      "yaw_error_rad": 0.0,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": 0.0
+    },
+    {
+      "angular_z_error_rad_s": 0.0,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": 0.0,
+      "command_tracking_error_left_xy_m_s": 0.1165162,
+      "command_tracking_error_right_xy_m_s": 0.1306351,
+      "command_vx_vy_yaw": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.0003387,
+      "planar_velocity_error_m_s": 0.0141189,
+      "position_delta_xyz_m": [
+        -0.0003387,
+        0.0,
+        -0.0220925
+      ],
+      "position_error_m": 0.0220951,
+      "position_left_xyz_m": [
+        1.2087692,
+        1.3,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2084305,
+        1.3,
+        0.1379075
+      ],
+      "tick": 1,
+      "time_s": 0.2,
+      "velocity_delta_xyz_m_s": [
+        -0.0141189,
+        0.0,
+        -0.096138
+      ],
+      "velocity_error_m_s": 0.09716923,
+      "velocity_left_xyz_m_s": [
+        0.0834838,
+        0.0,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        0.0693649,
+        0.0,
+        -0.096138
+      ],
+      "vertical_position_error_m": 0.0220925,
+      "vertical_velocity_error_m_s": 0.096138,
+      "yaw_error_rad": 0.0,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": 0.0
+    },
+    {
+      "angular_z_error_rad_s": 4e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -4e-07,
+      "command_tracking_error_left_xy_m_s": 0.0710481,
+      "command_tracking_error_right_xy_m_s": 0.200166,
+      "command_vx_vy_yaw": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.0195783,
+      "planar_velocity_error_m_s": 0.1291179,
+      "position_delta_xyz_m": [
+        -0.0195783,
+        4e-07,
+        -0.0250002
+      ],
+      "position_error_m": 0.03175405,
+      "position_left_xyz_m": [
+        1.2302419,
+        1.3,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106636,
+        1.3000004,
+        0.1349998
+      ],
+      "tick": 2,
+      "time_s": 0.4,
+      "velocity_delta_xyz_m_s": [
+        -0.1291179,
+        -7.4e-06,
+        -0.0001278
+      ],
+      "velocity_error_m_s": 0.12911796,
+      "velocity_left_xyz_m_s": [
+        0.1289519,
+        0.0,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -0.000166,
+        -7.4e-06,
+        -0.0001278
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 0.0001278,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 4e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -4e-07,
+      "command_tracking_error_left_xy_m_s": 0.0462846,
+      "command_tracking_error_right_xy_m_s": 0.2001634,
+      "command_vx_vy_yaw": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.0479698,
+      "planar_velocity_error_m_s": 0.1538788,
+      "position_delta_xyz_m": [
+        -0.0479698,
+        4e-07,
+        -0.0250002
+      ],
+      "position_error_m": 0.05409355,
+      "position_left_xyz_m": [
+        1.2586334,
+        1.3,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106636,
+        1.3000004,
+        0.1349998
+      ],
+      "tick": 3,
+      "time_s": 0.6,
+      "velocity_delta_xyz_m_s": [
+        -0.1538788,
+        -5.1e-06,
+        -0.00013
+      ],
+      "velocity_error_m_s": 0.15387885,
+      "velocity_left_xyz_m_s": [
+        0.1537154,
+        0.0,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -0.0001634,
+        -5.1e-06,
+        -0.00013
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 0.00013,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 4e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -4e-07,
+      "command_tracking_error_left_xy_m_s": 0.0327976,
+      "command_tracking_error_right_xy_m_s": 0.2001697,
+      "command_vx_vy_yaw": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.0801296,
+      "planar_velocity_error_m_s": 0.1673721,
+      "position_delta_xyz_m": [
+        -0.0801296,
+        4e-07,
+        -0.0250002
+      ],
+      "position_error_m": 0.08393904,
+      "position_left_xyz_m": [
+        1.2907932,
+        1.3,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106636,
+        1.3000004,
+        0.1349998
+      ],
+      "tick": 4,
+      "time_s": 0.8,
+      "velocity_delta_xyz_m_s": [
+        -0.1673721,
+        -8.2e-06,
+        -0.0001299
+      ],
+      "velocity_error_m_s": 0.16737215,
+      "velocity_left_xyz_m_s": [
+        0.1672024,
+        0.0,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -0.0001697,
+        -8.2e-06,
+        -0.0001299
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 0.0001299,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 4e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -4e-07,
+      "command_tracking_error_left_xy_m_s": 0.0254521,
+      "command_tracking_error_right_xy_m_s": 0.2001659,
+      "command_vx_vy_yaw": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.1143417,
+      "planar_velocity_error_m_s": 0.1747138,
+      "position_delta_xyz_m": [
+        -0.1143417,
+        4e-07,
+        -0.0250002
+      ],
+      "position_error_m": 0.11704287,
+      "position_left_xyz_m": [
+        1.3250053,
+        1.3,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106636,
+        1.3000004,
+        0.1349998
+      ],
+      "tick": 5,
+      "time_s": 1.0,
+      "velocity_delta_xyz_m_s": [
+        -0.1747138,
+        -6.3e-06,
+        -0.0001291
+      ],
+      "velocity_error_m_s": 0.17471385,
+      "velocity_left_xyz_m_s": [
+        0.1745479,
+        0.0,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -0.0001659,
+        -6.3e-06,
+        -0.0001291
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 0.0001291,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 1.2e-06,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -1.2e-06,
+      "command_tracking_error_left_xy_m_s": 0.0214515,
+      "command_tracking_error_right_xy_m_s": 0.2001639,
+      "command_vx_vy_yaw": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.1496715,
+      "planar_velocity_error_m_s": 0.1787124,
+      "position_delta_xyz_m": [
+        -0.1496715,
+        4e-07,
+        -0.0250002
+      ],
+      "position_error_m": 0.15174508,
+      "position_left_xyz_m": [
+        1.3603351,
+        1.3,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106636,
+        1.3000004,
+        0.1349998
+      ],
+      "tick": 6,
+      "time_s": 1.2,
+      "velocity_delta_xyz_m_s": [
+        -0.1787124,
+        -6.6e-06,
+        -0.0001281
+      ],
+      "velocity_error_m_s": 0.17871245,
+      "velocity_left_xyz_m_s": [
+        0.1785485,
+        0.0,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -0.0001639,
+        -6.6e-06,
+        -0.0001281
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 0.0001281,
+      "yaw_error_rad": 1e-06,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -1e-06
+    },
+    {
+      "angular_z_error_rad_s": 2e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": 2e-07,
+      "command_tracking_error_left_xy_m_s": 0.15176404,
+      "command_tracking_error_right_xy_m_s": 0.20010073,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.2,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.17705857,
+      "planar_velocity_error_m_s": 0.1281398,
+      "position_delta_xyz_m": [
+        -0.1768413,
+        -0.0087688,
+        -0.0250001
+      ],
+      "position_error_m": 0.17881483,
+      "position_left_xyz_m": [
+        1.3875045,
+        1.3087692,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106632,
+        1.3000004,
+        0.1349999
+      ],
+      "tick": 7,
+      "time_s": 1.4,
+      "velocity_delta_xyz_m_s": [
+        -0.0971259,
+        -0.0835845,
+        -3.76e-05
+      ],
+      "velocity_error_m_s": 0.12813981,
+      "velocity_left_xyz_m_s": [
+        0.0972435,
+        0.0834838,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        0.0001176,
+        -0.0001007,
+        -3.76e-05
+      ],
+      "vertical_position_error_m": 0.0250001,
+      "vertical_velocity_error_m_s": 3.76e-05,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 7e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": 7e-07,
+      "command_tracking_error_left_xy_m_s": 0.08861612,
+      "command_tracking_error_right_xy_m_s": 0.20008091,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.2,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.19401017,
+      "planar_velocity_error_m_s": 0.13950066,
+      "position_delta_xyz_m": [
+        -0.1916387,
+        -0.0302416,
+        -0.0250002
+      ],
+      "position_error_m": 0.1956143,
+      "position_left_xyz_m": [
+        1.4023018,
+        1.3302419,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106631,
+        1.3000003,
+        0.1349998
+      ],
+      "tick": 8,
+      "time_s": 1.6,
+      "velocity_delta_xyz_m_s": [
+        -0.0530186,
+        -0.1290328,
+        -3.28e-05
+      ],
+      "velocity_error_m_s": 0.13950067,
+      "velocity_left_xyz_m_s": [
+        0.0529621,
+        0.1289519,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -5.65e-05,
+        -8.09e-05,
+        -3.28e-05
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 3.28e-05,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 1e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -1e-07,
+      "command_tracking_error_left_xy_m_s": 0.05453713,
+      "command_tracking_error_right_xy_m_s": 0.20008601,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.2,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.20812749,
+      "planar_velocity_error_m_s": 0.15649628,
+      "position_delta_xyz_m": [
+        -0.1996978,
+        -0.0586331,
+        -0.0250002
+      ],
+      "position_error_m": 0.20962362,
+      "position_left_xyz_m": [
+        1.410361,
+        1.3586334,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106632,
+        1.3000003,
+        0.1349998
+      ],
+      "tick": 9,
+      "time_s": 1.8,
+      "velocity_delta_xyz_m_s": [
+        -0.0289174,
+        -0.1538014,
+        -8e-07
+      ],
+      "velocity_error_m_s": 0.15649628,
+      "velocity_left_xyz_m_s": [
+        0.028845,
+        0.1537154,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -7.24e-05,
+        -8.6e-05,
+        -8e-07
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 8e-07,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 1e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -1e-07,
+      "command_tracking_error_left_xy_m_s": 0.03636597,
+      "command_tracking_error_right_xy_m_s": 0.20008101,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.2,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.22337184,
+      "planar_velocity_error_m_s": 0.16802491,
+      "position_delta_xyz_m": [
+        -0.2040873,
+        -0.0907929,
+        -0.0250002
+      ],
+      "position_error_m": 0.22476652,
+      "position_left_xyz_m": [
+        1.4147503,
+        1.3907932,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.210663,
+        1.3000003,
+        0.1349998
+      ],
+      "tick": 10,
+      "time_s": 2.0,
+      "velocity_delta_xyz_m_s": [
+        -0.0157681,
+        -0.1672834,
+        -3.38e-05
+      ],
+      "velocity_error_m_s": 0.16802491,
+      "velocity_left_xyz_m_s": [
+        0.0157099,
+        0.1672024,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -5.82e-05,
+        -8.1e-05,
+        -3.38e-05
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 3.38e-05,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 0.0,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -0.0,
+      "command_tracking_error_left_xy_m_s": 0.02685178,
+      "command_tracking_error_right_xy_m_s": 0.2000935,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.2,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.24136951,
+      "planar_velocity_error_m_s": 0.17485138,
+      "position_delta_xyz_m": [
+        -0.2064777,
+        -0.1250048,
+        -0.0250001
+      ],
+      "position_error_m": 0.24266076,
+      "position_left_xyz_m": [
+        1.4171408,
+        1.4250053,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106631,
+        1.3000005,
+        0.1349999
+      ],
+      "tick": 11,
+      "time_s": 2.2,
+      "velocity_delta_xyz_m_s": [
+        -0.0085666,
+        -0.1746414,
+        -3.41e-05
+      ],
+      "velocity_error_m_s": 0.17485138,
+      "velocity_left_xyz_m_s": [
+        0.0085562,
+        0.1745479,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -1.04e-05,
+        -9.35e-05,
+        -3.41e-05
+      ],
+      "vertical_position_error_m": 0.0250001,
+      "vertical_velocity_error_m_s": 3.41e-05,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 1e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -1e-07,
+      "command_tracking_error_left_xy_m_s": 0.02195182,
+      "command_tracking_error_right_xy_m_s": 0.20008881,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.2,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.26244925,
+      "planar_velocity_error_m_s": 0.17870001,
+      "position_delta_xyz_m": [
+        -0.2077796,
+        -0.1603348,
+        -0.0250002
+      ],
+      "position_error_m": 0.26363729,
+      "position_left_xyz_m": [
+        1.4184428,
+        1.4603351,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106632,
+        1.3000003,
+        0.1349998
+      ],
+      "tick": 12,
+      "time_s": 2.4,
+      "velocity_delta_xyz_m_s": [
+        -0.0047336,
+        -0.1786373,
+        1e-06
+      ],
+      "velocity_error_m_s": 0.17870001,
+      "velocity_left_xyz_m_s": [
+        0.00466,
+        0.1785485,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -7.36e-05,
+        -8.88e-05,
+        1e-06
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 1e-06,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 1.3e-06,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": 1.3e-06,
+      "command_tracking_error_left_xy_m_s": 0.15372118,
+      "command_tracking_error_right_xy_m_s": 0.2002803,
+      "command_vx_vy_yaw": [
+        -0.2,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.27394522,
+      "planar_velocity_error_m_s": 0.12669831,
+      "position_delta_xyz_m": [
+        -0.1997201,
+        -0.1875043,
+        -0.0250002
+      ],
+      "position_error_m": 0.27508361,
+      "position_left_xyz_m": [
+        1.4103827,
+        1.4875045,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106626,
+        1.3000002,
+        0.1349998
+      ],
+      "tick": 13,
+      "time_s": 2.6,
+      "velocity_delta_xyz_m_s": [
+        0.0812261,
+        -0.0972357,
+        -0.0001375
+      ],
+      "velocity_error_m_s": 0.12669838,
+      "velocity_left_xyz_m_s": [
+        -0.0809458,
+        0.0972435,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        0.0002803,
+        7.8e-06,
+        -0.0001375
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 0.0001375,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 5e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": 5e-07,
+      "command_tracking_error_left_xy_m_s": 0.08972818,
+      "command_tracking_error_right_xy_m_s": 0.2002789,
+      "command_vx_vy_yaw": [
+        -0.2,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.2698812,
+      "planar_velocity_error_m_s": 0.13838092,
+      "position_delta_xyz_m": [
+        -0.1786335,
+        -0.2023016,
+        -0.0250002
+      ],
+      "position_error_m": 0.27103667,
+      "position_left_xyz_m": [
+        1.3892962,
+        1.5023018,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106627,
+        1.3000002,
+        0.1349998
+      ],
+      "tick": 14,
+      "time_s": 2.8,
+      "velocity_delta_xyz_m_s": [
+        0.1278485,
+        -0.0529532,
+        -0.0001383
+      ],
+      "velocity_error_m_s": 0.13838099,
+      "velocity_left_xyz_m_s": [
+        -0.1275696,
+        0.0529621,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        0.0002789,
+        8.9e-06,
+        -0.0001383
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 0.0001383,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 5e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": 5e-07,
+      "command_tracking_error_left_xy_m_s": 0.05517754,
+      "command_tracking_error_right_xy_m_s": 0.2002741,
+      "command_vx_vy_yaw": [
+        -0.2,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.25862635,
+      "planar_velocity_error_m_s": 0.15592676,
+      "position_delta_xyz_m": [
+        -0.1504524,
+        -0.2103608,
+        -0.0250002
+      ],
+      "position_error_m": 0.25983187,
+      "position_left_xyz_m": [
+        1.361115,
+        1.510361,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106626,
+        1.3000002,
+        0.1349998
+      ],
+      "tick": 15,
+      "time_s": 3.0,
+      "velocity_delta_xyz_m_s": [
+        0.1532366,
+        -0.0288392,
+        -0.0001388
+      ],
+      "velocity_error_m_s": 0.15592682,
+      "velocity_left_xyz_m_s": [
+        -0.1529625,
+        0.028845,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        0.0002741,
+        5.8e-06,
+        -0.0001388
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 0.0001388,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 5e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": 5e-07,
+      "command_tracking_error_left_xy_m_s": 0.03673616,
+      "command_tracking_error_right_xy_m_s": 0.2002748,
+      "command_vx_vy_yaw": [
+        -0.2,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.24523024,
+      "planar_velocity_error_m_s": 0.16780352,
+      "position_delta_xyz_m": [
+        -0.1184072,
+        -0.2147501,
+        -0.0250002
+      ],
+      "position_error_m": 0.24650128,
+      "position_left_xyz_m": [
+        1.3290698,
+        1.5147503,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106626,
+        1.3000002,
+        0.1349998
+      ],
+      "tick": 16,
+      "time_s": 3.2,
+      "velocity_delta_xyz_m_s": [
+        0.1670672,
+        -0.0157026,
+        -0.0001381
+      ],
+      "velocity_error_m_s": 0.16780358,
+      "velocity_left_xyz_m_s": [
+        -0.1667924,
+        0.0157099,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        0.0002748,
+        7.3e-06,
+        -0.0001381
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 0.0001381,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 5e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": 5e-07,
+      "command_tracking_error_left_xy_m_s": 0.02706353,
+      "command_tracking_error_right_xy_m_s": 0.2002859,
+      "command_vx_vy_yaw": [
+        -0.2,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.23291471,
+      "planar_velocity_error_m_s": 0.17482173,
+      "position_delta_xyz_m": [
+        -0.0842574,
+        -0.2171404,
+        -0.0250002
+      ],
+      "position_error_m": 0.23425258,
+      "position_left_xyz_m": [
+        1.2949201,
+        1.5171408,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106627,
+        1.3000004,
+        0.1349998
+      ],
+      "tick": 17,
+      "time_s": 3.4,
+      "velocity_delta_xyz_m_s": [
+        0.1746105,
+        -0.0085914,
+        -9.96e-05
+      ],
+      "velocity_error_m_s": 0.17482176,
+      "velocity_left_xyz_m_s": [
+        -0.1743246,
+        0.0085562,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        0.0002859,
+        -3.52e-05,
+        -9.96e-05
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 9.96e-05,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 5e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": 5e-07,
+      "command_tracking_error_left_xy_m_s": 0.02207066,
+      "command_tracking_error_right_xy_m_s": 0.2002768,
+      "command_vx_vy_yaw": [
+        -0.2,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.22386248,
+      "planar_velocity_error_m_s": 0.17876421,
+      "position_delta_xyz_m": [
+        -0.0489616,
+        -0.2184426,
+        -0.0250001
+      ],
+      "position_error_m": 0.22525411,
+      "position_left_xyz_m": [
+        1.2596243,
+        1.5184428,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106627,
+        1.3000002,
+        0.1349999
+      ],
+      "tick": 18,
+      "time_s": 3.6,
+      "velocity_delta_xyz_m_s": [
+        0.1787037,
+        -0.0046507,
+        -0.0001399
+      ],
+      "velocity_error_m_s": 0.17876426,
+      "velocity_left_xyz_m_s": [
+        -0.1784269,
+        0.00466,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        0.0002768,
+        9.3e-06,
+        -0.0001399
+      ],
+      "vertical_position_error_m": 0.0250001,
+      "vertical_velocity_error_m_s": 0.0001399,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 0.0,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -0.0,
+      "command_tracking_error_left_xy_m_s": 0.09721044,
+      "command_tracking_error_right_xy_m_s": 5.281e-05,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.22023412,
+      "planar_velocity_error_m_s": 0.09720452,
+      "position_delta_xyz_m": [
+        -0.0218103,
+        -0.2191515,
+        -0.0250001
+      ],
+      "position_error_m": 0.22164854,
+      "position_left_xyz_m": [
+        1.2324734,
+        1.5191519,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106631,
+        1.3000004,
+        0.1349999
+      ],
+      "tick": 19,
+      "time_s": 3.8,
+      "velocity_delta_xyz_m_s": [
+        0.09717,
+        -0.0025903,
+        -2.23e-05
+      ],
+      "velocity_error_m_s": 0.09720452,
+      "velocity_left_xyz_m_s": [
+        -0.0971773,
+        0.002538,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -7.3e-06,
+        -5.23e-05,
+        -2.23e-05
+      ],
+      "vertical_position_error_m": 0.0250001,
+      "vertical_velocity_error_m_s": 2.23e-05,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 0.0,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -0.0,
+      "command_tracking_error_left_xy_m_s": 0.05294405,
+      "command_tracking_error_right_xy_m_s": 6.179e-05,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.2196501,
+      "planar_velocity_error_m_s": 0.05292541,
+      "position_delta_xyz_m": [
+        -0.007023,
+        -0.2195378,
+        -0.0250002
+      ],
+      "position_error_m": 0.22106827,
+      "position_left_xyz_m": [
+        1.2176861,
+        1.5195381,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106631,
+        1.3000003,
+        0.1349998
+      ],
+      "tick": 20,
+      "time_s": 4.0,
+      "velocity_delta_xyz_m_s": [
+        0.0529058,
+        -0.0014407,
+        -7.4e-06
+      ],
+      "velocity_error_m_s": 0.05292541,
+      "velocity_left_xyz_m_s": [
+        -0.052926,
+        0.0013823,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -2.02e-05,
+        -5.84e-05,
+        -7.4e-06
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 7.4e-06,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 0.0,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -0.0,
+      "command_tracking_error_left_xy_m_s": 0.02883513,
+      "command_tracking_error_right_xy_m_s": 1.895e-05,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.21975052,
+      "planar_velocity_error_m_s": 0.02882817,
+      "position_delta_xyz_m": [
+        0.0010307,
+        -0.2197481,
+        -0.0250002
+      ],
+      "position_error_m": 0.22116804,
+      "position_left_xyz_m": [
+        1.2096325,
+        1.5197484,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106632,
+        1.3000003,
+        0.1349998
+      ],
+      "tick": 21,
+      "time_s": 4.2,
+      "velocity_delta_xyz_m_s": [
+        0.0288188,
+        -0.000735,
+        -3.01e-05
+      ],
+      "velocity_error_m_s": 0.02882819,
+      "velocity_left_xyz_m_s": [
+        -0.0288253,
+        0.0007528,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -6.5e-06,
+        1.78e-05,
+        -3.01e-05
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 3.01e-05,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 1e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -1e-07,
+      "command_tracking_error_left_xy_m_s": 0.01570455,
+      "command_tracking_error_right_xy_m_s": 5.972e-05,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.21992942,
+      "planar_velocity_error_m_s": 0.01567009,
+      "position_delta_xyz_m": [
+        0.0054169,
+        -0.2198627,
+        -0.0250002
+      ],
+      "position_error_m": 0.22134579,
+      "position_left_xyz_m": [
+        1.2052462,
+        1.519863,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106631,
+        1.3000003,
+        0.1349998
+      ],
+      "tick": 22,
+      "time_s": 4.4,
+      "velocity_delta_xyz_m_s": [
+        0.0156634,
+        -0.0004578,
+        -1.52e-05
+      ],
+      "velocity_error_m_s": 0.0156701,
+      "velocity_left_xyz_m_s": [
+        -0.0156992,
+        0.00041,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -3.58e-05,
+        -4.78e-05,
+        -1.52e-05
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 1.52e-05,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 1e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -1e-07,
+      "command_tracking_error_left_xy_m_s": 0.00855322,
+      "command_tracking_error_right_xy_m_s": 5.95e-05,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.22006359,
+      "planar_velocity_error_m_s": 0.0085185,
+      "position_delta_xyz_m": [
+        0.0078059,
+        -0.2199251,
+        -0.0250002
+      ],
+      "position_error_m": 0.2214791,
+      "position_left_xyz_m": [
+        1.2028572,
+        1.5199254,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106631,
+        1.3000003,
+        0.1349998
+      ],
+      "tick": 23,
+      "time_s": 4.6,
+      "velocity_delta_xyz_m_s": [
+        0.0085142,
+        -0.0002706,
+        -1.69e-05
+      ],
+      "velocity_error_m_s": 0.00851852,
+      "velocity_left_xyz_m_s": [
+        -0.0085503,
+        0.0002233,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -3.61e-05,
+        -4.73e-05,
+        -1.69e-05
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 1.69e-05,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    },
+    {
+      "angular_z_error_rad_s": 1e-07,
+      "angular_z_left_rad_s": 0.0,
+      "angular_z_right_rad_s": -1e-07,
+      "command_tracking_error_left_xy_m_s": 0.00465839,
+      "command_tracking_error_right_xy_m_s": 5.997e-05,
+      "command_vx_vy_yaw": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "contact_status": "missing_right",
+      "contacts_left": 0,
+      "contacts_right": null,
+      "planar_position_error_m": 0.22014755,
+      "planar_velocity_error_m_s": 0.00462288,
+      "position_delta_xyz_m": [
+        0.009107,
+        -0.2199591,
+        -0.0250002
+      ],
+      "position_error_m": 0.22156253,
+      "position_left_xyz_m": [
+        1.2015561,
+        1.5199594,
+        0.16
+      ],
+      "position_right_xyz_m": [
+        1.2106631,
+        1.3000003,
+        0.1349998
+      ],
+      "tick": 24,
+      "time_s": 4.8,
+      "velocity_delta_xyz_m_s": [
+        0.0046198,
+        -0.0001688,
+        -1.78e-05
+      ],
+      "velocity_error_m_s": 0.00462292,
+      "velocity_left_xyz_m_s": [
+        -0.0046568,
+        0.0001216,
+        0.0
+      ],
+      "velocity_right_xyz_m_s": [
+        -3.7e-05,
+        -4.72e-05,
+        -1.78e-05
+      ],
+      "vertical_position_error_m": 0.0250002,
+      "vertical_velocity_error_m_s": 1.78e-05,
+      "yaw_error_rad": 8e-07,
+      "yaw_left_rad": 0.0,
+      "yaw_right_rad": -8e-07
+    }
+  ]
+}
