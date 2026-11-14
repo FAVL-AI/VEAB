@@ -1,0 +1,45 @@
+{
+  "schema_version": "veab-assets/1",
+  "scene_id": "hospital-inspection",
+  "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+  "source_scenario_sha256": "38ab1b41f02b607160d9ebc0a2a0760ace6dfb2f098e60ab1c8021055df19eaf",
+  "engine_readiness": {
+    "mjcf": "exported; native MuJoCo loading and dynamic calibration required",
+    "sdf": "exported; Gazebo plugin, joints and native dynamics require verification",
+    "urdf": "static visual/collision descriptor, not an actuated robot description",
+    "usda": "visual geometry; Isaac/Unreal physics authoring and import checks outstanding",
+    "glb": "3D visual preview only"
+  },
+  "files": {
+    "mjcf": {
+      "name": "hospital-inspection.xml",
+      "sha256": "f901d48d3b5e1d505551ce7ba7bf15d6678482668ea061a87c3af61d0fe98916",
+      "bytes": 2715
+    },
+    "sdf": {
+      "name": "hospital-inspection.sdf",
+      "sha256": "fb63016d327f58212f167111d41ac593f9b1a5b3839944890326a6c38cffc112",
+      "bytes": 7893
+    },
+    "urdf": {
+      "name": "hospital-inspection.urdf",
+      "sha256": "81c8c87417b0f0fd57d4487f558cc92f7fe1944058bc9c73e62edc77151d0f8e",
+      "bytes": 7940
+    },
+    "usda": {
+      "name": "hospital-inspection.usda",
+      "sha256": "f3838fc96a8379909392307a15b6d0f55e66f0bbd811f64249604111608175ea",
+      "bytes": 4897
+    },
+    "glb": {
+      "name": "hospital-inspection.glb",
+      "sha256": "5d3da4de45a33ada6c5c4a9687517f29736c87b8f6d848ec426ae020c27f3604",
+      "bytes": 14400
+    },
+    "scene": {
+      "name": "hospital-inspection.scene.json",
+      "sha256": "afdc4970d4714856b6d2ac920bb0e5f3d1dd25c30d22502c237412618451ec4f",
+      "bytes": 5481
+    }
+  }
+}

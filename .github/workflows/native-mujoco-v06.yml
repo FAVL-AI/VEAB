@@ -1,0 +1,33 @@
+name: VEAP v0.6 MuJoCo native physics candidate
+on:
+  pull_request:
+    paths:
+      - 'veap/simulation/**'
+      - 'tests/test_native_mujoco_v06.py'
+      - '.github/workflows/native-mujoco-v06.yml'
+  workflow_dispatch:
+jobs:
+  native-mujoco:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install project and real MuJoCo wheel
+        run: python -m pip install -e '.[test]' trimesh numpy mujoco
+      - name: Record exact simulator environment
+        run: |
+          python -c 'import mujoco; print("MuJoCo:",mujoco.__version__)' | tee mujoco-version.txt
+          python -m pip freeze > mujoco-dependency-freeze.txt
+      - name: Execute native physics test
+        run: python -m pytest -v tests/test_native_mujoco_v06.py
+      - name: Save environment metadata (not a physics-certification artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mujoco-native-environment
+          path: |
+            mujoco-version.txt
+            mujoco-dependency-freeze.txt

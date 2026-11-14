@@ -1,0 +1,33 @@
+{
+  "release":"VEAB Assurance Studio 0.5.0-dev",
+  "date":"2026-11-12",
+  "source_baseline":"Available VEAB v0.4 source snapshot; NOT the user's uninspected newer 105-test native repository",
+  "test_suite":{
+    "legacy_tests":55,
+    "added_studio_tests":34,
+    "combined_tests":89,
+    "failed":0,
+    "method":"python -m pytest -q",
+    "result":"89 passed in 33.39 seconds"
+  },
+  "browser_ui_smoke":{
+    "result":"PASS",
+    "browser":"Chromium",
+    "transport":"FastAPI TestClient in-memory bridge; local HTTP is blocked by browser policy in this container",
+    "workflow":["personal token sign-in","project creation","queued local simulation","agent-independent verifier","isometric trajectory","engine status"],
+    "javascript_errors":0,
+    "screenshots":["Studio_Dashboard_Validated.png","Engine_Integration_Status.png"]
+  },
+  "engine_validation":{
+    "native_isaac_lab":"NOT_EXECUTED",
+    "native_mujoco":"NOT_EXECUTED",
+    "native_gazebo":"NOT_EXECUTED",
+    "native_ros2":"NOT_EXECUTED",
+    "native_unreal":"NOT_EXECUTED",
+    "interchange_assets":"PREEXISTING_STATIC_EXPORTS"
+  },
+  "production_decision":"BLOCKED",
+  "blocked_on":["external identity provider validation","tenant-scale security test","durable distributed orchestration",
+                "independent evidence custody","backup/restore drill","native robot/simulator trials","security audit","customer acceptance"],
+  "scientific_scope":"Toy-world mechanism demonstration and software-control tests, not confirmatory validation"
+}

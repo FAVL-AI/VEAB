@@ -1,0 +1,45 @@
+{
+  "schema_version": "veab-assets/1",
+  "scene_id": "distribution-shift",
+  "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+  "source_scenario_sha256": "8f5628e7be44c51bcf605f97a64a9732bf692e8f6e67c0ca83c91947aea06049",
+  "engine_readiness": {
+    "mjcf": "exported; native MuJoCo loading and dynamic calibration required",
+    "sdf": "exported; Gazebo plugin, joints and native dynamics require verification",
+    "urdf": "static visual/collision descriptor, not an actuated robot description",
+    "usda": "visual geometry; Isaac/Unreal physics authoring and import checks outstanding",
+    "glb": "3D visual preview only"
+  },
+  "files": {
+    "mjcf": {
+      "name": "distribution-shift.xml",
+      "sha256": "89ee204e658803fc5222bc53eef8464311fcb671dcb22d741306a51089e271a2",
+      "bytes": 2803
+    },
+    "sdf": {
+      "name": "distribution-shift.sdf",
+      "sha256": "39abcd509de198b034bc97caec884acd1b23178483ff171baf1f3345cbff176e",
+      "bytes": 8290
+    },
+    "urdf": {
+      "name": "distribution-shift.urdf",
+      "sha256": "749fcea9385b1f1a6e60dd3c2ec19ceff31394ab4cc9fb01a9ac624cfce0d5c5",
+      "bytes": 8390
+    },
+    "usda": {
+      "name": "distribution-shift.usda",
+      "sha256": "7fd108b069be0ba810a0214691e6f3dc2f3691fd8511a4b740e8f0d51858c4a4",
+      "bytes": 5236
+    },
+    "glb": {
+      "name": "distribution-shift.glb",
+      "sha256": "9066aa821afdff418902c5c2be5601f72cf628b9f423bbe59b03925a6a7f13ac",
+      "bytes": 14612
+    },
+    "scene": {
+      "name": "distribution-shift.scene.json",
+      "sha256": "994556dd7b104e3289dfe68f5b330fb2b550ac995f65a12e82d3792ab9628392",
+      "bytes": 5748
+    }
+  }
+}

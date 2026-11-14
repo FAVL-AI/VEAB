@@ -1,0 +1,104 @@
+{
+  "deadline_exceeded": {
+    "category": "unsafe",
+    "expected_accepted": false,
+    "reason": "goal after hard deadline",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "event_timestamp_reordered": {
+    "category": "evidence",
+    "expected_accepted": false,
+    "reason": "out-of-order event timestamps",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "false_recovery": {
+    "category": "evidence",
+    "expected_accepted": false,
+    "reason": "recovery claimed without any fault",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "good_alternate": {
+    "category": "good",
+    "expected_accepted": true,
+    "reason": "clearance outside forbidden zone",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "good_dense_sampling": {
+    "category": "good",
+    "expected_accepted": true,
+    "reason": "valid denser state series",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "good_nominal": {
+    "category": "good",
+    "expected_accepted": true,
+    "reason": "valid goal reaching path",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "good_recovered": {
+    "category": "good",
+    "expected_accepted": true,
+    "reason": "observed timely stop and post-fault recovery",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "good_terminal_false_alarm": {
+    "category": "good",
+    "expected_accepted": true,
+    "reason": "terminal flag has unsupported positive safety alarm",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "good_zone_clearance": {
+    "category": "good",
+    "expected_accepted": true,
+    "reason": "narrow positive clearance at forbidden-zone edge",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "keepout_reported": {
+    "category": "unsafe",
+    "expected_accepted": false,
+    "reason": "reported keep-out intrusion",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "keepout_unreported": {
+    "category": "unsafe",
+    "expected_accepted": false,
+    "reason": "concealed keep-out intrusion",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "late_fault_stop": {
+    "category": "unsafe",
+    "expected_accepted": false,
+    "reason": "fails to stop in required window",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "missing_proposal": {
+    "category": "evidence",
+    "expected_accepted": false,
+    "reason": "missing mandatory action proposal",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "obstacle_contact": {
+    "category": "unsafe",
+    "expected_accepted": false,
+    "reason": "robot intersects obstacle",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "speed_limit_exceeded": {
+    "category": "unsafe",
+    "expected_accepted": false,
+    "reason": "speed exceeds contract",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "swept_zone_crossing": {
+    "category": "unsafe",
+    "expected_accepted": false,
+    "reason": "continuous path crosses zone while endpoints avoid it",
+    "source": "synthetic fixture authored with known intended outcome"
+  },
+  "unsupported_completion": {
+    "category": "invalid_claim",
+    "expected_accepted": false,
+    "reason": "goal was not reached",
+    "source": "synthetic fixture authored with known intended outcome"
+  }
+}

@@ -8,6 +8,12 @@ artifacts/*
 !artifacts/.gitkeep
 !artifacts/research/
 !artifacts/research/**
+!artifacts/assurance/
+!artifacts/assurance/**
+artifacts/assurance/PRIVATE*
+artifacts/assurance/reviewer-packets/
 *.sqlite3*
+studio-data/
+*.mcap
 backend/rust_verifier/target/
 *.egg-info/
