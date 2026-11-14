@@ -10,8 +10,10 @@ import pytest
 
 from veap.spec import canonical, digest, load_scenario
 from veap.simulation.locked_replay import (
+    DIAGNOSTIC_SCHEMA,
     TAPE_SCHEMA,
     create_tape,
+    diagnose_paired_replay,
     paired_physics_report,
     standard_tape,
     validate_execution,
@@ -241,3 +243,61 @@ def test_retained_workstation_mujoco_and_isaaclab_traces_match_committed_tape():
     assert paired["calibration_status"] == "unmeasured_research_surrogate"
     assert paired["eligible_for_physics_equivalence_claim"] is False
     assert paired["independently_attested_ground_truth"] is False
+
+
+def test_per_tick_diagnostic_localizes_pilot_divergence_and_cli(tmp_path):
+    from scripts.veap_v06 import main as veap_v06_main
+
+    s = scenario()
+    tape = json.loads((ROOT / "artifacts" / "research" / "v06-control-tape.json").read_text(encoding="utf-8"))
+    mj_bundle = json.loads((ROOT / "artifacts" / "research" / "v06-mujoco-locked-replay.json").read_text(encoding="utf-8"))
+    is_bundle = json.loads((ROOT / "artifacts" / "research" / "v06-isaaclab-locked-replay.json").read_text(encoding="utf-8"))
+    diag_saved = json.loads((ROOT / "artifacts" / "research" / "v06-pilot-per-tick-diagnostic.json").read_text(encoding="utf-8"))
+
+    diag = diagnose_paired_replay(
+        s,
+        tape,
+        mj_bundle["trace"],
+        is_bundle["trace"],
+        repeat_left=mj_bundle["trace"],
+        repeat_right=is_bundle["trace"],
+    )
+    assert diag["schema_version"] == DIAGNOSTIC_SCHEMA
+    assert diag["tape_sha256"] == CANONICAL_TAPE_SHA256
+    assert len(diag["ticks"]) == 25
+    loc = diag["localization"]
+    assert loc["initial_pose_diverged_at_tick_0"] is True
+    assert loc["tick_0_position_error_m"] == pytest.approx(0.0028649, abs=1e-7)
+    assert loc["tick_0_planar_error_m"] == 0.0
+    assert loc["tick_0_vertical_delta_m"] == pytest.approx(0.0028649, abs=1e-7)
+    assert loc["tick_0_velocity_error_m_s"] == pytest.approx(0.1903532, abs=1e-7)
+    assert loc["first_position_divergence_tick"] == 0
+    assert loc["first_planar_divergence_tick"] == 2
+    assert loc["first_velocity_divergence_tick"] == 0
+    assert loc["first_planar_velocity_divergence_tick"] == 1
+    assert loc["first_target_exceedance_tick"] == 5
+    assert loc["peak_position_error_tick"] == 13
+    assert loc["peak_position_error_m"] == pytest.approx(0.27508361, abs=1e-7)
+    assert loc["commanded_motion_ticks"] == 18
+    assert loc["stalled_planar_motion_ticks_left"] == []
+    assert loc["stalled_planar_motion_ticks_right"] == list(range(2, 19))
+    assert loc["contact_observation_counts"]["missing_right"] == 25
+
+    rep = diag["repeatability"]
+    assert rep["left"]["repeats_deterministically"] is True
+    assert rep["right"]["repeats_deterministically"] is True
+    assert rep["divergence_repeats_identically"] is True
+    assert diag == diag_saved
+
+    out_file = tmp_path / "cli-diagnostic.json"
+    rc = veap_v06_main([
+        "diagnose",
+        "--tape", str(ROOT / "artifacts/research/v06-control-tape.json"),
+        "--left", str(ROOT / "artifacts/research/v06-mujoco-locked-replay.json"),
+        "--right", str(ROOT / "artifacts/research/v06-isaaclab-locked-replay.json"),
+        "--repeat-left", str(ROOT / "artifacts/research/v06-mujoco-locked-replay.json"),
+        "--repeat-right", str(ROOT / "artifacts/research/v06-isaaclab-locked-replay.json"),
+        "--out", str(out_file),
+    ])
+    assert rc == 0
+    assert json.loads(out_file.read_text(encoding="utf-8")) == diag_saved
