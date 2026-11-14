@@ -34,7 +34,7 @@ jobs:
           rm -rf backend/rust_verifier/target
       - name: Install core, R1.1/R1.3 and Studio in software-only CI
         run: |
-          python -m pip install -e '.[test]' -e './veap_evidence_r1_1' -e './veap_studio_r03[test]'
+          python -m pip install -e '.[test]' -e './veap_evidence_r1_1[custody]' -e './veap_studio_r03[test]'
       - name: Capture software provenance
         run: |
           git rev-parse HEAD > "$RUNNER_TEMP/veap-commit.txt"
