@@ -238,7 +238,7 @@ def test_production_flag_fails_closed(tmp_path,monkeypatch):
 
 
 def test_oidc_unconfigured_fails_closed(tmp_path,monkeypatch):
-    for key in ('VEAB_OIDC_ISSUER','VEAB_OIDC_AUDIENCE','VEAB_OIDC_JWKS_URL'):
+    for key in ('VEAP_OIDC_ISSUER','VEAP_OIDC_AUDIENCE','VEAP_OIDC_JWKS_URL','VEAB_OIDC_ISSUER','VEAB_OIDC_AUDIENCE','VEAB_OIDC_JWKS_URL'):
         monkeypatch.delenv(key,raising=False)
     with pytest.raises(RuntimeError,match='OIDC mode requires'):
         create_app(data_dir=tmp_path,mode='oidc')

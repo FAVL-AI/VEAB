@@ -161,14 +161,14 @@ class StudioDB:
         return tenant_id, principal_id
 
     def issue_dev_token(self, principal_id: str, *, valid_hours: int = 24) -> str:
-        token = 'veab_' + secrets.token_urlsafe(40)
+        token = 'veap_' + secrets.token_urlsafe(40)
         with self.conn(write=True) as c:
             c.execute('INSERT INTO tokens VALUES (?,?,?,?,0)',
                       (hashlib.sha256(token.encode()).hexdigest(), principal_id, time.time(), time.time()+valid_hours*3600))
         return token
 
     def principal_for_dev_token(self, token: str) -> dict | None:
-        if not token.startswith('veab_') or len(token) > 128:
+        if not token.startswith(('veap_', 'veab_')) or len(token) > 128:
             return None
         digest = hashlib.sha256(token.encode()).hexdigest()
         return self.row('''SELECT p.id,p.email,p.name FROM tokens t JOIN principals p ON p.id=t.principal_id

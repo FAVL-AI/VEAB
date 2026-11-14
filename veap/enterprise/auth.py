@@ -20,18 +20,27 @@ class Identity:
     name: str
 
 
+def _env(primary: str, legacy: str, default: str | None = None) -> str | None:
+    return os.getenv(primary) or os.getenv(legacy, default)
+
+
 def check_deployment_config(mode: str, *, docs_only: bool = False) -> None:
     if mode not in ('dev-token', 'oidc'):
-        raise RuntimeError('VEAB_STUDIO_AUTH_MODE must be dev-token or oidc')
+        raise RuntimeError('VEAP_STUDIO_AUTH_MODE must be dev-token or oidc')
     if mode == 'oidc':
-        missing=[k for k in ('VEAB_OIDC_ISSUER','VEAB_OIDC_AUDIENCE','VEAB_OIDC_JWKS_URL') if not os.getenv(k)]
+        pairs = (
+            ('VEAP_OIDC_ISSUER', 'VEAB_OIDC_ISSUER'),
+            ('VEAP_OIDC_AUDIENCE', 'VEAB_OIDC_AUDIENCE'),
+            ('VEAP_OIDC_JWKS_URL', 'VEAB_OIDC_JWKS_URL'),
+        )
+        missing = [primary for primary, legacy in pairs if not _env(primary, legacy)]
         if missing:
-            raise RuntimeError('OIDC mode requires '+', '.join(missing))
+            raise RuntimeError('OIDC mode requires ' + ', '.join(missing))
         try:
             import jwt  # noqa
         except ImportError as exc:
             raise RuntimeError('Install the [enterprise] dependencies for OIDC validation') from exc
-    if mode == 'dev-token' and os.getenv('VEAB_STUDIO_ALLOW_REMOTE') == '1':
+    if mode == 'dev-token' and _env('VEAP_STUDIO_ALLOW_REMOTE', 'VEAB_STUDIO_ALLOW_REMOTE') == '1':
         raise RuntimeError('Developer tokens must not be exposed to remote networks')
 
 
@@ -56,10 +65,12 @@ def authenticate(request: Request) -> Identity:
     else:
         try:
             import jwt
-            issuer=os.environ['VEAB_OIDC_ISSUER']
-            key=jwks_client(os.environ['VEAB_OIDC_JWKS_URL']).get_signing_key_from_jwt(token).key
+            issuer=_env('VEAP_OIDC_ISSUER', 'VEAB_OIDC_ISSUER') or ''
+            jwks_url=_env('VEAP_OIDC_JWKS_URL', 'VEAB_OIDC_JWKS_URL') or ''
+            audience=_env('VEAP_OIDC_AUDIENCE', 'VEAB_OIDC_AUDIENCE') or ''
+            key=jwks_client(jwks_url).get_signing_key_from_jwt(token).key
             claims=jwt.decode(token,key,algorithms=['RS256'],issuer=issuer,
-                              audience=os.environ['VEAB_OIDC_AUDIENCE'],leeway=30,
+                              audience=audience,leeway=30,
                               options={'require':['iss','sub','aud','exp','iat']})
             result=db.principal_for_oidc(claims['iss'],claims['sub'])
         except Exception:

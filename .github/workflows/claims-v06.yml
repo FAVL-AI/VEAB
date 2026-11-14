@@ -1,4 +1,4 @@
-name: VEAB scoped evidence and claim audit
+name: VEAP scoped evidence and claim audit
 on:
   pull_request:
   push:

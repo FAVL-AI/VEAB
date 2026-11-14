@@ -1,4 +1,4 @@
-name: VEAB v0.6 MuJoCo native physics candidate
+name: VEAP v0.6 MuJoCo native physics candidate
 on:
   pull_request:
     paths:

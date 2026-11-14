@@ -80,7 +80,7 @@ class Worker:
             scenario=load_scenario(scenario_id)
             # This invokes the EXISTING local deterministic simulator only.
             # No ROS 2, Isaac Lab, MuJoCo or physical robot commands are issued.
-            key=os.getenv('VEAB_STUDIO_BUNDLE_HMAC_KEY')
+            key=os.getenv('VEAP_STUDIO_BUNDLE_HMAC_KEY') or os.getenv('VEAB_STUDIO_BUNDLE_HMAC_KEY')
             bundle=run_episode(scenario,policy,seed,shield,attestation_key=key)
             report=verify_bundle(bundle,key,require_attestation=bool(key))
             data=canonical({**bundle,'verification':report}).encode()
@@ -160,11 +160,11 @@ def report_html(report:dict)->str:
 
 
 def create_app(*, data_dir: str | Path | None = None, mode: str | None = None) -> FastAPI:
-    auth_mode=mode or os.getenv('VEAB_STUDIO_AUTH_MODE','dev-token')
+    auth_mode=mode or os.getenv('VEAP_STUDIO_AUTH_MODE') or os.getenv('VEAB_STUDIO_AUTH_MODE','dev-token')
     check_deployment_config(auth_mode)
-    if os.getenv('VEAB_STUDIO_RELEASE','pilot') != 'pilot':
+    if (os.getenv('VEAP_STUDIO_RELEASE') or os.getenv('VEAB_STUDIO_RELEASE','pilot')) != 'pilot':
         raise RuntimeError('This release is pilot-only; production qualification gates are incomplete')
-    root=data_dir or os.getenv('VEAB_STUDIO_DATA_DIR',str(BASE/'studio-data'))
+    root=data_dir or os.getenv('VEAP_STUDIO_DATA_DIR') or os.getenv('VEAB_STUDIO_DATA_DIR',str(BASE/'studio-data'))
     db=StudioDB(root)
 
     @asynccontextmanager

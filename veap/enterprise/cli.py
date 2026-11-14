@@ -25,7 +25,7 @@ def main(argv=None):
         p.add_argument('--oidc-subject',default=None)
         p.add_argument('--oidc-issuer',default=None)
     args=parser.parse_args(argv)
-    root=os.getenv('VEAB_STUDIO_DATA_DIR','./studio-data')
+    root=os.getenv('VEAP_STUDIO_DATA_DIR') or os.getenv('VEAB_STUDIO_DATA_DIR','./studio-data')
     repo=StudioDB(root)
     if args.action=='bootstrap':
         tenant,actor=repo.bootstrap(args.org,args.email,args.name,oidc_issuer=args.oidc_issuer,

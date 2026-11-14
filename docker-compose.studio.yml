@@ -5,9 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile.studio
     environment:
-      VEAB_STUDIO_AUTH_MODE: dev-token
-      VEAB_STUDIO_RELEASE: pilot
-      VEAB_STUDIO_DATA_DIR: /app/studio-data
+      VEAP_STUDIO_AUTH_MODE: dev-token
+      VEAP_STUDIO_RELEASE: pilot
+      VEAP_STUDIO_DATA_DIR: /app/studio-data
     volumes:
       - ./studio-data:/app/studio-data
     ports:

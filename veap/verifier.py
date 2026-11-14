@@ -170,7 +170,7 @@ def verify_bundle(bundle: dict[str,Any], attestation_key: str | None = None, *, 
     if signature_status is False:
         errors.append("invalid HMAC attestation")
     if require_attestation and not attestation_key:
-        errors.append("strict verification requires external VEAB_ATTESTATION_KEY")
+        errors.append("strict verification requires external VEAP_ATTESTATION_KEY")
     elif require_attestation and signature_status is not True:
         errors.append("missing or unverifiable mandatory HMAC attestation")
     terminal_claim = events[-1].get("payload",{}).get("claimed")

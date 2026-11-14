@@ -8,8 +8,8 @@ COPY web ./web
 COPY scenarios ./scenarios
 COPY assets/generated ./assets/generated
 RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -e . \
-  && useradd --system --create-home --home-dir /home/veab veab \
-  && mkdir -p /app/studio-data && chown -R veab:veab /app/studio-data
-USER veab
+  && useradd --system --create-home --home-dir /home/veap veap \
+  && mkdir -p /app/studio-data && chown -R veap:veap /app/studio-data
+USER veap
 EXPOSE 8010
 CMD ["uvicorn","veap.enterprise.api:app","--host","0.0.0.0","--port","8010","--workers","1"]
