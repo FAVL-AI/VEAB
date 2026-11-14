@@ -60,8 +60,43 @@ def main(argv=None):
     diag.add_argument("--vel-threshold", type=float, default=0.01)
     diag.add_argument("--rmse-target", type=float, default=0.1)
     diag.add_argument("--out", default="artifacts/v06/pilot-per-tick-diagnostic.json")
+    freeze = sub.add_parser("freeze-manifest", help="Freeze Stage 3 v0.6 evaluation manifest (criteria, assets, held-out tapes)")
+    freeze.add_argument("--export-dir", default="artifacts/research/v06-assets")
+    freeze.add_argument("--out", default="artifacts/research/v06-evaluation-manifest.json")
+    gate = sub.add_parser("evaluate-gate", help="Evaluate 40+ native traces against a frozen v0.6 evaluation manifest")
+    gate.add_argument("--manifest", required=True)
+    gate.add_argument("--traces-dir", required=True)
+    gate.add_argument("--out", default="artifacts/research/v06-release-gate-report.json")
     args = parser.parse_args(argv)
     try:
+        if args.command == "freeze-manifest":
+            from veap.simulation.v06_gate import build_v06_evaluation_manifest
+            result = build_v06_evaluation_manifest(export_dir=args.export_dir)
+            save(args.out, result)
+            print(json.dumps({
+                "result": "v0.6 evaluation manifest frozen",
+                "manifest_sha256": result["manifest_sha256"],
+                "held_out_summary": result["held_out_summary"],
+                "out": args.out,
+            }, indent=2))
+            return 0
+        if args.command == "evaluate-gate":
+            from veap.simulation.v06_gate import evaluate_v06_release_gate
+            manifest = load(args.manifest)
+            traces_root = Path(args.traces_dir)
+            paired_runs = []
+            for entry in manifest["tapes"]:
+                tid = entry["tape_id"]
+                mj_path = traces_root / "mujoco" / f"{tid}.json"
+                il_path = traces_root / "isaaclab" / f"{tid}.json"
+                if not mj_path.is_file() or not il_path.is_file():
+                    paired_runs.append({"tape_id": tid, "error": f"missing trace: mj={mj_path.is_file()}, il={il_path.is_file()}"})
+                else:
+                    paired_runs.append({"tape_id": tid, "mujoco": load(mj_path), "isaaclab": load(il_path)})
+            report = evaluate_v06_release_gate(manifest, paired_runs)
+            save(args.out, report)
+            print(json.dumps({"gate_passed": report["gate_passed"], "summary": report["summary"], "out": args.out}, indent=2))
+            return 0
         if args.command == "tape":
             s = load_scenario(args.scenario)
             result = standard_tape(s, seed=args.seed, steps=args.steps)
