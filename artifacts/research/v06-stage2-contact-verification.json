@@ -1,0 +1,33 @@
+{
+  "contact_observed_example": {
+    "isaaclab_contacts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "tape_id": "nav-07"
+  },
+  "missing_observation_example": {
+    "contact_sensor_enabled": false,
+    "isaaclab_contacts_unique_is_null": true,
+    "sample_count": 25,
+    "scenario_id": "warehouse-transfer"
+  },
+  "schema_version": "veap-v06-stage2-contact-verification/1",
+  "zero_contact_observed_example": {
+    "isaaclab_contacts_unique": [
+      0
+    ],
+    "tape_id": "nav-01"
+  }
+}

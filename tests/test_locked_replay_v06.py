@@ -301,3 +301,74 @@ def test_per_tick_diagnostic_localizes_pilot_divergence_and_cli(tmp_path):
     ])
     assert rc == 0
     assert json.loads(out_file.read_text(encoding="utf-8")) == diag_saved
+
+
+def test_frozen_v06_evaluation_manifest_and_pilot_preservation():
+    from veap.simulation.v06_gate import EVALUATION_MANIFEST_SCHEMA, build_v06_evaluation_manifest
+
+    manifest_saved = json.loads((ROOT / "artifacts" / "research" / "v06-evaluation-manifest.json").read_text(encoding="utf-8"))
+    assert manifest_saved["schema_version"] == EVALUATION_MANIFEST_SCHEMA
+    assert manifest_saved["held_out_summary"]["total_tapes"] == 20
+    assert manifest_saved["held_out_summary"]["expected_native_traces"] == 40
+    assert manifest_saved["held_out_summary"]["split"] == "test"
+    assert set(manifest_saved["held_out_summary"]["families"]) >= {"navigation", "inspection"}
+    assert manifest_saved["pilot_baseline"]["position_rmse_m"] == pytest.approx(0.20182817, abs=1e-8)
+    assert manifest_saved["criteria"]["max_position_rmse_m"] == 0.100
+
+    rebuilt = build_v06_evaluation_manifest()
+    assert rebuilt["manifest_sha256"] != ""
+    assert [t["tape_sha256"] for t in rebuilt["tapes"]] == [t["tape_sha256"] for t in manifest_saved["tapes"]]
+
+
+def test_stage2_contact_verification_distinguishes_zero_contact_and_missing():
+    s2 = json.loads((ROOT / "artifacts" / "research" / "v06-stage2-contact-verification.json").read_text(encoding="utf-8"))
+    assert s2["zero_contact_observed_example"]["isaaclab_contacts_unique"] == [0]
+    assert any(c > 0 for c in s2["contact_observed_example"]["isaaclab_contacts"])
+    assert any(c == 0 for c in s2["contact_observed_example"]["isaaclab_contacts"])
+    assert s2["missing_observation_example"]["contact_sensor_enabled"] is False
+    assert s2["missing_observation_example"]["isaaclab_contacts_unique_is_null"] is True
+
+
+def test_heldout_40_trace_release_gate_reproducibility():
+    from veap.simulation.v06_gate import RELEASE_GATE_REPORT_SCHEMA, evaluate_v06_release_gate
+
+    manifest = json.loads((ROOT / "artifacts" / "research" / "v06-evaluation-manifest.json").read_text(encoding="utf-8"))
+    saved_report = json.loads((ROOT / "artifacts" / "research" / "v06-release-gate-report.json").read_text(encoding="utf-8"))
+    traces_root = ROOT / "artifacts" / "research" / "v06-heldout-traces"
+
+    paired_runs = []
+    for entry in manifest["tapes"]:
+        tid = entry["tape_id"]
+        paired_runs.append({
+            "tape_id": tid,
+            "mujoco": json.loads((traces_root / "mujoco" / f"{tid}.json").read_text(encoding="utf-8")),
+            "isaaclab": json.loads((traces_root / "isaaclab" / f"{tid}.json").read_text(encoding="utf-8")),
+        })
+
+    report = evaluate_v06_release_gate(
+        manifest,
+        paired_runs,
+        reviewer_assessment=saved_report.get("independent_reviewer_assessment"),
+    )
+    assert report["schema_version"] == RELEASE_GATE_REPORT_SCHEMA
+    assert report["summary"]["total_paired_runs"] == 20
+    assert report["summary"]["total_native_traces"] == 40
+    assert report["summary"]["missing_contact_observations_left"] == 0
+    assert report["summary"]["missing_contact_observations_right"] == 0
+    assert report["summary"]["max_control_timegrid_error_s"] == 0.0
+    assert report["summary"]["max_position_rmse_m"] < 0.100
+    assert [r["tape_id"] for r in report["failed_runs"]] == ["insp-07", "insp-08"]
+    assert report["eligible_for_physics_equivalence_claim"] is False
+    assert report["independently_attested_ground_truth"] is False
+    assert report == saved_report
+
+
+def test_isaaclab_native_runner_never_falls_back_to_toy_world(tmp_path):
+    import importlib.util
+    from veap.simulation.isaaclab_native_runner import run_isaaclab_tape
+
+    if importlib.util.find_spec("isaaclab") is None:
+        with pytest.raises(RuntimeError, match="Native Isaac Lab is required"):
+            run_isaaclab_tape(scenario(), standard_tape(scenario(), steps=4), tmp_path)
+    else:
+        pytest.skip("This is an offline missing-dependency control, not the native Isaac Lab suite")

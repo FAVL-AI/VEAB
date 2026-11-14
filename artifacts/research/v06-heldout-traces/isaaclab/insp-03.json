@@ -1,0 +1,785 @@
+{
+  "asset_manifest_files": {
+    "glb": {
+      "bytes": 14400,
+      "name": "hospital-inspection.glb",
+      "sha256": "5d3da4de45a33ada6c5c4a9687517f29736c87b8f6d848ec426ae020c27f3604"
+    },
+    "mjcf": {
+      "bytes": 2715,
+      "name": "hospital-inspection.xml",
+      "sha256": "f901d48d3b5e1d505551ce7ba7bf15d6678482668ea061a87c3af61d0fe98916"
+    },
+    "scene": {
+      "bytes": 5481,
+      "name": "hospital-inspection.scene.json",
+      "sha256": "afdc4970d4714856b6d2ac920bb0e5f3d1dd25c30d22502c237412618451ec4f"
+    },
+    "sdf": {
+      "bytes": 7893,
+      "name": "hospital-inspection.sdf",
+      "sha256": "fb63016d327f58212f167111d41ac593f9b1a5b3839944890326a6c38cffc112"
+    },
+    "urdf": {
+      "bytes": 7940,
+      "name": "hospital-inspection.urdf",
+      "sha256": "81c8c87417b0f0fd57d4487f558cc92f7fe1944058bc9c73e62edc77151d0f8e"
+    },
+    "usda": {
+      "bytes": 4897,
+      "name": "hospital-inspection.usda",
+      "sha256": "f3838fc96a8379909392307a15b6d0f55e66f0bbd811f64249604111608175ea"
+    }
+  },
+  "contact_sensor_enabled": true,
+  "control_contract": {
+    "engine": "isaaclab",
+    "max_timestamp_error_s": 0.0,
+    "physical_source_authenticity": "not_established",
+    "samples": 21,
+    "tape_matches": true,
+    "trace_integrity": true
+  },
+  "execution": "native_isaaclab",
+  "native_execution_asserted_by_veab": false,
+  "parameter_alignment": {
+    "angular_damping_n_m_s_rad_equivalent": 0.3,
+    "angular_damping_physx_s_inv": 1.54958678,
+    "control_dt_s": 0.2,
+    "controller_id": "planar-force-pd/1",
+    "coordinate_frame": "ENU_z_up_m",
+    "effort_limits": [
+      50.0,
+      50.0,
+      8.0
+    ],
+    "gains_kp": [
+      22.0,
+      22.0,
+      4.0
+    ],
+    "gravity_mode": "disabled_planar_surrogate_at_z_0.16m",
+    "inertia_z_kg_m2": 0.1936,
+    "linear_damping_n_s_m_equivalent": 2.0,
+    "linear_damping_physx_s_inv": 0.25,
+    "mass_kg": 8.0,
+    "physics_dt_s": 0.01,
+    "quaternion_input_order": "WXYZ",
+    "quaternion_output_order": "XYZW",
+    "substeps": 20
+  },
+  "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+  "schema_version": "veab-isaaclab-observation-bridge/1",
+  "scope": "Observer of externally stepped Isaac Lab environment; no physics, sensing or provenance certification",
+  "source_status": "externally_supplied_isaaclab_state_unattested",
+  "surrogate_calibrated": false,
+  "tape_sha256": "5882d6baf38d9f101175af096374d95f2e9990cc2e9afb1b841d56e15795e8d9",
+  "trace": {
+    "manifest": {
+      "claimed_terminal": "unknown",
+      "engine": "isaaclab",
+      "engine_version": "isaacsim-5.1.0.0/isaaclab-0.54.3",
+      "frame": "ENU_z_up_m",
+      "manifest_sha256": "76df46eda12ece2ac8c1b00530db6d3a387902d1edfb373fd6022e8b49499b74",
+      "note": "Not independently attested ground truth",
+      "provenance": "simulator_reported_unattested",
+      "sample_chain_sha256": "17d5855ce93d267ff39f8c407f7f1ca8785ba5e3679f478486bc2306e92000eb",
+      "sample_count": 21,
+      "scenario": {
+        "description": "Complete a three-stage facilities inspection while recovering from a stalled drive.",
+        "dt": 0.2,
+        "family": "inspection",
+        "faults": [
+          {
+            "duration_steps": 7,
+            "kind": "actuator_stall",
+            "start_step": 63
+          },
+          {
+            "duration_steps": 8,
+            "kind": "perception_noise",
+            "start_step": 115
+          }
+        ],
+        "forbidden_zones": [
+          {
+            "label": "Sterile boundary",
+            "x1": 8.5,
+            "x2": 10.5,
+            "y1": 0.9,
+            "y2": 3.2
+          }
+        ],
+        "height": 10.0,
+        "id": "hospital-inspection",
+        "max_speed": 1.1,
+        "max_steps": 340,
+        "obstacles": [
+          {
+            "label": "Equipment cart",
+            "radius": 0.85,
+            "x": 4.8,
+            "y": 3.6
+          },
+          {
+            "label": "Nurse station",
+            "radius": 1.1,
+            "x": 7.0,
+            "y": 5.2
+          },
+          {
+            "label": "Medical trolley",
+            "radius": 0.9,
+            "x": 10.9,
+            "y": 5.1
+          }
+        ],
+        "robot_radius": 0.22,
+        "schema_version": "veab-scenario/1",
+        "split": "test",
+        "start": {
+          "label": "Robot dock",
+          "x": 1.1,
+          "y": 1.1
+        },
+        "target_present": true,
+        "title": "Hospital \u00b7 corridor inspection",
+        "waypoint_tolerance": 0.42,
+        "waypoints": [
+          {
+            "label": "Ward entrance",
+            "x": 2.0,
+            "y": 8.3
+          },
+          {
+            "label": "Maintenance cabinet",
+            "x": 8.3,
+            "y": 7.7
+          },
+          {
+            "label": "Return checkpoint",
+            "x": 12.4,
+            "y": 2.3
+          }
+        ],
+        "width": 14.0
+      },
+      "scenario_sha256": "38ab1b41f02b607160d9ebc0a2a0760ace6dfb2f098e60ab1c8021055df19eaf",
+      "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+      "schema_version": "veab-physics-trace/1",
+      "seed": 203
+    },
+    "samples": [
+      {
+        "angular_z_rad_s": 0.0,
+        "command_vx_vy_yaw": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "position_xyz_m": [
+          1.1,
+          1.1,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 0,
+        "time_s": 0.0,
+        "velocity_xyz_m_s": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": 0.5535432,
+        "command_vx_vy_yaw": [
+          0.0,
+          0.5,
+          0.6
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.0458285,
+          0.9989493
+        ],
+        "position_xyz_m": [
+          1.0995724,
+          1.1240023,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 1,
+        "time_s": 0.2,
+        "velocity_xyz_m_s": [
+          -0.0060375,
+          0.2085805,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": 0.5574988,
+        "command_vx_vy_yaw": [
+          0.0,
+          0.5,
+          0.6
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.1013274,
+          0.9948531
+        ],
+        "position_xyz_m": [
+          1.0971868,
+          1.1787651,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 2,
+        "time_s": 0.4,
+        "velocity_xyz_m_s": [
+          -0.0170372,
+          0.3220229,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": 0.557527,
+        "command_vx_vy_yaw": [
+          0.0,
+          0.5,
+          0.6
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.1565836,
+          0.9876646
+        ],
+        "position_xyz_m": [
+          1.0929039,
+          1.2503265,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 3,
+        "time_s": 0.6,
+        "velocity_xyz_m_s": [
+          -0.0247016,
+          0.3844113,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": 0.5575272,
+        "command_vx_vy_yaw": [
+          0.0,
+          0.5,
+          0.6
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.2113536,
+          0.9774096
+        ],
+        "position_xyz_m": [
+          1.0874997,
+          1.3312143,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 4,
+        "time_s": 0.8,
+        "velocity_xyz_m_s": [
+          -0.0286402,
+          0.4194429,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": 0.5575271,
+        "command_vx_vy_yaw": [
+          0.0,
+          0.5,
+          0.6
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.2654673,
+          0.9641199
+        ],
+        "position_xyz_m": [
+          1.0815651,
+          1.417398,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 5,
+        "time_s": 1.0,
+        "velocity_xyz_m_s": [
+          -0.0303833,
+          0.4395872,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": 0.5575271,
+        "command_vx_vy_yaw": [
+          0.0,
+          0.5,
+          0.6
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.3187567,
+          0.9478365
+        ],
+        "position_xyz_m": [
+          1.0753871,
+          1.5066638,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 6,
+        "time_s": 1.2,
+        "velocity_xyz_m_s": [
+          -0.0313039,
+          0.4514721,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -0.549559,
+        "command_vx_vy_yaw": [
+          0.4,
+          0.0,
+          -0.6
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.2844564,
+          0.958689
+        ],
+        "position_xyz_m": [
+          1.0988569,
+          1.5868276,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 7,
+        "time_s": 1.4,
+        "velocity_xyz_m_s": [
+          0.2251195,
+          0.346774,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -0.5574703,
+        "command_vx_vy_yaw": [
+          0.4,
+          0.0,
+          -0.6
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.2307498,
+          0.9730131
+        ],
+        "position_xyz_m": [
+          1.1579745,
+          1.6432917,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 8,
+        "time_s": 1.6,
+        "velocity_xyz_m_s": [
+          0.342341,
+          0.2265712,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -0.5575269,
+        "command_vx_vy_yaw": [
+          0.4,
+          0.0,
+          -0.6
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.1761947,
+          0.9843553
+        ],
+        "position_xyz_m": [
+          1.2314124,
+          1.6784065,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 9,
+        "time_s": 1.8,
+        "velocity_xyz_m_s": [
+          0.3815169,
+          0.1350986,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -0.5575272,
+        "command_vx_vy_yaw": [
+          0.4,
+          0.0,
+          -0.6
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.1210924,
+          0.9926412
+        ],
+        "position_xyz_m": [
+          1.3086118,
+          1.6988547,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 10,
+        "time_s": 2.0,
+        "velocity_xyz_m_s": [
+          0.3870921,
+          0.0772292,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -0.5575272,
+        "command_vx_vy_yaw": [
+          0.4,
+          0.0,
+          -0.6
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.0656142,
+          0.9978451
+        ],
+        "position_xyz_m": [
+          1.3855848,
+          1.7104604,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 11,
+        "time_s": 2.2,
+        "velocity_xyz_m_s": [
+          0.3822072,
+          0.0436406,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -0.5575272,
+        "command_vx_vy_yaw": [
+          0.4,
+          0.0,
+          -0.6
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          0.0099322,
+          0.9999506
+        ],
+        "position_xyz_m": [
+          1.461374,
+          1.7169986,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 12,
+        "time_s": 2.4,
+        "velocity_xyz_m_s": [
+          0.3761327,
+          0.0244294,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -0.0039841,
+        "command_vx_vy_yaw": [
+          -0.2,
+          -0.2,
+          0.0
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          9.29e-05,
+          1.0
+        ],
+        "position_xyz_m": [
+          1.5073582,
+          1.7108288,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 13,
+        "time_s": 2.6,
+        "velocity_xyz_m_s": [
+          0.1216685,
+          -0.0709777,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -2.85e-05,
+        "command_vx_vy_yaw": [
+          -0.2,
+          -0.2,
+          0.0
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          4.2e-05,
+          1.0
+        ],
+        "position_xyz_m": [
+          1.5157143,
+          1.6907468,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 14,
+        "time_s": 2.8,
+        "velocity_xyz_m_s": [
+          -0.0172183,
+          -0.1221408,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -2e-07,
+        "command_vx_vy_yaw": [
+          -0.2,
+          -0.2,
+          0.0
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          4.2e-05,
+          1.0
+        ],
+        "position_xyz_m": [
+          1.5035694,
+          1.663114,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 15,
+        "time_s": 3.0,
+        "velocity_xyz_m_s": [
+          -0.0928532,
+          -0.1499974,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -0.0,
+        "command_vx_vy_yaw": [
+          -0.2,
+          -0.2,
+          0.0
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          4.2e-05,
+          1.0
+        ],
+        "position_xyz_m": [
+          1.4802606,
+          1.6313697,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 16,
+        "time_s": 3.2,
+        "velocity_xyz_m_s": [
+          -0.1340421,
+          -0.1651652,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -0.0,
+        "command_vx_vy_yaw": [
+          -0.2,
+          -0.2,
+          0.0
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          4.2e-05,
+          1.0
+        ],
+        "position_xyz_m": [
+          1.4508716,
+          1.5973862,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 17,
+        "time_s": 3.4,
+        "velocity_xyz_m_s": [
+          -0.1564725,
+          -0.173424,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -0.0,
+        "command_vx_vy_yaw": [
+          -0.2,
+          -0.2,
+          0.0
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          4.2e-05,
+          1.0
+        ],
+        "position_xyz_m": [
+          1.418172,
+          1.5621839,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 18,
+        "time_s": 3.6,
+        "velocity_xyz_m_s": [
+          -0.1686876,
+          -0.1779209,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -0.0,
+        "command_vx_vy_yaw": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          4.2e-05,
+          1.0
+        ],
+        "position_xyz_m": [
+          1.3932722,
+          1.5359222,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 19,
+        "time_s": 3.8,
+        "velocity_xyz_m_s": [
+          -0.0918661,
+          -0.0968853,
+          0.0
+        ]
+      },
+      {
+        "angular_z_rad_s": -0.0,
+        "command_vx_vy_yaw": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "contacts": 0,
+        "orientation_xyzw": [
+          0.0,
+          0.0,
+          4.2e-05,
+          1.0
+        ],
+        "position_xyz_m": [
+          1.379712,
+          1.5216216,
+          0.16
+        ],
+        "sensor_integrity": "not_assessed",
+        "source_stamp_ns": null,
+        "tick": 20,
+        "time_s": 4.0,
+        "velocity_xyz_m_s": [
+          -0.0500296,
+          -0.052758,
+          0.0
+        ]
+      }
+    ]
+  },
+  "usda_sha256": "f3838fc96a8379909392307a15b6d0f55e66f0bbd811f64249604111608175ea"
+}

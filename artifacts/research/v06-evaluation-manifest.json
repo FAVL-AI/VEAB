@@ -1,0 +1,2536 @@
+{
+  "criteria": {
+    "max_contact_state_disagreement_rate": 0.05,
+    "max_control_timegrid_error_s": 1e-06,
+    "max_failed_runs": 0,
+    "max_position_max_m": 0.2,
+    "max_position_p90_m": 0.15,
+    "max_position_rmse_m": 0.1,
+    "require_contacts_comparable": true,
+    "threshold_change_justification": "Retained the original 0.100 m position RMSE target from the pilot report without relaxation; added explicit P90 (0.150 m), max (0.200 m), time-grid (1e-6 s), zero missing contact observations, and <=5% binary contact-state disagreement criteria before executing the 40-trace held-out campaign."
+  },
+  "held_out_summary": {
+    "expected_native_traces": 40,
+    "families": [
+      "absence",
+      "inspection",
+      "navigation"
+    ],
+    "scenarios": [
+      "absence-rejection",
+      "distribution-shift",
+      "hospital-inspection"
+    ],
+    "split": "test",
+    "total_tapes": 20
+  },
+  "manifest_sha256": "31bee016b771f47379fd3cb800251fddc737f4b58a652452bbbd1565528cc25d",
+  "model_alignment": {
+    "controller_mapping": {
+      "controller_id": "planar-force-pd/1",
+      "effort_limits": [
+        50.0,
+        50.0,
+        8.0
+      ],
+      "gains_kp": [
+        22.0,
+        22.0,
+        4.0
+      ],
+      "isaaclab_actuation": "set_external_force_and_torque(is_global=True)"
+    },
+    "coordinate_frame": "ENU_z_up_m",
+    "friction_and_contacts": {
+      "isaaclab_contact_channel": "ContactSensor(force_threshold=1e-4) -> 1 if ||net_forces_w|| > 1e-4 else 0; null if sensor disabled",
+      "missing_observation_policy": "null (never coerced to 0)",
+      "mjcf_robot_friction": "1 .005 .0001",
+      "mjcf_world_friction": "0.8 0.1 0.1",
+      "mujoco_contact_channel": "int(data.ncon) (manifold contact point count)"
+    },
+    "inertial_and_damping": {
+      "footprint_radius_m": 0.22,
+      "height_m": 0.27,
+      "inertia_z_kg_m2": 0.1936,
+      "isaaclab_angular_damping_s_inv": 1.54958678,
+      "isaaclab_linear_damping_s_inv": 0.25,
+      "mass_kg": 8.0,
+      "mujoco_angular_damping_n_m_s_rad": 0.3,
+      "mujoco_linear_damping_n_s_m": 2.0,
+      "vertical_abstraction": "planar surrogate at z=0.16 m (MJCF planar joints; PhysX disable_gravity=True)"
+    },
+    "quaternion_ordering": {
+      "canonical_trace": "XYZW",
+      "isaaclab": "WXYZ root_quat_w explicitly converted to XYZW",
+      "mujoco": "XYZW ([0, 0, sin(yaw/2), cos(yaw/2)])"
+    },
+    "timing": {
+      "control_dt_s": 0.2,
+      "physics_dt_s": 0.01,
+      "substeps_per_control_tick": 20
+    }
+  },
+  "pilot_baseline": {
+    "artifacts": [
+      "artifacts/research/v06-control-tape.json",
+      "artifacts/research/v06-mujoco-locked-replay.json",
+      "artifacts/research/v06-isaaclab-locked-replay.json",
+      "artifacts/research/v06-paired-physics-report.json",
+      "artifacts/research/v06-pilot-per-tick-diagnostic.json"
+    ],
+    "contact_observed_samples": 0,
+    "contacts_comparable": false,
+    "missing_contact_samples_right": 25,
+    "position_max_m": 0.27508361,
+    "position_p90_m": 0.26211512,
+    "position_rmse_m": 0.20182817,
+    "position_rmse_tolerance_m": 0.1,
+    "position_rmse_within_target": false,
+    "scenario_id": "warehouse-transfer",
+    "tape_sha256": "ba0d2388943e76304dc21435b5ac2c1cd434258e75b3e90daece749bddd62d6e"
+  },
+  "scenes": {
+    "absence-rejection": {
+      "exported_assets": {
+        "glb": {
+          "name": "absence-rejection.glb",
+          "sha256": "2d4471e1f225248813882085305fb21827fb7810a7baa9cf7d6cb1bd87971433"
+        },
+        "mjcf": {
+          "name": "absence-rejection.xml",
+          "sha256": "b12397044541d437b4e587513d9e19c598b7cd20e81a5fd555d2e50fc0c1cf41"
+        },
+        "scene": {
+          "name": "absence-rejection.scene.json",
+          "sha256": "f4169cf0e2b470366bc3926e5cf498ab65ea260b8fa4410915f394ae54d87b9b"
+        },
+        "sdf": {
+          "name": "absence-rejection.sdf",
+          "sha256": "738a8ac40652e40b7747deeb622afa3650b3bda7689271bf0e0cbc7d3b564f37"
+        },
+        "urdf": {
+          "name": "absence-rejection.urdf",
+          "sha256": "0d4bbd1afe55e385818b7ecad61da853f56648cdd148e10c01b862462fa0d64b"
+        },
+        "usda": {
+          "name": "absence-rejection.usda",
+          "sha256": "4237040d89290dfe62c29b8a1d16e1839ede20df75b8cc7d9537d45ec8a33a7b"
+        }
+      },
+      "family": "absence",
+      "scenario_id": "absence-rejection",
+      "scene_sha256": "5ba2f2aa501993f1bca832046d98ec799235056589751dea82f5ee3ffd1c310e",
+      "source_scenario_sha256": "45501b835cddde9e7c77d1b1427a473c22aab793e67ff62112118bbe7046270e",
+      "split": "test"
+    },
+    "distribution-shift": {
+      "exported_assets": {
+        "glb": {
+          "name": "distribution-shift.glb",
+          "sha256": "f6944eff53d0fb9aff579fedb5d43b518848fd7b6e9f3db7cec5b21e2960fc0f"
+        },
+        "mjcf": {
+          "name": "distribution-shift.xml",
+          "sha256": "89ee204e658803fc5222bc53eef8464311fcb671dcb22d741306a51089e271a2"
+        },
+        "scene": {
+          "name": "distribution-shift.scene.json",
+          "sha256": "994556dd7b104e3289dfe68f5b330fb2b550ac995f65a12e82d3792ab9628392"
+        },
+        "sdf": {
+          "name": "distribution-shift.sdf",
+          "sha256": "39abcd509de198b034bc97caec884acd1b23178483ff171baf1f3345cbff176e"
+        },
+        "urdf": {
+          "name": "distribution-shift.urdf",
+          "sha256": "749fcea9385b1f1a6e60dd3c2ec19ceff31394ab4cc9fb01a9ac624cfce0d5c5"
+        },
+        "usda": {
+          "name": "distribution-shift.usda",
+          "sha256": "7fd108b069be0ba810a0214691e6f3dc2f3691fd8511a4b740e8f0d51858c4a4"
+        }
+      },
+      "family": "navigation",
+      "scenario_id": "distribution-shift",
+      "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+      "source_scenario_sha256": "8f5628e7be44c51bcf605f97a64a9732bf692e8f6e67c0ca83c91947aea06049",
+      "split": "test"
+    },
+    "hospital-inspection": {
+      "exported_assets": {
+        "glb": {
+          "name": "hospital-inspection.glb",
+          "sha256": "24dd53be89dbf6d0e527f6d520f4e42d6ff23773c9d024d62e273f64db6fcfeb"
+        },
+        "mjcf": {
+          "name": "hospital-inspection.xml",
+          "sha256": "f901d48d3b5e1d505551ce7ba7bf15d6678482668ea061a87c3af61d0fe98916"
+        },
+        "scene": {
+          "name": "hospital-inspection.scene.json",
+          "sha256": "afdc4970d4714856b6d2ac920bb0e5f3d1dd25c30d22502c237412618451ec4f"
+        },
+        "sdf": {
+          "name": "hospital-inspection.sdf",
+          "sha256": "fb63016d327f58212f167111d41ac593f9b1a5b3839944890326a6c38cffc112"
+        },
+        "urdf": {
+          "name": "hospital-inspection.urdf",
+          "sha256": "81c8c87417b0f0fd57d4487f558cc92f7fe1944058bc9c73e62edc77151d0f8e"
+        },
+        "usda": {
+          "name": "hospital-inspection.usda",
+          "sha256": "f3838fc96a8379909392307a15b6d0f55e66f0bbd811f64249604111608175ea"
+        }
+      },
+      "family": "inspection",
+      "scenario_id": "hospital-inspection",
+      "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+      "source_scenario_sha256": "38ab1b41f02b607160d9ebc0a2a0760ace6dfb2f098e60ab1c8021055df19eaf",
+      "split": "test"
+    }
+  },
+  "schema_version": "veap-v06-evaluation-manifest/1",
+  "tapes": [
+    {
+      "expects_contact": false,
+      "family": "navigation",
+      "scenario_id": "distribution-shift",
+      "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+      "seed": 101,
+      "split": "test",
+      "steps": 24,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -0.25,
+            0.0
+          ],
+          [
+            0.0,
+            -0.25,
+            0.0
+          ],
+          [
+            0.0,
+            -0.25,
+            0.0
+          ],
+          [
+            0.0,
+            -0.25,
+            0.0
+          ],
+          [
+            0.0,
+            -0.25,
+            0.0
+          ],
+          [
+            0.0,
+            -0.25,
+            0.0
+          ],
+          [
+            0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "distribution-shift",
+        "scenario_sha256": "8f5628e7be44c51bcf605f97a64a9732bf692e8f6e67c0ca83c91947aea06049",
+        "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+        "schema_version": "veab-control-tape/1",
+        "seed": 101,
+        "source_split": "test",
+        "tape_sha256": "faea74077952b616d1f579d3e4227c0e0ac3b708a07358605b08a306ecfd09c9"
+      },
+      "tape_id": "nav-01",
+      "tape_sha256": "faea74077952b616d1f579d3e4227c0e0ac3b708a07358605b08a306ecfd09c9"
+    },
+    {
+      "expects_contact": false,
+      "family": "navigation",
+      "scenario_id": "distribution-shift",
+      "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+      "seed": 102,
+      "split": "test",
+      "steps": 20,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.35,
+            0.15,
+            0.2
+          ],
+          [
+            0.35,
+            0.15,
+            0.2
+          ],
+          [
+            0.35,
+            0.15,
+            0.2
+          ],
+          [
+            0.35,
+            0.15,
+            0.2
+          ],
+          [
+            0.35,
+            0.15,
+            0.2
+          ],
+          [
+            0.35,
+            0.15,
+            0.2
+          ],
+          [
+            0.35,
+            0.15,
+            0.2
+          ],
+          [
+            0.35,
+            0.15,
+            0.2
+          ],
+          [
+            0.2,
+            -0.2,
+            -0.2
+          ],
+          [
+            0.2,
+            -0.2,
+            -0.2
+          ],
+          [
+            0.2,
+            -0.2,
+            -0.2
+          ],
+          [
+            0.2,
+            -0.2,
+            -0.2
+          ],
+          [
+            0.2,
+            -0.2,
+            -0.2
+          ],
+          [
+            0.2,
+            -0.2,
+            -0.2
+          ],
+          [
+            0.2,
+            -0.2,
+            -0.2
+          ],
+          [
+            0.2,
+            -0.2,
+            -0.2
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "distribution-shift",
+        "scenario_sha256": "8f5628e7be44c51bcf605f97a64a9732bf692e8f6e67c0ca83c91947aea06049",
+        "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+        "schema_version": "veab-control-tape/1",
+        "seed": 102,
+        "source_split": "test",
+        "tape_sha256": "d574c112502a5c2a2427e6c43fbe25a3cc23cf12c02fa772c42bf13736bf5a4b"
+      },
+      "tape_id": "nav-02",
+      "tape_sha256": "d574c112502a5c2a2427e6c43fbe25a3cc23cf12c02fa772c42bf13736bf5a4b"
+    },
+    {
+      "expects_contact": false,
+      "family": "navigation",
+      "scenario_id": "distribution-shift",
+      "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+      "seed": 103,
+      "split": "test",
+      "steps": 20,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.4,
+            0.0,
+            0.5
+          ],
+          [
+            0.4,
+            0.0,
+            0.5
+          ],
+          [
+            0.4,
+            0.0,
+            0.5
+          ],
+          [
+            0.4,
+            0.0,
+            0.5
+          ],
+          [
+            0.4,
+            0.0,
+            0.5
+          ],
+          [
+            0.4,
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            -0.3,
+            -0.5
+          ],
+          [
+            0.0,
+            -0.3,
+            -0.5
+          ],
+          [
+            0.0,
+            -0.3,
+            -0.5
+          ],
+          [
+            0.0,
+            -0.3,
+            -0.5
+          ],
+          [
+            0.0,
+            -0.3,
+            -0.5
+          ],
+          [
+            0.0,
+            -0.3,
+            -0.5
+          ],
+          [
+            -0.2,
+            0.1,
+            0.0
+          ],
+          [
+            -0.2,
+            0.1,
+            0.0
+          ],
+          [
+            -0.2,
+            0.1,
+            0.0
+          ],
+          [
+            -0.2,
+            0.1,
+            0.0
+          ],
+          [
+            -0.2,
+            0.1,
+            0.0
+          ],
+          [
+            -0.2,
+            0.1,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "distribution-shift",
+        "scenario_sha256": "8f5628e7be44c51bcf605f97a64a9732bf692e8f6e67c0ca83c91947aea06049",
+        "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+        "schema_version": "veab-control-tape/1",
+        "seed": 103,
+        "source_split": "test",
+        "tape_sha256": "52bde792bc45add4e2b301fc349bcb009e2b8493727bd5a1c9b25f728059db0d"
+      },
+      "tape_id": "nav-03",
+      "tape_sha256": "52bde792bc45add4e2b301fc349bcb009e2b8493727bd5a1c9b25f728059db0d"
+    },
+    {
+      "expects_contact": false,
+      "family": "navigation",
+      "scenario_id": "distribution-shift",
+      "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+      "seed": 104,
+      "split": "test",
+      "steps": 18,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.5,
+            0.1,
+            0.0
+          ],
+          [
+            0.5,
+            0.1,
+            0.0
+          ],
+          [
+            0.5,
+            0.1,
+            0.0
+          ],
+          [
+            0.5,
+            0.1,
+            0.0
+          ],
+          [
+            0.5,
+            0.1,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.3,
+            -0.2,
+            0.3
+          ],
+          [
+            0.3,
+            -0.2,
+            0.3
+          ],
+          [
+            0.3,
+            -0.2,
+            0.3
+          ],
+          [
+            0.3,
+            -0.2,
+            0.3
+          ],
+          [
+            0.3,
+            -0.2,
+            0.3
+          ],
+          [
+            0.3,
+            -0.2,
+            0.3
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "distribution-shift",
+        "scenario_sha256": "8f5628e7be44c51bcf605f97a64a9732bf692e8f6e67c0ca83c91947aea06049",
+        "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+        "schema_version": "veab-control-tape/1",
+        "seed": 104,
+        "source_split": "test",
+        "tape_sha256": "d781ab86697372843aed24eac20f5f45875eea9135692962984e077df6c90af8"
+      },
+      "tape_id": "nav-04",
+      "tape_sha256": "d781ab86697372843aed24eac20f5f45875eea9135692962984e077df6c90af8"
+    },
+    {
+      "expects_contact": false,
+      "family": "navigation",
+      "scenario_id": "distribution-shift",
+      "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+      "seed": 105,
+      "split": "test",
+      "steps": 20,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.15,
+            0.15,
+            0.4
+          ],
+          [
+            0.15,
+            0.15,
+            0.4
+          ],
+          [
+            0.15,
+            0.15,
+            0.4
+          ],
+          [
+            0.15,
+            0.15,
+            0.4
+          ],
+          [
+            0.15,
+            0.15,
+            0.4
+          ],
+          [
+            0.15,
+            0.15,
+            0.4
+          ],
+          [
+            0.15,
+            0.15,
+            0.4
+          ],
+          [
+            0.15,
+            0.15,
+            0.4
+          ],
+          [
+            0.3,
+            0.0,
+            -0.4
+          ],
+          [
+            0.3,
+            0.0,
+            -0.4
+          ],
+          [
+            0.3,
+            0.0,
+            -0.4
+          ],
+          [
+            0.3,
+            0.0,
+            -0.4
+          ],
+          [
+            0.3,
+            0.0,
+            -0.4
+          ],
+          [
+            0.3,
+            0.0,
+            -0.4
+          ],
+          [
+            0.3,
+            0.0,
+            -0.4
+          ],
+          [
+            0.3,
+            0.0,
+            -0.4
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "distribution-shift",
+        "scenario_sha256": "8f5628e7be44c51bcf605f97a64a9732bf692e8f6e67c0ca83c91947aea06049",
+        "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+        "schema_version": "veab-control-tape/1",
+        "seed": 105,
+        "source_split": "test",
+        "tape_sha256": "cca790a59fa8839ba126e67d5754231e05584b361c193d5b2f98d31759ac162a"
+      },
+      "tape_id": "nav-05",
+      "tape_sha256": "cca790a59fa8839ba126e67d5754231e05584b361c193d5b2f98d31759ac162a"
+    },
+    {
+      "expects_contact": false,
+      "family": "navigation",
+      "scenario_id": "distribution-shift",
+      "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+      "seed": 106,
+      "split": "test",
+      "steps": 20,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.45,
+            -0.1,
+            0.0
+          ],
+          [
+            0.45,
+            -0.1,
+            0.0
+          ],
+          [
+            0.45,
+            -0.1,
+            0.0
+          ],
+          [
+            0.45,
+            -0.1,
+            0.0
+          ],
+          [
+            0.45,
+            -0.1,
+            0.0
+          ],
+          [
+            0.45,
+            -0.1,
+            0.0
+          ],
+          [
+            0.0,
+            0.25,
+            0.3
+          ],
+          [
+            0.0,
+            0.25,
+            0.3
+          ],
+          [
+            0.0,
+            0.25,
+            0.3
+          ],
+          [
+            0.0,
+            0.25,
+            0.3
+          ],
+          [
+            0.0,
+            0.25,
+            0.3
+          ],
+          [
+            0.0,
+            0.25,
+            0.3
+          ],
+          [
+            -0.25,
+            0.0,
+            -0.3
+          ],
+          [
+            -0.25,
+            0.0,
+            -0.3
+          ],
+          [
+            -0.25,
+            0.0,
+            -0.3
+          ],
+          [
+            -0.25,
+            0.0,
+            -0.3
+          ],
+          [
+            -0.25,
+            0.0,
+            -0.3
+          ],
+          [
+            -0.25,
+            0.0,
+            -0.3
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "distribution-shift",
+        "scenario_sha256": "8f5628e7be44c51bcf605f97a64a9732bf692e8f6e67c0ca83c91947aea06049",
+        "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+        "schema_version": "veab-control-tape/1",
+        "seed": 106,
+        "source_split": "test",
+        "tape_sha256": "9c7100ee36e9683474c84b2a0495e23e47b2af2602e82c5e419708c28b4c0883"
+      },
+      "tape_id": "nav-06",
+      "tape_sha256": "9c7100ee36e9683474c84b2a0495e23e47b2af2602e82c5e419708c28b4c0883"
+    },
+    {
+      "expects_contact": true,
+      "family": "navigation",
+      "scenario_id": "distribution-shift",
+      "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+      "seed": 107,
+      "split": "test",
+      "steps": 12,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "distribution-shift",
+        "scenario_sha256": "8f5628e7be44c51bcf605f97a64a9732bf692e8f6e67c0ca83c91947aea06049",
+        "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+        "schema_version": "veab-control-tape/1",
+        "seed": 107,
+        "source_split": "test",
+        "tape_sha256": "2ed1c197ef33f0a9d7e00cc602b19d070120a77f821b2e8f91f64db66f41079a"
+      },
+      "tape_id": "nav-07",
+      "tape_sha256": "2ed1c197ef33f0a9d7e00cc602b19d070120a77f821b2e8f91f64db66f41079a"
+    },
+    {
+      "expects_contact": true,
+      "family": "navigation",
+      "scenario_id": "distribution-shift",
+      "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+      "seed": 108,
+      "split": "test",
+      "steps": 16,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.9,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "distribution-shift",
+        "scenario_sha256": "8f5628e7be44c51bcf605f97a64a9732bf692e8f6e67c0ca83c91947aea06049",
+        "scene_sha256": "3df14d9c066f149609c674db5dbb8546c47b8fa9eac0b2336d816ffb83e531b2",
+        "schema_version": "veab-control-tape/1",
+        "seed": 108,
+        "source_split": "test",
+        "tape_sha256": "3398f0c6f0fbc69c04c6f0e2d96be87d60956a64e92e5f085d99a74df3d01a3f"
+      },
+      "tape_id": "nav-08",
+      "tape_sha256": "3398f0c6f0fbc69c04c6f0e2d96be87d60956a64e92e5f085d99a74df3d01a3f"
+    },
+    {
+      "expects_contact": false,
+      "family": "inspection",
+      "scenario_id": "hospital-inspection",
+      "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+      "seed": 201,
+      "split": "test",
+      "steps": 24,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.0,
+            0.3,
+            0.0
+          ],
+          [
+            0.0,
+            0.3,
+            0.0
+          ],
+          [
+            0.0,
+            0.3,
+            0.0
+          ],
+          [
+            0.0,
+            0.3,
+            0.0
+          ],
+          [
+            0.0,
+            0.3,
+            0.0
+          ],
+          [
+            0.0,
+            0.3,
+            0.0
+          ],
+          [
+            0.3,
+            0.0,
+            0.0
+          ],
+          [
+            0.3,
+            0.0,
+            0.0
+          ],
+          [
+            0.3,
+            0.0,
+            0.0
+          ],
+          [
+            0.3,
+            0.0,
+            0.0
+          ],
+          [
+            0.3,
+            0.0,
+            0.0
+          ],
+          [
+            0.3,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -0.2,
+            0.0
+          ],
+          [
+            0.0,
+            -0.2,
+            0.0
+          ],
+          [
+            0.0,
+            -0.2,
+            0.0
+          ],
+          [
+            0.0,
+            -0.2,
+            0.0
+          ],
+          [
+            0.0,
+            -0.2,
+            0.0
+          ],
+          [
+            0.0,
+            -0.2,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "hospital-inspection",
+        "scenario_sha256": "38ab1b41f02b607160d9ebc0a2a0760ace6dfb2f098e60ab1c8021055df19eaf",
+        "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+        "schema_version": "veab-control-tape/1",
+        "seed": 201,
+        "source_split": "test",
+        "tape_sha256": "ca76a19b655ea979b54aa64128d8b242e6fa0f0bb25079097392bd3f19ae507d"
+      },
+      "tape_id": "insp-01",
+      "tape_sha256": "ca76a19b655ea979b54aa64128d8b242e6fa0f0bb25079097392bd3f19ae507d"
+    },
+    {
+      "expects_contact": false,
+      "family": "inspection",
+      "scenario_id": "hospital-inspection",
+      "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+      "seed": 202,
+      "split": "test",
+      "steps": 20,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.2,
+            0.4,
+            0.3
+          ],
+          [
+            0.2,
+            0.4,
+            0.3
+          ],
+          [
+            0.2,
+            0.4,
+            0.3
+          ],
+          [
+            0.2,
+            0.4,
+            0.3
+          ],
+          [
+            0.2,
+            0.4,
+            0.3
+          ],
+          [
+            0.2,
+            0.4,
+            0.3
+          ],
+          [
+            0.2,
+            0.4,
+            0.3
+          ],
+          [
+            0.2,
+            0.4,
+            0.3
+          ],
+          [
+            0.3,
+            -0.1,
+            -0.3
+          ],
+          [
+            0.3,
+            -0.1,
+            -0.3
+          ],
+          [
+            0.3,
+            -0.1,
+            -0.3
+          ],
+          [
+            0.3,
+            -0.1,
+            -0.3
+          ],
+          [
+            0.3,
+            -0.1,
+            -0.3
+          ],
+          [
+            0.3,
+            -0.1,
+            -0.3
+          ],
+          [
+            0.3,
+            -0.1,
+            -0.3
+          ],
+          [
+            0.3,
+            -0.1,
+            -0.3
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "hospital-inspection",
+        "scenario_sha256": "38ab1b41f02b607160d9ebc0a2a0760ace6dfb2f098e60ab1c8021055df19eaf",
+        "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+        "schema_version": "veab-control-tape/1",
+        "seed": 202,
+        "source_split": "test",
+        "tape_sha256": "401ae3bdb438a2b155e0f952badd52c3a53dca08dffed2bfd8d77f9951a90d1a"
+      },
+      "tape_id": "insp-02",
+      "tape_sha256": "401ae3bdb438a2b155e0f952badd52c3a53dca08dffed2bfd8d77f9951a90d1a"
+    },
+    {
+      "expects_contact": false,
+      "family": "inspection",
+      "scenario_id": "hospital-inspection",
+      "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+      "seed": 203,
+      "split": "test",
+      "steps": 20,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.0,
+            0.5,
+            0.6
+          ],
+          [
+            0.0,
+            0.5,
+            0.6
+          ],
+          [
+            0.0,
+            0.5,
+            0.6
+          ],
+          [
+            0.0,
+            0.5,
+            0.6
+          ],
+          [
+            0.0,
+            0.5,
+            0.6
+          ],
+          [
+            0.0,
+            0.5,
+            0.6
+          ],
+          [
+            0.4,
+            0.0,
+            -0.6
+          ],
+          [
+            0.4,
+            0.0,
+            -0.6
+          ],
+          [
+            0.4,
+            0.0,
+            -0.6
+          ],
+          [
+            0.4,
+            0.0,
+            -0.6
+          ],
+          [
+            0.4,
+            0.0,
+            -0.6
+          ],
+          [
+            0.4,
+            0.0,
+            -0.6
+          ],
+          [
+            -0.2,
+            -0.2,
+            0.0
+          ],
+          [
+            -0.2,
+            -0.2,
+            0.0
+          ],
+          [
+            -0.2,
+            -0.2,
+            0.0
+          ],
+          [
+            -0.2,
+            -0.2,
+            0.0
+          ],
+          [
+            -0.2,
+            -0.2,
+            0.0
+          ],
+          [
+            -0.2,
+            -0.2,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "hospital-inspection",
+        "scenario_sha256": "38ab1b41f02b607160d9ebc0a2a0760ace6dfb2f098e60ab1c8021055df19eaf",
+        "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+        "schema_version": "veab-control-tape/1",
+        "seed": 203,
+        "source_split": "test",
+        "tape_sha256": "5882d6baf38d9f101175af096374d95f2e9990cc2e9afb1b841d56e15795e8d9"
+      },
+      "tape_id": "insp-03",
+      "tape_sha256": "5882d6baf38d9f101175af096374d95f2e9990cc2e9afb1b841d56e15795e8d9"
+    },
+    {
+      "expects_contact": false,
+      "family": "inspection",
+      "scenario_id": "hospital-inspection",
+      "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+      "seed": 204,
+      "split": "test",
+      "steps": 18,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.3,
+            0.3,
+            0.0
+          ],
+          [
+            0.3,
+            0.3,
+            0.0
+          ],
+          [
+            0.3,
+            0.3,
+            0.0
+          ],
+          [
+            0.3,
+            0.3,
+            0.0
+          ],
+          [
+            0.3,
+            0.3,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.4,
+            0.2
+          ],
+          [
+            0.0,
+            0.4,
+            0.2
+          ],
+          [
+            0.0,
+            0.4,
+            0.2
+          ],
+          [
+            0.0,
+            0.4,
+            0.2
+          ],
+          [
+            0.0,
+            0.4,
+            0.2
+          ],
+          [
+            0.0,
+            0.4,
+            0.2
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "hospital-inspection",
+        "scenario_sha256": "38ab1b41f02b607160d9ebc0a2a0760ace6dfb2f098e60ab1c8021055df19eaf",
+        "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+        "schema_version": "veab-control-tape/1",
+        "seed": 204,
+        "source_split": "test",
+        "tape_sha256": "f4ecc8fd0e8fe46e7ba1dd08a37f77b9de85990fbd832309e0faa6ce4e55a76b"
+      },
+      "tape_id": "insp-04",
+      "tape_sha256": "f4ecc8fd0e8fe46e7ba1dd08a37f77b9de85990fbd832309e0faa6ce4e55a76b"
+    },
+    {
+      "expects_contact": false,
+      "family": "inspection",
+      "scenario_id": "hospital-inspection",
+      "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+      "seed": 205,
+      "split": "test",
+      "steps": 20,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.15,
+            0.25,
+            -0.4
+          ],
+          [
+            0.15,
+            0.25,
+            -0.4
+          ],
+          [
+            0.15,
+            0.25,
+            -0.4
+          ],
+          [
+            0.15,
+            0.25,
+            -0.4
+          ],
+          [
+            0.15,
+            0.25,
+            -0.4
+          ],
+          [
+            0.15,
+            0.25,
+            -0.4
+          ],
+          [
+            0.15,
+            0.25,
+            -0.4
+          ],
+          [
+            0.15,
+            0.25,
+            -0.4
+          ],
+          [
+            0.25,
+            0.1,
+            0.4
+          ],
+          [
+            0.25,
+            0.1,
+            0.4
+          ],
+          [
+            0.25,
+            0.1,
+            0.4
+          ],
+          [
+            0.25,
+            0.1,
+            0.4
+          ],
+          [
+            0.25,
+            0.1,
+            0.4
+          ],
+          [
+            0.25,
+            0.1,
+            0.4
+          ],
+          [
+            0.25,
+            0.1,
+            0.4
+          ],
+          [
+            0.25,
+            0.1,
+            0.4
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "hospital-inspection",
+        "scenario_sha256": "38ab1b41f02b607160d9ebc0a2a0760ace6dfb2f098e60ab1c8021055df19eaf",
+        "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+        "schema_version": "veab-control-tape/1",
+        "seed": 205,
+        "source_split": "test",
+        "tape_sha256": "85f0175f165665c17d010f9c2a5addaaa854d9b1e22500d5ee68ace486f1625c"
+      },
+      "tape_id": "insp-05",
+      "tape_sha256": "85f0175f165665c17d010f9c2a5addaaa854d9b1e22500d5ee68ace486f1625c"
+    },
+    {
+      "expects_contact": false,
+      "family": "inspection",
+      "scenario_id": "hospital-inspection",
+      "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+      "seed": 206,
+      "split": "test",
+      "steps": 20,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.4,
+            0.0,
+            0.2
+          ],
+          [
+            0.4,
+            0.0,
+            0.2
+          ],
+          [
+            0.4,
+            0.0,
+            0.2
+          ],
+          [
+            0.4,
+            0.0,
+            0.2
+          ],
+          [
+            0.4,
+            0.0,
+            0.2
+          ],
+          [
+            0.4,
+            0.0,
+            0.2
+          ],
+          [
+            0.0,
+            0.35,
+            -0.2
+          ],
+          [
+            0.0,
+            0.35,
+            -0.2
+          ],
+          [
+            0.0,
+            0.35,
+            -0.2
+          ],
+          [
+            0.0,
+            0.35,
+            -0.2
+          ],
+          [
+            0.0,
+            0.35,
+            -0.2
+          ],
+          [
+            0.0,
+            0.35,
+            -0.2
+          ],
+          [
+            -0.25,
+            0.0,
+            0.0
+          ],
+          [
+            -0.25,
+            0.0,
+            0.0
+          ],
+          [
+            -0.25,
+            0.0,
+            0.0
+          ],
+          [
+            -0.25,
+            0.0,
+            0.0
+          ],
+          [
+            -0.25,
+            0.0,
+            0.0
+          ],
+          [
+            -0.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "hospital-inspection",
+        "scenario_sha256": "38ab1b41f02b607160d9ebc0a2a0760ace6dfb2f098e60ab1c8021055df19eaf",
+        "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+        "schema_version": "veab-control-tape/1",
+        "seed": 206,
+        "source_split": "test",
+        "tape_sha256": "8d914d2b6a2753a01da3f05a863e1b2eb0e2233e0a2825ff3b6ea44c780c8719"
+      },
+      "tape_id": "insp-06",
+      "tape_sha256": "8d914d2b6a2753a01da3f05a863e1b2eb0e2233e0a2825ff3b6ea44c780c8719"
+    },
+    {
+      "expects_contact": true,
+      "family": "inspection",
+      "scenario_id": "hospital-inspection",
+      "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+      "seed": 207,
+      "split": "test",
+      "steps": 12,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            -0.8,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "hospital-inspection",
+        "scenario_sha256": "38ab1b41f02b607160d9ebc0a2a0760ace6dfb2f098e60ab1c8021055df19eaf",
+        "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+        "schema_version": "veab-control-tape/1",
+        "seed": 207,
+        "source_split": "test",
+        "tape_sha256": "363e7559fd572815997b40489535388166fa6a49eaf14c5791d49f1369867a75"
+      },
+      "tape_id": "insp-07",
+      "tape_sha256": "363e7559fd572815997b40489535388166fa6a49eaf14c5791d49f1369867a75"
+    },
+    {
+      "expects_contact": true,
+      "family": "inspection",
+      "scenario_id": "hospital-inspection",
+      "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+      "seed": 208,
+      "split": "test",
+      "steps": 12,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.0,
+            -0.8,
+            0.0
+          ],
+          [
+            0.0,
+            -0.8,
+            0.0
+          ],
+          [
+            0.0,
+            -0.8,
+            0.0
+          ],
+          [
+            0.0,
+            -0.8,
+            0.0
+          ],
+          [
+            0.0,
+            -0.8,
+            0.0
+          ],
+          [
+            0.0,
+            -0.8,
+            0.0
+          ],
+          [
+            0.0,
+            -0.8,
+            0.0
+          ],
+          [
+            0.0,
+            -0.8,
+            0.0
+          ],
+          [
+            0.0,
+            -0.8,
+            0.0
+          ],
+          [
+            0.0,
+            -0.8,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "hospital-inspection",
+        "scenario_sha256": "38ab1b41f02b607160d9ebc0a2a0760ace6dfb2f098e60ab1c8021055df19eaf",
+        "scene_sha256": "6cec1afd2460591395754cedb4129c3c42890deeb64098413733efeda28bf5b6",
+        "schema_version": "veab-control-tape/1",
+        "seed": 208,
+        "source_split": "test",
+        "tape_sha256": "a99702d0c5864bc6b1fb8e374596c6a999ff18c42ece6badb94b77dc544c9ef0"
+      },
+      "tape_id": "insp-08",
+      "tape_sha256": "a99702d0c5864bc6b1fb8e374596c6a999ff18c42ece6badb94b77dc544c9ef0"
+    },
+    {
+      "expects_contact": false,
+      "family": "absence",
+      "scenario_id": "absence-rejection",
+      "scene_sha256": "5ba2f2aa501993f1bca832046d98ec799235056589751dea82f5ee3ffd1c310e",
+      "seed": 301,
+      "split": "test",
+      "steps": 12,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "absence-rejection",
+        "scenario_sha256": "45501b835cddde9e7c77d1b1427a473c22aab793e67ff62112118bbe7046270e",
+        "scene_sha256": "5ba2f2aa501993f1bca832046d98ec799235056589751dea82f5ee3ffd1c310e",
+        "schema_version": "veab-control-tape/1",
+        "seed": 301,
+        "source_split": "test",
+        "tape_sha256": "8d4a52535bf9ea792ace43adf9b5f89ed8ddfe0b5f8abe375ebcf1b2c5aa54f3"
+      },
+      "tape_id": "abs-01",
+      "tape_sha256": "8d4a52535bf9ea792ace43adf9b5f89ed8ddfe0b5f8abe375ebcf1b2c5aa54f3"
+    },
+    {
+      "expects_contact": false,
+      "family": "absence",
+      "scenario_id": "absence-rejection",
+      "scene_sha256": "5ba2f2aa501993f1bca832046d98ec799235056589751dea82f5ee3ffd1c310e",
+      "seed": 302,
+      "split": "test",
+      "steps": 12,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.0,
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0,
+            -0.5
+          ],
+          [
+            0.0,
+            0.0,
+            -0.5
+          ],
+          [
+            0.0,
+            0.0,
+            -0.5
+          ],
+          [
+            0.0,
+            0.0,
+            -0.5
+          ],
+          [
+            0.0,
+            0.0,
+            -0.5
+          ],
+          [
+            0.0,
+            0.0,
+            -0.5
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "absence-rejection",
+        "scenario_sha256": "45501b835cddde9e7c77d1b1427a473c22aab793e67ff62112118bbe7046270e",
+        "scene_sha256": "5ba2f2aa501993f1bca832046d98ec799235056589751dea82f5ee3ffd1c310e",
+        "schema_version": "veab-control-tape/1",
+        "seed": 302,
+        "source_split": "test",
+        "tape_sha256": "ff60ae8de19db782d72accddc5e217cdc90f2f9677e369206f278ccc90a8ccd5"
+      },
+      "tape_id": "abs-02",
+      "tape_sha256": "ff60ae8de19db782d72accddc5e217cdc90f2f9677e369206f278ccc90a8ccd5"
+    },
+    {
+      "expects_contact": false,
+      "family": "absence",
+      "scenario_id": "absence-rejection",
+      "scene_sha256": "5ba2f2aa501993f1bca832046d98ec799235056589751dea82f5ee3ffd1c310e",
+      "seed": 303,
+      "split": "test",
+      "steps": 12,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.2,
+            0.1,
+            0.0
+          ],
+          [
+            0.2,
+            0.1,
+            0.0
+          ],
+          [
+            0.2,
+            0.1,
+            0.0
+          ],
+          [
+            0.2,
+            0.1,
+            0.0
+          ],
+          [
+            0.2,
+            0.1,
+            0.0
+          ],
+          [
+            -0.2,
+            -0.1,
+            0.0
+          ],
+          [
+            -0.2,
+            -0.1,
+            0.0
+          ],
+          [
+            -0.2,
+            -0.1,
+            0.0
+          ],
+          [
+            -0.2,
+            -0.1,
+            0.0
+          ],
+          [
+            -0.2,
+            -0.1,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "absence-rejection",
+        "scenario_sha256": "45501b835cddde9e7c77d1b1427a473c22aab793e67ff62112118bbe7046270e",
+        "scene_sha256": "5ba2f2aa501993f1bca832046d98ec799235056589751dea82f5ee3ffd1c310e",
+        "schema_version": "veab-control-tape/1",
+        "seed": 303,
+        "source_split": "test",
+        "tape_sha256": "03659f716de8f7582392c4bdf15f09ea763af314f7983e517e08290abfbeb774"
+      },
+      "tape_id": "abs-03",
+      "tape_sha256": "03659f716de8f7582392c4bdf15f09ea763af314f7983e517e08290abfbeb774"
+    },
+    {
+      "expects_contact": true,
+      "family": "absence",
+      "scenario_id": "absence-rejection",
+      "scene_sha256": "5ba2f2aa501993f1bca832046d98ec799235056589751dea82f5ee3ffd1c310e",
+      "seed": 304,
+      "split": "test",
+      "steps": 20,
+      "tape": {
+        "calibration_status": "unmeasured_research_surrogate",
+        "command_frame": "world_enu_velocity_reference",
+        "commands_vx_vy_yaw": [
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ],
+          [
+            0.88,
+            0.44,
+            0.0
+          ]
+        ],
+        "controller_id": "planar-force-pd/1",
+        "coordinate_frame": "ENU_z_up_m",
+        "dt_s": 0.2,
+        "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+        "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+        "scenario_id": "absence-rejection",
+        "scenario_sha256": "45501b835cddde9e7c77d1b1427a473c22aab793e67ff62112118bbe7046270e",
+        "scene_sha256": "5ba2f2aa501993f1bca832046d98ec799235056589751dea82f5ee3ffd1c310e",
+        "schema_version": "veab-control-tape/1",
+        "seed": 304,
+        "source_split": "test",
+        "tape_sha256": "53d0afd6bd5768b6cb15a36ad30548cb3edb0ce8f65cd6ecf8d0bfe7a8da5d08"
+      },
+      "tape_id": "abs-04",
+      "tape_sha256": "53d0afd6bd5768b6cb15a36ad30548cb3edb0ce8f65cd6ecf8d0bfe7a8da5d08"
+    }
+  ]
+}

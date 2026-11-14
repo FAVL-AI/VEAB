@@ -9,7 +9,7 @@
       "scope": "Offline software-unit controls; no native physics",
       "limitations": "Tests exercise synthetic input and provenance identity but not engine equivalence",
       "artifact": "tests/test_locked_replay_v06.py",
-      "artifact_sha256": "97c987fd01ffc86d825db29b1eb3d36d732ea64fed350b1efe961c55528bcad2",
+      "artifact_sha256": "ba1ae176c0e111e07ca3272457e3ddd03400d4f28681aa4241aa3b5f92125afb",
       "reviewer": null,
       "intended_use": null,
       "external_certification": null
