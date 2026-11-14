@@ -1,6 +1,15 @@
-# VEAP — Verifiable Embodied Agent Benchmark
+# VEAP — Verifiable Embodied Agent Platform
 
-**Version 0.1.0 · Open, local research prototype · 11 November 2026**
+**Integrated source snapshot:** 14 November 2026. The **core benchmark remains v0.1.0**; the repository additionally contains Evidence R1.1, Studio R0.3, and M3 Replay R0.1. These are component identifiers, not a unified v1.0 release or safety certification.
+
+| Component | Source | Evidence boundary |
+|---|---|---|
+| Core benchmark | `veap/` | Deterministic toy-world evaluation |
+| Evidence R1.1 (+ proposed R1.2 controls) | `veap_evidence_r1_1/` | Synthetic, three-valued evidence certificates; strong reachability baseline ties VEAP |
+| Studio R0.3 | `veap_studio_r03/` | First-party local UI / adapters; native acceptance pending |
+| M3 Replay R0.1 | `veap/m3_replay/` | ROS 2 metadata contract tested synthetically; physical sensor/storage gates outstanding |
+
+Research and operational maturity: [repository audit](docs/release/VEAP_REPOSITORY_AUDIT_2026-11-14.md), [R1.2 assumption controls](docs/release/VEAP_R12_ASSUMPTION_SENSITIVITY.md). Tests in the proposed integrated workflow cover core, R1.1, R1.2 and Studio separately. **No production readiness, SOTA superiority, trusted robot provenance, or physical safety certification is claimed.**
 
 An executable **evidence-first benchmarking platform**: deterministic toy-world tasks; distinct baseline planners, control gates, and trace verifier; auditable trajectories; split-labelled scenarios; a live isometric 3D-projection dashboard; and a reproducible ablation CLI.
 

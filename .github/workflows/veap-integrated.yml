@@ -1,0 +1,66 @@
+name: VEAP integrated scientific software gate
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'veap/**'
+      - 'veap_evidence_r1_1/**'
+      - 'veap_studio_r03/**'
+      - 'scripts/veap_integrated_gate.py'
+      - 'tests/test_veap_integrated_gate.py'
+      - 'README.md'
+      - '.github/workflows/veap-integrated.yml'
+      - 'docs/release/**'
+      - 'docs/m3/**'
+      - 'pyproject.toml'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-and-studio:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install core, R1.1 and Studio in software-only CI
+        run: |
+          python -m pip install -e '.[test]' -e './veap_evidence_r1_1' -e './veap_studio_r03[test]'
+      - name: Capture software provenance
+        run: |
+          git rev-parse HEAD > "$RUNNER_TEMP/veap-commit.txt"
+          python -m pip freeze > "$RUNNER_TEMP/veap-dependencies.txt"
+          python --version > "$RUNNER_TEMP/veap-python.txt" 2>&1
+          uname -a > "$RUNNER_TEMP/veap-runner.txt"
+      - name: Core VEAP and M3 replay suite
+        run: python -m pytest -q tests
+      - name: Evidence R1.1 + R1.2 regression
+        working-directory: veap_evidence_r1_1
+        run: |
+          python -m unittest discover -s tests -q
+          python -m scripts.run_r1_identifiability --transforms 16 --out "$RUNNER_TEMP/r11-regenerated.json"
+          cmp "$RUNNER_TEMP/r11-regenerated.json" artifacts/r1_identifiability/stress_report.json
+          python -m scripts.run_r12_assumption_sensitivity --out "$RUNNER_TEMP/r12-assumptions.json"
+      - name: Studio software suite
+        run: python -m pytest -q veap_studio_r03/tests
+      - name: Integrated claims / evidence acceptance gate
+        run: |
+          python -m pytest -q tests/test_veap_integrated_gate.py
+          python scripts/veap_integrated_gate.py --root . --r12-report "$RUNNER_TEMP/r12-assumptions.json" --out "$RUNNER_TEMP/veap-gate.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: veap-software-evidence-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/r11-regenerated.json
+            ${{ runner.temp }}/r12-assumptions.json
+            ${{ runner.temp }}/veap-gate.json
+            ${{ runner.temp }}/veap-commit.txt
+            ${{ runner.temp }}/veap-dependencies.txt
+            ${{ runner.temp }}/veap-python.txt
+            ${{ runner.temp }}/veap-runner.txt
+          if-no-files-found: warn
+          retention-days: 30

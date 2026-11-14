@@ -1,0 +1,1845 @@
+{
+  "cases": [
+    {
+      "case_id": "clock_reversal",
+      "certificate_check": "PASS",
+      "certificate_sha256": "0edd0de51c1240cac7ccb247b17214fc880cf76d6ca4d401d6d0c4b226b9eebb",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "clock_reversal",
+      "certificate_check": "PASS",
+      "certificate_sha256": "a82cc9b203a549e74dd134c7fe385d7f9cfd0337c63ee3900c6ddeafdc6687b4",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "clock_reversal",
+      "certificate_check": "PASS",
+      "certificate_sha256": "68de6ccfa216401d2a08e0cac7f2822090d7c476fefca8f6c9e9d062aee4261d",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "clock_reversal",
+      "certificate_check": "PASS",
+      "certificate_sha256": "cbace898313a68d3e62f498c470b72efff16d46627f1d0bea5cd223903261afb",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "clock_reversal",
+      "certificate_check": "PASS",
+      "certificate_sha256": "8be11afc90c5a3c921120a7b9a9c98301fd2f1e218030e954e94aee8e2b9adc6",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "clock_reversal",
+      "certificate_check": "PASS",
+      "certificate_sha256": "404081671ee6130679ccb180e97479b1ef3ff770ce2bbcdbc8081fe1deac7711",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "clock_reversal",
+      "certificate_check": "PASS",
+      "certificate_sha256": "048d1e4246f45ff6fd106d5cd7be6148d9e25ebe7634db162573fd8a9f1298a5",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "clock_reversal",
+      "certificate_check": "PASS",
+      "certificate_sha256": "963341d16b13fb61b46bd040464d32a61a4f1a5b1c8ead6f73c2438a9e72f5f1",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "clock_reversal",
+      "certificate_check": "PASS",
+      "certificate_sha256": "229473a8edffa88281aa17f91488b350a51f921769c5ff4bae45238a67b480ff",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "clock_reversal",
+      "certificate_check": "PASS",
+      "certificate_sha256": "575950104399f60764541c7538e0124d33a0d72015deaeffd3bfcbb8ef37c205",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "clock_reversal",
+      "certificate_check": "PASS",
+      "certificate_sha256": "dcdba31146c7cdf998622e3a4a7fa39bbbe4dcc7dd1be41f1e3a736abb7d6f6d",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "clock_reversal",
+      "certificate_check": "PASS",
+      "certificate_sha256": "8bc33d20752670c933fa6904a1a52b30aa62f4489d5cae7b8b48d3f605b722cd",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "compliant",
+      "certificate_check": "PASS",
+      "certificate_sha256": "5de188799aca4346e504a8ea03b06785f4604fc1aec1b2311c9241f346e953dd",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "compliant",
+      "certificate_check": "PASS",
+      "certificate_sha256": "d47cc8472498e79c963f683cdb9fb006965a9a86d4e23246b108302e48fef3fc",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "compliant",
+      "certificate_check": "PASS",
+      "certificate_sha256": "32168f0bf9d2766a7cbd5437f564b72dc5e647d40b9f782740c30f877d3a16a2",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "compliant",
+      "certificate_check": "PASS",
+      "certificate_sha256": "a4cd17ecacb550e0a44a3380978f05eade0574231e464583455270056a0d75c9",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "compliant",
+      "certificate_check": "PASS",
+      "certificate_sha256": "457fc4944947239936714acc34c99003f4ebdf270fecf47196b1eb19fd5adc86",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "compliant",
+      "certificate_check": "PASS",
+      "certificate_sha256": "c3b9efff08af46a24265e41a6184b69b4f2680554c86e8ac63d719d37fd24606",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "compliant",
+      "certificate_check": "PASS",
+      "certificate_sha256": "ce39bda48aeb74813a0e4059149d88533c220d31372ec8b125966d0543e6363c",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "compliant",
+      "certificate_check": "PASS",
+      "certificate_sha256": "d2f2c5610e124469e2ff07a61bddb4df8275774003cd524d61a02afffb762805",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "compliant",
+      "certificate_check": "PASS",
+      "certificate_sha256": "2858a5635837db49091a4912fd855c9401389e8f72d14034bd5d7e7e570d99d0",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "compliant",
+      "certificate_check": "PASS",
+      "certificate_sha256": "22bb17633c6c7a49192aaceeeebd106ccfc8e1eb2566825c5d6a2ae50f9ae661",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "compliant",
+      "certificate_check": "PASS",
+      "certificate_sha256": "514288e2902e22b6962d374fca1df0edd05509169d75ee0b721a0f350ba7e4dc",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "compliant",
+      "certificate_check": "PASS",
+      "certificate_sha256": "b7340df1c13cd7a600d52dc2abc96879a47f105a20f4ceb15cad03d33779a60d",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "early_truncation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "d79e1cf7a4074e774bf2a580782069f48d0b859ec721730d8a26de98aad592e2",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "early_truncation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "9eacdea17b7ce4e41bef3b45ec4ecd14c9ff954efc4c8b3bff1a2d4e0667e892",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "early_truncation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "d141ec8f69aacc8529b1a9415485bc50af20df8aa59f3566a9e82a01fc6ce6fe",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "early_truncation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "84b64142ba5e673b5436156f75b19b4e2474be059ef612e6e26695b7a23874b1",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "early_truncation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "393b07f8e6c07c8b473532c91458523c32ce741ea85e892eeda3becbe44e8434",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "early_truncation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "f0ad99768640a9137d5b6a41a3e125bd278b552f3830b38bace59d57a5dedee6",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "early_truncation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "9b7b844d23544bdcbb28bd5a335feda884c78611da09fb8ee69928e8ffee942f",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "early_truncation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "436fb37199c1d0b5f72682d9f08428659f053d44854de5fa67c3bb0aba9b9619",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "early_truncation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "054caf51e4c5dfe64dd64223e41c64203be54740c05f4e25f8f0e06dfef5a77b",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "early_truncation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "0786d326b749ddda8ffd204461055e2984b6d8e838fb2f8e4ee1933f9c509af8",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "early_truncation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "24128970d0e2bc626dad5ae195b945104f1894c334f061c0595d0ba930f47e8d",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "early_truncation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "605522ae49c572688bffe564bfa29d310e606d4bfa81871e21e36d437976d46c",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "false_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "6b1c382ed387862a2a142b316520b18a2b27053a3f100809d4689f2e32349bc5",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "false_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "78132b9ccb2c8d26c791dfb918dbdc5413e0e4075499069bd8bd0eb0c953d948",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "false_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "84f1570aa5550f514bfa845649bfb354df918f96a09ad599565a4bff22fc5170",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "false_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "4901519a3fcf94954bf44abe35d8fa16949b18c86a9802b5db14b3274b54168f",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "false_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "03d0a07b8ea0af080afdcdd325f13d45f972dfb78d7ea4cb7ce662faa65fd0be",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "false_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "2f51f84ab4c132ffb65a510c65527d60088b3e8cdf873fb085486fc7216ca746",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "false_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "720b74033be8b0f6ed8e6ef634c990885daf1b813c6e3108a1c4bd9008e52b43",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "false_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "1c47bd19fb5ecf705133d319a783000707206eb7c2f25cf86a39348dc6d7efdd",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "false_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "7e100f22c2aa83c8ddecb5c28a1d18064ac097f7f4b3dd2f3f10fe1ec070a6a6",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "false_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "6774737940bbb201c72a6ad556e052ec1444ffe72fafa2d55975b700165ea242",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "false_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "b113d6fa26ade5231d82291ea8b935556b6bedc5e2a64a117fc0c44fa20782ec",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "false_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "3b306242a524c732f8b5a4696d12ecebfad94535c2b1552d5437ddb3ad5d31de",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "frame_mismatch",
+      "certificate_check": "PASS",
+      "certificate_sha256": "06c3071cc817e672ec5cca3f01e2704a7bf466e6661c31dd66003d804c8f2843",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "frame_mismatch",
+      "certificate_check": "PASS",
+      "certificate_sha256": "1917a0659361b21d593ecabe71d88879e8cb64466b13db1ad4794f3bc806194b",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "frame_mismatch",
+      "certificate_check": "PASS",
+      "certificate_sha256": "ebb9b22172c74c6d06509f5c0c1cf555f2c32437b25b0ab3b846a40fb8c94594",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "frame_mismatch",
+      "certificate_check": "PASS",
+      "certificate_sha256": "4c24e2335567a61212699c2e159c5a88b156dd2d1912e380ae29932e39b802ff",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "frame_mismatch",
+      "certificate_check": "PASS",
+      "certificate_sha256": "155291472fa3a130412c1ea2712cdea6d61f06d0ac827a04094edf00874e7677",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "frame_mismatch",
+      "certificate_check": "PASS",
+      "certificate_sha256": "8105afa6eddac8537ca3cb0c60dde292d8c1b7d9f0c8eb2bf4dc5ad387db7fae",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "frame_mismatch",
+      "certificate_check": "PASS",
+      "certificate_sha256": "18836c7ae81f1ce91543e8278554f12c3aacc0831b90790ff0c436198105b60f",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "frame_mismatch",
+      "certificate_check": "PASS",
+      "certificate_sha256": "baee09f9d1fd891da5ed93de28b33b7d9aa5555e3a3c3309308206b58b701241",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "frame_mismatch",
+      "certificate_check": "PASS",
+      "certificate_sha256": "e1e1660ba367d87c48191efc6a6d4843d72f4347e66a3c1e9e4740411cd613ce",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "frame_mismatch",
+      "certificate_check": "PASS",
+      "certificate_sha256": "48052c2333b2ade9abf6505088c5ca76baf32b5798b9f00c2106466e73c47182",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "frame_mismatch",
+      "certificate_check": "PASS",
+      "certificate_sha256": "0c2cfa2f160bf0b9e5fc09ed7716a9e7355a042a1d2dc9f1288896b9a1475ba7",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "frame_mismatch",
+      "certificate_check": "PASS",
+      "certificate_sha256": "57136934b5c24d1a78e5752b6801ce0b935ce663e028d9bdce6421ed5def2848",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "goal_unreached",
+      "certificate_check": "PASS",
+      "certificate_sha256": "9749d5c1d2aa8515a947c0352744a690887f0de017e00fafaa5bda8c40823051",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "goal_unreached",
+      "certificate_check": "PASS",
+      "certificate_sha256": "fe5bd5b5d04d1858b35533322b7ecce2ca7b5c662ae102770b923b74a1d266e2",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "goal_unreached",
+      "certificate_check": "PASS",
+      "certificate_sha256": "65ea1fd08341c5af074cc3a3c1f9b6bbc61f1beb3d5e885122635813475db5e8",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "goal_unreached",
+      "certificate_check": "PASS",
+      "certificate_sha256": "2efc955997658b62919a314b667fc6b1e623b765bd7e12f8c2538cd1f8763068",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "goal_unreached",
+      "certificate_check": "PASS",
+      "certificate_sha256": "b121c1776e73625835f34650dac7c8fb14d47e1649e7e63ff0933c856c1c5ff4",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "goal_unreached",
+      "certificate_check": "PASS",
+      "certificate_sha256": "9f42802bda801dcfe030395f58021cd57571b01952977156a81b4c457845a30d",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "goal_unreached",
+      "certificate_check": "PASS",
+      "certificate_sha256": "e964edc3f5928d030c6fe77d33084d4d0d5eeb39b33e756f67c247f3dedc61e1",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "goal_unreached",
+      "certificate_check": "PASS",
+      "certificate_sha256": "8c277408709ba89035313872fe3f3a8a00d785cb15015e06430e0d4918677749",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "goal_unreached",
+      "certificate_check": "PASS",
+      "certificate_sha256": "62120ce598c94f956011c6b340c64b1b1965ad8db7ad2d5932aa66927acb9481",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "goal_unreached",
+      "certificate_check": "PASS",
+      "certificate_sha256": "0fd632359852afc86c5875f1cc2ee8d9e068971b6c97cd293d580101724c0676",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "goal_unreached",
+      "certificate_check": "PASS",
+      "certificate_sha256": "39935c1bc6bcb1a20eef17119f32298d1fa2c87b0bd750e18a66983aa8fb1695",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "goal_unreached",
+      "certificate_check": "PASS",
+      "certificate_sha256": "bf8537b4da0cbde76ec52b0a745e4e0a870b2eb316498e31b963fbbf0c41892c",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "0366744bf32823c02f131add92740377eaf271726153ba193cdc417c791fc51d",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "a271cdb18fd0c14050a8ae909b63826dc16eb56a711b4327d4c56028b8447cbb",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "cbf7f23410e4cd5c9e48fc4651aabbaf5e4cc46c9e1bd52934a6a1be8785ec1b",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "26d0ad19eeb41e38613e333dee9ebb9f610ff32fc9afab55c5224c0eb9dd1651",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "ba9f59a8490b84b75f302ca2f517abc19b7eca3a675cac4af0805a9b0d8f4649",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "a80a9404fb1db754282d5e2b599eee332f768bda6b29eca8cc2fe4c21f1e6c33",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "d14ce095fbe1672a7f21708e8e53ea8853acf44a16ab0ce67826d82ae0b0da51",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "6c235f33ce5acac8f7a4e36844fa4c5b32fb79b6dd0eeef15d47b2572f88702a",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "dc7ef37e8b16d9e57c2e9f323aa6f42df50967073f0cb42b5ea7c8e90c80e048",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "f06aae2907791441ffb526b4a4a45f1ea090d036fb80f85180e04ab6a1158c4f",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "895a529478753308a7c0cc4a633bc18fe8ad5fd24bd37cff2c63482233469edf",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "b0e3c7a70bfa4d52f65a4820ec21e686f7f6fe826b7d100d38347a760e3ddc32",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "certificate_check": "PASS",
+      "certificate_sha256": "dcc4bf9197cd031d44703366490021c836c6a773f518faea756c58abf0306703",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "certificate_check": "PASS",
+      "certificate_sha256": "51196715a63b511174e09fd02a6b16c243d1c6490e2fdfab32a02e5a7b6e43f9",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "certificate_check": "PASS",
+      "certificate_sha256": "394739b83aa0974049e6319bc2c51913bf52d991f91aae8863d9bfb7a057e7ea",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "certificate_check": "PASS",
+      "certificate_sha256": "b6acc8e4efa43b86dd48ee720c7e945ec5e3f1a85e632e1f8950161128ccf78d",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "certificate_check": "PASS",
+      "certificate_sha256": "96ecdd4c815cee40a9fcadba4d5618ce25cd19a959586d780bcb10587227e611",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "certificate_check": "PASS",
+      "certificate_sha256": "d095e129237d7a465b744eb6369d0aab37399ef8ea448b9cf29ef52e914e846b",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "certificate_check": "PASS",
+      "certificate_sha256": "9dbc73ccc512323f5c72bd73a4d3a9ebaa8809ac6f490b3e846b5a85e3614406",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "certificate_check": "PASS",
+      "certificate_sha256": "729d666427e1863db9d0e419cfa022af7a0d483aea9513de7d21a7ce3afa4b9a",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "certificate_check": "PASS",
+      "certificate_sha256": "edf951a022058e96ab8a262249ee4474b27363a06958dd749ca9b0a06995819a",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "certificate_check": "PASS",
+      "certificate_sha256": "fc8a2de6daca1d3b2461be9cf0200e8e4887e3fff7e46dfe0a921cba2b29af8d",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "certificate_check": "PASS",
+      "certificate_sha256": "c3d26d37182b185a2dc6d8aa208856ec6d5c9e1574666a86687e9873b6c0d49c",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "certificate_check": "PASS",
+      "certificate_sha256": "1a91c28df4b2bacac6ff272c5ac37787eeb63bb722ea3727bd711286320ff110",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_required_odom",
+      "certificate_check": "PASS",
+      "certificate_sha256": "4efc0bdd87316dc7c3881c3d012dbcb4a17af44cb257298dd877e5b0aa13234a",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_required_odom",
+      "certificate_check": "PASS",
+      "certificate_sha256": "7f7b73b4a2be2554b3d073d263cb2cb0420ddf80a182d41d29367fbe07b3ab4a",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_required_odom",
+      "certificate_check": "PASS",
+      "certificate_sha256": "ec64ebaf01045f6fe486071f40c7059a2aff81edf8955d5731f4d3e1522399dc",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_required_odom",
+      "certificate_check": "PASS",
+      "certificate_sha256": "4873fc75d62a64be0ef4b52481168b1fe7ace0a241ba08e1cf065f062c613d01",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_required_odom",
+      "certificate_check": "PASS",
+      "certificate_sha256": "065be985842387a942134a8e54fe57b5bc52dc976ed73f3dd1c62a38c59c4d3e",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_required_odom",
+      "certificate_check": "PASS",
+      "certificate_sha256": "6768cdc8ae5dce93b0506a6725c3fb61d5b20efdfb38bfbf1ac35bc7fa36cc69",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_required_odom",
+      "certificate_check": "PASS",
+      "certificate_sha256": "b5a1b893c20e1607abd4cac25b3357be5ec50192d0053c2e31e4820d3ffe735d",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_required_odom",
+      "certificate_check": "PASS",
+      "certificate_sha256": "64154b77b19fc3ad9b95eb29c718f0c4f09ea95144b87727bce12e402751a064",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_required_odom",
+      "certificate_check": "PASS",
+      "certificate_sha256": "5f4018adf088709735058de6ddc2ce97b3eeff934de824d6ef5ebd91a972f81d",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_required_odom",
+      "certificate_check": "PASS",
+      "certificate_sha256": "6e6a776c0f21caf5b1227245d34447244118760f7358d611b2078ad50d87b475",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_required_odom",
+      "certificate_check": "PASS",
+      "certificate_sha256": "7adcc1ed0cf5ccd4a61f9ad3740d7deac892d4b3699e95c4f67a9169c1b9e485",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_required_odom",
+      "certificate_check": "PASS",
+      "certificate_sha256": "fa1931e0c082406827f79048a8f5c3ebea9925c26a80db4d338dbcadcb6b3b9e",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "fe02393b220bb41da64840b313cc0ace205b48abd7838b5e1cca23cd9eba2512",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "591a42828a28b5c1ada8d37e35a58ff2214569e8233540f0f5b9c146125aa90e",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "3cc7e2bc37ac18b683c121acf60cd263de2aecdc465312a33cc4a3eed79ccdfd",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "c34e7d9fcc21e5088c95885133ea289949f7169513c02d2ce2f9f45b0407a288",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "3315335e0a0104b59f0ae6f9b5718b3f4619637719e6bdbcb173ba36bfcac6ce",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "c1d01f8550261ffcf1d20e58e37fec42461ce7443f0cdca417f75a8fc708235c",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "c3d283472724ab6cbae652a989e72c4b20a4994b1172f1428059d9bd38d4a52c",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "29789f881c9eeb62764f9554b83040719a1929ae66270708be8eae23aa0fbc8f",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "e771392789c371b8ef71de0b1f57c8609e2697be5c321eefd2e6ca2e6270f302",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "6c07ad9302cfed30cc2c7fbb00693d13d04a95363f1362553c9a090d1ae38059",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "e5f3717d90192a83f781c365d2a1df314f02e08e8701f431fe1a56d1720f26af",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "certificate_check": "PASS",
+      "certificate_sha256": "4dbadbfd76b95f0dec1c85fa788ffcfa492a7579ba1f1cba24a39aef7383a807",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "negative_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "29ebf21ca764379099344820224a32fc385b1e2753cf1675ebf16291d011ff88",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "negative_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "b8fa4495caaff62c293ef7522d4f605fbfe9f560133842e08469d8d90966bc77",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "negative_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "efb447053208e42660a4d3a1ae6107279491f2c61bbec4def2c1dfa5f5e6d45b",
+      "independent_verdict": "COMPLIANT",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "COMPLIANT"
+    },
+    {
+      "case_id": "negative_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "646303d841f384813ae1ee26987176e2e06f992ba23eb52f8eaa27c2f52a4ac5",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "negative_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "38450c5e254f9c124acca3f6f7b8804eb7e79290e42a9e72d4bee038f9bfe9a2",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "negative_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "179270aaf208f13ec996d6963e357e0dabf300fea27795c536872b6ace51ea9a",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "negative_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "24fd80e1543f4dd547f9eed97efd264fa59e9150580bf435b04ddbed6f3ab7fe",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "negative_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "98a8d4118278b2bf01e51e3eadc1e688973077538cc6bb476faeaae363dca256",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "negative_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "6debeee4d25d3d3a0bc32f6a458350183f204f6c15334ae1120eaa55878882a5",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "negative_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "832572f545c9e8b00c741a17dd48686ac670e0fd31e7b6f6374f95c0f6c4bcd2",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "negative_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "c74a97fc6e16281a614aefe0b0f66af088cdac6aca4b22b5aa3510394b005aa4",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "negative_agent_success_claim",
+      "certificate_check": "PASS",
+      "certificate_sha256": "206b217cbbbfe0d7db309eeeed04265fa5f5717c5b6cc38708edcd08d34db755",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "observed_violation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "6b1c382ed387862a2a142b316520b18a2b27053a3f100809d4689f2e32349bc5",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "observed_violation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "78132b9ccb2c8d26c791dfb918dbdc5413e0e4075499069bd8bd0eb0c953d948",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "observed_violation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "84f1570aa5550f514bfa845649bfb354df918f96a09ad599565a4bff22fc5170",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "observed_violation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "4901519a3fcf94954bf44abe35d8fa16949b18c86a9802b5db14b3274b54168f",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "observed_violation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "03d0a07b8ea0af080afdcdd325f13d45f972dfb78d7ea4cb7ce662faa65fd0be",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "observed_violation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "2f51f84ab4c132ffb65a510c65527d60088b3e8cdf873fb085486fc7216ca746",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "observed_violation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "720b74033be8b0f6ed8e6ef634c990885daf1b813c6e3108a1c4bd9008e52b43",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "observed_violation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "1c47bd19fb5ecf705133d319a783000707206eb7c2f25cf86a39348dc6d7efdd",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "observed_violation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "7e100f22c2aa83c8ddecb5c28a1d18064ac097f7f4b3dd2f3f10fe1ec070a6a6",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "observed_violation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "6774737940bbb201c72a6ad556e052ec1444ffe72fafa2d55975b700165ea242",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "observed_violation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "b113d6fa26ade5231d82291ea8b935556b6bedc5e2a64a117fc0c44fa20782ec",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "observed_violation",
+      "certificate_check": "PASS",
+      "certificate_sha256": "3b306242a524c732f8b5a4696d12ecebfad94535c2b1552d5437ddb3ad5d31de",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "sensor_dropout",
+      "certificate_check": "PASS",
+      "certificate_sha256": "95cb0ec18885ad971dc214d66bd92e1202de8e9800750855233e0e0dc799c1e9",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "sensor_dropout",
+      "certificate_check": "PASS",
+      "certificate_sha256": "9a9272570c7f9ceced04ec9b90fb602fd11f6096733ad061e7df8b3f9144a771",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "sensor_dropout",
+      "certificate_check": "PASS",
+      "certificate_sha256": "13f4318444cb4a3a454b8af3ae19c86763b97da0964db07d960976655b9f4d5d",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "sensor_dropout",
+      "certificate_check": "PASS",
+      "certificate_sha256": "7af4cac035253f026e7bbb334c0b37ab884949dc4e1a90ede1de8995a910da19",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "sensor_dropout",
+      "certificate_check": "PASS",
+      "certificate_sha256": "1e084efafac9668132b99e39c0291da08f01351f68497ae4770056375f7a4fd0",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "sensor_dropout",
+      "certificate_check": "PASS",
+      "certificate_sha256": "3c0e8df9490838d3a2f2c92029001c12747646930eb33c5f032ac704eed9112a",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "sensor_dropout",
+      "certificate_check": "PASS",
+      "certificate_sha256": "38143cc2632bf56d21fda4dc6fdad18604b84c28c3730c78f09ba300cb247824",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "sensor_dropout",
+      "certificate_check": "PASS",
+      "certificate_sha256": "cbd88d6baa6ac965674bf6fdcf39b641a67927eefb59f684cd5c46e7b491f455",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "sensor_dropout",
+      "certificate_check": "PASS",
+      "certificate_sha256": "b257e1e84832175caa440c16cbd05048a8e93a3fb9278442b0007ecbcd1a9c4d",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "sensor_dropout",
+      "certificate_check": "PASS",
+      "certificate_sha256": "badc3ea565648ddb03ab7337ebaafef7c3fa61d8a023321f73ead46918acecd8",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "sensor_dropout",
+      "certificate_check": "PASS",
+      "certificate_sha256": "b3d8250c0b5053035f76b0dcf3504584776b4855aac2530ba950b0537a2267af",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "sensor_dropout",
+      "certificate_check": "PASS",
+      "certificate_sha256": "76b69615a182ebeac76bbf4091f1d41b32a7a3aae64a435655418941089cbf64",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "uncertain_clearance",
+      "certificate_check": "PASS",
+      "certificate_sha256": "52aa24791c673fb89d5a8a8337958f346d84aaa773d69410928543cd3ed6192f",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "uncertain_clearance",
+      "certificate_check": "PASS",
+      "certificate_sha256": "6f847495907fcfd592e21017dbde4c0bda002c2dc7eb5caee20c615f0a3519b0",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "uncertain_clearance",
+      "certificate_check": "PASS",
+      "certificate_sha256": "18bc82feb31061dfa8796889516a1f71df2ddf08436390769e222985e49f70eb",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "uncertain_clearance",
+      "certificate_check": "PASS",
+      "certificate_sha256": "6ad06d5912fce6da75fb51756547de47880ad9f0170e85156c788e5dddb55265",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "uncertain_clearance",
+      "certificate_check": "PASS",
+      "certificate_sha256": "40bb465c941aca69ee69372af41a402abdbf08a0c4be9525e2cc841ac71b4e8e",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "uncertain_clearance",
+      "certificate_check": "PASS",
+      "certificate_sha256": "fc336419f90851f7413d2eb781d15e3e1c8ec6db8fc1d6f6e60c22617a061df4",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "uncertain_clearance",
+      "certificate_check": "PASS",
+      "certificate_sha256": "62195d21f681a5d01a4b5dbfa6a6c4de441fe92ae54b0e5189520147b1d08410",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "uncertain_clearance",
+      "certificate_check": "PASS",
+      "certificate_sha256": "0fff3398c56ad17ce843e33d656971f6268063c9d464f282da887bf7ad3668ca",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "uncertain_clearance",
+      "certificate_check": "PASS",
+      "certificate_sha256": "59b1029349328943b50ae7d12664f49adf06cc4b57d4920488f8015fc0cd337c",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "uncertain_clearance",
+      "certificate_check": "PASS",
+      "certificate_sha256": "809840b91b94c56348e67421031c34aff7275d0723f3cc8b9627e80c4c0fb532",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "uncertain_clearance",
+      "certificate_check": "PASS",
+      "certificate_sha256": "62e151a210f9f2612c99964b6611cdb21158e707a7a4155c539b5178765efe8a",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "uncertain_clearance",
+      "certificate_check": "PASS",
+      "certificate_sha256": "4e262db6eb54e99c400226fa4ab88fd9c722d8ad25946a4a7f73de4919cbbaac",
+      "independent_verdict": "INCONCLUSIVE",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "certificate_check": "PASS",
+      "certificate_sha256": "925471fde61f856a18cc8fca3106d3a4bbf6109336941bfb4a4a708c88f588f0",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "certificate_check": "PASS",
+      "certificate_sha256": "127b94f7896871ea61686992b16876e69b0313a0bb4e651141859bbc4a802f1c",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "certificate_check": "PASS",
+      "certificate_sha256": "4dc80e54065e041e6e5aeb0113cb928260ed8d05157ca8743fefa5f0e4aa1eed",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "certificate_check": "PASS",
+      "certificate_sha256": "3da964ca54cb1e21129f80c601b2813d4cffda3ebe7cc877735edb0d47202e2e",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "certificate_check": "PASS",
+      "certificate_sha256": "0f82e4310514785e6775076bc7065fa1939b96820351cb34c99233d18e95c0cc",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "certificate_check": "PASS",
+      "certificate_sha256": "ed658ee3aef035764167b6d38122ba9f021b1d18fd547fb04dfab6ca59367077",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.25,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "certificate_check": "PASS",
+      "certificate_sha256": "d1433f5aadf9c5343fa1f59269db17fb50aab3d31aa1a9e587ea5ca6dea4b0f3",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "certificate_check": "PASS",
+      "certificate_sha256": "7824a2fd0e277aa9a64f5cd37d2f669bada53ad09448aa5671422935545e935b",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "certificate_check": "PASS",
+      "certificate_sha256": "7d52062ae3782d1320186c6737d614c5e32e3c4306a5bfa3dc671a71b2cf561b",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 1.5,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "certificate_check": "PASS",
+      "certificate_sha256": "43c8dba6a0bff2dbf556200f54f2865b71f97548fa612a03c64a401a224e4d93",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.0,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "certificate_check": "PASS",
+      "certificate_sha256": "ac06a09067ee338f72b88b868e50d2f78cacbec0a9569ca75ad2ee8b7a62dc20",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.02,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "VIOLATING"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "certificate_check": "PASS",
+      "certificate_sha256": "9b3c71b38bef2abfabc094ce3c91d04ca7ccfff37fd481010e7a01c5ba4e462e",
+      "independent_verdict": "VIOLATING",
+      "position_uncertainty_m": 0.06,
+      "source_authenticity": "UNATTESTED",
+      "speed_multiplier": 2.0,
+      "verdict": "VIOLATING"
+    }
+  ],
+  "failures": {
+    "certificate_failures": [],
+    "monitor_mismatches": [],
+    "monotonicity_failures": []
+  },
+  "independent_heldout_environments": false,
+  "limitations": [
+    "Shared stated kinematics, clocks, frames, and error bounds are not physically calibrated.",
+    "A separate checker is implementation-independent, not organisationally independent.",
+    "Fixtures are authored by the development team, not independent held-out scenes.",
+    "No statistical superiority, certification or sim-to-real claim follows from these cases."
+  ],
+  "parameters": {
+    "position_uncertainties_m": [
+      0.0,
+      0.02,
+      0.06
+    ],
+    "speed_multipliers": [
+      1.0,
+      1.25,
+      1.5,
+      2.0
+    ]
+  },
+  "physical_sensor_ground_truth": false,
+  "schema": "veap.r1.assumption-sensitivity/1",
+  "source_authenticity": "UNATTESTED",
+  "study_type": "AUTHOR_CONSTRUCTED_CORRELATED_SOFTWARE_STRESS",
+  "summary": {
+    "assumption_monotonicity_failures": 0,
+    "certificate_checker_failures": 0,
+    "independent_monitor_disagreements": 0,
+    "n_cases": 180,
+    "n_fixtures": 15,
+    "verdict_counts": {
+      "COMPLIANT": 21,
+      "INCONCLUSIVE": 111,
+      "VIOLATING": 48
+    }
+  }
+}

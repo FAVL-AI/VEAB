@@ -94,8 +94,12 @@ class MujocoTelemetryRecord(BaseModel):
     pos_y: float
     vx: float
     vy: float
+    force_x_n: float | None = None
+    force_y_n: float | None = None
     torque_x: float = 0.0
     torque_y: float = 0.0
+    omega_x_rad_s: float | None = None
+    omega_y_rad_s: float | None = None
     contact_force_n: float = 0.0
     in_collision: bool = False
 
@@ -107,7 +111,7 @@ def ingest_mujoco_run(
     seed: int = 17,
     attestation_key: str | None = None
 ) -> dict[str, Any]:
-    """Ingest MuJoCo physics simulation records and compute true mechanical energy in Joules."""
+    """Ingest MuJoCo physics simulation records and compute generalized mechanical work."""
     ledger = Ledger()
     sc_dict = scenario.model_dump(mode="json")
     sc_digest = digest(sc_dict)
@@ -124,6 +128,7 @@ def ingest_mujoco_run(
     milestone_idx = 0
     stage = 0
     total_joules = 0.0
+    unit_qualified = True
     
     for idx, rec in enumerate(records):
         tick = idx + 1
@@ -135,8 +140,18 @@ def ingest_mujoco_run(
         ty = float(rec.get("torque_y", 0.0))
         cf = float(rec.get("contact_force_n", 0.0))
         
-        # Power = tau * vel -> Energy = sum(Power * dt)
-        step_joules = (abs(tx * vx) + abs(ty * vy)) * dt
+        if "force_x_n" in rec or "force_y_n" in rec:
+            fx = float(rec.get("force_x_n", 0.0))
+            fy = float(rec.get("force_y_n", 0.0))
+            step_joules = (abs(fx * vx) + abs(fy * vy)) * dt
+        elif "omega_x_rad_s" in rec or "omega_y_rad_s" in rec:
+            wx = float(rec.get("omega_x_rad_s", 0.0))
+            wy = float(rec.get("omega_y_rad_s", 0.0))
+            step_joules = (abs(tx * wx) + abs(ty * wy)) * dt
+        else:
+            # Legacy slide-joint effort proxy: requires actuator dimensional calibration before physical Joule claims
+            unit_qualified = False
+            step_joules = (abs(tx * vx) + abs(ty * vy)) * dt
         total_joules += step_joules
         
         ledger.emit(tick, "observation", {
@@ -189,7 +204,12 @@ def ingest_mujoco_run(
         "dt_seconds": dt,
         "simulation_steps": last_tick,
         "ledger_root_sha256": ledger.root,
-        "measured_energy_joules": round(total_joules, 4)
+        "measured_energy_joules": round(total_joules, 4),
+        "energy_unit_status": (
+            "dimensionally_consistent_joules"
+            if unit_qualified
+            else "uncalibrated_generalized_effort_proxy"
+        ),
     }
     
     from ..ledger import sign

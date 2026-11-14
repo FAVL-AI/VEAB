@@ -69,10 +69,16 @@ Notice: Requires isaaclab >= 0.1.0 and Omniverse Isaac Sim.
 from __future__ import annotations
 import math
 import torch
-import omni.isaac.lab.sim as sim_utils
-from omni.isaac.lab.envs import DirectRLEnv, DirectRLEnvCfg
-from omni.isaac.lab.scene import InteractiveSceneCfg
-from omni.isaac.lab.sim import SimulationCfg
+try:
+    import isaaclab.sim as sim_utils
+    from isaaclab.envs import DirectRLEnv, DirectRLEnvCfg
+    from isaaclab.scene import InteractiveSceneCfg
+    from isaaclab.sim import SimulationCfg
+except ImportError:
+    import omni.isaac.lab.sim as sim_utils
+    from omni.isaac.lab.envs import DirectRLEnv, DirectRLEnvCfg
+    from omni.isaac.lab.scene import InteractiveSceneCfg
+    from omni.isaac.lab.sim import SimulationCfg
 
 class {scenario.id.replace("-", "_").title()}EnvCfg(DirectRLEnvCfg):
     decimation = 4

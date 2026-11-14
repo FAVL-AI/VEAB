@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "veap-platform"
 version = "0.1.0"
-description = "Verifiable Embodied Agent Benchmark: reproducible simulation, independent evidence verification, and audit dashboard"
+description = "VEAP benchmark core: reproducible toy-world simulation, process verification, and audit dashboard"
 requires-python = ">=3.10"
 dependencies = ["fastapi>=0.110,<1", "uvicorn>=0.28,<1", "pydantic>=2,<3"]
 
