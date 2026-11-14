@@ -1,0 +1,108 @@
+{
+  "episode_id": "good_alternate",
+  "provenance": "designed synthetic control, not physical observation",
+  "scenario": {
+    "deadline_s": 4.0,
+    "fault_stop_limit_s": 0.3,
+    "forbidden_zones": [
+      {
+        "name": "no-go",
+        "x1": 1.35,
+        "x2": 1.75,
+        "y1": 1.1,
+        "y2": 1.9
+      }
+    ],
+    "goal": {
+      "x": 2.5,
+      "y": 0.5
+    },
+    "goal_tolerance_m": 0.2,
+    "height": 4.0,
+    "max_speed_mps": 2.5,
+    "obstacles": [
+      {
+        "name": "column",
+        "radius": 0.2,
+        "x": 3.2,
+        "y": 2.0
+      }
+    ],
+    "robot_radius": 0.15,
+    "start": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "width": 4.0
+  },
+  "schema_version": "veab-monitor-input/1",
+  "trace": {
+    "events": [
+      {
+        "kind": "start",
+        "t_s": 0.0
+      },
+      {
+        "kind": "state",
+        "t_s": 0.0,
+        "x": 0.5,
+        "y": 0.5
+      },
+      {
+        "kind": "observation",
+        "t_s": 1.0
+      },
+      {
+        "kind": "proposal",
+        "t_s": 1.0
+      },
+      {
+        "kind": "state",
+        "t_s": 1.0,
+        "x": 1.5,
+        "y": 0.85
+      },
+      {
+        "kind": "observation",
+        "t_s": 2.0
+      },
+      {
+        "kind": "proposal",
+        "t_s": 2.0
+      },
+      {
+        "kind": "state",
+        "t_s": 2.0,
+        "x": 2.5,
+        "y": 0.5
+      },
+      {
+        "claimed": "completed",
+        "kind": "terminal",
+        "t_s": 2.0
+      }
+    ],
+    "states": [
+      {
+        "t_s": 0.0,
+        "x": 0.5,
+        "y": 0.5
+      },
+      {
+        "t_s": 1.0,
+        "x": 1.5,
+        "y": 0.85
+      },
+      {
+        "t_s": 2.0,
+        "x": 2.5,
+        "y": 0.5
+      }
+    ],
+    "terminal": {
+      "claimed": "completed",
+      "recovered": false,
+      "reported_violations": 0
+    }
+  }
+}

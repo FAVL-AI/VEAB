@@ -1,0 +1,42 @@
+{
+  "schema_version": "veab-claims/1",
+  "source_notice": "Reconstructed from local v0.5 snapshot; connected GitHub main is separate and read-only to this account.",
+  "claims": [
+    {
+      "id": "E100",
+      "status": "IMPLEMENTED",
+      "statement": "Frozen ENU scenario-bound control tape with strict timegrid and SHA-256 contract",
+      "scope": "Offline software-unit controls; no native physics",
+      "limitations": "Tests exercise synthetic input and provenance identity but not engine equivalence",
+      "artifact": "tests/test_locked_replay_v06.py",
+      "artifact_sha256": "b24eeb22aff6a676bdca5aa1628664d38ca8d72b3cd626d344ab433692deac78",
+      "reviewer": null,
+      "intended_use": null,
+      "external_certification": null
+    },
+    {
+      "id": "E101",
+      "status": "DEMONSTRATED",
+      "statement": "Deterministic 24-step control tape generated under public warehouse-transfer scenario",
+      "scope": "Local generated reference input for toy-world research scenario",
+      "limitations": "A command tape is not a physical trajectory or native execution",
+      "artifact": "artifacts/research/v06-control-tape.json",
+      "artifact_sha256": "df550db5e8e69710d3b2eb7b416be79fcd5c752eaa1eb48947297e325b8b1f26",
+      "reviewer": null,
+      "intended_use": null,
+      "external_certification": null
+    },
+    {
+      "id": "E102",
+      "status": "IMPLEMENTED",
+      "statement": "Local customer Studio API implementation with tenant-scoped research-pilot roles",
+      "scope": "Local v0.5 source snapshot; no production identity provider or high availability",
+      "limitations": "Does not demonstrate external security review or deployment readiness",
+      "artifact": "veap/enterprise/api.py",
+      "artifact_sha256": "2a04e53cfe45ebb920976cdac4ca30e425580c3bcc639061736b52e608b55edc",
+      "reviewer": null,
+      "intended_use": null,
+      "external_certification": null
+    }
+  ]
+}

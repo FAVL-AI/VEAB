@@ -61,7 +61,7 @@ def _failed(reason: str) -> dict:
             "energy_unit":"(m/s)^2·s; not Joules"}
 
 
-def verify_bundle(bundle: dict[str,Any], attestation_key: str | None = None) -> dict:
+def verify_bundle(bundle: dict[str,Any], attestation_key: str | None = None, *, require_attestation: bool = False) -> dict:
     if not isinstance(bundle, dict) or not isinstance(bundle.get("manifest"), dict):
         return _failed("missing manifest")
     m = bundle["manifest"]
@@ -169,6 +169,10 @@ def verify_bundle(bundle: dict[str,Any], attestation_key: str | None = None) -> 
             errors.append("manifest step count mismatch")
     if signature_status is False:
         errors.append("invalid HMAC attestation")
+    if require_attestation and not attestation_key:
+        errors.append("strict verification requires external VEAP_ATTESTATION_KEY")
+    elif require_attestation and signature_status is not True:
+        errors.append("missing or unverifiable mandatory HMAC attestation")
     terminal_claim = events[-1].get("payload",{}).get("claimed")
     complete = (milestone_index == len(s.waypoints) and terminal_claim == "completed") if s.target_present else (
         abstain_seen and terminal_claim == "abstained")
