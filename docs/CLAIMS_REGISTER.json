@@ -33,7 +33,7 @@
       "scope": "Local v0.5 source snapshot; no production identity provider or high availability",
       "limitations": "Does not demonstrate external security review or deployment readiness",
       "artifact": "veap/enterprise/api.py",
-      "artifact_sha256": "83a92371ddba75e9b1323837c04dc0f1d62dba973796554c38462ee21545f0c0",
+      "artifact_sha256": "2a04e53cfe45ebb920976cdac4ca30e425580c3bcc639061736b52e608b55edc",
       "reviewer": null,
       "intended_use": null,
       "external_certification": null

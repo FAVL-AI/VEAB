@@ -1,6 +1,6 @@
 """Owner-controlled bootstrap. Tokens are displayed only at creation.
 
-python -m veap.enterprise.cli bootstrap --org "VEAB Pilot" --email admin@example.org
+python -m veap.enterprise.cli bootstrap --org "VEAP Pilot" --email admin@example.org
 python -m veap.enterprise.cli add-user --tenant TENANT_ID --email reviewer@example.org --role reviewer
 """
 from __future__ import annotations
@@ -10,7 +10,7 @@ from .db import StudioDB
 
 
 def main(argv=None):
-    parser=argparse.ArgumentParser(description='VEAB Assurance Studio operator bootstrap (local CLI)')
+    parser=argparse.ArgumentParser(description='VEAP Assurance Studio operator bootstrap (local CLI)')
     cmd=parser.add_subparsers(dest='action',required=True)
     boot=cmd.add_parser('bootstrap')
     boot.add_argument('--org',required=True)

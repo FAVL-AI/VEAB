@@ -1,4 +1,4 @@
-"""VEAB Assurance Studio: separated pilot API, no robot actuation endpoints.
+"""VEAP Assurance Studio: separated pilot API, no robot actuation endpoints.
 
 Run with: uvicorn veap.enterprise.api:app --host 127.0.0.1 --port 8010
 The legacy unscoped /api/runs is NOT mounted here. This is an isolated app.
@@ -61,7 +61,7 @@ class Worker:
     """Bounded single-process demo executor. No HA or durable cross-node leasing."""
     def __init__(self,db: StudioDB, *, max_workers: int=2, capacity: int=8):
         self.db=db
-        self.pool=ThreadPoolExecutor(max_workers=max_workers,thread_name_prefix='veab-studio')
+        self.pool=ThreadPoolExecutor(max_workers=max_workers,thread_name_prefix='veap-studio')
         self.slots=threading.BoundedSemaphore(capacity)
 
     def submit(self,tenant:str,run_id:str,scenario_id:str,policy:str,seed:int,shield:bool) -> bool:
@@ -147,11 +147,11 @@ def report_html(report:dict)->str:
     h=lambda value: html.escape(str(value),quote=True)
     rows=''.join('<tr><th>'+h(k.replace('_',' ').title())+'</th><td>'+h(v)+'</td></tr>'
                  for k,v in report['summary'].items())
-    return ('<!doctype html><html><head><meta charset="utf-8"><title>VEAB Evidence Report</title>'
+    return ('<!doctype html><html><head><meta charset="utf-8"><title>VEAP Evidence Report</title>'
             '<style>body{font:16px system-ui;max-width:820px;margin:48px auto;padding:0 22px;color:#172434}'
             'table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ccd5dc;padding:12px;text-align:left}'
             '.alert{border-left:4px solid #ab7222;padding:12px;background:#fbf5eb}</style></head><body>'
-            '<h1>VEAB Assurance Studio</h1><p>Research / operational evidence report</p><h2>'+h(report['project']['name'])+'</h2>'
+            '<h1>VEAP Assurance Studio</h1><p>Research / operational evidence report</p><h2>'+h(report['project']['name'])+'</h2>'
             '<table>'+rows+'</table><h2>Validation boundary</h2><p class="alert">'
             'Local toy-world results and uploaded files do not establish hardware safety, sensor authenticity, '
             'physical fidelity, certification, or SOTA. Uploaded evidence is not attested.</p>'
@@ -174,7 +174,7 @@ def create_app(*, data_dir: str | Path | None = None, mode: str | None = None) -
         yield
         app.state.worker.close()
 
-    api=FastAPI(title='VEAB Assurance Studio',version='0.5.0-dev',
+    api=FastAPI(title='VEAP Assurance Studio',version='0.5.0-dev',
                 docs_url=None,redoc_url=None,openapi_url=None,lifespan=lifespan)
     api.state.studio_db=db
     api.state.auth_mode=auth_mode
@@ -282,7 +282,7 @@ def create_app(*, data_dir: str | Path | None = None, mode: str | None = None) -
         run_guard(tenant,project,run_id,request)
         path=db.root/'runs'/tenant/(run_id+'.json')
         if not path.is_file():raise HTTPException(404,'Evidence is not ready')
-        return FileResponse(path,filename='veab-'+run_id[:8]+'.json',media_type='application/json')
+        return FileResponse(path,filename='veap-'+run_id[:8]+'.json',media_type='application/json')
 
     @api.post('/api/studio/t/{tenant}/projects/{project}/runs/{run_id}/reviews',status_code=201)
     def add_review(tenant:str,project:str,run_id:str,body:ReviewCreate,
@@ -417,7 +417,7 @@ def create_app(*, data_dir: str | Path | None = None, mode: str | None = None) -
                 'limitations':['Toy-world simulator execution only','Imported evidence is unattested',
                                'Hash chains establish internal consistency, not external authenticity',
                                'No independent physical safety certification']}
-        if format=='html':return HTMLResponse(report_html(report),headers={'Content-Disposition':'attachment; filename="veab-report.html"'})
+        if format=='html':return HTMLResponse(report_html(report),headers={'Content-Disposition':'attachment; filename="veap-report.html"'})
         return report
 
     @api.get('/api/studio/t/{tenant}/audit')

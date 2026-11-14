@@ -1,4 +1,4 @@
-/* VEAB Studio local pilot. No persistent browser token storage. */
+/* VEAP Studio local pilot. No persistent browser token storage. */
 'use strict';
 const state={token:'',me:null,tenant:'',project:'',scenarios:[],runs:[],evidence:[],scene:null,trace:[],currentRun:null,selectedReport:null,playing:false,playHandle:null};
 const el=(id)=>document.getElementById(id);
@@ -136,7 +136,7 @@ async function downloadBlob(path,filename){
   const blob=await api(path,{download:true});const url=URL.createObjectURL(blob);
   const a=document.createElement('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2500);
 }
-async function downloadRun(){if(state.currentRun)await downloadBlob(projectPath()+'/runs/'+state.currentRun+'/bundle','veab-'+state.currentRun.slice(0,8)+'.json');}
+async function downloadRun(){if(state.currentRun)await downloadBlob(projectPath()+'/runs/'+state.currentRun+'/bundle','veap-'+state.currentRun.slice(0,8)+'.json');}
 async function downloadEvidence(e){try{await downloadBlob(projectPath()+'/evidence/'+e.id+'/download',e.filename);}catch(err){msg(err.message);}}
 async function createProject(){
   const name=prompt('Project name (2–100 characters)');if(!name)return;
