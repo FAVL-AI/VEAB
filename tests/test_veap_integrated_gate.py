@@ -85,3 +85,38 @@ def test_gate_rejects_r12_monitor_mismatch(tmp_path):
     data["summary"]["independent_monitor_disagreements"] = 1
     r12.write_text(json.dumps(data))
     assert module.audit(tmp_path, r12)["status"] == "BLOCKED"
+
+
+def test_gate_rejects_r13_reference_leakage_or_kpi_failure(tmp_path):
+    _, r12 = make_fixture(tmp_path)
+    r13 = tmp_path / "r13.json"
+    r13.write_text(json.dumps({
+        "study_scope": "DEVELOPMENT_PILOT_SYNTHETIC_SEALED_HARNESS",
+        "independent_external_authorship": False,
+        "strong_monitor_verdict_tie_preserved": True,
+        "kpi_gate": {
+            "false_decisive_rate_le_5pct": True,
+            "conclusive_certificates_100pct_checkable": True,
+            "zero_reference_leakage": False,
+            "split_integrity_passed": True,
+        },
+    }))
+    assert module.audit(tmp_path, r12, r13)["status"] == "BLOCKED"
+
+
+def test_gate_rejects_r13_synthetic_pilot_claiming_external_authorship(tmp_path):
+    _, r12 = make_fixture(tmp_path)
+    r13 = tmp_path / "r13.json"
+    r13.write_text(json.dumps({
+        "study_scope": "DEVELOPMENT_PILOT_SYNTHETIC_SEALED_HARNESS",
+        "independent_external_authorship": True,
+        "strong_monitor_verdict_tie_preserved": True,
+        "kpi_gate": {
+            "false_decisive_rate_le_5pct": True,
+            "conclusive_certificates_100pct_checkable": True,
+            "zero_reference_leakage": True,
+            "split_integrity_passed": True,
+        },
+    }))
+    assert module.audit(tmp_path, r12, r13)["status"] == "BLOCKED"
+

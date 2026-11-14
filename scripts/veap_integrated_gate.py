@@ -17,6 +17,12 @@ REQUIRED_PATHS = (
     "veap/m3_replay/core.py",
     "veap_evidence_r1_1/veap_evidence/verdict.py",
     "veap_evidence_r1_1/external_monitor/possible_worlds_checker.py",
+    "veap_evidence_r1_1/r13/study_schema.py",
+    "veap_evidence_r1_1/r13/split_integrity.py",
+    "veap_evidence_r1_1/r13/blinded_runner.py",
+    "veap_evidence_r1_1/r13/reference_scorer.py",
+    "veap_evidence_r1_1/r13/certificate_audit.py",
+    "veap_evidence_r1_1/r13/statistics.py",
     "veap_studio_r03/veap_studio/api.py",
     "veap_studio_r03/veap_studio/workers/isaac_fall.py",
     "veap_studio_r03/veap_studio/workers/mujoco_fall.py",
@@ -28,7 +34,7 @@ def file_sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def audit(root: Path, r12_report: Path | None = None) -> dict:
+def audit(root: Path, r12_report: Path | None = None, r13_report: Path | None = None) -> dict:
     errors = []
     evidence = {}
     for path in REQUIRED_PATHS:
@@ -81,6 +87,27 @@ def audit(root: Path, r12_report: Path | None = None) -> dict:
             errors.append(f"R1.2 report error: {exc}")
     else:
         errors.append("A freshly regenerated R1.2 report must be supplied")
+
+    r13_candidate = r13_report if r13_report is not None else (root / "veap_evidence_r1_1/artifacts/r13_pilot_report.json")
+    if r13_candidate is not None and r13_candidate.is_file():
+        try:
+            r13 = json.loads(r13_candidate.read_text(encoding="utf-8"))
+            evidence["runtime_r13_report"] = file_sha(r13_candidate)
+            if r13.get("study_scope") == "DEVELOPMENT_PILOT_SYNTHETIC_SEALED_HARNESS" and r13.get("independent_external_authorship"):
+                errors.append("R1.3 synthetic development pilot cannot claim independent external authorship")
+            kpi = r13.get("kpi_gate", {})
+            if not all(kpi.get(k) is True for k in (
+                "false_decisive_rate_le_5pct",
+                "conclusive_certificates_100pct_checkable",
+                "zero_reference_leakage",
+                "split_integrity_passed",
+            )):
+                errors.append("R1.3 KPI or isolation gate failed")
+            if not r13.get("strong_monitor_verdict_tie_preserved"):
+                errors.append("R1.3 strong monitor verdict tie not preserved")
+        except (ValueError, KeyError, TypeError, OSError) as exc:
+            errors.append(f"R1.3 report error: {exc}")
+
     return {
         "schema": "veap.integrated.software-release-gate/1",
         "status": "PASS_SOFTWARE_ONLY" if not errors else "BLOCKED",
@@ -99,9 +126,11 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--root", type=Path, default=Path.cwd())
     p.add_argument("--r12-report", type=Path, required=True)
+    p.add_argument("--r13-report", type=Path, default=None)
     p.add_argument("--out", type=Path, required=True)
     opts = p.parse_args()
-    result = audit(opts.root.resolve(), opts.r12_report.resolve())
+    r13_path = opts.r13_report.resolve() if opts.r13_report is not None else None
+    result = audit(opts.root.resolve(), opts.r12_report.resolve(), r13_path)
     opts.out.parent.mkdir(parents=True, exist_ok=True)
     opts.out.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
     print(json.dumps({"status": result["status"], "errors": result["errors"]}, indent=2))

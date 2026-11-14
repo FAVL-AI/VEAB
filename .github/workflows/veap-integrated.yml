@@ -1,9 +1,10 @@
 name: VEAP integrated scientific software gate
 on:
   push:
-    branches: [main]
+    branches: [main, 'feat/**']
     paths:
       - 'veap/**'
+      - 'backend/**'
       - 'veap_evidence_r1_1/**'
       - 'veap_studio_r03/**'
       - 'scripts/veap_integrated_gate.py'
@@ -26,7 +27,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install core, R1.1 and Studio in software-only CI
+      - name: Compile native Rust, C++ and Go backends from source
+        run: |
+          rm -f backend/bin/veap-rust-verifier backend/bin/veap-cpp-sim backend/bin/veap-go-orchestrator
+          bash backend/build.sh
+          rm -rf backend/rust_verifier/target
+      - name: Install core, R1.1/R1.3 and Studio in software-only CI
         run: |
           python -m pip install -e '.[test]' -e './veap_evidence_r1_1' -e './veap_studio_r03[test]'
       - name: Capture software provenance
@@ -35,21 +41,22 @@ jobs:
           python -m pip freeze > "$RUNNER_TEMP/veap-dependencies.txt"
           python --version > "$RUNNER_TEMP/veap-python.txt" 2>&1
           uname -a > "$RUNNER_TEMP/veap-runner.txt"
-      - name: Core VEAP and M3 replay suite
+      - name: Core VEAP, freshly compiled native backends, and M3 replay suite
         run: python -m pytest -q tests
-      - name: Evidence R1.1 + R1.2 regression
+      - name: Evidence R1.1 + R1.2 + R1.3 regression
         working-directory: veap_evidence_r1_1
         run: |
           python -m unittest discover -s tests -q
           python -m scripts.run_r1_identifiability --transforms 16 --out "$RUNNER_TEMP/r11-regenerated.json"
           cmp "$RUNNER_TEMP/r11-regenerated.json" artifacts/r1_identifiability/stress_report.json
           python -m scripts.run_r12_assumption_sensitivity --out "$RUNNER_TEMP/r12-assumptions.json"
+          python -m scripts.run_r13_pilot --out "$RUNNER_TEMP/r13-pilot.json"
       - name: Studio software suite
         run: python -m pytest -q veap_studio_r03/tests
       - name: Integrated claims / evidence acceptance gate
         run: |
           python -m pytest -q tests/test_veap_integrated_gate.py
-          python scripts/veap_integrated_gate.py --root . --r12-report "$RUNNER_TEMP/r12-assumptions.json" --out "$RUNNER_TEMP/veap-gate.json"
+          python scripts/veap_integrated_gate.py --root . --r12-report "$RUNNER_TEMP/r12-assumptions.json" --r13-report "$RUNNER_TEMP/r13-pilot.json" --out "$RUNNER_TEMP/veap-gate.json"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -57,6 +64,7 @@ jobs:
           path: |
             ${{ runner.temp }}/r11-regenerated.json
             ${{ runner.temp }}/r12-assumptions.json
+            ${{ runner.temp }}/r13-pilot.json
             ${{ runner.temp }}/veap-gate.json
             ${{ runner.temp }}/veap-commit.txt
             ${{ runner.temp }}/veap-dependencies.txt

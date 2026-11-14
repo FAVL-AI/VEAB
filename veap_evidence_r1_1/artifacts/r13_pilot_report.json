@@ -1,0 +1,285 @@
+{
+  "certificate_audit": {
+    "all_certificate_check_rate": 1.0,
+    "conclusive_certificate_check_rate": 1.0,
+    "conclusive_certificates": 90,
+    "conclusive_passed": 90,
+    "failures": [],
+    "mean_localized_sample_fraction": 0.5721,
+    "passed_certificates": 120,
+    "status": "PASS",
+    "total_certificates": 120
+  },
+  "evaluator_bundle_sha256": "8b982ab1f4cb18b4fdce76670174f9e1318f0743fd9bf76cf5b91890855fbb69",
+  "independent_external_authorship": false,
+  "kpi_gate": {
+    "conclusive_certificates_100pct_checkable": true,
+    "false_decisive_rate_le_5pct": true,
+    "split_integrity_passed": true,
+    "zero_reference_leakage": true
+  },
+  "metrics_by_method": {
+    "gap_aware": {
+      "accuracy_by_condition": {
+        "A_COMPLETE_COMPLIANT": 1.0,
+        "B_ESTABLISHED_INTRUSION": 1.0,
+        "C_CRITICAL_OMISSION": 1.0,
+        "D_IRRELEVANT_OMISSION": 0.0
+      },
+      "appropriate_abstention_rate": 1.0,
+      "false_decisive_count": 0,
+      "false_decisive_rate": 0.0,
+      "false_decisive_wilson_95_ci": [
+        0.0,
+        0.031019
+      ],
+      "n_cases": 120,
+      "n_scenes": 30,
+      "overall_case_accuracy": 0.75,
+      "scene_all_four_correct_count": 0,
+      "scene_all_four_correct_rate": 0.0,
+      "scene_all_four_wilson_95_ci": [
+        0.0,
+        0.113513
+      ],
+      "unnecessary_abstention_rate": 0.333333
+    },
+    "goal_only": {
+      "accuracy_by_condition": {
+        "A_COMPLETE_COMPLIANT": 1.0,
+        "B_ESTABLISHED_INTRUSION": 0.0,
+        "C_CRITICAL_OMISSION": 0.0,
+        "D_IRRELEVANT_OMISSION": 1.0
+      },
+      "appropriate_abstention_rate": 0.0,
+      "false_decisive_count": 60,
+      "false_decisive_rate": 0.5,
+      "false_decisive_wilson_95_ci": [
+        0.411939,
+        0.588061
+      ],
+      "n_cases": 120,
+      "n_scenes": 30,
+      "overall_case_accuracy": 0.5,
+      "scene_all_four_correct_count": 0,
+      "scene_all_four_correct_rate": 0.0,
+      "scene_all_four_wilson_95_ci": [
+        0.0,
+        0.113513
+      ],
+      "unnecessary_abstention_rate": 0.0
+    },
+    "sampled_safety": {
+      "accuracy_by_condition": {
+        "A_COMPLETE_COMPLIANT": 1.0,
+        "B_ESTABLISHED_INTRUSION": 1.0,
+        "C_CRITICAL_OMISSION": 0.0,
+        "D_IRRELEVANT_OMISSION": 1.0
+      },
+      "appropriate_abstention_rate": 0.0,
+      "false_decisive_count": 30,
+      "false_decisive_rate": 0.25,
+      "false_decisive_wilson_95_ci": [
+        0.181098,
+        0.334411
+      ],
+      "n_cases": 120,
+      "n_scenes": 30,
+      "overall_case_accuracy": 0.75,
+      "scene_all_four_correct_count": 0,
+      "scene_all_four_correct_rate": 0.0,
+      "scene_all_four_wilson_95_ci": [
+        0.0,
+        0.113513
+      ],
+      "unnecessary_abstention_rate": 0.0
+    },
+    "separate_reachability_monitor": {
+      "accuracy_by_condition": {
+        "A_COMPLETE_COMPLIANT": 1.0,
+        "B_ESTABLISHED_INTRUSION": 1.0,
+        "C_CRITICAL_OMISSION": 1.0,
+        "D_IRRELEVANT_OMISSION": 1.0
+      },
+      "appropriate_abstention_rate": 1.0,
+      "false_decisive_count": 0,
+      "false_decisive_rate": 0.0,
+      "false_decisive_wilson_95_ci": [
+        0.0,
+        0.031019
+      ],
+      "n_cases": 120,
+      "n_scenes": 30,
+      "overall_case_accuracy": 1.0,
+      "scene_all_four_correct_count": 30,
+      "scene_all_four_correct_rate": 1.0,
+      "scene_all_four_wilson_95_ci": [
+        0.886487,
+        1.0
+      ],
+      "unnecessary_abstention_rate": 0.0
+    },
+    "terminal_safety": {
+      "accuracy_by_condition": {
+        "A_COMPLETE_COMPLIANT": 1.0,
+        "B_ESTABLISHED_INTRUSION": 0.0,
+        "C_CRITICAL_OMISSION": 0.0,
+        "D_IRRELEVANT_OMISSION": 1.0
+      },
+      "appropriate_abstention_rate": 0.0,
+      "false_decisive_count": 60,
+      "false_decisive_rate": 0.5,
+      "false_decisive_wilson_95_ci": [
+        0.411939,
+        0.588061
+      ],
+      "n_cases": 120,
+      "n_scenes": 30,
+      "overall_case_accuracy": 0.5,
+      "scene_all_four_correct_count": 0,
+      "scene_all_four_correct_rate": 0.0,
+      "scene_all_four_wilson_95_ci": [
+        0.0,
+        0.113513
+      ],
+      "unnecessary_abstention_rate": 0.0
+    },
+    "veap": {
+      "accuracy_by_condition": {
+        "A_COMPLETE_COMPLIANT": 1.0,
+        "B_ESTABLISHED_INTRUSION": 1.0,
+        "C_CRITICAL_OMISSION": 1.0,
+        "D_IRRELEVANT_OMISSION": 1.0
+      },
+      "appropriate_abstention_rate": 1.0,
+      "false_decisive_count": 0,
+      "false_decisive_rate": 0.0,
+      "false_decisive_wilson_95_ci": [
+        0.0,
+        0.031019
+      ],
+      "n_cases": 120,
+      "n_scenes": 30,
+      "overall_case_accuracy": 1.0,
+      "scene_all_four_correct_count": 30,
+      "scene_all_four_correct_rate": 1.0,
+      "scene_all_four_wilson_95_ci": [
+        0.886487,
+        1.0
+      ],
+      "unnecessary_abstention_rate": 0.0
+    }
+  },
+  "physical_sensor_ground_truth": false,
+  "prospective_confirmatory_power_analysis": {
+    "alpha_two_sided": 0.05,
+    "assumed_scene_diff_sd": 0.25,
+    "minimum_detectable_effect": 0.1,
+    "recommended_confirmatory_scenes": 57,
+    "target_power": 0.8,
+    "total_condition_evaluations_4x": 228,
+    "unadjusted_normal_n": 50,
+    "unit_of_generalisation": "independently_authored_scene"
+  },
+  "scene_clustered_paired_comparisons": {
+    "veap_vs_gap_aware": {
+      "bootstrap_95_ci": [
+        0.25,
+        0.25
+      ],
+      "discordant_scenes": {
+        "a_better": 30,
+        "b_better": 0,
+        "tied": 0
+      },
+      "exact_sign_test_p_value": 0.0,
+      "mean_paired_difference": 0.25,
+      "mean_score_a": 1.0,
+      "mean_score_b": 0.75,
+      "n_independent_scenes": 30,
+      "unit_of_analysis": "scene_cluster"
+    },
+    "veap_vs_goal_only": {
+      "bootstrap_95_ci": [
+        0.5,
+        0.5
+      ],
+      "discordant_scenes": {
+        "a_better": 30,
+        "b_better": 0,
+        "tied": 0
+      },
+      "exact_sign_test_p_value": 0.0,
+      "mean_paired_difference": 0.5,
+      "mean_score_a": 1.0,
+      "mean_score_b": 0.5,
+      "n_independent_scenes": 30,
+      "unit_of_analysis": "scene_cluster"
+    },
+    "veap_vs_sampled_safety": {
+      "bootstrap_95_ci": [
+        0.25,
+        0.25
+      ],
+      "discordant_scenes": {
+        "a_better": 30,
+        "b_better": 0,
+        "tied": 0
+      },
+      "exact_sign_test_p_value": 0.0,
+      "mean_paired_difference": 0.25,
+      "mean_score_a": 1.0,
+      "mean_score_b": 0.75,
+      "n_independent_scenes": 30,
+      "unit_of_analysis": "scene_cluster"
+    },
+    "veap_vs_separate_reachability_monitor": {
+      "bootstrap_95_ci": [
+        0.0,
+        0.0
+      ],
+      "discordant_scenes": {
+        "a_better": 0,
+        "b_better": 0,
+        "tied": 30
+      },
+      "exact_sign_test_p_value": 1.0,
+      "mean_paired_difference": 0.0,
+      "mean_score_a": 1.0,
+      "mean_score_b": 1.0,
+      "n_independent_scenes": 30,
+      "unit_of_analysis": "scene_cluster"
+    },
+    "veap_vs_terminal_safety": {
+      "bootstrap_95_ci": [
+        0.5,
+        0.5
+      ],
+      "discordant_scenes": {
+        "a_better": 30,
+        "b_better": 0,
+        "tied": 0
+      },
+      "exact_sign_test_p_value": 0.0,
+      "mean_paired_difference": 0.5,
+      "mean_score_a": 1.0,
+      "mean_score_b": 0.5,
+      "n_independent_scenes": 30,
+      "unit_of_analysis": "scene_cluster"
+    }
+  },
+  "schema": "veap.r13.score_report/1",
+  "sealed_reference_sha256": "3fbb4161f872bd35abb59eeb6ab41a58c9ad6cd55ef158ae02ee7e28d70365f1",
+  "split_integrity": {
+    "duplicate_trace_pairs": [],
+    "errors": [],
+    "n_cases": 120,
+    "n_scenes": 30,
+    "status": "PASS",
+    "translated_or_duplicate_scenes": []
+  },
+  "strong_monitor_verdict_tie_preserved": true,
+  "study_id": "veap-r13-dev-pilot-30x4",
+  "study_scope": "DEVELOPMENT_PILOT_SYNTHETIC_SEALED_HARNESS",
+  "submission_sha256": "3972e9bf4965ed68cb6573f3767007e8b2d366f50c135b30cbd4363bac965890"
+}

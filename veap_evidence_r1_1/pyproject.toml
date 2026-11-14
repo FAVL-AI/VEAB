@@ -3,8 +3,8 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "veap-evidence-research"
-version = "0.1.0"
+version = "0.1.3"
 requires-python = ">=3.10"
-description = "Conservative evidence-sufficiency certificate research prototype"
+description = "Conservative evidence-sufficiency certificate research prototype (R1.1/R1.2/R1.3)"
 [tool.setuptools.packages.find]
-include = ["veap_evidence*"]
+include = ["veap_evidence*", "r13*", "external_monitor*"]
