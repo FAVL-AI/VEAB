@@ -27,19 +27,14 @@
 
 ---
 
-## Visual Surfaces: VEAP Foundry & Agent Observatory
+## Visual Surfaces: VEAP Foundry
 
-### 1. VEAP Foundry — Physical AI Replay Operations
+### 1. Physical AI Replay Operations
 Multi-camera synchronized replay, 3-D digital twin viewport (`M3-WAREHOUSE` / `KEEP-OUT`), Assurance Inspector (`41 recorded events`), time-series telemetry, cross-engine discrepancy panel, and synchronized mission timeline.
 
 ![VEAP Foundry — Physical AI Replay Operations](docs/veap-foundry-replay.jpg)
 
-### 2. VEAP Agent Observatory (`http://127.0.0.1:8000`)
-Interactive mission control, 3-D isometric world projection, live geometric safety-gate toggle, hash-chain verification (`Event-chain integrity`, `Task postconditions`, `Constraint satisfaction`), and exportable evidence bundles.
-
-![VEAP Agent Observatory — Mission Control after verified run](docs/dashboard-after-run.png)
-
-### 3. VEAP Foundry / Studio R0.3 (`veap_studio_r03/`)
+### 2. VEAP Foundry / Studio R0.3 (`veap_studio_r03/`)
 Enterprise & research assurance workbench featuring the **Evidence Claim Ladder (`G0–G3`)**, separate-process contract monitor, and native simulator runtime status.
 
 | Assurance & Evidence Claim Ladder | Native Runtime Workbench |
