@@ -1,0 +1,45 @@
+{
+  "schema_version": "veab-assets/1",
+  "scene_id": "campus-patrol",
+  "scene_sha256": "18eccfbe0412e922700218e1942c8bb4af42ad824e368adf99f4de8bc7f35df0",
+  "source_scenario_sha256": "d1968d30e36a3e61fc912787c41c48d673254c9782549aa316ed33c7230d5de1",
+  "engine_readiness": {
+    "mjcf": "exported; native MuJoCo loading and dynamic calibration required",
+    "sdf": "exported; Gazebo plugin, joints and native dynamics require verification",
+    "urdf": "static visual/collision descriptor, not an actuated robot description",
+    "usda": "visual geometry; Isaac/Unreal physics authoring and import checks outstanding",
+    "glb": "3D visual preview only"
+  },
+  "files": {
+    "mjcf": {
+      "name": "campus-patrol.xml",
+      "sha256": "0e5788da40c4fa63f1d23d10d4c597b1f10e6dfe127a7815f67b0cb8ecbc32ed",
+      "bytes": 2424
+    },
+    "sdf": {
+      "name": "campus-patrol.sdf",
+      "sha256": "d3ebdd36cd2d9b2d18432202a6a3eb0ecf4c75948f6e55aa76f9f5369c61804a",
+      "bytes": 7111
+    },
+    "urdf": {
+      "name": "campus-patrol.urdf",
+      "sha256": "59eef982771995a2df1504771dd40c7ca4649667a8fe48a0cce362bbeaf90eb9",
+      "bytes": 6661
+    },
+    "usda": {
+      "name": "campus-patrol.usda",
+      "sha256": "72efab6b95412ff2d9a5c4c16005d2da16728aa32b49bb8f9bf9a202378f5dd5",
+      "bytes": 4118
+    },
+    "glb": {
+      "name": "campus-patrol.glb",
+      "sha256": "95669434c109ddea51605dbb375eebd08346922711ddee3300028fc85ce78088",
+      "bytes": 12152
+    },
+    "scene": {
+      "name": "campus-patrol.scene.json",
+      "sha256": "0d4dbc0a431460fc5a7b7c501ccf238c133b649d1c98089d7f7e996d19a343d3",
+      "bytes": 4689
+    }
+  }
+}

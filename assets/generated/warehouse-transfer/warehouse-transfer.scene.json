@@ -1,0 +1,320 @@
+{
+  "schema_version": "veab-scene/2",
+  "scene_id": "warehouse-transfer",
+  "source_scenario_sha256": "7803186e84f8e73d5d44098dab67ad351b01e1349a894a4c9a5423c5d6903e23",
+  "coordinate_frame": "ENU_z_up_m",
+  "meters_per_unit": 1,
+  "dt_seconds": 0.2,
+  "bounds_m": [
+    13.0,
+    9.0,
+    3.0
+  ],
+  "source_split": "validation",
+  "objects": [
+    {
+      "id": "factory-floor",
+      "label": "Factory floor",
+      "shape": "box",
+      "position_m": [
+        6.5,
+        4.5,
+        -0.075
+      ],
+      "size_m": [
+        13.0,
+        9.0,
+        0.15
+      ],
+      "rgba": [
+        0.16,
+        0.21,
+        0.27,
+        1
+      ],
+      "role": "floor",
+      "collision": true
+    },
+    {
+      "id": "west-boundary",
+      "label": "West boundary",
+      "shape": "box",
+      "position_m": [
+        -0.08,
+        4.5,
+        0.65
+      ],
+      "size_m": [
+        0.16,
+        9.0,
+        1.3
+      ],
+      "rgba": [
+        0.3,
+        0.36,
+        0.46,
+        0.68
+      ],
+      "role": "boundary",
+      "collision": true
+    },
+    {
+      "id": "east-boundary",
+      "label": "East boundary",
+      "shape": "box",
+      "position_m": [
+        13.08,
+        4.5,
+        0.65
+      ],
+      "size_m": [
+        0.16,
+        9.0,
+        1.3
+      ],
+      "rgba": [
+        0.3,
+        0.36,
+        0.46,
+        0.68
+      ],
+      "role": "boundary",
+      "collision": true
+    },
+    {
+      "id": "south-boundary",
+      "label": "South boundary",
+      "shape": "box",
+      "position_m": [
+        6.5,
+        -0.08,
+        0.65
+      ],
+      "size_m": [
+        13.0,
+        0.16,
+        1.3
+      ],
+      "rgba": [
+        0.3,
+        0.36,
+        0.46,
+        0.68
+      ],
+      "role": "boundary",
+      "collision": true
+    },
+    {
+      "id": "north-boundary",
+      "label": "North boundary",
+      "shape": "box",
+      "position_m": [
+        6.5,
+        9.08,
+        0.65
+      ],
+      "size_m": [
+        13.0,
+        0.16,
+        1.3
+      ],
+      "rgba": [
+        0.3,
+        0.36,
+        0.46,
+        0.68
+      ],
+      "role": "boundary",
+      "collision": true
+    },
+    {
+      "id": "rack-a",
+      "label": "Rack A",
+      "shape": "cylinder",
+      "position_m": [
+        3.0,
+        3.4,
+        0.8
+      ],
+      "size_m": [
+        0.85,
+        1.6
+      ],
+      "rgba": [
+        0.9,
+        0.52,
+        0.2,
+        1
+      ],
+      "role": "obstacle",
+      "collision": true
+    },
+    {
+      "id": "rack-b",
+      "label": "Rack B",
+      "shape": "cylinder",
+      "position_m": [
+        6.5,
+        4.5,
+        0.8
+      ],
+      "size_m": [
+        1.1,
+        1.6
+      ],
+      "rgba": [
+        0.9,
+        0.52,
+        0.2,
+        1
+      ],
+      "role": "obstacle",
+      "collision": true
+    },
+    {
+      "id": "rack-c",
+      "label": "Rack C",
+      "shape": "cylinder",
+      "position_m": [
+        9.7,
+        3.8,
+        0.8
+      ],
+      "size_m": [
+        0.8,
+        1.6
+      ],
+      "rgba": [
+        0.9,
+        0.52,
+        0.2,
+        1
+      ],
+      "role": "obstacle",
+      "collision": true
+    },
+    {
+      "id": "no-entry-workcell",
+      "label": "No-entry workcell",
+      "shape": "box",
+      "position_m": [
+        6.4,
+        1.5,
+        0.025
+      ],
+      "size_m": [
+        2.6,
+        1.4,
+        0.05
+      ],
+      "rgba": [
+        0.9,
+        0.18,
+        0.32,
+        0.25
+      ],
+      "role": "forbidden",
+      "collision": false
+    },
+    {
+      "id": "checkpoint-1-scan-station",
+      "label": "Checkpoint 1 Scan station",
+      "shape": "cylinder",
+      "position_m": [
+        3.6,
+        6.9,
+        0.035
+      ],
+      "size_m": [
+        0.16,
+        0.07
+      ],
+      "rgba": [
+        0.16,
+        0.83,
+        0.71,
+        0.8
+      ],
+      "role": "waypoint",
+      "collision": false
+    },
+    {
+      "id": "checkpoint-2-quality-gate",
+      "label": "Checkpoint 2 Quality gate",
+      "shape": "cylinder",
+      "position_m": [
+        9.4,
+        6.7,
+        0.035
+      ],
+      "size_m": [
+        0.16,
+        0.07
+      ],
+      "rgba": [
+        0.16,
+        0.83,
+        0.71,
+        0.8
+      ],
+      "role": "waypoint",
+      "collision": false
+    },
+    {
+      "id": "checkpoint-3-dispatch-bay",
+      "label": "Checkpoint 3 Dispatch bay",
+      "shape": "cylinder",
+      "position_m": [
+        11.4,
+        2.0,
+        0.035
+      ],
+      "size_m": [
+        0.16,
+        0.07
+      ],
+      "rgba": [
+        0.16,
+        0.83,
+        0.71,
+        0.8
+      ],
+      "role": "waypoint",
+      "collision": false
+    }
+  ],
+  "robot": {
+    "id": "veab-scout-surrogate",
+    "display_name": "VEAB Scout (research surrogate; not vendor-calibrated)",
+    "initial_pose_xyz_m": [
+      1.2,
+      1.3,
+      0.16
+    ],
+    "yaw_rad": 0.0,
+    "footprint_radius_m": 0.22,
+    "height_m": 0.27,
+    "mass_kg": 8.0,
+    "max_speed_m_s": 1.2,
+    "control_mode": "planar_velocity_reference"
+  },
+  "waypoints_xyz_m": [
+    [
+      3.6,
+      6.9,
+      0.16
+    ],
+    [
+      9.4,
+      6.7,
+      0.16
+    ],
+    [
+      11.4,
+      2.0,
+      0.16
+    ]
+  ],
+  "disclosure": "Geometric surrogate scene; masses/friction/sensors are not measured hardware properties.",
+  "content_sha256": "3d71701f88f547f12beb35d4e9c7516e4bfd4f049f000fadd382543269fafce8"
+}

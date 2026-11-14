@@ -1,0 +1,45 @@
+{
+  "schema_version": "veab-assets/1",
+  "scene_id": "warehouse-transfer",
+  "scene_sha256": "3d71701f88f547f12beb35d4e9c7516e4bfd4f049f000fadd382543269fafce8",
+  "source_scenario_sha256": "7803186e84f8e73d5d44098dab67ad351b01e1349a894a4c9a5423c5d6903e23",
+  "engine_readiness": {
+    "mjcf": "exported; native MuJoCo loading and dynamic calibration required",
+    "sdf": "exported; Gazebo plugin, joints and native dynamics require verification",
+    "urdf": "static visual/collision descriptor, not an actuated robot description",
+    "usda": "visual geometry; Isaac/Unreal physics authoring and import checks outstanding",
+    "glb": "3D visual preview only"
+  },
+  "files": {
+    "mjcf": {
+      "name": "warehouse-transfer.xml",
+      "sha256": "f2b8966f32edd84eabe106e47ed89aca648c44efc182b8c721c51fdef4a904f7",
+      "bytes": 2700
+    },
+    "sdf": {
+      "name": "warehouse-transfer.sdf",
+      "sha256": "165107a11184f9f3fcc1650350b433cc452d64622e27ec701a3db84758a63f76",
+      "bytes": 7861
+    },
+    "urdf": {
+      "name": "warehouse-transfer.urdf",
+      "sha256": "cdaf08aec0a7d4ffc813d010641e2e47162f47ffc7d75356c6bafca20294a104",
+      "bytes": 7800
+    },
+    "usda": {
+      "name": "warehouse-transfer.usda",
+      "sha256": "6a8d04db619081a560517b68e4016d68a76095741ed368a3e14b58d0fd69a291",
+      "bytes": 4869
+    },
+    "glb": {
+      "name": "warehouse-transfer.glb",
+      "sha256": "9506b2f6cbb917367e7ceda29bc5412faa29a2f5a52fec122e08ff0bd4737d2f",
+      "bytes": 14384
+    },
+    "scene": {
+      "name": "warehouse-transfer.scene.json",
+      "sha256": "626c89b2ed66c19b64523606ac047ac7b30afd6f2531efcb5930f69128cc3162",
+      "bytes": 5407
+    }
+  }
+}
