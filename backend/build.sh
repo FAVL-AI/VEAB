@@ -32,7 +32,7 @@ fi
 # 3. Go Concurrent Orchestrator
 echo "[3/3] Building Go Concurrent Orchestrator..."
 if command -v go >/dev/null 2>&1; then
-    (cd "${ROOT_DIR}/go_orchestrator" && go build -o "${BIN_DIR}/veap-go-orchestrator")
+    (cd "${ROOT_DIR}/go_orchestrator" && go build -o "${BIN_DIR}/veap-go-orchestrator" main.go)
     echo "  -> ${BIN_DIR}/veap-go-orchestrator built successfully."
 elif command -v g++ >/dev/null 2>&1; then
     g++ -std=c++20 -O3 -Wall -Wextra -pthread "${ROOT_DIR}/go_orchestrator/fallback.cpp" -o "${BIN_DIR}/veap-go-orchestrator"
