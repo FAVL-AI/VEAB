@@ -9,15 +9,15 @@ Verifies:
 """
 from __future__ import annotations
 import pytest
-from veab.spec import load_scenario
-from veab.sim import run_episode
-from veab.protocol import evaluate_bundle_jointly
-from veab.adapters.isaac_lab import export_isaac_lab_code, ingest_isaac_lab_run
-from veab.adapters.mujoco import export_mjcf_xml, ingest_mujoco_run
-from veab.adapters.ros2 import ingest_ros2_trajectory, analyze_clock_sync_and_latency
-from veab.vla import VLAObservation, VLAActionChunk, ActionStep, VLASafetyWrapper
-from veab.diagnostics import evaluate_trial_diagnostics
-from veab.benchmark import compare_sim_trajectories
+from veap.spec import load_scenario
+from veap.sim import run_episode
+from veap.protocol import evaluate_bundle_jointly
+from veap.adapters.isaac_lab import export_isaac_lab_code, ingest_isaac_lab_run
+from veap.adapters.mujoco import export_mjcf_xml, ingest_mujoco_run
+from veap.adapters.ros2 import ingest_ros2_trajectory, analyze_clock_sync_and_latency
+from veap.vla import VLAObservation, VLAActionChunk, ActionStep, VLASafetyWrapper
+from veap.diagnostics import evaluate_trial_diagnostics
+from veap.benchmark import compare_sim_trajectories
 
 
 def test_joint_evaluation_protocol_on_clean_run():

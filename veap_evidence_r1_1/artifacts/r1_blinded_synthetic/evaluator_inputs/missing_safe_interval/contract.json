@@ -1,0 +1,25 @@
+{
+  "frame_id": "map",
+  "goal": {
+    "tolerance_m": 0.2,
+    "x": 2.0,
+    "y": 7.5
+  },
+  "id": "nav-keepout-r1-v2",
+  "keepout": [
+    0.8,
+    -0.2,
+    1.2,
+    0.2
+  ],
+  "max_gap_s": 0.55,
+  "max_speed_mps": 4.0,
+  "mission_end_s": 2.0,
+  "mission_start_s": 0.0,
+  "position_uncertainty_m": 0.02,
+  "required_topics": [
+    "/odom"
+  ],
+  "robot_radius_m": 0.1,
+  "schema": "veap.evidence.contract/1"
+}

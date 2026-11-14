@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from veab.m3_replay.core import load_contract, audit_records, iter_jsonl
+from veap.m3_replay.core import load_contract, audit_records, iter_jsonl
 
 SPECPATH=ROOT/'external_monitor/m3_record_monitor.py'
 spec=importlib.util.spec_from_file_location('m3_record_monitor',SPECPATH)
@@ -40,7 +40,7 @@ def evaluate():
                      'error_codes':[e['code'] for e in a['errors']]})
     sensitivity=confusion['tp']/(confusion['tp']+confusion['fn']) if confusion['tp']+confusion['fn'] else None
     specificity=confusion['tn']/(confusion['tn']+confusion['fp']) if confusion['tn']+confusion['fp'] else None
-    return {'schema_version':'veab.m3.synthetic-controls/1',
+    return {'schema_version':'veap.m3.synthetic-controls/1',
             'status':'SYNTHETIC_MECHANISM_TEST_ONLY',
             'external_ground_truth':False,'robot_data_used':False,
             'scientific_performance_estimate':False,

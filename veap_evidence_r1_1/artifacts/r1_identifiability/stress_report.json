@@ -1,0 +1,2696 @@
+{
+  "cases": [
+    {
+      "available_trace_sha256": "90cb448d270c3a185d2882599ba4abb801259972ae2926c5dd6b4f3994ea5da0",
+      "case_id": "translation_000/compliant",
+      "certificate_sha256": "d6e0fb67f63f1a2ece42121bd15d1f2f264e590c6ae7f224a98c25858389c363",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "3608441128388f5f0dd0bef09b3d1288f2988e1cca96b6d6fe8f15fa4674919e",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 0,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "3e27b2bdea35ae07c11c76f96a2898ece46987d9cf4cc088eef945e6f5a2da6f",
+      "case_id": "translation_000/observed_violation",
+      "certificate_sha256": "1b2c64e8b600d0b08a6763099448109bc9da057b46c2993aa6b78f571b7ba32d",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "3608441128388f5f0dd0bef09b3d1288f2988e1cca96b6d6fe8f15fa4674919e",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 0,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "fde60abbe6409f634bd9ad314b436c14aaa02d3ea614bef99197f544f8a9e18c",
+      "case_id": "translation_000/missing_critical_interval",
+      "certificate_sha256": "096cf54b31187f9aeb3da6a9838d612cafe93bd132631ab3817a9051809a6128",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "3608441128388f5f0dd0bef09b3d1288f2988e1cca96b6d6fe8f15fa4674919e",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "8f1df0ea6dd2b7ae013b7d4da7ad6529b2e895301abe398ee0d06d66061ee831",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 0,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "e76c4892d0556415773f8d3f88339331758d58378f60c3e3a45509776c6bd32f",
+      "case_id": "translation_000/missing_irrelevant_camera",
+      "certificate_sha256": "6db9a60b2faa8949d38bfc708292222852fb3d46bfb53d532528ea60872c2640",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "3608441128388f5f0dd0bef09b3d1288f2988e1cca96b6d6fe8f15fa4674919e",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 0,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "45fc778eef3cabd8e6c05df43974a2164ec149daa398e95396f6ab1bdd95bc83",
+      "case_id": "translation_000/missing_safe_interval",
+      "certificate_sha256": "06e2ac7e21efb454758ff82ac12d8ab6da54c9be27a0b106ad0e7fbf2912e80b",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "93eb5ea23b7146c787d792a214b1a21c448020b9e9da9643a70901f47edd0601",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 0,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "a741be38ebd6cd7c9cc1a7fb745eedb116c8f281fbe7ab91475e423aec6e34db",
+      "case_id": "translation_000/violation_plus_missing",
+      "certificate_sha256": "cbf2f34bf9b9ce3bce95f265d861c88e082d04fda8d30ace3d49174bf4093134",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "3608441128388f5f0dd0bef09b3d1288f2988e1cca96b6d6fe8f15fa4674919e",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 0,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "0b274edddd67728d79ecf5091d54893eb8d2c9214fd9d9bed8efdc6cf00395ea",
+      "case_id": "translation_001/compliant",
+      "certificate_sha256": "ba66a5953d02d969ac88ec96f0ae26ec30b75bde87b6a4cc7f4669a4d1a117a7",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "213356043e271bb59d5644936969f5bab12c4ccdf2962ea4ed58bf565f1669a9",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 1,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "c3720ee1866ebce5ced2adbf3e0fee64b094fca147cd62caaaa1285bda9b1280",
+      "case_id": "translation_001/observed_violation",
+      "certificate_sha256": "ac508e4ecf981c18593135d7dc7eb0e7b53a8502c5f4929a2fd60405b2fdbd76",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "213356043e271bb59d5644936969f5bab12c4ccdf2962ea4ed58bf565f1669a9",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 1,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "93c631e29b4a06f2df3ac02abb13ab9725c6910d4bd34a641060465e89a9ea86",
+      "case_id": "translation_001/missing_critical_interval",
+      "certificate_sha256": "ddf568510965b676e12d2326cdcd09aa11e7651b229996f5094f33c2abc005c9",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "213356043e271bb59d5644936969f5bab12c4ccdf2962ea4ed58bf565f1669a9",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "dbb25a485b2e8eb8ab13aa029b3b63c3b05f66988b3ac5838c11aa56addcc766",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 1,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "71b6450cbc832ef2807b71d8c5166eef55eef8b1bc3de5f2b5be9657f6bdd185",
+      "case_id": "translation_001/missing_irrelevant_camera",
+      "certificate_sha256": "58e47c19da9cffd11c7d03c4ff81ca31616a95b48cdc4bfda9ac296715ac4e56",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "213356043e271bb59d5644936969f5bab12c4ccdf2962ea4ed58bf565f1669a9",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 1,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "2e02cf127a04f0eb531a3b1fd0cdd688f4fd0b691b6b9dcb77da2153b1ee4472",
+      "case_id": "translation_001/missing_safe_interval",
+      "certificate_sha256": "6c683484afbc4d340d32fc0218df2ca0288b08621d3ee0ad4ca10b66f5b8ae70",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "32e83730e444ab009d7ebdefa625724f0c16c3631124050cb9ac6cdd52156560",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 1,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "905e1b645c8a91c2e79b18270753e87767352bb56c613957a65995205aa7b6c8",
+      "case_id": "translation_001/violation_plus_missing",
+      "certificate_sha256": "c5efb0b9235d41c8087bf9e2719d820850b2ea1d257695103e39ae6930a30f98",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "213356043e271bb59d5644936969f5bab12c4ccdf2962ea4ed58bf565f1669a9",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 1,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "b8dc50627225e336c8e6d50922172d5127438f09e6f9b971b0c5e5b0ef3ab8d2",
+      "case_id": "translation_002/compliant",
+      "certificate_sha256": "719e3567c2b4e7720cedcd53e9a507a71d44016a795fec7d8ecca7eae0e68855",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "44f4695e75778dbedafd6ba2d89de153f83dfcba70e129f0411c6e9416a0617f",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 2,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "5b08fa6962c36c0679247ab45067989c3243a217c5c8edeb25d309c61373081b",
+      "case_id": "translation_002/observed_violation",
+      "certificate_sha256": "da0a17d4e05b8811941326234a48c0db544f57d3689e088c0448004572e8a7b1",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "44f4695e75778dbedafd6ba2d89de153f83dfcba70e129f0411c6e9416a0617f",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 2,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "43bce1d54193e3a2dc98bbd1fe940ea1c6f5ed3ede48c13b80029872b350f8a0",
+      "case_id": "translation_002/missing_critical_interval",
+      "certificate_sha256": "efaaea86c7c9aa42f1a0b63ad434e7444a2f6f9c4298539a09a63b9e620d0a21",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "44f4695e75778dbedafd6ba2d89de153f83dfcba70e129f0411c6e9416a0617f",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "d2f14f4de4b3d16bf4a047033696c45477cdd44eb3f810e07b0cdd0ac3e3c762",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 2,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "d58a21d11165ded147d435b55e9b41a7878eceb2362046a855cb922e39186e56",
+      "case_id": "translation_002/missing_irrelevant_camera",
+      "certificate_sha256": "d5ce3a449abaf4c70efb372bd4f2313d09f7a6bb5cc115b9090c8d19674e3665",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "44f4695e75778dbedafd6ba2d89de153f83dfcba70e129f0411c6e9416a0617f",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 2,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "b26e25030f27bf25017f1eb2745fe49a37ed48d07b49a88f93185e4fcabb5f29",
+      "case_id": "translation_002/missing_safe_interval",
+      "certificate_sha256": "1d62653c8c47e87fa5f654642c2cf2d893b39673dcef68e5c6112abf680e60d8",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "49dac9c8cbc84ece9c0dd32d1c7bb46ee02c13ea66bc07c2a3ceb5880941807e",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 2,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "9439ff7df470738438a729c29e1611eaaf8851421332bff884b782f48b91a8b4",
+      "case_id": "translation_002/violation_plus_missing",
+      "certificate_sha256": "725aa65e5e08b5f6438aa8af3ca0a6cae272949f14adf0eb150c2ba01c8ff801",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "44f4695e75778dbedafd6ba2d89de153f83dfcba70e129f0411c6e9416a0617f",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 2,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "a262d1d338c97835efeef4b2b558584d6daf5d93e55f42270e574a2a275b155d",
+      "case_id": "translation_003/compliant",
+      "certificate_sha256": "dc29a91254c7db9b9864ddf287734a5f582a772c4cd7a2fc58a4b416c9d35246",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "13984cd6e010a17d2c6514e73094d64860aa155c87d9a1a89f80ac70c5a0d33f",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 3,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "a664313beb298d5eb587da8a3e139a682e34e764e5fa87c1cdf3df03d132f6b6",
+      "case_id": "translation_003/observed_violation",
+      "certificate_sha256": "875257262584df36b2e7efae0813e74bf5ba2df52884dff4ab57bc9838499859",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "13984cd6e010a17d2c6514e73094d64860aa155c87d9a1a89f80ac70c5a0d33f",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 3,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "45b3100c59ca2fde4b50c4fc5bf1dfdb50f3efde2802a07c72bf59c503c75ff9",
+      "case_id": "translation_003/missing_critical_interval",
+      "certificate_sha256": "afbca14d6f2b0a63e8a46331f84bb8b4a96004fa0e8db91273cde0eee0cec884",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "13984cd6e010a17d2c6514e73094d64860aa155c87d9a1a89f80ac70c5a0d33f",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "2eed926139bd271f362e1733444aa6cf35a46702f6531251dc6c65743145ac2a",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 3,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "08879f7a6d30628f6a36013b870a48923e12a4f059a53d3eed8f3367b5ba9d21",
+      "case_id": "translation_003/missing_irrelevant_camera",
+      "certificate_sha256": "82c4383171cc8b615cfef31ff2843179b08c2ecf3e793baeaabffcf5e5a751cd",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "13984cd6e010a17d2c6514e73094d64860aa155c87d9a1a89f80ac70c5a0d33f",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 3,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "c027d52b0119fb7bdc16024b00011546b2c8018d199ad3831fe03991b40b1a3f",
+      "case_id": "translation_003/missing_safe_interval",
+      "certificate_sha256": "5e7e19a03679414f02e92cbcdac01c0b459d6a28e37401c446646089090dc3b9",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "e8de9d9e437a2b020f4079931478c9caeb70189607e2d03e343fd405449b21c9",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 3,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "9ea0d950285a548f66eb8fa190605a712b3daeb224a64ae0f0525e77da93629f",
+      "case_id": "translation_003/violation_plus_missing",
+      "certificate_sha256": "d2071852c2c1a75172b0225ca89cc7cc295f93148090b73942dbf227180f66e2",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "13984cd6e010a17d2c6514e73094d64860aa155c87d9a1a89f80ac70c5a0d33f",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 3,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "eb54f5bf23e3aba2f99034998e2694ce133b13b086c6dab29fcc906e78c6ffb8",
+      "case_id": "translation_004/compliant",
+      "certificate_sha256": "b97c5a601ca47463d0e3a40ff62401074359baa3db830ebe8ca518d68e4b3118",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "6aa997bd3c6f48b068ade503a55d82d514644d2bcde49f059b5b264dcc6f8a5c",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 4,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "0210778882ee37ec5b58a4a3a00eb35acdd491de66889d55ed0dca5f0e1eb722",
+      "case_id": "translation_004/observed_violation",
+      "certificate_sha256": "8a11f883df669fe33b1c38f4266d3b2bee4b38cf901a783c6182b5017b68653a",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "6aa997bd3c6f48b068ade503a55d82d514644d2bcde49f059b5b264dcc6f8a5c",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 4,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "a645b678f240fec6840e877cfd1dd6b9a3f4e014e4626de046ad6b4c21673cfb",
+      "case_id": "translation_004/missing_critical_interval",
+      "certificate_sha256": "47c5c120887f003926441c9286718a3aacf254a5b17946db753d7b97444037e7",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "6aa997bd3c6f48b068ade503a55d82d514644d2bcde49f059b5b264dcc6f8a5c",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "6fe4564b2a208e1076f974860f118a505dd664bf3e41fad2e20909a975f00631",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 4,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "2941e2878edb828a1c3a8008715765fbcc87ae07cf37112469d88b976eda1cea",
+      "case_id": "translation_004/missing_irrelevant_camera",
+      "certificate_sha256": "5d8f8b814a5e3aee8506ea41c62fb39de402b48e34b44bd669b8f343d7660a38",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "6aa997bd3c6f48b068ade503a55d82d514644d2bcde49f059b5b264dcc6f8a5c",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 4,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "ede4f07e1636c49826a28f6d518bac74f2a3f9825c336a9bc24d8e53b75d5569",
+      "case_id": "translation_004/missing_safe_interval",
+      "certificate_sha256": "b1f9cb72ba85055dc151ccedec8009a29cdfbdd394c33f8c0456c78ba5d77f7b",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "a611a5b4571f5abf07a992278fcf8659aa8c412a5818f5f968bd9155d5b1dc19",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 4,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "ca1bbecf829cdb905703d8a81138a624092612da18dce62c4cb8dfc73e959a19",
+      "case_id": "translation_004/violation_plus_missing",
+      "certificate_sha256": "370fa4d41f728bf14cc4bc260a12cae4a471b14639f7edaef4af4e6afbfac7b6",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "6aa997bd3c6f48b068ade503a55d82d514644d2bcde49f059b5b264dcc6f8a5c",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 4,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "13c181fa8405d1124c19ea4595a0107b3cd29bf5b8f0b634540a7b3111388a45",
+      "case_id": "translation_005/compliant",
+      "certificate_sha256": "ee18dee9e91466bf9b4a453a4d78d924f6ba0fc7bc5119d71353b50b42f7c8b9",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "871729a66b29b69297aff96e9ac5e8d90bd474eec378cbb0d95f1580060db863",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 5,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "229a35f9491f002cdc2412a36d601b6463e136d1b871d2c5d208d0fb6d9d25b8",
+      "case_id": "translation_005/observed_violation",
+      "certificate_sha256": "2cdd01386443972c6c88aed978262398d16525cd29dc591437c418f409e436d8",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "871729a66b29b69297aff96e9ac5e8d90bd474eec378cbb0d95f1580060db863",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 5,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "f2a5797436e44c647ec1cb59a48aaee98dc39187ded0498e3960fd2b3379da60",
+      "case_id": "translation_005/missing_critical_interval",
+      "certificate_sha256": "1b31a5377531e7e01b34dd36d00a4d3a04fe6bf82f806633b9c326f7b65b5fda",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "871729a66b29b69297aff96e9ac5e8d90bd474eec378cbb0d95f1580060db863",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "a372b6829c838c77355e80dbefa11718d89ca3df1d14e2d3d03052d2df391d00",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 5,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "db054f26085e37427bffcc1b08da51f8aa97a3e183a020607944bd3f96523910",
+      "case_id": "translation_005/missing_irrelevant_camera",
+      "certificate_sha256": "c98803d478fb37544baa33ce8ab22d34f9d4184c208f714e2063a20e2a148de2",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "871729a66b29b69297aff96e9ac5e8d90bd474eec378cbb0d95f1580060db863",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 5,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "a3c693b040d2f7b18bf5ef4aa095d8f5840d19b5ba3669daadf3fcb8700a9902",
+      "case_id": "translation_005/missing_safe_interval",
+      "certificate_sha256": "69409134dab8a0e479a821952cd44e09716c378f2f00fd875b234bb63b048049",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "35296d58206a3ef5e1364b224bd64930125fc8be4a500f030522d418b1ff6393",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 5,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "07df37ac3989b50b819fbf5a32a2fc44e38aa9ce19871676560dd3eef2afae5d",
+      "case_id": "translation_005/violation_plus_missing",
+      "certificate_sha256": "7e3b36972a3129b06e532f3a3c318792dd812893f054667ddc7c30df7b4f88c4",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "871729a66b29b69297aff96e9ac5e8d90bd474eec378cbb0d95f1580060db863",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 5,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "8bf5350e86cfc25047df266e8f389f3026bad245a820d76bdf8d385a82a5230f",
+      "case_id": "translation_006/compliant",
+      "certificate_sha256": "d6c29f63acce3874f7241461ee12e7107ce66ee17582369fdadff71041c5cdc9",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "002350ceb289dd3b93a258a1d57bb8535b61986a50185f268651267ff28cba4a",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 6,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "5a17ec7defbdb39ae6461780f2b5d75247ffee90702453a32e934c075b26f6d4",
+      "case_id": "translation_006/observed_violation",
+      "certificate_sha256": "a31e3276b010cb0ac31a12026380893171a6cc7fb59ff43ea6d37c1331407054",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "002350ceb289dd3b93a258a1d57bb8535b61986a50185f268651267ff28cba4a",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 6,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "5175bbb13dfa7a1bcbd07b296c7e1af744f9336e378ebcc824372f5745ad23d3",
+      "case_id": "translation_006/missing_critical_interval",
+      "certificate_sha256": "d13bd1ec9bcd498003f2d16a67ee91456c1aa8c71c06a034a0390d0b2e87db63",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "002350ceb289dd3b93a258a1d57bb8535b61986a50185f268651267ff28cba4a",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "5185f2061769edaf02956ecaff5d2489bde80eac70dd915c38c4d93725c16e56",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 6,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "e812c32fa48bd44fdb0164ab3969151e6e80057a72bc4469916a20c53c125d78",
+      "case_id": "translation_006/missing_irrelevant_camera",
+      "certificate_sha256": "be49d4fb0d1c3b093ebf88e51d0883d65857ac73770f2b44d69212aca701c5d9",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "002350ceb289dd3b93a258a1d57bb8535b61986a50185f268651267ff28cba4a",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 6,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "57c10d55f41e680d6bf8b56a477fe5c5debae90da943cf6bfebb4628aa25a02c",
+      "case_id": "translation_006/missing_safe_interval",
+      "certificate_sha256": "80d3a99232416e026e97d6c9226432d4de675c6e6809d45277f4c3ec72e77da8",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "f15361d60f402e11e40cf378a98e7c99e868a95f3b50e57e2d5795fdff117c82",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 6,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "495cba9e058a419020bce1bc24de08f17e620aef5cbfb42da5f774e9bcdf731a",
+      "case_id": "translation_006/violation_plus_missing",
+      "certificate_sha256": "8b365623c3f364aada115fdeaa8f4a5c737dde551659b420ceb8624f0b6dd99d",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "002350ceb289dd3b93a258a1d57bb8535b61986a50185f268651267ff28cba4a",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 6,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "fb30baff8003071b61ffa7b5cd86cb017bdf5d7993d274484ad5c2c570ce0761",
+      "case_id": "translation_007/compliant",
+      "certificate_sha256": "43e85d791d79ef355db8b917014b0414d6df1cf8f7047e9e8cc86db94eebd0f4",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "f187c5a9753e0ea01920801c0cc410545f0eebc289adc2c6f521c33a41698d45",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 7,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "71a5dd6b9f4cbed7cfe37dfe43044bdb17ddb99053b0e9cd3f26e7ba93055190",
+      "case_id": "translation_007/observed_violation",
+      "certificate_sha256": "378c7d7c1b4119b21c258f9809871e6aa8b67e6cd1119dd96babbb8c7b18fbfa",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "f187c5a9753e0ea01920801c0cc410545f0eebc289adc2c6f521c33a41698d45",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 7,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "9cec88dcc5ab93f5890eb75ffa51556f83dda6682cff0e860a606d2c4ee8f1d6",
+      "case_id": "translation_007/missing_critical_interval",
+      "certificate_sha256": "44a9e3b96c6d5ef303e2ce1ef892f54d621294b24d49663d84b5876399be6459",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "f187c5a9753e0ea01920801c0cc410545f0eebc289adc2c6f521c33a41698d45",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "4e8833d87a3481f9615f8d28a6456a7cedf3e7e4e719ba6f5ec6bf8041c675ea",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 7,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "82fe3ec09873c44bbbc307442abdac4e9cd83f03df3868cf05852004e62774a7",
+      "case_id": "translation_007/missing_irrelevant_camera",
+      "certificate_sha256": "424ccd287f09df765cee5460c40a4a596e9beeb4e5cce20c62fdbf108f8f8bd9",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "f187c5a9753e0ea01920801c0cc410545f0eebc289adc2c6f521c33a41698d45",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 7,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "ceeb22dbaf55f92c316ac39a9f2b6f8b0d41e290756cc18187e2e158c28cd8bc",
+      "case_id": "translation_007/missing_safe_interval",
+      "certificate_sha256": "aa85d5ea2788015d7d90f3b58e16ba233c3175a9d5bbdb5d49ed82e730cb4996",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "27c1d5458b10fa61f59c9427d2d392869338a1a059201d884c6f7a6baa8cf775",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 7,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "f3065cb1fbff366078b939a31b6cc616dffef884738ce44d946793f8805e3345",
+      "case_id": "translation_007/violation_plus_missing",
+      "certificate_sha256": "537406d42313ddf1ddcae6b266070dd3f77771cbec6b1927af56f2d162996423",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "f187c5a9753e0ea01920801c0cc410545f0eebc289adc2c6f521c33a41698d45",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 7,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "850b224b92169b3be1c4877f3f4c1799718fe9fbd662fc6c04ec2f30d942003d",
+      "case_id": "translation_008/compliant",
+      "certificate_sha256": "67dd390d5be9d1904ac1373e019e00de5145b2f2d5f64fcb5d54a1546bc3e0e4",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "b88c29f4e266db0a30b9407ccbc92880f09659e4a9d1a26ab9a8780fd22d4811",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 8,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "2eb41a9334e14e9c0062f4a17d2220a87a04b7a4a1cdd0759f535ddab6e51489",
+      "case_id": "translation_008/observed_violation",
+      "certificate_sha256": "9830441c1e131a31fe10c6c32dfffe2f111a9dee06585607a4b675f9d18e9e03",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "b88c29f4e266db0a30b9407ccbc92880f09659e4a9d1a26ab9a8780fd22d4811",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 8,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "6f98b1c098351894f3780dfda55faec60ed4252ae165fbf95999a76334d2ba7f",
+      "case_id": "translation_008/missing_critical_interval",
+      "certificate_sha256": "1ee5fb380c46593b77360ae878e9b01b15321909003baf00feb6df5419ae1db1",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "b88c29f4e266db0a30b9407ccbc92880f09659e4a9d1a26ab9a8780fd22d4811",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "2e4de74bf1913248acc1b81972db09d14f293ac67ef9358995b94120e9e4cbb1",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 8,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "8a87e0a148a871a4cc2462cbe5f39a98d69e705aeb4b9b98f491252a5158cc1e",
+      "case_id": "translation_008/missing_irrelevant_camera",
+      "certificate_sha256": "8be76a8187550093b1f0fe7b01a3652d9607f38efb3bfbc2cf1fc87b279be8ca",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "b88c29f4e266db0a30b9407ccbc92880f09659e4a9d1a26ab9a8780fd22d4811",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 8,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "1aba6d354e7edd4ea249b171843c6499d12049bf9aad3ae904791c3b38df946f",
+      "case_id": "translation_008/missing_safe_interval",
+      "certificate_sha256": "0a0f471d007da53960848c4528028750e94e51781ac214727df047f8d2e852ff",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "bbe11da14b4b71657d3ad381dc085d195026bae48e1a40534c417542f30a1e16",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 8,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "0ba1495766391acf186246fabf98c60d0ce90292b5a7714023cf5fd5d4bb4c96",
+      "case_id": "translation_008/violation_plus_missing",
+      "certificate_sha256": "c6801f63ea650184fde95da2bb691603b8043552934ab7f36e9fdb8ca1df1435",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "b88c29f4e266db0a30b9407ccbc92880f09659e4a9d1a26ab9a8780fd22d4811",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 8,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "cda6cfe202a3158d98105d8922197b29bcfe755f197a61c15ed85932afff87fd",
+      "case_id": "translation_009/compliant",
+      "certificate_sha256": "c1295bd57aed2e1249d588b1cc0b3fa979a7377381af1621a02afc1171985a84",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "089c0879fea399c191ab8c08db2b2633ad9c5e8ac4a9f1724ef8719d57a74161",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 9,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "a990d6f092229ac9571b1ac4c4666e3ae1bd8aaa8528fbb87d51fcf7c1523cb9",
+      "case_id": "translation_009/observed_violation",
+      "certificate_sha256": "73a3889cf7f5ab8f1046c251122b3d6915d94fd98f51848ab28628e9649f53c2",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "089c0879fea399c191ab8c08db2b2633ad9c5e8ac4a9f1724ef8719d57a74161",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 9,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "dc7e918597539ef04b6c906a001351689fbca79eeb4fade11b0f1015fa696838",
+      "case_id": "translation_009/missing_critical_interval",
+      "certificate_sha256": "3dd0e797fc1deb53138e636bd93f4c2ce3c4d563022d3f7978e96f85323c9285",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "089c0879fea399c191ab8c08db2b2633ad9c5e8ac4a9f1724ef8719d57a74161",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "c098e970c2c7ffe67e082cb9c96e52912943bc7c34fd83dc1435b3387c13f417",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 9,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "4a8e4ca28cceff295eff8e918458cd30915294f929ac9b5899af038f4f04fceb",
+      "case_id": "translation_009/missing_irrelevant_camera",
+      "certificate_sha256": "c7f0cfed857639817563dba9ab62801053e45cc60ee81e89e8dc8ded61663c9c",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "089c0879fea399c191ab8c08db2b2633ad9c5e8ac4a9f1724ef8719d57a74161",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 9,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "a74b6dcb1013c5015bf9b1f4f858cf66be7c7a3975014e217fd5bdba3aa4a100",
+      "case_id": "translation_009/missing_safe_interval",
+      "certificate_sha256": "32fd3116c7cf0b1625b8ca94f97033bc1eaa97def81ca938af2696db023793b4",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "41416f27bd68e41361605738a990a255242709949c982402407043704e095ab4",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 9,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "60ca773a3274e731448fc430c0f93d6cba6ed1cdfb99744aab3e15a06307e4ed",
+      "case_id": "translation_009/violation_plus_missing",
+      "certificate_sha256": "67d94a5554eb282dbb214d42ab332bc3f9fd0b64f7b2feaf12309bd7b29af420",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "089c0879fea399c191ab8c08db2b2633ad9c5e8ac4a9f1724ef8719d57a74161",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 9,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "8822a68859594bf627acb61b09291bebbd68cbc52f56b5df544279ecaffca3c1",
+      "case_id": "translation_010/compliant",
+      "certificate_sha256": "f44b938d018bb238292dd373d0da88693f7ee93e21760c165b04e84820fb52ae",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "d89425e02544a372f3e3e84b8504a60107d762c060d5f51d99b401b08ee350ef",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 10,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "f7abc1622567c7a203e01770b5208b6e7ef412d43cce7ddcc901026e13be65d0",
+      "case_id": "translation_010/observed_violation",
+      "certificate_sha256": "e7fd67b12d54f61fa8b7ba6ece6d22a2baa885d321b9ba4419ef460065cd9570",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "d89425e02544a372f3e3e84b8504a60107d762c060d5f51d99b401b08ee350ef",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 10,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "13a981814f424d6d510c0940d2589250ade7e17cd9035111954a9253540c78c2",
+      "case_id": "translation_010/missing_critical_interval",
+      "certificate_sha256": "44b05fa25e3d71dc18faca367db376a896eef7c83229fffe3ea5d99f1a008828",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "d89425e02544a372f3e3e84b8504a60107d762c060d5f51d99b401b08ee350ef",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "7da38c5479a8a4dad08a0f25a982ca0618bf07340165ffa056ba2caf54d4a762",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 10,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "bc0fb53e228cdd0dd5ec8f90ecd7c17fde662592d4ee61c297aa3841ae046d35",
+      "case_id": "translation_010/missing_irrelevant_camera",
+      "certificate_sha256": "b4318f668576d13511b53b5ecb9abfbaa026b3cd058823d6ed2720a4878f73ca",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "d89425e02544a372f3e3e84b8504a60107d762c060d5f51d99b401b08ee350ef",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 10,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "d9c2e718d041441843a36e105b48026d11b42677b01c8c62e34bd795f84dfb55",
+      "case_id": "translation_010/missing_safe_interval",
+      "certificate_sha256": "0e79d49f86abd3c47221ca1b8b40b6d14ceba5f148603fb03046217464148d36",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "132d1e566f70b9bfb18784794ab3d71f3c39264a02eb52afd3aa4446f8fce1e3",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 10,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "98b66f423ffac8cc764021a31380024a4de3bc6aa9e2d6389dd7dcdd80d2cf99",
+      "case_id": "translation_010/violation_plus_missing",
+      "certificate_sha256": "eb55e5b378d73f569e22dac904e5209bf84e5bf56c7e0e5e6090086930a6b6bb",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "d89425e02544a372f3e3e84b8504a60107d762c060d5f51d99b401b08ee350ef",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 10,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "1ea61501873babac40cb821ac7051ce1bed64fc3373518975a40b5205c06ec1b",
+      "case_id": "translation_011/compliant",
+      "certificate_sha256": "9daee762a31b2c6d4e070b7e02cab5acd287572b79009890a1f301e4cfeca3df",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "935556db03288cfc473c429705d9091e71dc9de3cb54dbf21a4eb1905560d6d0",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 11,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "939c12c9e5bb4d4a306b5002d7c13083a71fa25e232bf8052273d1f490f93566",
+      "case_id": "translation_011/observed_violation",
+      "certificate_sha256": "a41519df9605a468eb239b83bbbd0b9fa45b7faaa809cff67eb85769f90c82f6",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "935556db03288cfc473c429705d9091e71dc9de3cb54dbf21a4eb1905560d6d0",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 11,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "fdca4ab29f35a5fd87d132a1f86d729b1e44e09c60d0219f9dfd1bc5cc82e9c7",
+      "case_id": "translation_011/missing_critical_interval",
+      "certificate_sha256": "c916a4f2d4ca2a1be3346c01600978532c5c271cd9d0ed477f502127a42dbe9a",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "935556db03288cfc473c429705d9091e71dc9de3cb54dbf21a4eb1905560d6d0",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "81e9841e0ec6259b5c60a26559e9cef647e6f6b5aaf70e343924a29834a5e966",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 11,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "19fd24f3c9fc6561df8f59e9f78e461fcfb311b48ae51b3688d5f62a417b17ab",
+      "case_id": "translation_011/missing_irrelevant_camera",
+      "certificate_sha256": "c0b1e4e453f80da8583a9d76afdd35260afddc32807aa70a209a51ace5baec99",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "935556db03288cfc473c429705d9091e71dc9de3cb54dbf21a4eb1905560d6d0",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 11,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "d6f2128ad320b63d7a65f61880351b97ccb6cbbaa12c4fc1439f7646dc206274",
+      "case_id": "translation_011/missing_safe_interval",
+      "certificate_sha256": "6ac08de1df63136ff4aa764a13f7af26e6af00a1260699ff5b15c34a6b6601f5",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "d42ed7ba18fc704e6296568385ce989c91610b6c80ac9ca90fbe83e2dee8045e",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 11,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "9bd99c541d19b6c8eeceec54c3c71f19f867b49b6b569734c88e7af384b5ab29",
+      "case_id": "translation_011/violation_plus_missing",
+      "certificate_sha256": "8a840dc5b0b43b08be6fea8f1f4684c14f0cddbfd1d6ab51d6625ec020e67817",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "935556db03288cfc473c429705d9091e71dc9de3cb54dbf21a4eb1905560d6d0",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 11,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "9fe308a9603c14e4295a03804c43479f604504a132bc40ecd0c97efc51bd3d2c",
+      "case_id": "translation_012/compliant",
+      "certificate_sha256": "7d640bbed6387a8977bd7882c77ac9fa2a2a9830ef4838f5eb3a5339bd27e964",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "ea1c4d1caffd8d7ccbad1ab01f09fc37c9855b5f0c2494f1516f3b00a4ce7724",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 12,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "fa4f31ee39b448f138e5cf2907bb097a6fce9eb3fea96d611e938846d88cc00f",
+      "case_id": "translation_012/observed_violation",
+      "certificate_sha256": "fcefd1eeecdc57a40675a29744615a66a52368b7dcf2ac86c3766a857648c51e",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "ea1c4d1caffd8d7ccbad1ab01f09fc37c9855b5f0c2494f1516f3b00a4ce7724",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 12,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "10e98b7fa3820a0b7d71bf89e344d7fb427cdccb8201f59332eaaa4b081d331c",
+      "case_id": "translation_012/missing_critical_interval",
+      "certificate_sha256": "4c17d3735d6f29ec71c7ed4ff16a09c17499902badfc7bb80665729a48efd0fd",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "ea1c4d1caffd8d7ccbad1ab01f09fc37c9855b5f0c2494f1516f3b00a4ce7724",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "e089d8a9b367bdbf8dded965109e9e57077c1963f7c8132e86ba93c9d1475c2f",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 12,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "555c5848705489784a7488966e67d0889db83ab8072143bcda6025c0d68c8503",
+      "case_id": "translation_012/missing_irrelevant_camera",
+      "certificate_sha256": "07101f41259f440f43da1679c7d95c3f61b9a51f20d52c5ba89f6437de41c804",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "ea1c4d1caffd8d7ccbad1ab01f09fc37c9855b5f0c2494f1516f3b00a4ce7724",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 12,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "3762f7a4789584bef5f54d2b92588be8079c838d538778653b637831884cb0ff",
+      "case_id": "translation_012/missing_safe_interval",
+      "certificate_sha256": "8a8540437098c55d3b7597c44869db507834f5ae160383aa3deb9ba271779a9d",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "0752ac07089f38567f08caf7976f917c6d515c8687c73c440df9cf69d0486897",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 12,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "ca8429928c62441adab70d97dbd92215e810cf289de3beb15f9b7bc6946db325",
+      "case_id": "translation_012/violation_plus_missing",
+      "certificate_sha256": "bc84881586a9c43ecdc2ab492523a8da79caa37da1bedac4a34ca7b787ce3078",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "ea1c4d1caffd8d7ccbad1ab01f09fc37c9855b5f0c2494f1516f3b00a4ce7724",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 12,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "2cb11aa8420d0293454395d6b7c95899e71025079048d845e95e19635ea663ac",
+      "case_id": "translation_013/compliant",
+      "certificate_sha256": "0b82c95ab9b8ef32315895cb740ca2b576018a3dba468c208c026318a0b39cc5",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "5d756f4075c777bd97356d615ddbe7ef6e8eda3f516f5e3cb785e3b91d2c75d6",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 13,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "6058b1201efcac38db416f79d2ec28fd4225d92c7ac164798be367c6e85957e5",
+      "case_id": "translation_013/observed_violation",
+      "certificate_sha256": "853773795fdfcc1eca37b368a6415db051b6cf2f136abf9cf735e2d787b8590d",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "5d756f4075c777bd97356d615ddbe7ef6e8eda3f516f5e3cb785e3b91d2c75d6",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 13,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "03e34a75765bfee658c449c71f65e72deda87a02028de3cefd2bd743e5c7d0ca",
+      "case_id": "translation_013/missing_critical_interval",
+      "certificate_sha256": "a8e797c7d6e6e377de6ca1ee21255867c5ecbb44a21c2bf015d1cc4abc1c247c",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "5d756f4075c777bd97356d615ddbe7ef6e8eda3f516f5e3cb785e3b91d2c75d6",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "10a64728a6d08d436bc62013a9afd23f824a4472efeedb87cae5be249fc6462d",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 13,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "84a9e07a3a013ba69d25dbb35b1f8aca795b7b79b7c593a0243d02d58690e02e",
+      "case_id": "translation_013/missing_irrelevant_camera",
+      "certificate_sha256": "a07464d414be51c62a9d99b8d574210153faf53d456481ba79d84a3ff9ac52c9",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "5d756f4075c777bd97356d615ddbe7ef6e8eda3f516f5e3cb785e3b91d2c75d6",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 13,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "161d3dd2ffd294320970ee7a7e5e8e98d987dd207543819c757b60706db79af2",
+      "case_id": "translation_013/missing_safe_interval",
+      "certificate_sha256": "0737ea923b78e3c83524a7294792f5a9c1f080bda28501ff60ea85e27afe7661",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "27d8ab3c65792560c914098e55b665e5574eabeeea13cbf5f78d187871ee26b6",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 13,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "406ea2bdffcb437956a115cf0b012de2cf0605b8aa0e7a431f8f08100f6e5e06",
+      "case_id": "translation_013/violation_plus_missing",
+      "certificate_sha256": "ef85d120140a229f92136cd5d6dbe440b6cd3c9c1c8d70a598670257d17911b1",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "5d756f4075c777bd97356d615ddbe7ef6e8eda3f516f5e3cb785e3b91d2c75d6",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 13,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "bc66c7c3884d5ed7dcae60c5a1d5866eaf2df8adb5f79f69c66e44657cb04c88",
+      "case_id": "translation_014/compliant",
+      "certificate_sha256": "e6958e2f459471242409e174b1d387da4229d22e3976a7fcdd1e485e447c1710",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "b6093ad030ce4f27b316cffcc7e96e9a365039f049d2e407d2ff5b47d1bd3043",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 14,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "f5397cea80207ae39f6a7c02a42594a65074c4f4d4ca39d02a81071f28925bb6",
+      "case_id": "translation_014/observed_violation",
+      "certificate_sha256": "b66bcf01fe1ed45894398b722e21aa8349d6b075d6e5702f7a437a8dc02263ac",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "b6093ad030ce4f27b316cffcc7e96e9a365039f049d2e407d2ff5b47d1bd3043",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 14,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "7b9d0d00839b0c6d72df682c707f892f6d6d0d36f065d56952fd60903d65c041",
+      "case_id": "translation_014/missing_critical_interval",
+      "certificate_sha256": "b3460e5ebb9a35b3232dc9c230533ae2c3a0afcf265182e46b795d56d7ae1060",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "b6093ad030ce4f27b316cffcc7e96e9a365039f049d2e407d2ff5b47d1bd3043",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "3b74c844550ba9136b7e1b3ca0b6665e772209b91563cf8976ea6582917334e5",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 14,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "b02804254e13b04c2c0f408b3c96fe28da6dee191ccd6ee456eeb45e63104fce",
+      "case_id": "translation_014/missing_irrelevant_camera",
+      "certificate_sha256": "e326ed086dd931a0fd21460b534fdd772db7426a1086d62bc7f3d98ecef51cd0",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "b6093ad030ce4f27b316cffcc7e96e9a365039f049d2e407d2ff5b47d1bd3043",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 14,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "09c3ab4efd81e27cd4ab96399c6263528162ef1950bdb5e5d23e9f0252a7da10",
+      "case_id": "translation_014/missing_safe_interval",
+      "certificate_sha256": "dd643e23f29d0edb3020091665c0adba3e8d0326c5db9a8a275885010546ea35",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "382fbf00f06ed3506a3c23191c10aa9bfbaaa809b414cc7c365b93b9449cdddb",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 14,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "3f023660bb2140f6e5a005bf8cae5418a0a8d02063a6d2c2445c756887ab550e",
+      "case_id": "translation_014/violation_plus_missing",
+      "certificate_sha256": "d8b78e0baef5168c360e86cd767e7158a774d1af4df06309eefc1edfe10a9de7",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "b6093ad030ce4f27b316cffcc7e96e9a365039f049d2e407d2ff5b47d1bd3043",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 14,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "959839449e8e63ef57b5cec67670ba7ec3a69cd2338a4d380a25425458796b93",
+      "case_id": "translation_015/compliant",
+      "certificate_sha256": "e08dc55aa46566c9eb972f7f70bf8b2722546a51e0a13f0fd4accb69b1899bc3",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "compliant",
+      "contract_sha256": "4e6675c2130b960bef44ba54cdcdb760a59c803fe1edfd61c29e358978ac6fa5",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 15,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "fa2b8ab8d0a7e337f1aa8a93a6f50705a98c7832ca75f0684f75b909ec8113ca",
+      "case_id": "translation_015/observed_violation",
+      "certificate_sha256": "9fe40ef5817466211782ab26d161d5a71f1e30d59b803355e1e17d0a1b4789e0",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "observed_violation",
+      "contract_sha256": "4e6675c2130b960bef44ba54cdcdb760a59c803fe1edfd61c29e358978ac6fa5",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 15,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    },
+    {
+      "available_trace_sha256": "a301788f3fa42ec20ed638dfcec61df2109f59eb8d502d53eb4e173bcb2b388d",
+      "case_id": "translation_015/missing_critical_interval",
+      "certificate_sha256": "4d5bcbbe078467c0fc0227b9e8512a5684dca81835a1cacb88d97b0d1c938bcc",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_critical_interval",
+      "contract_sha256": "4e6675c2130b960bef44ba54cdcdb760a59c803fe1edfd61c29e358978ac6fa5",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": {
+        "check": "PASS",
+        "checksum": "1f0841b021a9b6da90f85c8c2b912a885831a42d459ae8a111b884c1c881eeb5",
+        "worlds": {
+          "candidate_compliant": {
+            "min_clearance_m": 1.3,
+            "verdict": "COMPLIANT"
+          },
+          "candidate_violating": {
+            "min_clearance_m": 0.0,
+            "verdict": "VIOLATING"
+          }
+        }
+      },
+      "separate_checker_verdict": "INCONCLUSIVE",
+      "transformation_id": 15,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "INCONCLUSIVE"
+    },
+    {
+      "available_trace_sha256": "936d051ece65fb0df71695f1f77822cb42b49c9802dd5688f4c54a2dfc70f514",
+      "case_id": "translation_015/missing_irrelevant_camera",
+      "certificate_sha256": "1f05274b520670103b324275852b4c1c06051cc5f914e0a355c1e03f4afdb47f",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_irrelevant_camera",
+      "contract_sha256": "4e6675c2130b960bef44ba54cdcdb760a59c803fe1edfd61c29e358978ac6fa5",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 15,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "ac75742ee321683199de6f41939d0d230c320225125446948105922d19066dc4",
+      "case_id": "translation_015/missing_safe_interval",
+      "certificate_sha256": "3d968567a2d4de8d3e7c453cb6615dd1192a415ae4bb95e944699de055e196dd",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "condition": "missing_safe_interval",
+      "contract_sha256": "e46aec3d8f9d62efa443bb396631f50d50a19fe37755f15784f3dd34dd5fbf6e",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "full_trace_truth_class": "COMPLIANT",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "COMPLIANT",
+      "transformation_id": 15,
+      "unresolved_coverage": [],
+      "veap_verdict": "COMPLIANT"
+    },
+    {
+      "available_trace_sha256": "0a679b47c5983bf341e09acdcb14ccf27bb261095320848a2d51775e5d536550",
+      "case_id": "translation_015/violation_plus_missing",
+      "certificate_sha256": "55b12d0a1d934ca7c16e992ff23a619d5e2c41a67ca7b7d7b64c7db7475a8020",
+      "checker_status": "PASS",
+      "comparators": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "condition": "violation_plus_missing",
+      "contract_sha256": "4e6675c2130b960bef44ba54cdcdb760a59c803fe1edfd61c29e358978ac6fa5",
+      "expected_epistemic_verdict": "VIOLATING",
+      "full_trace_truth_class": "VIOLATING",
+      "oracle_is_author_constructed": true,
+      "possible_worlds_pair": null,
+      "separate_checker_verdict": "VIOLATING",
+      "transformation_id": 15,
+      "unresolved_coverage": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap_verdict": "VIOLATING"
+    }
+  ],
+  "conditions": [
+    "compliant",
+    "observed_violation",
+    "missing_critical_interval",
+    "missing_irrelevant_camera",
+    "missing_safe_interval",
+    "violation_plus_missing"
+  ],
+  "method": "Rigid translations of author-specified examples; do not treat as independent replications",
+  "n_cases": 96,
+  "no_experimental_p_value_or_sota_claim": true,
+  "no_independent_scenes": true,
+  "number_of_geometry_translations": 16,
+  "schema": "veap.r1.identifiability-study/1",
+  "source_authenticity": "UNATTESTED",
+  "study": "AUTHOR_CONSTRUCTED_DETERMINISTIC_STRESS_TEST",
+  "summary": {
+    "accepted_counterfactual_ambiguity_witnesses": 16,
+    "accepted_veap_certificates": 96,
+    "correct_by_method": {
+      "gap_aware": 80,
+      "goal_only": 48,
+      "sampled_safety": 80,
+      "separate_monitor": 96,
+      "veap": 96
+    },
+    "correlated_stress_cases_not_holdout_scenes": 96,
+    "expected_epistemic_verdicts": {
+      "COMPLIANT": 48,
+      "INCONCLUSIVE": 16,
+      "VIOLATING": 32
+    }
+  },
+  "unit_of_scientific_generalisation": "NOT_ESTABLISHED",
+  "upstream_ABC_reproduction": "NOT_RUN",
+  "upstream_EAI_reproduction": "NOT_RUN"
+}

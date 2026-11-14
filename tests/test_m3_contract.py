@@ -6,11 +6,11 @@ import subprocess
 import sys
 from pathlib import Path
 import pytest
-from veab.m3_replay.core import (
+from veap.m3_replay.core import (
     CONTRACT_SCHEMA, RECORD_SCHEMA, ContractError, audit_records, canonical_bytes,
     iter_jsonl, load_contract, sha256_obj, validate_contract,
 )
-from veab.m3_replay.rosbag2_adapter import iter_rosbag2_mcap,require_rosbag_input
+from veap.m3_replay.rosbag2_adapter import iter_rosbag2_mcap,require_rosbag_input
 
 ROOT=Path(__file__).resolve().parents[1]
 CONTRACT=ROOT/'contracts/m3_nav_v1.template.json'
@@ -146,7 +146,7 @@ def test_native_rosbag_missing_path_rejected():
 def test_cli_success_and_failure(tmp_path):
     for case,rc in [('clean',0),('no_odom',3)]:
         dest=tmp_path/f'{case}.json'
-        result=subprocess.run([sys.executable,'-m','veab.m3_replay.cli',
+        result=subprocess.run([sys.executable,'-m','veap.m3_replay.cli',
              '--contract',str(CONTRACT),'--jsonl',str(FIX/(case+'.jsonl')),'--out',str(dest)],
              cwd=ROOT,capture_output=True,text=True)
         assert result.returncode==rc,result.stderr
@@ -159,9 +159,9 @@ def test_independent_monitor_import_isolation():
     tree=ast.parse(text)
     for node in ast.walk(tree):
         if isinstance(node,ast.Import):
-            assert all(not a.name.startswith('veab') for a in node.names)
+            assert all(not a.name.startswith('veap') for a in node.names)
         if isinstance(node,ast.ImportFrom):
-            assert not (node.module or '').startswith('veab')
+            assert not (node.module or '').startswith('veap')
 
 @pytest.mark.parametrize('case,pass_expected',[
  ('clean',True),('no_scan',False),('wrong_type',False),
@@ -191,7 +191,7 @@ def test_cross_monitor_agreement_on_all_bounded_fixtures():
 
 
 def test_no_robot_publish_or_actuator_api():
-    root=ROOT/'veab/m3_replay'
+    root=ROOT/'veap/m3_replay'
     texts='\n'.join(p.read_text() for p in root.glob('*.py'))
     assert '.publish(' not in texts
     assert 'create_publisher(' not in texts

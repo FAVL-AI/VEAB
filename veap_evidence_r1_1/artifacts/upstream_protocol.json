@@ -1,0 +1,133 @@
+{
+  "abc": {
+    "assessments": [
+      {
+        "source": "assessments/bird-bench.yaml",
+        "status": "NOT_RUN"
+      },
+      {
+        "source": "assessments/cy-bench.yaml",
+        "status": "NOT_RUN"
+      },
+      {
+        "source": "assessments/gaia.yaml",
+        "status": "NOT_RUN"
+      },
+      {
+        "source": "assessments/kernel-bench.yaml",
+        "status": "NOT_RUN"
+      },
+      {
+        "source": "assessments/mle-bench.yaml",
+        "status": "NOT_RUN"
+      },
+      {
+        "source": "assessments/osworld.yaml",
+        "status": "NOT_RUN"
+      },
+      {
+        "source": "assessments/swe-bench.yaml",
+        "status": "NOT_RUN"
+      },
+      {
+        "source": "assessments/swe-lancer.yaml",
+        "status": "NOT_RUN"
+      },
+      {
+        "source": "assessments/tau-bench.yaml",
+        "status": "NOT_RUN"
+      },
+      {
+        "source": "assessments/webarena.yaml",
+        "status": "NOT_RUN"
+      }
+    ],
+    "checklist": "ABC.md",
+    "checklist_sections": [
+      "Outcome Validity",
+      "Challenge Validity",
+      "Benchmark Reporting"
+    ],
+    "flaw_experiments": [
+      {
+        "name": "tau-bench",
+        "status": "NOT_RUN"
+      },
+      {
+        "name": "kernel-bench",
+        "status": "NOT_RUN"
+      },
+      {
+        "name": "swe-lancer",
+        "status": "NOT_RUN"
+      },
+      {
+        "name": "webarena",
+        "status": "NOT_RUN"
+      },
+      {
+        "name": "osworld",
+        "status": "NOT_RUN"
+      }
+    ],
+    "repository": "https://github.com/uiuc-kang-lab/agentic-benchmarks",
+    "revision": "ae1124758098876db04336e1d8c6e419a139c6e3"
+  },
+  "eai": {
+    "environment": "Python 3.8 separate environment, BEHAVIOR iGibson optional dependency",
+    "repository": "https://github.com/embodied-agent-interface/embodied-agent-interface",
+    "revision": "531c62f8df2cb392bdf1907923c76da41cad4fe6",
+    "tasks": [
+      {
+        "command": "eai-eval --dataset virtualhome --eval-type goal_interpretation --mode evaluate_results",
+        "environment": "virtualhome",
+        "module": "goal_interpretation",
+        "status": "NOT_RUN"
+      },
+      {
+        "command": "eai-eval --dataset virtualhome --eval-type subgoal_decomposition --mode evaluate_results",
+        "environment": "virtualhome",
+        "module": "subgoal_decomposition",
+        "status": "NOT_RUN"
+      },
+      {
+        "command": "eai-eval --dataset virtualhome --eval-type action_sequencing --mode evaluate_results",
+        "environment": "virtualhome",
+        "module": "action_sequencing",
+        "status": "NOT_RUN"
+      },
+      {
+        "command": "eai-eval --dataset virtualhome --eval-type transition_modeling --mode evaluate_results",
+        "environment": "virtualhome",
+        "module": "transition_modeling",
+        "status": "NOT_RUN"
+      },
+      {
+        "command": "eai-eval --dataset behavior --eval-type goal_interpretation --mode evaluate_results",
+        "environment": "behavior",
+        "module": "goal_interpretation",
+        "status": "NOT_RUN"
+      },
+      {
+        "command": "eai-eval --dataset behavior --eval-type subgoal_decomposition --mode evaluate_results",
+        "environment": "behavior",
+        "module": "subgoal_decomposition",
+        "status": "NOT_RUN"
+      },
+      {
+        "command": "eai-eval --dataset behavior --eval-type action_sequencing --mode evaluate_results",
+        "environment": "behavior",
+        "module": "action_sequencing",
+        "status": "NOT_RUN"
+      },
+      {
+        "command": "eai-eval --dataset behavior --eval-type transition_modeling --mode evaluate_results",
+        "environment": "behavior",
+        "module": "transition_modeling",
+        "status": "NOT_RUN"
+      }
+    ]
+  },
+  "no_score_claims": true,
+  "schema": "veap.upstream.reproduction/1"
+}

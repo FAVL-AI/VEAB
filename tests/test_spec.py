@@ -1,5 +1,5 @@
 import pytest
-from veab.spec import Scenario, digest, canonical, list_scenarios, load_scenario
+from veap.spec import Scenario, digest, canonical, list_scenarios, load_scenario
 
 
 def test_five_scenarios_with_train_validation_test():

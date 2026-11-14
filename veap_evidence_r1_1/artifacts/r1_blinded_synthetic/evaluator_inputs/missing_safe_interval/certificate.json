@@ -1,0 +1,83 @@
+{
+  "assumptions": [
+    "Maximum translational speed bound applies over every unobserved interval",
+    "Position error is never greater than the stated uncertainty",
+    "Frame, clock and mission window are correct, and source records are genuine"
+  ],
+  "certificate_schema": "veap.evidence.sufficiency/1",
+  "certificate_sha256": "2909424f1b2d945369edccb48b7e65e8eb41ae3188b58b27674a410c424a3e1b",
+  "confirmed_violations": [],
+  "contract_sha256": "0a86b2c4595b30ac43ebc2343a86b5cac83769edb503e17757173706b9da168f",
+  "eligible_pose_samples": 4,
+  "evidence_witnesses": [
+    {
+      "assurance": "conditional_motion_bound",
+      "evidence_refs": [
+        "pose-0",
+        "pose-1"
+      ],
+      "interval_s": [
+        0.0,
+        2.0
+      ],
+      "type": "continuous_keepout_coverage"
+    },
+    {
+      "distance_upper_bound_m": 0.02,
+      "evidence_ref": "pose-4",
+      "t_s": 2.0,
+      "type": "terminal_goal_certified"
+    }
+  ],
+  "missing_evidence_diagnostics": [
+    {
+      "interval_s": [
+        0.5,
+        1.5
+      ],
+      "not_automatically_inconclusive": true,
+      "type": "nominal_recording_gap"
+    }
+  ],
+  "observed_samples": 4,
+  "requirements": {
+    "goal_at_deadline": {
+      "unresolved_intervals": [],
+      "verdict": "COMPLIANT",
+      "witnesses": [
+        {
+          "distance_upper_bound_m": 0.02,
+          "evidence_ref": "pose-4",
+          "t_s": 2.0,
+          "type": "terminal_goal_certified"
+        }
+      ]
+    },
+    "keepout_continuous": {
+      "unresolved_intervals": [],
+      "verdict": "COMPLIANT",
+      "witnesses": [
+        {
+          "assurance": "conditional_motion_bound",
+          "evidence_refs": [
+            "pose-0",
+            "pose-1"
+          ],
+          "interval_s": [
+            0.0,
+            2.0
+          ],
+          "type": "continuous_keepout_coverage"
+        }
+      ]
+    }
+  },
+  "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+  "source_authenticity": "UNATTESTED",
+  "source_hash_mode": "raw_bytes",
+  "source_kind": "synthetic",
+  "source_sha256": "44b877754c565a2f10e9b016b75326c83fee7973bcc1c3e56695b79acd78218d",
+  "trace_canonical_sha256": "45fc778eef3cabd8e6c05df43974a2164ec149daa398e95396f6ab1bdd95bc83",
+  "unresolved_coverage": [],
+  "verdict": "COMPLIANT"
+}

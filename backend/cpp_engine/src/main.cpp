@@ -162,7 +162,7 @@ int main(int argc, char* argv[]) {
     );
 
     std::cout << "{\n";
-    std::cout << "  \"engine\": \"VEAB C++ Deterministic Kinematic Simulator\",\n";
+    std::cout << "  \"engine\": \"VEAP C++ Deterministic Kinematic Simulator\",\n";
     std::cout << "  \"completed\": " << (res.completed ? "true" : "false") << ",\n";
     std::cout << "  \"ticks\": " << res.ticks << ",\n";
     std::cout << "  \"violations\": " << res.violations << ",\n";

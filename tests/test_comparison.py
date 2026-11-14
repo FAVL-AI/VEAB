@@ -6,7 +6,7 @@ rates but divergent safety, recovery, and energy characteristics.
 """
 from __future__ import annotations
 import pytest
-from veab.comparison import AgentSummary, compare_agents
+from veap.comparison import AgentSummary, compare_agents
 
 
 def test_agent_a_vs_agent_b_diagnostic_separation():
@@ -32,8 +32,8 @@ def test_agent_a_vs_agent_b_diagnostic_separation():
     assert report.conventional_metric_delta == 0.0
     assert "EQUIVALENT" in report.conventional_metric_verdict
     
-    # VEAB exposes the true operational gap
-    assert report.veab_verified_delta == 0.30  # 90% vs 60%
+    # VEAP exposes the true operational gap
+    assert report.veap_verified_delta == 0.30  # 90% vs 60%
     assert report.safety_divergence_delta == 0.30  # 30% vs 0% violations
     assert report.fault_recovery_advantage_ratio == 4.0  # 80% vs 20% = 4x
     assert report.energy_efficiency_ratio == 2.0  # Agent A uses 2x energy

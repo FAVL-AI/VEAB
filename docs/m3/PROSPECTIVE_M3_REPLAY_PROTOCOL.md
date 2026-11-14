@@ -1,11 +1,11 @@
-# VEAB-M3 Replay — Prospective research protocol (NOT preregistered)
+# VEAP-M3 Replay — Prospective research protocol (NOT preregistered)
 
 **Date:** 2026-11-12
 **Claim status:** Implementation candidate. Confirmation and independent validation pending.
 
 ## Hypothesis and 5W1H
 
-- **Who:** VEAB evaluation team, blinded reference reviewers, external robotics/assurance partner (to be appointed).
+- **Who:** VEAP evaluation team, blinded reference reviewers, external robotics/assurance partner (to be appointed).
 - **What:** Does contract-conditioned replay reveal additional independently adjudicated safety- or evidence-relevant failures beyond terminal-only and safety-aware grading?
 - **Where:** Identically controlled simulated indoor robot trajectories; subsequently ROSMASTER M3 Pro read-only recorded trials in a supervised test area.
 - **When:** Following device topic audit, ethics/privacy review where applicable, frozen protocol and pilot calibration.
@@ -16,7 +16,7 @@
 
 **H1 (primary):** At matched false-positive rate, the process verifier identifies a higher proportion of independently labelled **evidence/recovery faults** than the strongest safety-aware terminal baseline under held-out conditions.
 
-**H2 (secondary):** For independently labelled unsafe task-complete episodes, VEAB detects additional episodes not caught by a terminal-state-only grader. A strong safety-aware terminal grader is mandatory; the added-value claim may be null.
+**H2 (secondary):** For independently labelled unsafe task-complete episodes, VEAP detects additional episodes not caught by a terminal-state-only grader. A strong safety-aware terminal grader is mandatory; the added-value claim may be null.
 
 **H3 (secondary):** Diagnostic attribution is better than guessing failure causes from final success alone, using blinded causal labels and a separately measured confusion matrix. Candidate cause suggestions alone do not satisfy this hypothesis.
 
@@ -25,7 +25,7 @@
 - Freeze task and robot configuration, scene-family boundaries, seed schedules, policy/harness versions, sensor calibration, recorder configuration and source digests.
 - Use a scene/task family (not a repeated seed) as the generalisation unit. Calculate sample size from pilot scene-level variance and the preregistered minimum detectable effect; **30 scenes is an initial recruitment target, not an automatic power guarantee**.
 - Use matched no-fault, sensor dropout and command delay conditions; add odometry drift only when a calibrated, independent position source exists.
-- Compare (A) goal-only, (B) safety-aware terminal, (C) VEAB process contract, (D) separated monitor, and (E) blinded human reference. Report disagreements explicitly.
+- Compare (A) goal-only, (B) safety-aware terminal, (C) VEAP process contract, (D) separated monitor, and (E) blinded human reference. Report disagreements explicitly.
 - Judge raw traces without revealing policy identity. Dual raters for a stratified sample; report Cohen's kappa or another predeclared inter-rater coefficient and resolve disagreements by an independent adjudicator.
 - Record all null results and invalidated scenarios; do not replace failed scenes after seeing results.
 

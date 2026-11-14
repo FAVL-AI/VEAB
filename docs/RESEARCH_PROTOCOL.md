@@ -1,12 +1,12 @@
-# VEAB — Research, Experiment, and Verification Protocol
+# VEAP — Research, Experiment, and Verification Protocol
 
 **Status: Laboratory research prototype.**
 
-> **Core Definition:** VEAB is a **model- and harness-agnostic evaluation protocol** that jointly measures **task success**, **constraint violations**, **recovery**, **resource cost**, and **independently checkable evidence** under **controlled faults**.
+> **Core Definition:** VEAP is a **model- and harness-agnostic evaluation protocol** that jointly measures **task success**, **constraint violations**, **recovery**, **resource cost**, and **independently checkable evidence** under **controlled faults**.
 
 ## Canonical Research Narrative
 
-The value proposition of VEAB is tested directly through empirical verification rather than narrative dramatization. We do not invent catastrophes, fictional character conflicts, or benchmark results to explain why the platform matters.
+The value proposition of VEAP is tested directly through empirical verification rather than narrative dramatization. We do not invent catastrophes, fictional character conflicts, or benchmark results to explain why the platform matters.
 
 For the full nine-stage narrative, primary audience, and platform classification, see [CANONICAL_NARRATIVE.md](CANONICAL_NARRATIVE.md).
 
@@ -39,13 +39,13 @@ Consider two candidate deployment policies evaluated across 100 trials:
 | Evaluation Metric | Agent A | Agent B | Evaluation Verdict |
 |---|---|---|---|
 | **Conventional Final-Success Benchmark** | **90%** | **90%** | **EQUIVALENT ($\Delta = 0.0$)** |
-| **VEAB Verified Completion** | **60%** | **90%** | **$\Delta = +30.0\%$ advantage for Agent B** |
+| **VEAP Verified Completion** | **60%** | **90%** | **$\Delta = +30.0\%$ advantage for Agent B** |
 | **Keep-Out Constraint Violations** | 30% | 0% | Agent A breaches critical safety boundaries |
 | **Fault Recovery Rate** | 20% | 80% | Agent B has $4\times$ higher recovery resilience |
 | **Relative Energy Consumption** | $2.0\times$ | $1.0\times$ | Agent A imposes double the mechanical/battery cost |
 | **Deployment Recommendation** | **REJECTED (Unsafe)** | **VERIFIED CANDIDATE** | **Stark Operational Divergence** |
 
-> **Conclusion:** A conventional success-only benchmark ranks them identically, obscuring catastrophic deployment risks. VEAB exposes the true multidimensional operational gap.
+> **Conclusion:** A conventional success-only benchmark ranks them identically, obscuring catastrophic deployment risks. VEAP exposes the true multidimensional operational gap.
 
 ### Formal Research Hypothesis
 
@@ -80,7 +80,7 @@ The present results motivate and support this hypothesis; future multi-simulator
 ## Experimental design / controls
 
 1. **Freeze:** Save each scenario contract's SHA-256 digest and code commit. Current demo split labels are *public*, not contamination-controlled.
-2. **Factorial comparisons:** Two reference policies (greedy, route), two gate conditions (on/off), seeds 0/1/2 initially. `veab suite` pairs condition by scenario and seed.
+2. **Factorial comparisons:** Two reference policies (greedy, route), two gate conditions (on/off), seeds 0/1/2 initially. `veap suite` pairs condition by scenario and seed.
 3. **Adversarial challenges:** Observation dropout, actuator stall, perception noise, forbidden regions, narrow clearances, tampering with event payload/manifest, absent-object abstention, invalid trajectory and premature terminal claim.
 4. **Process metrics:** Verified completion, partial completion, unsafe steps, min clearance, interventions, injected faults recovered, simulation time, and proxy motion energy. Track invalid/missing data separately.
 5. **Statistics:** Report every trial, denominators, descriptive means, paired differences and resampled percentile intervals. Current three-seed values cannot establish general significance; later use preregistered scene-level cluster bootstrap and held-out families.

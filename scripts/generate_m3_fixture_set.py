@@ -21,7 +21,7 @@ def records():
     items=[]
     for step in range(5):
         for topic in ('/odom','/cmd_vel','/scan','/tf','/imu/data_raw'):
-            items.append({'schema_version':'veab.m3.record/1','topic':topic,'ros_type':TYPE[topic],
+            items.append({'schema_version':'veap.m3.record/1','topic':topic,'ros_type':TYPE[topic],
                           'log_time_ns':1_000_000_000+step*100_000_000})
     return items
 
@@ -43,7 +43,7 @@ def export():
     patch('backwards_timestamp',lambda v:v[20].update(log_time_ns=1_000_000_000-1))
     patch('large_gap',lambda v:[r.update(log_time_ns=r['log_time_ns']+2_000_000_000) for r in v if r['topic']=='/odom' and r['log_time_ns']>=1_300_000_000])
     patch('missing_header',lambda v:None,True,'Header clocks not required in example contract')
-    patch('unknown_extra_topic',lambda v:v.append({'schema_version':'veab.m3.record/1','topic':'/diagnostics','ros_type':'diagnostic_msgs/msg/DiagnosticArray','log_time_ns':1_100_000_000}),True,'Extraneous channel is allowed')
+    patch('unknown_extra_topic',lambda v:v.append({'schema_version':'veap.m3.record/1','topic':'/diagnostics','ros_type':'diagnostic_msgs/msg/DiagnosticArray','log_time_ns':1_100_000_000}),True,'Extraneous channel is allowed')
     patch('type_flip_lidar',lambda v:next(r.update(ros_type='sensor_msgs/msg/PointCloud2') for r in v if r['topic']=='/scan'))
     patch('truncated_one_sample',lambda v:v.__setitem__(slice(None),[r for r in v if r['log_time_ns'] <1_200_000_000]),True,'Bounded window is inferred from recorded data; truncation is not independently observable without an expected window')
     manifest=[]

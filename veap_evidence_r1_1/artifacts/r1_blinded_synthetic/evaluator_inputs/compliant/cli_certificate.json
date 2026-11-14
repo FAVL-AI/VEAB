@@ -1,0 +1,80 @@
+{
+  "assumptions": [
+    "Maximum translational speed bound applies over every unobserved interval",
+    "Position error is never greater than the stated uncertainty",
+    "Frame, clock and mission window are correct, and source records are genuine"
+  ],
+  "certificate_schema": "veap.evidence.sufficiency/1",
+  "certificate_sha256": "0d1ade29852ffffe32977e452957975d16864b5faf79eed1c714c83b0877eae0",
+  "confirmed_violations": [],
+  "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+  "eligible_pose_samples": 5,
+  "evidence_witnesses": [
+    {
+      "assurance": "conditional_motion_bound",
+      "evidence_refs": [
+        "pose-0",
+        "pose-1",
+        "pose-2",
+        "pose-3",
+        "pose-4"
+      ],
+      "interval_s": [
+        0.0,
+        2.0
+      ],
+      "type": "continuous_keepout_coverage"
+    },
+    {
+      "distance_upper_bound_m": 0.02,
+      "evidence_ref": "pose-4",
+      "t_s": 2.0,
+      "type": "terminal_goal_certified"
+    }
+  ],
+  "missing_evidence_diagnostics": [],
+  "observed_samples": 5,
+  "requirements": {
+    "goal_at_deadline": {
+      "unresolved_intervals": [],
+      "verdict": "COMPLIANT",
+      "witnesses": [
+        {
+          "distance_upper_bound_m": 0.02,
+          "evidence_ref": "pose-4",
+          "t_s": 2.0,
+          "type": "terminal_goal_certified"
+        }
+      ]
+    },
+    "keepout_continuous": {
+      "unresolved_intervals": [],
+      "verdict": "COMPLIANT",
+      "witnesses": [
+        {
+          "assurance": "conditional_motion_bound",
+          "evidence_refs": [
+            "pose-0",
+            "pose-1",
+            "pose-2",
+            "pose-3",
+            "pose-4"
+          ],
+          "interval_s": [
+            0.0,
+            2.0
+          ],
+          "type": "continuous_keepout_coverage"
+        }
+      ]
+    }
+  },
+  "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+  "source_authenticity": "UNATTESTED",
+  "source_hash_mode": "raw_bytes",
+  "source_kind": "synthetic",
+  "source_sha256": "c6355562fbb067d437723c4dfaf8b3f81ed7cd61a34d0cd58b4ab4b2ba27bc4d",
+  "trace_canonical_sha256": "90cb448d270c3a185d2882599ba4abb801259972ae2926c5dd6b4f3994ea5da0",
+  "unresolved_coverage": [],
+  "verdict": "COMPLIANT"
+}

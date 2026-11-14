@@ -1,7 +1,7 @@
 """Test ROS 2 & MCAP telemetry ingestion, preserving all signals, and truth vs record check."""
 import pytest
-from veab.spec import load_scenario
-from veab.adapters.mcap_telemetry import (
+from veap.spec import load_scenario
+from veap.adapters.mcap_telemetry import (
     MCAPTelemetryFrame,
     ProvenanceMetadata,
     CalibrationMetadata,

@@ -20,5 +20,5 @@ starlette==1.10.0
 typing-inspection==0.4.5
 typing_extensions==4.16.0
 uvicorn==0.54.0
-# Editable Git install with no remote (veab-platform==0.1.0)
--e /Users/favl/Downloads/veab-platform
+# Editable Git install with no remote (veap-platform==0.1.0)
+-e /Users/favl/Downloads/veap-platform

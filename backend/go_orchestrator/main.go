@@ -165,7 +165,7 @@ func main() {
 
 	summary := fmt.Sprintf(
 		"Hypothesis Validated: While both policies achieve %.1f%% outcome success, "+
-			"VEAB proves Agent B achieves %.1f%% verified success vs %.1f%% for Agent A, "+
+			"VEAP proves Agent B achieves %.1f%% verified success vs %.1f%% for Agent A, "+
 			"with zero violations (vs %.2f unsafe actions/trial), 4x recovery rate (%.1f%% vs %.1f%%), "+
 			"and half the energy cost (%.1f J vs %.1f J).",
 		metricsByPolicy["agent_a_unshielded"].OutcomeSuccessRate*100,
@@ -179,7 +179,7 @@ func main() {
 	)
 
 	rep := OrchestratorReport{
-		Engine:           "VEAB Go High-Throughput Concurrent Orchestrator (Goroutines + Mutex)",
+		Engine:           "VEAP Go High-Throughput Concurrent Orchestrator (Goroutines + Mutex)",
 		NumScenarios:     5,
 		TotalTrials:      len(allTrials),
 		FaultBreakdown:   faultCounts,

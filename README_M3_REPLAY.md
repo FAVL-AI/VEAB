@@ -1,16 +1,16 @@
-# VEAB-M3 Replay — Research Slice M3-R0.1
+# VEAP-M3 Replay — Research Slice M3-R0.1
 
-**Scope:** Versioned, read-only ROS 2/MCAP evidence contracts, topic-type and timing checks, a separate-implementation monitor, and synthetic controls. This is an **additive package** for VEAB (Python >=3.10); it does not edit the existing VEAB engine or publish ROS commands.
+**Scope:** Versioned, read-only ROS 2/MCAP evidence contracts, topic-type and timing checks, a separate-implementation monitor, and synthetic controls. This is an **additive package** for VEAP (Python >=3.10); it does not edit the existing VEAP engine or publish ROS commands.
 
 ## A. Run the software-only synthetic controls, without ROS installed
 
-From the VEAB repository root:
+From the VEAP repository root:
 
 ```bash
 python -m pytest -q tests/test_m3_contract.py
 python scripts/generate_m3_fixture_set.py
 python scripts/run_m3_controls.py
-python -m veab.m3_replay.cli \
+python -m veap.m3_replay.cli \
   --contract contracts/m3_nav_v1.template.json \
   --jsonl examples/m3/clean.jsonl \
   --out examples/m3/local-audit.json
@@ -26,9 +26,9 @@ Reports are explicitly `UNATTESTED`; these synthetic controls are not a validati
 In a NEW terminal, outside the Isaac/MuJoCo virtual environments:
 
 ```bash
-cd ~/projects/VEAB  # use the actual VEAB checkout path
+cd ~/projects/VEAP  # use the actual VEAP checkout path
 source /opt/ros/humble/setup.bash
-bash scripts/veab_m3_capture_preflight.sh
+bash scripts/veap_m3_capture_preflight.sh
 ros2 topic list -t
 ```
 
@@ -40,9 +40,9 @@ Use the ROS 2 system Python (which has `rosbag2_py`) rather than Isaac Python 3.
 
 ```bash
 source /opt/ros/humble/setup.bash
-cd /path/to/your/veab-repository
+cd /path/to/your/veap-repository
 export PYTHONPATH="$PWD${PYTHONPATH:+:$PYTHONPATH}"
-/usr/bin/python3 -m veab.m3_replay.cli \
+/usr/bin/python3 -m veap.m3_replay.cli \
   --contract contracts/m3_nav_v1.template.json \
   --bag /path/to/recorded/bag_or_file.mcap \
   --out m3-audit-report.json
@@ -74,8 +74,8 @@ Never use these results as estimates of unsafe-action detection, a robot safety 
 
 ## F. External agent runtimes
 
-NVIDIA NemoClaw / OpenShell can be evaluated later as a **sandboxed agent executor**, separately from VEAB's verifier and source-of-truth custody. Do not route robot safety-critical control through it or assume runtime sandboxing establishes physical safety. No NemoClaw components or model weights are installed by this patch.
+NVIDIA NemoClaw / OpenShell can be evaluated later as a **sandboxed agent executor**, separately from VEAP's verifier and source-of-truth custody. Do not route robot safety-critical control through it or assume runtime sandboxing establishes physical safety. No NemoClaw components or model weights are installed by this patch.
 
 ## G. Linux native backend portability note
 
-The base VEAB repository currently tracks prebuilt macOS ARM64 (`Mach-O 64-bit arm64`) executables under `backend/bin/` (`veab-cpp-sim`, `veab-go-orchestrator`, `veab-rust-verifier`). On an x86_64 Linux workstation, `tests/test_native_backends.py` will fail with `OSError: [Errno 8] Exec format error` until those binaries are rebuilt natively (`bash backend/build.sh` with `cargo`, `g++`/`clang++`, and `go` on `PATH`), or ignored via `pytest --ignore=tests/test_native_backends.py`. Do not commit host-compiled binaries into the additive M3 Replay patch.
+The base VEAP repository currently tracks prebuilt macOS ARM64 (`Mach-O 64-bit arm64`) executables under `backend/bin/` (`veap-cpp-sim`, `veap-go-orchestrator`, `veap-rust-verifier`). On an x86_64 Linux workstation, `tests/test_native_backends.py` will fail with `OSError: [Errno 8] Exec format error` until those binaries are rebuilt natively (`bash backend/build.sh` with `cargo`, `g++`/`clang++`, and `go` on `PATH`), or ignored via `pytest --ignore=tests/test_native_backends.py`. Do not commit host-compiled binaries into the additive M3 Replay patch.

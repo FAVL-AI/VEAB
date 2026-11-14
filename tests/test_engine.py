@@ -1,9 +1,9 @@
 import copy
 import pytest
-from veab.spec import list_scenarios,load_scenario,digest
-from veab.sim import run_episode
-from veab.verifier import verify_bundle
-from veab.ledger import check_chain,Ledger
+from veap.spec import list_scenarios,load_scenario,digest
+from veap.sim import run_episode
+from veap.verifier import verify_bundle
+from veap.ledger import check_chain,Ledger
 
 
 @pytest.mark.parametrize('scenario',[s.id for s in list_scenarios()])
@@ -94,7 +94,7 @@ def test_unknown_terminal_claim_rejected_if_chain_rehashed():
 
 
 def test_unattested_external_trace_cannot_be_marked_verified(tmp_path):
-    from veab.ingest import ingest_jsonl
+    from veap.ingest import ingest_jsonl
     s=load_scenario('campus-patrol')
     trace=tmp_path/'trace.jsonl'
     trace.write_text('{"tick":0,"x":1.0,"y":1.0,"vx":0,"vy":0}\n{"tick":1,"x":1.1,"y":1.0,"vx":0.5,"vy":0}\n')
@@ -106,7 +106,7 @@ def test_unattested_external_trace_cannot_be_marked_verified(tmp_path):
 
 
 def test_ingest_rejects_discontinuous_ticks(tmp_path):
-    from veab.ingest import ingest_jsonl
+    from veap.ingest import ingest_jsonl
     trace=tmp_path/'invalid.jsonl'
     trace.write_text('{"tick":0,"x":1.0,"y":1.0,"vx":0,"vy":0}\n{"tick":3,"x":1.1,"y":1.0,"vx":0.5,"vy":0}\n')
     with pytest.raises(ValueError):ingest_jsonl(load_scenario('campus-patrol'),trace)

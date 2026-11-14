@@ -1,0 +1,135 @@
+{
+  "cases": [
+    {
+      "baselines": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "case": "compliant",
+      "certificate_sha256": "0d1ade29852ffffe32977e452957975d16864b5faf79eed1c714c83b0877eae0",
+      "checker": "PASS",
+      "evidence_sha256": "c6355562fbb067d437723c4dfaf8b3f81ed7cd61a34d0cd58b4ab4b2ba27bc4d",
+      "requirements": {
+        "goal_at_deadline": "COMPLIANT",
+        "keepout_continuous": "COMPLIANT"
+      },
+      "unresolved_intervals": [],
+      "veap": "COMPLIANT"
+    },
+    {
+      "baselines": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "case": "missing_critical_interval",
+      "certificate_sha256": "559c7a58592d22a9b1c8a47cb6d9d1009bc9af05f6452059abd53a52d8e38b94",
+      "checker": "PASS",
+      "evidence_sha256": "3a1d2b9b23b60b022de8e8475d5ca7a7eda274ee825e901979d5a495e08962cd",
+      "requirements": {
+        "goal_at_deadline": "COMPLIANT",
+        "keepout_continuous": "INCONCLUSIVE"
+      },
+      "unresolved_intervals": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap": "INCONCLUSIVE"
+    },
+    {
+      "baselines": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "case": "missing_irrelevant_camera",
+      "certificate_sha256": "c7331b6f82219a185057790c65e3de4eabd21b4c3fb05c2deab0a1ceb375c2bd",
+      "checker": "PASS",
+      "evidence_sha256": "29f93f6b5806e3b5cbb299b445d05434c56c63a2c0daec91a0265571fd0666ed",
+      "requirements": {
+        "goal_at_deadline": "COMPLIANT",
+        "keepout_continuous": "COMPLIANT"
+      },
+      "unresolved_intervals": [],
+      "veap": "COMPLIANT"
+    },
+    {
+      "baselines": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "case": "missing_safe_interval",
+      "certificate_sha256": "2909424f1b2d945369edccb48b7e65e8eb41ae3188b58b27674a410c424a3e1b",
+      "checker": "PASS",
+      "evidence_sha256": "44b877754c565a2f10e9b016b75326c83fee7973bcc1c3e56695b79acd78218d",
+      "requirements": {
+        "goal_at_deadline": "COMPLIANT",
+        "keepout_continuous": "COMPLIANT"
+      },
+      "unresolved_intervals": [],
+      "veap": "COMPLIANT"
+    },
+    {
+      "baselines": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "case": "observed_violation",
+      "certificate_sha256": "c4bb90fcf5a6dff2a263d1ccc46636962d9979f8aec4f2ec47fd1a5ae30807ed",
+      "checker": "PASS",
+      "evidence_sha256": "8272f35072e140077bf4f5c4c006768dc0a17a62c6b7e8c916c1a206608af3f2",
+      "requirements": {
+        "goal_at_deadline": "COMPLIANT",
+        "keepout_continuous": "VIOLATING"
+      },
+      "unresolved_intervals": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap": "VIOLATING"
+    },
+    {
+      "baselines": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "case": "violation_plus_missing",
+      "certificate_sha256": "5bd121d13876fa998c50836a49fbf51ac5e06bc8b189d602b9bd41a7a9f84256",
+      "checker": "PASS",
+      "evidence_sha256": "543bec71eee3d7376808b4b9191fe9f8fe17b60e59042a37fb3e27351822a721",
+      "requirements": {
+        "goal_at_deadline": "COMPLIANT",
+        "keepout_continuous": "VIOLATING"
+      },
+      "unresolved_intervals": [
+        {
+          "interval_s": [
+            0.35160844,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "veap": "VIOLATING"
+    }
+  ],
+  "never_used_reference_truth_as_evaluator_input": true,
+  "study": "SYNTHETIC_ONLY"
+}

@@ -1,11 +1,11 @@
-# VEAB — From Apparent Success to Verifiable Autonomy
+# VEAP — From Apparent Success to Verifiable Autonomy
 ## Consolidated Review and Canonical Platform Narrative
 
-**Document status:** Canonical engineering narrative and research positioning for VEAB.
+**Document status:** Canonical engineering narrative and research positioning for VEAP.
 **Primary audience:** Robotics validation or safety-assurance engineers responsible for deployment decisions.
 **Current classification:** Experimental benchmarking and execution-verification platform (prototype v0.1.0).
 
-> **Core Definition:** VEAB is a **model- and harness-agnostic evaluation protocol** that jointly measures **task success**, **constraint violations**, **recovery**, **resource cost**, and **independently checkable evidence** under **controlled faults**.
+> **Core Definition:** VEAP is a **model- and harness-agnostic evaluation protocol** that jointly measures **task success**, **constraint violations**, **recovery**, **resource cost**, and **independently checkable evidence** under **controlled faults**.
 
 ---
 
@@ -20,7 +20,7 @@ The recorded experiment contains five toy-world scenarios, three seeds per scena
 | **Route, gate off** | 15/15 | 15/15 | 0 |
 | **Route, gate on** | 15/15 | 15/15 | 0 |
 
-*Source: Bundled VEAB v0.1.0 60-trial summary; deterministic simplified 2D simulation. Descriptive development results, not independent external benchmark results.*
+*Source: Bundled VEAP v0.1.0 60-trial summary; deterministic simplified 2D simulation. Descriptive development results, not independent external benchmark results.*
 
 #### The Core Narrative Anchor
 **Nine of fifteen ungated greedy trials reached their task objectives but were rejected by the independent verifier because they violated safety constraints.**
@@ -37,16 +37,16 @@ Consider two candidate deployment policies evaluated across 100 trials:
 | Evaluation Metric | Agent A | Agent B | Benchmark Verdict |
 |---|---|---|---|
 | **Conventional Final-Success Benchmark** | **90%** | **90%** | **EQUIVALENT ($\Delta = 0.0$)** |
-| **VEAB Verified Completion** | **60%** | **90%** | **$\Delta = +30.0\%$ advantage for Agent B** |
+| **VEAP Verified Completion** | **60%** | **90%** | **$\Delta = +30.0\%$ advantage for Agent B** |
 | **Keep-Out Constraint Violations** | 30% | 0% | Agent A breaches critical safety boundaries |
 | **Fault Recovery Rate** | 20% | 80% | Agent B has $4\times$ higher recovery resilience |
 | **Relative Energy Consumption** | $2.0\times$ | $1.0\times$ | Agent A imposes double the mechanical/battery cost |
 | **Deployment Recommendation** | **REJECTED (Unsafe)** | **VERIFIED CANDIDATE** | **Stark Operational Divergence** |
 
-> **Conclusion:** A conventional success-only benchmark ranks them identically, obscuring catastrophic deployment risks. VEAB exposes the true multidimensional operational gap.
+> **Conclusion:** A conventional success-only benchmark ranks them identically, obscuring catastrophic deployment risks. VEAP exposes the true multidimensional operational gap.
 
 #### Scientific Clarifications
-1. **No unrelated domain analogies:** VEAB does not invent catastrophes, fictional character conflicts, or irrelevant domain analogies.
+1. **No unrelated domain analogies:** VEAP does not invent catastrophes, fictional character conflicts, or irrelevant domain analogies.
 2. **Tamper evidence vs. authenticity:** SHA-256 chaining provides tamper evidence against post-hoc modification; it does not guarantee immutability or physical sensor authenticity.
 3. **Attestation status:** Optional HMAC signing is an existing implemented mechanism in v0.1.0. Enterprise identity, external key custody, and independently trusted attestation remain future work.
 
@@ -60,12 +60,12 @@ Consider two candidate deployment policies evaluated across 100 trials:
 ### 1. Opening — The Success Score That Concealed a Failure
 A robotics validation engineer must determine whether an autonomous agent is suitable for a defined operational task. Conventional task-success reporting provides part of the answer, but may not reveal the full execution history.
 
-The VEAB warehouse-transfer demonstration illustrates the problem. In a deterministic 2D simulation, the ungated greedy planner completes the required task, yet the recorded trajectory contains 22 geometric safety violations. A task-completion indicator reports success; VEAB's independent verifier rejects the outcome.
+The VEAP warehouse-transfer demonstration illustrates the problem. In a deterministic 2D simulation, the ungated greedy planner completes the required task, yet the recorded trajectory contains 22 geometric safety violations. A task-completion indicator reports success; VEAP's independent verifier rejects the outcome.
 
 The central question becomes: **Should completing the destination task count as success when the agent violates constraints along the way?**
 
 ### 2. Inciting Incident — The Executor Loses Authority Over Its Own Result
-VEAB establishes a separation between execution and verification.
+VEAP establishes a separation between execution and verification.
 
 The execution system generates actions and observations. The independent trace-checking component examines recorded states, trajectory consistency, geometric constraints, scenario requirements and terminal postconditions.
 
@@ -84,7 +84,7 @@ A benchmark result must identify the scenario, policy, safety configuration, ran
 
 Unsupported claims remain unvalidated. Failed experiments are retained as research evidence rather than omitted from the results.
 
-### 4. First Implementation — Building VEAB v0.1.0
+### 4. First Implementation — Building VEAP v0.1.0
 The first implementation provides an integrated, local evaluation environment.
 
 Its capabilities include five demonstration scenario contracts, greedy and route-planning baselines, an optional geometric safety gate, configurable disturbances, negative-target abstention, an evidence ledger, a trace verifier, a local REST API and an interactive isometric dashboard.
@@ -122,7 +122,7 @@ Similarly, a safety gate that enforces geometric conditions in a toy environment
 These limitations define the next research problems: independent ground truth, trustworthy capture, simulator fidelity, sensor provenance, calibrated uncertainty and operationally meaningful safety conditions.
 
 ### 7. Critical Boundary — The Simulator Cannot Certify the Robot
-VEAB v0.1.0 reaches its current evidence boundary.
+VEAP v0.1.0 reaches its current evidence boundary.
 
 It can demonstrate repeatable execution and trace checking inside its own deterministic simulator. It cannot yet establish reliable performance on physical robots or under realistic environmental disturbances.
 
@@ -133,7 +133,7 @@ Public demonstration splits also prevent claims of contamination-controlled benc
 The correct engineering decision is to retain the prototype's demonstrated claims while withholding broader assertions about physical safety, enterprise readiness or state-of-the-art autonomy.
 
 ### 8. Decisive Scientific Test — Does Process Verification Add Independent Value?
-The next research phase must test whether VEAB's additional evidence identifies important failures beyond a properly implemented outcome-only evaluator.
+The next research phase must test whether VEAP's additional evidence identifies important failures beyond a properly implemented outcome-only evaluator.
 
 The study should use preregistered scenarios, controlled faults, independently labelled ground truth and strong reference baselines.
 
@@ -154,7 +154,7 @@ The following stages introduce realistic Isaac Lab experiments, held-out scenari
 
 Only after these stages satisfy their acceptance criteria should the programme progress towards enterprise workspaces, authenticated multi-user access, stronger attestation, scalable execution and formal deployment governance.
 
-VEAB's intended contribution is an evidence infrastructure that allows developers and decision-makers to answer a precise question:
+VEAP's intended contribution is an evidence infrastructure that allows developers and decision-makers to answer a precise question:
 
 > **What can this autonomous agent demonstrably accomplish, under which conditions, with which safety and resource constraints, and with what independently checkable evidence?**
 
@@ -165,13 +165,13 @@ The objective is not to make every autonomous-system claim positive. It is to ma
 ## Three-Paragraph Platform Narrative
 
 **Beginning**  
-VEAB begins with a problem in autonomous AI evaluation: reaching a goal is not equivalent to completing a task safely and reliably. A robot or autonomous agent may achieve its final objective while violating operational constraints along the way. Without examining the execution process, a success score may conceal failures that matter to researchers, engineers and deployment decision-makers. The first VEAB implementation demonstrates this distinction using deterministic navigation tasks and an independent trace verifier.
+VEAP begins with a problem in autonomous AI evaluation: reaching a goal is not equivalent to completing a task safely and reliably. A robot or autonomous agent may achieve its final objective while violating operational constraints along the way. Without examining the execution process, a success score may conceal failures that matter to researchers, engineers and deployment decision-makers. The first VEAP implementation demonstrates this distinction using deterministic navigation tasks and an independent trace verifier.
 
 **Middle**  
 The platform develops an evidence-first evaluation architecture in which task execution, safety intervention and outcome verification are separate components. Researchers can compare planning policies, inject disturbances, inspect actions and review recorded trajectories. Initial toy-world experiments reveal cases where task completion and verified completion disagree. This provides a concrete foundation for studying the value of process-level evidence. At the same time, development reveals limitations in simulated dynamics, sensor authenticity, benchmark independence and real-world transfer, requiring stronger experimental controls and realistic validation environments.
 
 **End and Long-Term Direction**  
-VEAB aims to evolve into a reproducible evaluation and assurance infrastructure for autonomous agents operating across simulation and physical environments. Its future development will require independent scenario validation, realistic robotics integration, trusted telemetry, measured operational constraints and controlled hardware testing. Rather than relying on impressive demonstrations or a single benchmark score, users should be able to inspect the evidence supporting an agent's claimed capabilities, identify unresolved risks and make informed deployment decisions. The central objective is to replace unsupported confidence with measurable, reproducible and appropriately qualified evidence.
+VEAP aims to evolve into a reproducible evaluation and assurance infrastructure for autonomous agents operating across simulation and physical environments. Its future development will require independent scenario validation, realistic robotics integration, trusted telemetry, measured operational constraints and controlled hardware testing. Rather than relying on impressive demonstrations or a single benchmark score, users should be able to inspect the evidence supporting an agent's claimed capabilities, identify unresolved risks and make informed deployment decisions. The central objective is to replace unsupported confidence with measurable, reproducible and appropriately qualified evidence.
 
 ---
 
@@ -184,18 +184,18 @@ This professional must understand how an agent behaved, which requirements it sa
 
 Secondary users include embodied-AI researchers, robotics manufacturers, benchmark developers, independent evaluators and enterprise autonomy teams.
 
-VEAB must earn their trust through transparent experimental methods, reproducible results, accurate failure reporting and clear distinctions between demonstrated capabilities and unvalidated claims.
+VEAP must earn their trust through transparent experimental methods, reproducible results, accurate failure reporting and clear distinctions between demonstrated capabilities and unvalidated claims.
 
 ### Platform Classification
 - **Current classification:** Experimental benchmarking and execution-verification platform.
 - **Longer-term classification:** Autonomous-system evaluation and evidence-assurance infrastructure.
-- **Explicit exclusions:** VEAB is not presently a certified safety controller, a physical-robot assurance system, or an accredited conformity-assessment service. Benchmark success cannot replace the safety case and regulatory requirements of a particular deployment.
+- **Explicit exclusions:** VEAP is not presently a certified safety controller, a physical-robot assurance system, or an accredited conformity-assessment service. Benchmark success cannot replace the safety case and regulatory requirements of a particular deployment.
 
 ---
 
 ## Technical Scope & Engineering Focus Areas
 
-The VEAB project focuses exclusively on **autonomous and embodied AI engineering**, structured across seven technical pillars:
+The VEAP project focuses exclusively on **autonomous and embodied AI engineering**, structured across seven technical pillars:
 
 1. **Simulation:** NVIDIA Isaac Lab, Isaac Sim, MuJoCo, Gazebo and Unreal Engine–quality 3D environments.
 2. **Robotics:** ROS 2, robot control, navigation, manipulation and hardware-in-the-loop (HIL) testing.

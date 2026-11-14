@@ -1,0 +1,71 @@
+{
+  "agent_claimed_success": true,
+  "samples": [
+    {
+      "event_id": "pose-0",
+      "frame_id": "map",
+      "sensor_healthy": true,
+      "t_s": 0.0,
+      "topics": [
+        "/odom",
+        "/cmd_vel",
+        "/camera"
+      ],
+      "x": 0.0,
+      "y": 1.5
+    },
+    {
+      "event_id": "pose-1",
+      "frame_id": "map",
+      "sensor_healthy": true,
+      "t_s": 0.5,
+      "topics": [
+        "/odom",
+        "/cmd_vel",
+        "/camera"
+      ],
+      "x": 0.5,
+      "y": 1.5
+    },
+    {
+      "event_id": "pose-2",
+      "frame_id": "map",
+      "sensor_healthy": true,
+      "t_s": 1.0,
+      "topics": [
+        "/odom",
+        "/cmd_vel"
+      ],
+      "x": 1.0,
+      "y": 1.5
+    },
+    {
+      "event_id": "pose-3",
+      "frame_id": "map",
+      "sensor_healthy": true,
+      "t_s": 1.5,
+      "topics": [
+        "/odom",
+        "/cmd_vel",
+        "/camera"
+      ],
+      "x": 1.5,
+      "y": 1.5
+    },
+    {
+      "event_id": "pose-4",
+      "frame_id": "map",
+      "sensor_healthy": true,
+      "t_s": 2.0,
+      "topics": [
+        "/odom",
+        "/cmd_vel",
+        "/camera"
+      ],
+      "x": 2.0,
+      "y": 1.5
+    }
+  ],
+  "schema": "veap.evidence.trace/1",
+  "source_kind": "synthetic"
+}

@@ -1,4 +1,4 @@
-# VEAB v0.3.0 — research validity increment (11 Nov 2026)
+# VEAP v0.3.0 — research validity increment (11 Nov 2026)
 
 ## Implemented
 
@@ -7,18 +7,18 @@
 3. **Process-versus-outcome analysis:** task success, verified task success, unsafe task-complete traces, reported violations per 1,000 simulation steps, kinematic energy proxy and fault-recovery proxy. Distinguishes scene units from nominal trial-row count.
 4. **Exploratory scenario-cluster analysis:** deterministic bootstrap by unique scenes and two-sided sign-flip diagnostic. Not confirmatory inference.
 5. **Evidence attack regression:** four unkeyed post-hoc edits rejected; separately demonstrates that fully rehashed spoofed observations can still appear verified if capture custody is untrusted.
-6. **Optional fail-closed HMAC:** `veab verify --require-attestation` refuses unsigned/unverifiable bundles even when ordinary development mode would permit them.
+6. **Optional fail-closed HMAC:** `veap verify --require-attestation` refuses unsigned/unverifiable bundles even when ordinary development mode would permit them.
 7. **Prospective protocol:** a frozen-study template for blinded independent scene families, ground-truth adjudication and native simulator/robot acceptance gates.
 
 ## Executable commands
 
 ```bash
 python -m pytest -q
-python -m veab research-analyse examples/60-trial-summary.json --out artifacts/research/process-analysis.json
-python -m veab research-run --seeds 0 1 2 --split all --out artifacts/research/reexecuted-factorial.json
-python -m veab tamper-audit --out artifacts/research/tamper-audit.json
-# Require an externally held VEAB_ATTESTATION_KEY before accepting a signed bundle:
-VEAB_ATTESTATION_KEY='key-from-secure-environment' python -m veab verify --require-attestation artifacts/signed.json
+python -m veap research-analyse examples/60-trial-summary.json --out artifacts/research/process-analysis.json
+python -m veap research-run --seeds 0 1 2 --split all --out artifacts/research/reexecuted-factorial.json
+python -m veap tamper-audit --out artifacts/research/tamper-audit.json
+# Require an externally held VEAP_ATTESTATION_KEY before accepting a signed bundle:
+VEAP_ATTESTATION_KEY='key-from-secure-environment' python -m veap verify --require-attestation artifacts/signed.json
 ```
 
 ## Interpreting the development data

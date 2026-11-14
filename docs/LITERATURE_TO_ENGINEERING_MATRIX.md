@@ -1,10 +1,10 @@
-# VEAB v0.3 · Literature-to-engineering traceability matrix
+# VEAP v0.3 · Literature-to-engineering traceability matrix
 
 **Reviewed 11 November 2026.** This matrix establishes the provenance of engineering requirements. **Citing a paper does not constitute reproducing its results**; implementation status and experiment outcomes are deliberately separated.
 
 ## Supplied agent-evaluation reference corpus
 
-| Source | Publication status and permanent identifier | Transferable method | VEAB implementation / next gate |
+| Source | Publication status and permanent identifier | Transferable method | VEAP implementation / next gate |
 |---|---|---|---|
 | Xie et al. (2024), **OSWorld** | NeurIPS 2024 D&B; DOI [10.52202/079017-1650](https://doi.org/10.52202/079017-1650); [proceedings](https://proceedings.neurips.cc/paper_files/paper/2024/hash/5d413e48f84dc61244b6be550f1cd8f5-Abstract-Datasets_and_Benchmarks_Track.html) | Executable evaluator and deterministic task setup | **Current:** scenario contracts and agent-independent postconditions. **Required:** cross-application (robot-harness) evaluator lifecycle checks |
 | Zhou et al. (2024), **WebArena** | ICLR 2024; [official](https://proceedings.iclr.cc/paper_files/paper/2024/hash/4410c0711e9154a7a2d26f9b3816d1ef-Abstract-Conference.html) | Functional, realistic, interactive tasks | **Current:** benchmark scenarios; **required:** hidden physical-environment task families and realistic dynamic agents |
@@ -19,9 +19,9 @@
 
 ## Essential embodied benchmarking comparators (must not be omitted)
 
-| Source | Publication status | Required VEAB comparative study |
+| Source | Publication status | Required VEAP comparative study |
 |---|---|---|
-| Li et al. (2024), **Embodied Agent Interface: Benchmarking LLMs for Embodied Decision Making** | NeurIPS 2024 D&B; DOI [10.52202/079017-3188](https://doi.org/10.52202/079017-3188) | Validate error attribution beyond terminal success; compare EAI-style fine-grained error categories against VEAB |
+| Li et al. (2024), **Embodied Agent Interface: Benchmarking LLMs for Embodied Decision Making** | NeurIPS 2024 D&B; DOI [10.52202/079017-3188](https://doi.org/10.52202/079017-3188) | Validate error attribution beyond terminal success; compare EAI-style fine-grained error categories against VEAP |
 | Li et al. (2025), **IndustryEQA** | NeurIPS 2025 D&B; DOI [10.52202/085713-3423](https://doi.org/10.52202/085713-3423) | Assess industrial hazard recognition and whether model perception errors propagate to unsafe action; note question-answer scoring is not closed-loop control validation |
 | Mu et al. (2025), **RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins** | CVPR 2025; [official](https://openaccess.thecvf.com/content/CVPR2025/html/Mu_RoboTwin_Dual-Arm_Robot_Benchmark_with_Generative_Digital_Twins_CVPR_2025_paper.html) | Model geometry and domain variation, independent manipulation validation and real-data comparison |
 | Shukla, Tao & Su (2025), **ManiSkill-HAB** | ICLR 2025; [indexed proceedings](https://mlanthology.org/iclr/2025/shukla2025iclr-maniskillhab/) | Compare long-horizon task and safety-oriented demonstration filters under changing contact and object dynamics |
@@ -29,10 +29,10 @@
 
 ## Method-to-module mapping
 
-1. **Executable benchmark validity (OSWorld/WebArena/ABC)** → `veab/spec.py`, `veab/verifier.py`, `veab/research/protocol.py`. Next evidence: independent scene-family holdouts and grading false-positive rates.
-2. **Model–harness attribution (OpenHands/Guo)** → `veab/agents.py`, `veab/sim.py`, factorial experiment; next: model providers, memory/action budget and controller factorization.
-3. **Process evidence (ScienceAgentBench/AgentActionBench)** → `veab/ledger.py`, `veab/research/attacks.py`; next: external action collector and witnessed telemetry.
-4. **Safety and formal contracts (Embodied Agent Interface/SENTINEL)** → current geometric constraints in `veab/verifier.py`; next: bounded-time fault-response and formal temporal monitors verified independently.
+1. **Executable benchmark validity (OSWorld/WebArena/ABC)** → `veap/spec.py`, `veap/verifier.py`, `veap/research/protocol.py`. Next evidence: independent scene-family holdouts and grading false-positive rates.
+2. **Model–harness attribution (OpenHands/Guo)** → `veap/agents.py`, `veap/sim.py`, factorial experiment; next: model providers, memory/action budget and controller factorization.
+3. **Process evidence (ScienceAgentBench/AgentActionBench)** → `veap/ledger.py`, `veap/research/attacks.py`; next: external action collector and witnessed telemetry.
+4. **Safety and formal contracts (Embodied Agent Interface/SENTINEL)** → current geometric constraints in `veap/verifier.py`; next: bounded-time fault-response and formal temporal monitors verified independently.
 5. **Physical validity (RoboTwin/IndustryEQA/ManiSkill-HAB)** → v0.2 multi-engine asset exporters, native adapter hooks; next: measured dynamics calibration, real ROS 2 / MCAP traces, sensor calibration and witnessed physical trials.
 6. **Benchmark efficiency (AgencyBench/Mohammadi)** → timing and dimensioned kinematic energy proxy in current suite; next: hardware-counter Joules, wall-clock latency, token and communication budgets.
 
@@ -41,4 +41,4 @@
 - The present 2D physics surrogate **is not** Isaac Lab, MuJoCo, Gazebo or Unreal physics equivalence.
 - `SHA-256` event chaining protects an internally coherent history against unsophisticated post-hoc edits, **not** against a source able to rewrite and rehash the full stream.
 - "Independent" today means **agent-independent verification**; external custody, ground truth and independent implementation must be demonstrated separately.
-- Peer-reviewed digital-agent evaluations are **methodological analogies**, not evidence that VEAB is state-of-the-art on robot safety.
+- Peer-reviewed digital-agent evaluations are **methodological analogies**, not evidence that VEAP is state-of-the-art on robot safety.

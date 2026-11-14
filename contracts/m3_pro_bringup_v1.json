@@ -1,5 +1,5 @@
 {
-  "schema_version": "veab.m3.contract/1",
+  "schema_version": "veap.m3.contract/1",
   "id": "m3_pro_bringup_provisional_v1",
   "purpose": "read_only_evidence_audit",
   "source_trust": "unattested",

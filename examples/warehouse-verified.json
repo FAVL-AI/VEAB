@@ -1,10 +1,10 @@
 {
   "manifest": {
-    "schema_version": "veab-bundle/1",
+    "schema_version": "veap-bundle/1",
     "source": "deterministic_toy_simulation",
-    "environment": "VEAB toy planar simulator v0.1 (not Isaac/ROS2)",
+    "environment": "VEAP toy planar simulator v0.1 (not Isaac/ROS2)",
     "scenario": {
-      "schema_version": "veab-scenario/1",
+      "schema_version": "veap-scenario/1",
       "id": "warehouse-transfer",
       "title": "Warehouse · multi-stop transfer",
       "description": "Cross a mapped warehouse, inspect intermediate stations, then reach the dispatch bay.",
@@ -77,7 +77,7 @@
       ],
       "target_present": true
     },
-    "scenario_sha256": "7803186e84f8e73d5d44098dab67ad351b01e1349a894a4c9a5423c5d6903e23",
+    "scenario_sha256": "0bb7535885a4ca0b6eff45a1718c0c7364d336eb15e819e661b3708637451a09",
     "policy": "route",
     "seed": 17,
     "shield_enabled": true,

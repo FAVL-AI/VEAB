@@ -1,6 +1,6 @@
-VEAB M3 Replay — Source-side execution evidence
+VEAP M3 Replay — Source-side execution evidence
 DATE: 2026-11-12
-BASE: VEAB v0.6 research snapshot
+BASE: VEAP v0.6 research snapshot
 SCOPE: Synthetic evidence metadata contracts, separate implementation monitor,
        Python contract CLI and mock rosbag2 Python interfaces.
 

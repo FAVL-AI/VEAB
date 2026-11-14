@@ -1,0 +1,85 @@
+{
+  "cases": [
+    {
+      "actual_synthetic_truth": "COMPLIANT",
+      "baselines": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "checker": "PASS",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "id": "compliant",
+      "oracle_match": true,
+      "veap": "COMPLIANT"
+    },
+    {
+      "actual_synthetic_truth": "VIOLATING",
+      "baselines": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "checker": "PASS",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "id": "missing_critical_interval",
+      "oracle_match": true,
+      "veap": "INCONCLUSIVE"
+    },
+    {
+      "actual_synthetic_truth": "COMPLIANT",
+      "baselines": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "checker": "PASS",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "id": "missing_irrelevant_camera",
+      "oracle_match": true,
+      "veap": "COMPLIANT"
+    },
+    {
+      "actual_synthetic_truth": "COMPLIANT",
+      "baselines": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT"
+      },
+      "checker": "PASS",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "id": "missing_safe_interval",
+      "oracle_match": true,
+      "veap": "COMPLIANT"
+    },
+    {
+      "actual_synthetic_truth": "VIOLATING",
+      "baselines": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "checker": "PASS",
+      "expected_epistemic_verdict": "VIOLATING",
+      "id": "observed_violation",
+      "oracle_match": true,
+      "veap": "VIOLATING"
+    },
+    {
+      "actual_synthetic_truth": "VIOLATING",
+      "baselines": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING"
+      },
+      "checker": "PASS",
+      "expected_epistemic_verdict": "VIOLATING",
+      "id": "violation_plus_missing",
+      "oracle_match": true,
+      "veap": "VIOLATING"
+    }
+  ],
+  "n": 6,
+  "no_claim_of_sota_or_novelty": true,
+  "study": "AUTHOR_SYNTHETIC_NOT_EXTERNAL_VALIDATION"
+}

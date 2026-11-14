@@ -6,67 +6,67 @@
       "id": "clean",
       "expected_topic_audit_pass": true,
       "purpose": "Clean topic/time/type metadata",
-      "sha256": "be6ddb3bb16c50044034f7a846d0be4495898b7dfc242a5e612fb5a025248c7b"
+      "sha256": "f5629eb3361738b6dd49845b8180fef37aaea5742210afdd93827dd0278e032b"
     },
     {
       "id": "no_odom",
       "expected_topic_audit_pass": false,
       "purpose": "Missing required odometry",
-      "sha256": "a92df655fc3374c74854dff8af3d0357a4d1abc77188d2d016ae0bab8deaff5d"
+      "sha256": "897bb6475f6c2051e8368e00f6705a84ae63e0fcb0753e5286d2215fe9536b02"
     },
     {
       "id": "no_cmd",
       "expected_topic_audit_pass": false,
       "purpose": "Missing required commands",
-      "sha256": "facb362ac7f248d830ede4dcb5573cc9ea9fded9763155bec04853b82013ed08"
+      "sha256": "b5e06ba08c9cd1e66f8b36e182931fca04ab00d8ee3293a5c66fb0db9ebd2dcb"
     },
     {
       "id": "no_scan",
       "expected_topic_audit_pass": false,
       "purpose": "Missing required lidar",
-      "sha256": "e0bed81de865d0ac8c0e1d96de49fe0b170748d11ebb9d6ad1be94d04181e9fd"
+      "sha256": "6ceb7ea298a8641623ac5963b0d47ee38a502a2c87dcbc94b1f0f023e05353bb"
     },
     {
       "id": "wrong_type",
       "expected_topic_audit_pass": false,
       "purpose": "Synthetic negative control",
-      "sha256": "d934f11aaa684c9c3c7b5602ffce8456d8c594de54e478fff3e213e57f7b49a5"
+      "sha256": "6f572edc340d9f53ceabbd67a026ec37b49a17914d8bef8e94354692a719828a"
     },
     {
       "id": "backwards_timestamp",
       "expected_topic_audit_pass": false,
       "purpose": "Synthetic negative control",
-      "sha256": "b48ea8d0985eef0b6a84270d7c9d94c3ae677d256a30109256af86ecf5e12f79"
+      "sha256": "643cf1c76dff044708ea469be9e2eae8e662d3a6f98a60317fa3d0a4134b1073"
     },
     {
       "id": "large_gap",
       "expected_topic_audit_pass": false,
       "purpose": "Synthetic negative control",
-      "sha256": "ab26ebc2b5a4515c2af0a1535324d8d27bdaed464f84b2501cd2a3ad57984ade"
+      "sha256": "1bfe0836c73868193aacb023414de7dfdee9dd019b864697ec88a2f2d3b8de0b"
     },
     {
       "id": "missing_header",
       "expected_topic_audit_pass": true,
       "purpose": "Header clocks not required in example contract",
-      "sha256": "be6ddb3bb16c50044034f7a846d0be4495898b7dfc242a5e612fb5a025248c7b"
+      "sha256": "f5629eb3361738b6dd49845b8180fef37aaea5742210afdd93827dd0278e032b"
     },
     {
       "id": "unknown_extra_topic",
       "expected_topic_audit_pass": true,
       "purpose": "Extraneous channel is allowed",
-      "sha256": "c07b405593dfa8e766a8b9b2eeac9a64e2a2fb9a7a7e3776107ffc83b2360e99"
+      "sha256": "d7e575d76e859eb5568627a82c91506f924c184c0e3fe150ca37a845b7e7ef67"
     },
     {
       "id": "type_flip_lidar",
       "expected_topic_audit_pass": false,
       "purpose": "Synthetic negative control",
-      "sha256": "73a1dba3e2feb980227dff95f80139540bcd3109ab2f728395ea63cd6c916eec"
+      "sha256": "654a2487102362b1f71b18393dfb4c53d6a3cab007e488b04b2b099757801a0b"
     },
     {
       "id": "truncated_one_sample",
       "expected_topic_audit_pass": true,
       "purpose": "Bounded window is inferred from recorded data; truncation is not independently observable without an expected window",
-      "sha256": "027564afac119933870bfd1e6ac79cc2d93c42b17d2f5d1f65ef7492e3e1fd4f"
+      "sha256": "8db9768a56f690bbda957fe05cbd83a0807de2b7a9c861b3c401819584293db3"
     }
   ]
 }

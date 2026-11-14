@@ -3,13 +3,13 @@ and Stage 2 (Machine-checkable formal task contracts).
 """
 from __future__ import annotations
 import pytest
-from veab.spec import load_scenario
-from veab.sim import run_episode
-from veab.power_analysis import compute_sample_size
-from veab.cost_model import evaluate_cost_profile
-from veab.ablation import run_factorial_ablation
-from veab.reproducibility import generate_reproducibility_report
-from veab.formal_contracts import check_formal_task_contracts
+from veap.spec import load_scenario
+from veap.sim import run_episode
+from veap.power_analysis import compute_sample_size
+from veap.cost_model import evaluate_cost_profile
+from veap.ablation import run_factorial_ablation
+from veap.reproducibility import generate_reproducibility_report
+from veap.formal_contracts import check_formal_task_contracts
 
 
 def test_statistical_power_analysis():

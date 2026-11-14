@@ -4,8 +4,8 @@ install:
 test:
 	python -m pytest -q
 lint:
-	python -m compileall -q veab
+	python -m compileall -q veap
 serve:
-	python -m uvicorn veab.api:app --host 127.0.0.1 --port 8000
+	python -m uvicorn veap.api:app --host 127.0.0.1 --port 8000
 suite:
-	python -m veab suite --seeds 0 1 2 --out artifacts/suite-summary.json
+	python -m veap suite --seeds 0 1 2 --out artifacts/suite-summary.json

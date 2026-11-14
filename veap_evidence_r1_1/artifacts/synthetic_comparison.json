@@ -1,0 +1,1413 @@
+{
+  "cases": [
+    {
+      "baselines": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "d47cc8472498e79c963f683cdb9fb006965a9a86d4e23246b108302e48fef3fc",
+        "confirmed_violations": [],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 5,
+        "evidence_witnesses": [
+          {
+            "assurance": "conditional_motion_bound",
+            "evidence_refs": [
+              "pose-0",
+              "pose-1",
+              "pose-2",
+              "pose-3",
+              "pose-4"
+            ],
+            "interval_s": [
+              0.0,
+              2.0
+            ],
+            "type": "continuous_keepout_coverage"
+          },
+          {
+            "distance_upper_bound_m": 0.02,
+            "evidence_ref": "pose-4",
+            "t_s": 2.0,
+            "type": "terminal_goal_certified"
+          }
+        ],
+        "missing_evidence_diagnostics": [],
+        "observed_samples": 5,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "distance_upper_bound_m": 0.02,
+                "evidence_ref": "pose-4",
+                "t_s": 2.0,
+                "type": "terminal_goal_certified"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "assurance": "conditional_motion_bound",
+                "evidence_refs": [
+                  "pose-0",
+                  "pose-1",
+                  "pose-2",
+                  "pose-3",
+                  "pose-4"
+                ],
+                "interval_s": [
+                  0.0,
+                  2.0
+                ],
+                "type": "continuous_keepout_coverage"
+              }
+            ]
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "90cb448d270c3a185d2882599ba4abb801259972ae2926c5dd6b4f3994ea5da0",
+        "trace_canonical_sha256": "90cb448d270c3a185d2882599ba4abb801259972ae2926c5dd6b4f3994ea5da0",
+        "unresolved_coverage": [],
+        "verdict": "COMPLIANT"
+      },
+      "id": "compliant",
+      "oracle": "COMPLIANT",
+      "truth_class_label": "COMPLIANT",
+      "veap": "COMPLIANT"
+    },
+    {
+      "baselines": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "78132b9ccb2c8d26c791dfb918dbdc5413e0e4075499069bd8bd0eb0c953d948",
+        "confirmed_violations": [
+          {
+            "evidence_ref": "pose-2",
+            "signed_clearance_m": -0.2,
+            "t_s": 1.0,
+            "type": "confirmed_keepout_overlap"
+          }
+        ],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 5,
+        "evidence_witnesses": [
+          {
+            "evidence_ref": "pose-2",
+            "signed_clearance_m": -0.2,
+            "t_s": 1.0,
+            "type": "confirmed_keepout_overlap"
+          },
+          {
+            "distance_upper_bound_m": 0.02,
+            "evidence_ref": "pose-4",
+            "t_s": 2.0,
+            "type": "terminal_goal_certified"
+          }
+        ],
+        "missing_evidence_diagnostics": [],
+        "observed_samples": 5,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "distance_upper_bound_m": 0.02,
+                "evidence_ref": "pose-4",
+                "t_s": 2.0,
+                "type": "terminal_goal_certified"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [
+              {
+                "interval_s": [
+                  0.8035416,
+                  1.1964584
+                ],
+                "request": "Obtain calibrated pose observations or tighter motion bounds",
+                "type": "unproven_keepout_coverage"
+              }
+            ],
+            "verdict": "VIOLATING",
+            "witnesses": [
+              {
+                "evidence_ref": "pose-2",
+                "signed_clearance_m": -0.2,
+                "t_s": 1.0,
+                "type": "confirmed_keepout_overlap"
+              }
+            ]
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "3e27b2bdea35ae07c11c76f96a2898ece46987d9cf4cc088eef945e6f5a2da6f",
+        "trace_canonical_sha256": "3e27b2bdea35ae07c11c76f96a2898ece46987d9cf4cc088eef945e6f5a2da6f",
+        "unresolved_coverage": [
+          {
+            "interval_s": [
+              0.8035416,
+              1.1964584
+            ],
+            "request": "Obtain calibrated pose observations or tighter motion bounds",
+            "type": "unproven_keepout_coverage"
+          }
+        ],
+        "verdict": "VIOLATING"
+      },
+      "id": "observed_violation",
+      "oracle": "VIOLATING",
+      "truth_class_label": "VIOLATING",
+      "veap": "VIOLATING"
+    },
+    {
+      "baselines": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "127b94f7896871ea61686992b16876e69b0313a0bb4e651141859bbc4a802f1c",
+        "confirmed_violations": [
+          {
+            "evidence_ref": "pose-2",
+            "signed_clearance_m": -0.2,
+            "t_s": 1.0,
+            "type": "confirmed_keepout_overlap"
+          }
+        ],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 4,
+        "evidence_witnesses": [
+          {
+            "evidence_ref": "pose-2",
+            "signed_clearance_m": -0.2,
+            "t_s": 1.0,
+            "type": "confirmed_keepout_overlap"
+          },
+          {
+            "distance_upper_bound_m": 0.02,
+            "evidence_ref": "pose-4",
+            "t_s": 2.0,
+            "type": "terminal_goal_certified"
+          }
+        ],
+        "missing_evidence_diagnostics": [
+          {
+            "interval_s": [
+              0.0,
+              1.0
+            ],
+            "not_automatically_inconclusive": true,
+            "type": "nominal_recording_gap"
+          }
+        ],
+        "observed_samples": 4,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "distance_upper_bound_m": 0.02,
+                "evidence_ref": "pose-4",
+                "t_s": 2.0,
+                "type": "terminal_goal_certified"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [
+              {
+                "interval_s": [
+                  0.35160844,
+                  1.1964584
+                ],
+                "request": "Obtain calibrated pose observations or tighter motion bounds",
+                "type": "unproven_keepout_coverage"
+              }
+            ],
+            "verdict": "VIOLATING",
+            "witnesses": [
+              {
+                "evidence_ref": "pose-2",
+                "signed_clearance_m": -0.2,
+                "t_s": 1.0,
+                "type": "confirmed_keepout_overlap"
+              }
+            ]
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "a741be38ebd6cd7c9cc1a7fb745eedb116c8f281fbe7ab91475e423aec6e34db",
+        "trace_canonical_sha256": "a741be38ebd6cd7c9cc1a7fb745eedb116c8f281fbe7ab91475e423aec6e34db",
+        "unresolved_coverage": [
+          {
+            "interval_s": [
+              0.35160844,
+              1.1964584
+            ],
+            "request": "Obtain calibrated pose observations or tighter motion bounds",
+            "type": "unproven_keepout_coverage"
+          }
+        ],
+        "verdict": "VIOLATING"
+      },
+      "id": "violation_plus_missing",
+      "oracle": "VIOLATING",
+      "truth_class_label": "VIOLATING",
+      "veap": "VIOLATING"
+    },
+    {
+      "baselines": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "a271cdb18fd0c14050a8ae909b63826dc16eb56a711b4327d4c56028b8447cbb",
+        "confirmed_violations": [],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 4,
+        "evidence_witnesses": [
+          {
+            "distance_upper_bound_m": 0.02,
+            "evidence_ref": "pose-4",
+            "t_s": 2.0,
+            "type": "terminal_goal_certified"
+          }
+        ],
+        "missing_evidence_diagnostics": [
+          {
+            "interval_s": [
+              0.5,
+              1.5
+            ],
+            "not_automatically_inconclusive": true,
+            "type": "nominal_recording_gap"
+          }
+        ],
+        "observed_samples": 4,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "distance_upper_bound_m": 0.02,
+                "evidence_ref": "pose-4",
+                "t_s": 2.0,
+                "type": "terminal_goal_certified"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [
+              {
+                "interval_s": [
+                  0.8035416,
+                  1.1964584
+                ],
+                "request": "Obtain calibrated pose observations or tighter motion bounds",
+                "type": "unproven_keepout_coverage"
+              }
+            ],
+            "verdict": "INCONCLUSIVE",
+            "witnesses": []
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "fde60abbe6409f634bd9ad314b436c14aaa02d3ea614bef99197f544f8a9e18c",
+        "trace_canonical_sha256": "fde60abbe6409f634bd9ad314b436c14aaa02d3ea614bef99197f544f8a9e18c",
+        "unresolved_coverage": [
+          {
+            "interval_s": [
+              0.8035416,
+              1.1964584
+            ],
+            "request": "Obtain calibrated pose observations or tighter motion bounds",
+            "type": "unproven_keepout_coverage"
+          }
+        ],
+        "verdict": "INCONCLUSIVE"
+      },
+      "id": "missing_critical_interval",
+      "oracle": "INCONCLUSIVE",
+      "truth_class_label": "VIOLATING",
+      "veap": "INCONCLUSIVE"
+    },
+    {
+      "baselines": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "51196715a63b511174e09fd02a6b16c243d1c6490e2fdfab32a02e5a7b6e43f9",
+        "confirmed_violations": [],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 5,
+        "evidence_witnesses": [
+          {
+            "assurance": "conditional_motion_bound",
+            "evidence_refs": [
+              "pose-0",
+              "pose-1",
+              "pose-2",
+              "pose-3",
+              "pose-4"
+            ],
+            "interval_s": [
+              0.0,
+              2.0
+            ],
+            "type": "continuous_keepout_coverage"
+          },
+          {
+            "distance_upper_bound_m": 0.02,
+            "evidence_ref": "pose-4",
+            "t_s": 2.0,
+            "type": "terminal_goal_certified"
+          }
+        ],
+        "missing_evidence_diagnostics": [],
+        "observed_samples": 5,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "distance_upper_bound_m": 0.02,
+                "evidence_ref": "pose-4",
+                "t_s": 2.0,
+                "type": "terminal_goal_certified"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "assurance": "conditional_motion_bound",
+                "evidence_refs": [
+                  "pose-0",
+                  "pose-1",
+                  "pose-2",
+                  "pose-3",
+                  "pose-4"
+                ],
+                "interval_s": [
+                  0.0,
+                  2.0
+                ],
+                "type": "continuous_keepout_coverage"
+              }
+            ]
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "e76c4892d0556415773f8d3f88339331758d58378f60c3e3a45509776c6bd32f",
+        "trace_canonical_sha256": "e76c4892d0556415773f8d3f88339331758d58378f60c3e3a45509776c6bd32f",
+        "unresolved_coverage": [],
+        "verdict": "COMPLIANT"
+      },
+      "id": "missing_irrelevant_camera",
+      "oracle": "COMPLIANT",
+      "truth_class_label": "COMPLIANT",
+      "veap": "COMPLIANT"
+    },
+    {
+      "baselines": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "591a42828a28b5c1ada8d37e35a58ff2214569e8233540f0f5b9c146125aa90e",
+        "confirmed_violations": [],
+        "contract_sha256": "0a86b2c4595b30ac43ebc2343a86b5cac83769edb503e17757173706b9da168f",
+        "eligible_pose_samples": 4,
+        "evidence_witnesses": [
+          {
+            "assurance": "conditional_motion_bound",
+            "evidence_refs": [
+              "pose-0",
+              "pose-1"
+            ],
+            "interval_s": [
+              0.0,
+              2.0
+            ],
+            "type": "continuous_keepout_coverage"
+          },
+          {
+            "distance_upper_bound_m": 0.02,
+            "evidence_ref": "pose-4",
+            "t_s": 2.0,
+            "type": "terminal_goal_certified"
+          }
+        ],
+        "missing_evidence_diagnostics": [
+          {
+            "interval_s": [
+              0.5,
+              1.5
+            ],
+            "not_automatically_inconclusive": true,
+            "type": "nominal_recording_gap"
+          }
+        ],
+        "observed_samples": 4,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "distance_upper_bound_m": 0.02,
+                "evidence_ref": "pose-4",
+                "t_s": 2.0,
+                "type": "terminal_goal_certified"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "assurance": "conditional_motion_bound",
+                "evidence_refs": [
+                  "pose-0",
+                  "pose-1"
+                ],
+                "interval_s": [
+                  0.0,
+                  2.0
+                ],
+                "type": "continuous_keepout_coverage"
+              }
+            ]
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "45fc778eef3cabd8e6c05df43974a2164ec149daa398e95396f6ab1bdd95bc83",
+        "trace_canonical_sha256": "45fc778eef3cabd8e6c05df43974a2164ec149daa398e95396f6ab1bdd95bc83",
+        "unresolved_coverage": [],
+        "verdict": "COMPLIANT"
+      },
+      "id": "missing_safe_interval",
+      "oracle": "COMPLIANT",
+      "truth_class_label": "COMPLIANT",
+      "veap": "COMPLIANT"
+    },
+    {
+      "baselines": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "INCONCLUSIVE",
+        "sampled_safety": "INCONCLUSIVE",
+        "terminal_safety": "INCONCLUSIVE"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "9eacdea17b7ce4e41bef3b45ec4ecd14c9ff954efc4c8b3bff1a2d4e0667e892",
+        "confirmed_violations": [],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 4,
+        "evidence_witnesses": [],
+        "missing_evidence_diagnostics": [],
+        "observed_samples": 4,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [
+              {
+                "evidence_ref": "pose-3",
+                "interval_s": [
+                  1.5,
+                  2.0
+                ],
+                "request": "Provide deadline-anchored pose evidence",
+                "type": "terminal_goal_unresolved"
+              }
+            ],
+            "verdict": "INCONCLUSIVE",
+            "witnesses": []
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [
+              {
+                "interval_s": [
+                  1.8035416,
+                  2.0
+                ],
+                "request": "Obtain calibrated pose observations or tighter motion bounds",
+                "type": "unproven_keepout_coverage"
+              }
+            ],
+            "verdict": "INCONCLUSIVE",
+            "witnesses": []
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "6f2c1f18013841fa55b45554b9a63a1046542d235eb5e0efe8e8fc18f576d5ea",
+        "trace_canonical_sha256": "6f2c1f18013841fa55b45554b9a63a1046542d235eb5e0efe8e8fc18f576d5ea",
+        "unresolved_coverage": [
+          {
+            "interval_s": [
+              1.8035416,
+              2.0
+            ],
+            "request": "Obtain calibrated pose observations or tighter motion bounds",
+            "type": "unproven_keepout_coverage"
+          },
+          {
+            "evidence_ref": "pose-3",
+            "interval_s": [
+              1.5,
+              2.0
+            ],
+            "request": "Provide deadline-anchored pose evidence",
+            "type": "terminal_goal_unresolved"
+          }
+        ],
+        "verdict": "INCONCLUSIVE"
+      },
+      "id": "early_truncation",
+      "oracle": "INCONCLUSIVE",
+      "truth_class_label": "INCONCLUSIVE",
+      "veap": "INCONCLUSIVE"
+    },
+    {
+      "baselines": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "9a9272570c7f9ceced04ec9b90fb602fd11f6096733ad061e7df8b3f9144a771",
+        "confirmed_violations": [],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 4,
+        "evidence_witnesses": [
+          {
+            "distance_upper_bound_m": 0.02,
+            "evidence_ref": "pose-4",
+            "t_s": 2.0,
+            "type": "terminal_goal_certified"
+          }
+        ],
+        "missing_evidence_diagnostics": [
+          {
+            "evidence_ref": "pose-2",
+            "type": "sensor_unhealthy"
+          },
+          {
+            "interval_s": [
+              0.5,
+              1.5
+            ],
+            "not_automatically_inconclusive": true,
+            "type": "nominal_recording_gap"
+          }
+        ],
+        "observed_samples": 5,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "distance_upper_bound_m": 0.02,
+                "evidence_ref": "pose-4",
+                "t_s": 2.0,
+                "type": "terminal_goal_certified"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [
+              {
+                "interval_s": [
+                  0.8035416,
+                  1.1964584
+                ],
+                "request": "Obtain calibrated pose observations or tighter motion bounds",
+                "type": "unproven_keepout_coverage"
+              }
+            ],
+            "verdict": "INCONCLUSIVE",
+            "witnesses": []
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "b0e97ef9ea0aee7aba46e17aafafa62bf65c75844508f5d9378bc0430e66f364",
+        "trace_canonical_sha256": "b0e97ef9ea0aee7aba46e17aafafa62bf65c75844508f5d9378bc0430e66f364",
+        "unresolved_coverage": [
+          {
+            "interval_s": [
+              0.8035416,
+              1.1964584
+            ],
+            "request": "Obtain calibrated pose observations or tighter motion bounds",
+            "type": "unproven_keepout_coverage"
+          }
+        ],
+        "verdict": "INCONCLUSIVE"
+      },
+      "id": "sensor_dropout",
+      "oracle": "INCONCLUSIVE",
+      "truth_class_label": "INCONCLUSIVE",
+      "veap": "INCONCLUSIVE"
+    },
+    {
+      "baselines": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "7f7b73b4a2be2554b3d073d263cb2cb0420ddf80a182d41d29367fbe07b3ab4a",
+        "confirmed_violations": [],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 4,
+        "evidence_witnesses": [
+          {
+            "distance_upper_bound_m": 0.02,
+            "evidence_ref": "pose-4",
+            "t_s": 2.0,
+            "type": "terminal_goal_certified"
+          }
+        ],
+        "missing_evidence_diagnostics": [
+          {
+            "evidence_ref": "pose-2",
+            "topics": [
+              "/odom"
+            ],
+            "type": "missing_required_pose_channel"
+          },
+          {
+            "interval_s": [
+              0.5,
+              1.5
+            ],
+            "not_automatically_inconclusive": true,
+            "type": "nominal_recording_gap"
+          }
+        ],
+        "observed_samples": 5,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "distance_upper_bound_m": 0.02,
+                "evidence_ref": "pose-4",
+                "t_s": 2.0,
+                "type": "terminal_goal_certified"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [
+              {
+                "interval_s": [
+                  0.8035416,
+                  1.1964584
+                ],
+                "request": "Obtain calibrated pose observations or tighter motion bounds",
+                "type": "unproven_keepout_coverage"
+              }
+            ],
+            "verdict": "INCONCLUSIVE",
+            "witnesses": []
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "c9a4fff77b4fc98a278a07acd4d26d9603ded0665f73a40a034a96690e0064c5",
+        "trace_canonical_sha256": "c9a4fff77b4fc98a278a07acd4d26d9603ded0665f73a40a034a96690e0064c5",
+        "unresolved_coverage": [
+          {
+            "interval_s": [
+              0.8035416,
+              1.1964584
+            ],
+            "request": "Obtain calibrated pose observations or tighter motion bounds",
+            "type": "unproven_keepout_coverage"
+          }
+        ],
+        "verdict": "INCONCLUSIVE"
+      },
+      "id": "missing_required_odom",
+      "oracle": "INCONCLUSIVE",
+      "truth_class_label": "INCONCLUSIVE",
+      "veap": "INCONCLUSIVE"
+    },
+    {
+      "baselines": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "1917a0659361b21d593ecabe71d88879e8cb64466b13db1ad4794f3bc806194b",
+        "confirmed_violations": [],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 4,
+        "evidence_witnesses": [
+          {
+            "distance_upper_bound_m": 0.02,
+            "evidence_ref": "pose-4",
+            "t_s": 2.0,
+            "type": "terminal_goal_certified"
+          }
+        ],
+        "missing_evidence_diagnostics": [
+          {
+            "evidence_ref": "pose-2",
+            "type": "unverified_frame"
+          },
+          {
+            "interval_s": [
+              0.5,
+              1.5
+            ],
+            "not_automatically_inconclusive": true,
+            "type": "nominal_recording_gap"
+          }
+        ],
+        "observed_samples": 5,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "distance_upper_bound_m": 0.02,
+                "evidence_ref": "pose-4",
+                "t_s": 2.0,
+                "type": "terminal_goal_certified"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [
+              {
+                "interval_s": [
+                  0.8035416,
+                  1.1964584
+                ],
+                "request": "Obtain calibrated pose observations or tighter motion bounds",
+                "type": "unproven_keepout_coverage"
+              }
+            ],
+            "verdict": "INCONCLUSIVE",
+            "witnesses": []
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "210b1babfdc5836a970b439e906e2f23d6424a8d40bd477491c848add77e0a48",
+        "trace_canonical_sha256": "210b1babfdc5836a970b439e906e2f23d6424a8d40bd477491c848add77e0a48",
+        "unresolved_coverage": [
+          {
+            "interval_s": [
+              0.8035416,
+              1.1964584
+            ],
+            "request": "Obtain calibrated pose observations or tighter motion bounds",
+            "type": "unproven_keepout_coverage"
+          }
+        ],
+        "verdict": "INCONCLUSIVE"
+      },
+      "id": "frame_mismatch",
+      "oracle": "INCONCLUSIVE",
+      "truth_class_label": "INCONCLUSIVE",
+      "veap": "INCONCLUSIVE"
+    },
+    {
+      "baselines": {
+        "gap_aware": "INCONCLUSIVE",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "a82cc9b203a549e74dd134c7fe385d7f9cfd0337c63ee3900c6ddeafdc6687b4",
+        "confirmed_violations": [],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 0,
+        "evidence_witnesses": [],
+        "missing_evidence_diagnostics": [
+          {
+            "evidence_ref": "pose-2",
+            "type": "non_monotonic_clock"
+          }
+        ],
+        "observed_samples": 5,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [
+              {
+                "interval_s": [
+                  0.0,
+                  2.0
+                ],
+                "request": "Provide observed final robot position in calibrated frame",
+                "type": "terminal_goal_unresolved"
+              }
+            ],
+            "verdict": "INCONCLUSIVE",
+            "witnesses": []
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [
+              {
+                "interval_s": [
+                  0.0,
+                  2.0
+                ],
+                "request": "Obtain calibrated pose observations or tighter motion bounds",
+                "type": "unproven_keepout_coverage"
+              }
+            ],
+            "verdict": "INCONCLUSIVE",
+            "witnesses": []
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "f417336d062c6aefd411fd7bac9184cf46f189af88b66387318ffab6e586f440",
+        "trace_canonical_sha256": "f417336d062c6aefd411fd7bac9184cf46f189af88b66387318ffab6e586f440",
+        "unresolved_coverage": [
+          {
+            "interval_s": [
+              0.0,
+              2.0
+            ],
+            "request": "Obtain calibrated pose observations or tighter motion bounds",
+            "type": "unproven_keepout_coverage"
+          },
+          {
+            "interval_s": [
+              0.0,
+              2.0
+            ],
+            "request": "Provide observed final robot position in calibrated frame",
+            "type": "terminal_goal_unresolved"
+          }
+        ],
+        "verdict": "INCONCLUSIVE"
+      },
+      "id": "clock_reversal",
+      "oracle": "INCONCLUSIVE",
+      "truth_class_label": "INCONCLUSIVE",
+      "veap": "INCONCLUSIVE"
+    },
+    {
+      "baselines": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "VIOLATING",
+        "sampled_safety": "VIOLATING",
+        "terminal_safety": "VIOLATING"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "fe5bd5b5d04d1858b35533322b7ecce2ca7b5c662ae102770b923b74a1d266e2",
+        "confirmed_violations": [
+          {
+            "distance_lower_bound_m": 0.98,
+            "evidence_ref": "pose-4",
+            "type": "goal_not_reached_at_deadline"
+          }
+        ],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 5,
+        "evidence_witnesses": [
+          {
+            "assurance": "conditional_motion_bound",
+            "evidence_refs": [
+              "pose-0",
+              "pose-1",
+              "pose-2",
+              "pose-3",
+              "pose-4"
+            ],
+            "interval_s": [
+              0.0,
+              2.0
+            ],
+            "type": "continuous_keepout_coverage"
+          }
+        ],
+        "missing_evidence_diagnostics": [],
+        "observed_samples": 5,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "VIOLATING",
+            "witnesses": [
+              {
+                "distance_lower_bound_m": 0.98,
+                "evidence_ref": "pose-4",
+                "type": "goal_not_reached_at_deadline"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "assurance": "conditional_motion_bound",
+                "evidence_refs": [
+                  "pose-0",
+                  "pose-1",
+                  "pose-2",
+                  "pose-3",
+                  "pose-4"
+                ],
+                "interval_s": [
+                  0.0,
+                  2.0
+                ],
+                "type": "continuous_keepout_coverage"
+              }
+            ]
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "5988c6fc88111e850027b1c6b6629dc0651e7a7eaf3568cf59650865b42e81e9",
+        "trace_canonical_sha256": "5988c6fc88111e850027b1c6b6629dc0651e7a7eaf3568cf59650865b42e81e9",
+        "unresolved_coverage": [],
+        "verdict": "VIOLATING"
+      },
+      "id": "goal_unreached",
+      "oracle": "VIOLATING",
+      "truth_class_label": "VIOLATING",
+      "veap": "VIOLATING"
+    },
+    {
+      "baselines": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "6f847495907fcfd592e21017dbde4c0bda002c2dc7eb5caee20c615f0a3519b0",
+        "confirmed_violations": [],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 5,
+        "evidence_witnesses": [
+          {
+            "distance_upper_bound_m": 0.02,
+            "evidence_ref": "pose-4",
+            "t_s": 2.0,
+            "type": "terminal_goal_certified"
+          }
+        ],
+        "missing_evidence_diagnostics": [],
+        "observed_samples": 5,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "distance_upper_bound_m": 0.02,
+                "evidence_ref": "pose-4",
+                "t_s": 2.0,
+                "type": "terminal_goal_certified"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [
+              {
+                "interval_s": [
+                  0.8035416,
+                  0.8925
+                ],
+                "request": "Obtain calibrated pose observations or tighter motion bounds",
+                "type": "unproven_keepout_coverage"
+              },
+              {
+                "interval_s": [
+                  1.1075,
+                  1.1964584
+                ],
+                "request": "Obtain calibrated pose observations or tighter motion bounds",
+                "type": "unproven_keepout_coverage"
+              }
+            ],
+            "verdict": "INCONCLUSIVE",
+            "witnesses": []
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "0c77787a4ccab8d5fd5354117c0b9527a64c9b1e04ec1ec92e3032de14c21756",
+        "trace_canonical_sha256": "0c77787a4ccab8d5fd5354117c0b9527a64c9b1e04ec1ec92e3032de14c21756",
+        "unresolved_coverage": [
+          {
+            "interval_s": [
+              0.8035416,
+              0.8925
+            ],
+            "request": "Obtain calibrated pose observations or tighter motion bounds",
+            "type": "unproven_keepout_coverage"
+          },
+          {
+            "interval_s": [
+              1.1075,
+              1.1964584
+            ],
+            "request": "Obtain calibrated pose observations or tighter motion bounds",
+            "type": "unproven_keepout_coverage"
+          }
+        ],
+        "verdict": "INCONCLUSIVE"
+      },
+      "id": "uncertain_clearance",
+      "oracle": "INCONCLUSIVE",
+      "truth_class_label": "INCONCLUSIVE",
+      "veap": "INCONCLUSIVE"
+    },
+    {
+      "baselines": {
+        "gap_aware": "VIOLATING",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "VIOLATING",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "78132b9ccb2c8d26c791dfb918dbdc5413e0e4075499069bd8bd0eb0c953d948",
+        "confirmed_violations": [
+          {
+            "evidence_ref": "pose-2",
+            "signed_clearance_m": -0.2,
+            "t_s": 1.0,
+            "type": "confirmed_keepout_overlap"
+          }
+        ],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 5,
+        "evidence_witnesses": [
+          {
+            "evidence_ref": "pose-2",
+            "signed_clearance_m": -0.2,
+            "t_s": 1.0,
+            "type": "confirmed_keepout_overlap"
+          },
+          {
+            "distance_upper_bound_m": 0.02,
+            "evidence_ref": "pose-4",
+            "t_s": 2.0,
+            "type": "terminal_goal_certified"
+          }
+        ],
+        "missing_evidence_diagnostics": [],
+        "observed_samples": 5,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "distance_upper_bound_m": 0.02,
+                "evidence_ref": "pose-4",
+                "t_s": 2.0,
+                "type": "terminal_goal_certified"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [
+              {
+                "interval_s": [
+                  0.8035416,
+                  1.1964584
+                ],
+                "request": "Obtain calibrated pose observations or tighter motion bounds",
+                "type": "unproven_keepout_coverage"
+              }
+            ],
+            "verdict": "VIOLATING",
+            "witnesses": [
+              {
+                "evidence_ref": "pose-2",
+                "signed_clearance_m": -0.2,
+                "t_s": 1.0,
+                "type": "confirmed_keepout_overlap"
+              }
+            ]
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "3e27b2bdea35ae07c11c76f96a2898ece46987d9cf4cc088eef945e6f5a2da6f",
+        "trace_canonical_sha256": "3e27b2bdea35ae07c11c76f96a2898ece46987d9cf4cc088eef945e6f5a2da6f",
+        "unresolved_coverage": [
+          {
+            "interval_s": [
+              0.8035416,
+              1.1964584
+            ],
+            "request": "Obtain calibrated pose observations or tighter motion bounds",
+            "type": "unproven_keepout_coverage"
+          }
+        ],
+        "verdict": "VIOLATING"
+      },
+      "id": "false_agent_success_claim",
+      "oracle": "VIOLATING",
+      "truth_class_label": "VIOLATING",
+      "veap": "VIOLATING"
+    },
+    {
+      "baselines": {
+        "gap_aware": "COMPLIANT",
+        "goal_only": "COMPLIANT",
+        "sampled_safety": "COMPLIANT",
+        "terminal_safety": "COMPLIANT"
+      },
+      "certificate": {
+        "assumptions": [
+          "Maximum translational speed bound applies over every unobserved interval",
+          "Position error is never greater than the stated uncertainty",
+          "Frame, clock and mission window are correct, and source records are genuine"
+        ],
+        "certificate_schema": "veap.evidence.sufficiency/1",
+        "certificate_sha256": "b8fa4495caaff62c293ef7522d4f605fbfe9f560133842e08469d8d90966bc77",
+        "confirmed_violations": [],
+        "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+        "eligible_pose_samples": 5,
+        "evidence_witnesses": [
+          {
+            "assurance": "conditional_motion_bound",
+            "evidence_refs": [
+              "pose-0",
+              "pose-1",
+              "pose-2",
+              "pose-3",
+              "pose-4"
+            ],
+            "interval_s": [
+              0.0,
+              2.0
+            ],
+            "type": "continuous_keepout_coverage"
+          },
+          {
+            "distance_upper_bound_m": 0.02,
+            "evidence_ref": "pose-4",
+            "t_s": 2.0,
+            "type": "terminal_goal_certified"
+          }
+        ],
+        "missing_evidence_diagnostics": [],
+        "observed_samples": 5,
+        "requirements": {
+          "goal_at_deadline": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "distance_upper_bound_m": 0.02,
+                "evidence_ref": "pose-4",
+                "t_s": 2.0,
+                "type": "terminal_goal_certified"
+              }
+            ]
+          },
+          "keepout_continuous": {
+            "unresolved_intervals": [],
+            "verdict": "COMPLIANT",
+            "witnesses": [
+              {
+                "assurance": "conditional_motion_bound",
+                "evidence_refs": [
+                  "pose-0",
+                  "pose-1",
+                  "pose-2",
+                  "pose-3",
+                  "pose-4"
+                ],
+                "interval_s": [
+                  0.0,
+                  2.0
+                ],
+                "type": "continuous_keepout_coverage"
+              }
+            ]
+          }
+        },
+        "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+        "source_authenticity": "UNATTESTED",
+        "source_hash_mode": "canonical_json",
+        "source_kind": "synthetic",
+        "source_sha256": "0ad565d436991c28598756a41ebe9d8a6dbdf9788497574ccac5327dd32ddb84",
+        "trace_canonical_sha256": "0ad565d436991c28598756a41ebe9d8a6dbdf9788497574ccac5327dd32ddb84",
+        "unresolved_coverage": [],
+        "verdict": "COMPLIANT"
+      },
+      "id": "negative_agent_success_claim",
+      "oracle": "COMPLIANT",
+      "truth_class_label": "COMPLIANT",
+      "veap": "COMPLIANT"
+    }
+  ],
+  "n": 15,
+  "note": "Reference truth class is synthetic; the evaluator never consumes it.",
+  "reproduction": {
+    "source": "local generated fixtures",
+    "upstream_ABC": "NOT_RUN",
+    "upstream_EAI": "NOT_RUN"
+  },
+  "study": "SYNTHETIC_MECHANISM_DEMO_NOT_EXTERNAL_VALIDATION"
+}

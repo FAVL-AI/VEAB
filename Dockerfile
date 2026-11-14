@@ -1,15 +1,15 @@
 FROM python:3.12-slim
-ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 VEAB_DATA_DIR=/app/artifacts
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 VEAP_DATA_DIR=/app/artifacts
 WORKDIR /app
 COPY pyproject.toml README.md ./
-COPY veab ./veab
+COPY veap ./veap
 COPY scenarios ./scenarios
 COPY web ./web
 COPY docs ./docs
 RUN python -m pip install --no-cache-dir . && \
-    useradd --create-home --shell /usr/sbin/nologin veab && \
-    mkdir -p /app/artifacts && chown veab:veab /app/artifacts
-USER veab
+    useradd --create-home --shell /usr/sbin/nologin veap && \
+    mkdir -p /app/artifacts && chown veap:veap /app/artifacts
+USER veap
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD python -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8000/').read(50)" || exit 1
-CMD ["python","-m","uvicorn","veab.api:app","--host","0.0.0.0","--port","8000"]
+CMD ["python","-m","uvicorn","veap.api:app","--host","0.0.0.0","--port","8000"]

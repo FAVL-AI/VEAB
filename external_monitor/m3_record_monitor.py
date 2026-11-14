@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Second, separate-implementation monitor for exported M3 ROS evidence envelopes.
 
-Does not import VEAB, agent, or simulation code. Reads a frozen JSON contract.
+Does not import VEAP, agent, or simulation code. Reads a frozen JSON contract.
 Both monitors may share the same untrusted data source: NO external ground truth
 or organisational independence is implied.
 """
@@ -15,7 +15,7 @@ import sys
 
 def independently_check(contract_path: str | Path, jsonl_path: str | Path) -> dict:
     contract = json.loads(Path(contract_path).read_text(encoding='utf-8'))
-    if contract.get('purpose') != 'read_only_evidence_audit' or contract.get('schema_version') != 'veab.m3.contract/1':
+    if contract.get('purpose') != 'read_only_evidence_audit' or contract.get('schema_version') != 'veap.m3.contract/1':
         raise ValueError('unsupported evidence contract')
     if contract.get('source_trust') != 'unattested':
         raise ValueError('unsupported source trust assertion')
@@ -27,7 +27,7 @@ def independently_check(contract_path: str | Path, jsonl_path: str | Path) -> di
         if index >= 1_000_000 or len(line) > 1_048_576:
             raise ValueError('input bounds exceeded')
         r = json.loads(line)
-        if not isinstance(r, dict) or r.get('schema_version') != 'veab.m3.record/1':
+        if not isinstance(r, dict) or r.get('schema_version') != 'veap.m3.record/1':
             raise ValueError('unsupported record schema')
         t = r.get('log_time_ns')
         if type(t) is not int or t < 0 or t > 10**20:
@@ -77,7 +77,7 @@ def independently_check(contract_path: str | Path, jsonl_path: str | Path) -> di
             if any(frame != expected_frame for frame in seen):
                 errors.append(f'FRAME_MISMATCH:{label}')
     return {
-        'schema_version':'veab.m3.independent-monitor/1',
+        'schema_version':'veap.m3.independent-monitor/1',
         'verdict':'OBSERVED' if not errors else 'INCOMPLETE',
         'read_only':True,
         'organisational_independence':False,

@@ -1,5 +1,5 @@
 #![allow(dead_code, unused_imports)]
-// VEAB Rust Verifier: High-assurance hash-corruption detection & postcondition auditing.
+// VEAP Rust Verifier: High-assurance hash-corruption detection & postcondition auditing.
 mod sha256;
 
 use sha256::Sha256;
@@ -230,12 +230,10 @@ fn verify_evidence_bundle(bundle_json: &str) -> VerificationOutcome {
     let mut milestones_reached = 0;
     let mut claimed_status = String::new();
 
-    for chunk in events_str.split("{\"seq\":") {
-        if chunk.is_empty() || chunk.starts_with("\"events\":") {
-            continue;
-        }
+    let parts: Vec<&str> = events_str.split("\"seq\":").collect();
+    for chunk in parts.iter().skip(1) {
         event_count += 1;
-        let event_body = format!("{{\"seq\":{}", chunk.split("}\n").next().unwrap_or(""));
+        let event_body = format!("{{\"seq\":{}", chunk);
         
         let hash = match extract_string(&event_body, "hash") {
             Some(h) => h.to_string(),
@@ -328,7 +326,7 @@ fn verify_evidence_bundle(bundle_json: &str) -> VerificationOutcome {
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
-        eprintln!("Usage: veab-rust-verifier <bundle.json>");
+        eprintln!("Usage: veap-rust-verifier <bundle.json>");
         process::exit(1);
     }
 

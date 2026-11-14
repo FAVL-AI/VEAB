@@ -105,7 +105,7 @@
   "external_ground_truth": false,
   "robot_data_used": false,
   "sample_size": 11,
-  "schema_version": "veab.m3.synthetic-controls/1",
+  "schema_version": "veap.m3.synthetic-controls/1",
   "scientific_performance_estimate": false,
   "sensitivity_synthetic": 1.0,
   "separate_monitor_disagreements": [],

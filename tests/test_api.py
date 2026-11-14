@@ -1,12 +1,12 @@
 import os
 import time
 from fastapi.testclient import TestClient
-from veab import api
-from veab.store import Store
+from veap import api
+from veap.store import Store
 
 
 def test_api_local_run_and_evidence_bundle(tmp_path,monkeypatch):
-    monkeypatch.delenv('VEAB_ADMIN_TOKEN',raising=False)
+    monkeypatch.delenv('VEAP_ADMIN_TOKEN',raising=False)
     monkeypatch.setattr(api,'store',Store(tmp_path))
     client=TestClient(api.app)
     assert client.get('/api/health').status_code==200
@@ -29,7 +29,7 @@ def test_api_local_run_and_evidence_bundle(tmp_path,monkeypatch):
 
 def test_api_rejects_bad_input_and_requires_token(tmp_path,monkeypatch):
     monkeypatch.setattr(api,'store',Store(tmp_path))
-    monkeypatch.setenv('VEAB_ADMIN_TOKEN','test-sentry')
+    monkeypatch.setenv('VEAP_ADMIN_TOKEN','test-sentry')
     client=TestClient(api.app)
     assert client.get('/api/health').status_code==401
     headers={'Authorization':'Bearer test-sentry'}

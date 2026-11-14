@@ -1,4 +1,4 @@
-# VEAB v0.1 threat model and operational boundary
+# VEAP v0.1 threat model and operational boundary
 
 ## Trust model
 
@@ -24,7 +24,7 @@ The model/policy and the simulator are both untrusted sources of **claims**. A s
 
 1. Keep the default 127.0.0.1 bind. If containerised, publish localhost-only ports.
 2. Before network exposure, add authenticated IAM, TLS termination, rate limits, policy isolation, observability, secrets management, CSRF assessment and multi-tenant data separation.
-3. Never connect `veab.api` to `/cmd_vel`, actuator driver, MCU motion control or hazardous tool execution. A **separate hardware controller with emergency stop** must bound any future physical agent.
+3. Never connect `veap.api` to `/cmd_vel`, actuator driver, MCU motion control or hazardous tool execution. A **separate hardware controller with emergency stop** must bound any future physical agent.
 4. Collect independent, signed or hardware-attested sensor provenance before using the word **verified** for real-robot outcomes.
 5. Sign benchmark snapshots with independently custodied keys; publish immutable object hashes to an external log to mitigate coordinated evidence rewriting.
 6. Red-team all pipeline paths: model response, tool adapter, memory, replay data, partial messages, interface user input and artefact ingestion.

@@ -1,4 +1,4 @@
-module veab/orchestrator
+module veap/orchestrator
 
 go 1.22
 

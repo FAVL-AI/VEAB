@@ -1,7 +1,7 @@
 """Test native backend execution: Rust verifier, C++ sim, and Go orchestrator."""
 import pytest
 from pathlib import Path
-from veab.native import (
+from veap.native import (
     has_rust_verifier,
     has_cpp_sim,
     has_go_orchestrator,

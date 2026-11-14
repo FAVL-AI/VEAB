@@ -1,5 +1,5 @@
 {
-  "schema_version": "veab-research-analysis/1",
+  "schema_version": "veap-research-analysis/1",
   "scope": "public 2D deterministic demonstration; methodology smoke test",
   "source_provenance": "record-level summary only, not externally witnessed sensor truth",
   "data_audit": {

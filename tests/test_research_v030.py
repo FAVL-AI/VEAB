@@ -1,18 +1,18 @@
-"""Tests for VEAB v0.3.0 regenerated research files and CLI tools."""
+"""Tests for VEAP v0.3.0 regenerated research files and CLI tools."""
 import hashlib
 import json
 from pathlib import Path
-from veab.research.analyse import run_process_analysis
-from veab.research.attacks import run_tamper_audit
-from veab.cli import main
+from veap.research.analyse import run_process_analysis
+from veap.research.attacks import run_tamper_audit
+from veap.cli import main
 
 ROOT = Path(__file__).resolve().parent.parent
 
 EXPECTED_HASHES = {
-    "LITERATURE_TO_ENGINEERING_MATRIX.md": "bcfc5223c61c534edfae95da03f43f727a98f5b06edd4707ed102c3fcbaaaf5e",
-    "PREREG_VEAB_NAV_PROTOCOL.md": "f274ab290ba9d4cdf759eca393889ab762a70d5ab6e03151c797edf98ba89c92",
-    "process-analysis.json": "ca623e39383e66775e0fbf973b29df630baaee2af8de1711d23a288f4ecef128",
-    "RESEARCH_RELEASE_NOTES_v0.3.0.md": "61e6c9be20c4f1a3bcc0fbce58f97e88a7f1bf88d65866bac32a2f1353eb2c11",
+    "LITERATURE_TO_ENGINEERING_MATRIX.md": "2cf56c614da5db4813256f09658256f86c6acf345af928e28f7e1b678ff00f26",
+    "PREREG_VEAP_NAV_PROTOCOL.md": "024c4d26a948b526012e8f564a8243cb2f04a27913fdf237074b568a8c75f342",
+    "process-analysis.json": "cea31fcce868137ed18c8c6d2dd5b215f7170b7fd09bb436bc3186e814f41962",
+    "RESEARCH_RELEASE_NOTES_v0.3.0.md": "6c9a9540b9d1535dc1ccb6d6d2ac62529eb24c799eb59bf01e6174d2e5e38d3a",
 }
 
 
@@ -33,7 +33,7 @@ def test_research_process_analysis_cli(tmp_path):
     assert out_file.exists()
     
     data = json.loads(out_file.read_text(encoding="utf-8"))
-    assert data["schema_version"] == "veab-research-analysis/1"
+    assert data["schema_version"] == "veap-research-analysis/1"
     assert data["data_audit"]["n_trial_rows"] == 60
     assert "greedy_gate_effect" in data["comparisons"]
     assert "route_gate_effect" in data["comparisons"]

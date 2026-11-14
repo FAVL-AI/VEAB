@@ -15,7 +15,7 @@ Ensures:
 """
 from __future__ import annotations
 import pytest
-from veab.evaluation_matrix import run_evaluation_matrix, ConditionMetrics, FullEvaluationReport
+from veap.evaluation_matrix import run_evaluation_matrix, ConditionMetrics, FullEvaluationReport
 
 
 def test_evaluation_matrix_computes_all_eight_metrics_separately():

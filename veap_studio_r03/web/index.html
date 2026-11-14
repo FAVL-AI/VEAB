@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="theme-color" content="#0b1014"/>
+<title>VEAP Studio — Physical AI Operations</title>
+<link rel="stylesheet" href="/assets/style.css"/>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand" title="VEAP Foundry"><span class="brand-cube">◈</span><span>VEAP<span class="brand-sub">/ FOUNDRY</span></span></div>
+    <div class="top-divider"></div><div class="breadcrumb"><span>PHYSICAL AI</span><span class="chevron">›</span><strong id="crumbPage">Replay Operations</strong></div>
+    <div class="top-spacer"></div>
+    <div class="system-tag"><i class="glowdot"></i><span>LOCAL ENGINE</span></div>
+    <div class="system-tag discreet" id="hostTag">ROS 2 <b>OFFLINE</b></div>
+    <div class="system-tag discreet">R0.3 <b>INTEGRATED LOCAL</b></div>
+    <button class="iconbtn" id="shortcuts" title="Keyboard shortcuts">⌘</button>
+    <div class="avatar">V</div>
+  </header>
+
+  <div class="shell">
+    <nav class="rail" aria-label="Main navigation">
+      <button class="railbutton active" data-page="replay" title="Replay" aria-label="Replay">▦</button>
+      <button class="railbutton" data-page="world" title="World Studio" aria-label="World Studio">⬡</button>
+      <button class="railbutton" data-page="data" title="Data Registry" aria-label="Data Registry">▤</button>
+      <button class="railbutton" data-page="policy" title="Policy Lab" aria-label="Policy Lab">⦿</button>
+      <button class="railbutton" data-page="assurance" title="Assurance" aria-label="Assurance">◇</button>
+      <button class="railbutton" data-page="connectors" title="Fleet and Connectors" aria-label="Fleet and Connectors">⌘</button>
+      <div class="rail-spacer"></div>
+      <button class="railbutton" id="about" title="About and evidence boundaries" aria-label="About">ⓘ</button>
+    </nav>
+
+    <aside class="sidebar" id="sidebar" aria-label="Workspace sidebar">
+      <div class="side-head">
+        <div class="side-head-top"><div class="overline">WORKSPACE</div><button class="side-collapse-btn" id="sidebarCollapseBtn" type="button" title="Collapse sidebar ([ or Ctrl+B)" aria-label="Collapse sidebar" aria-expanded="true">«</button></div>
+        <div class="side-workspace"><div class="workspace-logo">◈</div><div><strong>Industrial Validation</strong><small>VEAP Research / Local</small></div><span class="down">⌄</span></div>
+      </div>
+      <div class="side-tabs"><button class="selected" data-side="sources">Sources</button><button data-side="topics">Topics</button><button data-side="scene">Scene</button></div>
+      <div class="side-search"><span>⌕</span><input id="sideSearch" placeholder="Filter sources or topics..." aria-label="Filter sources"/><span class="keycap">/</span></div>
+      <div class="side-content" id="sideSources">
+        <button type="button" class="side-section collapsible" data-collapse="sourceItems" aria-expanded="true"><span><i class="sec-caret">▾</i> RECORDED SESSIONS</span><small id="sourceCount">0</small></button>
+        <div id="sourceItems" class="side-group-body"></div>
+        <button type="button" class="side-section collapsible" data-collapse="studioModules" aria-expanded="true" style="margin-top:14px"><span><i class="sec-caret">▾</i> STUDIO MODULES</span><small>R0.3</small></button>
+        <div id="studioModules" class="side-group-body">
+          <div class="module"><span class="mini-circle good"></span>Contract evaluator <span class="module-end">LOCAL</span></div>
+          <div class="module"><span class="mini-circle good"></span>Trace comparison <span class="module-end">LOCAL</span></div>
+          <div class="module"><span class="mini-circle good"></span>Fault generator <span class="module-end">LOCAL</span></div>
+          <div class="module"><span class="mini-circle good"></span>Isaac Lab runtime <span class="module-end">READY</span></div>
+          <div class="module"><span class="mini-circle good"></span>ROS 2 / Gazebo <span class="module-end">HUMBLE</span></div>
+          <div class="module"><span class="mini-circle good"></span>LeRobot / OpenUSD <span class="module-end">LOCAL</span></div>
+        </div>
+      </div>
+      <div class="side-content hidden" id="sideTopics">
+        <div class="side-section">TOPIC NAMESPACE <small>EXAMPLE</small></div>
+        <div class="topic-row"><i></i>/camera/front/image_raw <small>sensor_msgs/Image</small></div>
+        <div class="topic-row"><i></i>/camera/left/image_raw <small>sensor_msgs/Image</small></div>
+        <div class="topic-row"><i></i>/camera/right/image_raw <small>sensor_msgs/Image</small></div>
+        <div class="topic-row"><i></i>/scan0 <small>LaserScan</small></div>
+        <div class="topic-row"><i></i>/scan1 <small>LaserScan</small></div>
+        <div class="topic-row"><i></i>/odom_raw <small>Odometry</small></div>
+        <div class="topic-row"><i></i>/imu/data_raw <small>Imu</small></div>
+        <div class="topic-row"><i></i>/cmd_vel <small>Twist</small></div>
+        <div class="topic-row"><i></i>/tf <small>TFMessage</small></div>
+        <p class="small-note">Example contract topics, not current live publications. MCAP channel indexes appear in Data Registry after upload.</p>
+      </div>
+      <div class="side-content hidden" id="sideScene">
+        <div class="side-section">SIMULATION WORLD</div>
+        <div class="scene-node">▾ <b>World / Warehouse</b></div><div class="scene-node inset">⌑ GroundPlane</div>
+        <div class="scene-node inset">◇ RestrictedZone_01</div><div class="scene-node inset">▣ Shelving_A–D</div>
+        <div class="scene-node">▾ <b>Robots</b></div><div class="scene-node inset">♢ ROSMASTER M3 Pro <em>surrogate</em></div>
+        <div class="scene-node inset">♙ Unitree G1 <em>surrogate</em></div><div class="scene-node">▾ <b>Evidence</b></div>
+        <div class="scene-node inset">↝ RecordedTrajectory</div><div class="scene-node inset">◎ LiDAR samples (synthetic)</div>
+      </div>
+      <div class="side-bottom"><div class="side-bottom-top"><span class="mini-circle bad"></span>Physical robot <b>HOLD</b></div><small>Yahboom M3 · storage recovery gate<br/>No actuator authority or live sensor control</small></div>
+    </aside>
+    <div class="sidebar-slider" id="sidebarSlider" role="separator" aria-orientation="vertical" aria-label="Resize or collapse sidebar" title="Drag to slide width · Click handle to collapse/expand ([ or Ctrl+B)">
+      <button class="sidebar-slider-btn" id="sidebarSliderBtn" type="button" aria-label="Toggle sidebar" aria-expanded="true" title="Collapse or expand sidebar ([ or Ctrl+B)"><span id="sidebarSliderIcon">‹</span></button>
+    </div>
+
+    <main class="workspace">
+      <section id="pageReplay" class="page active">
+        <div class="workspace-top"><div><span class="eyebrow">MISSION CONTROL / SYNCHRONIZED REPLAY</span><h1>Physical AI Operations <span class="replay-tag">REPLAY</span></h1><p id="runSubtitle">Independent process evidence, time-aligned visualization and digital-twin discrepancy analysis.</p></div><div class="actions">
+          <button class="btn subtle" id="btnRecord">◉ &nbsp; Record plan</button>
+          <button class="btn subtle" id="btnCompare">⇄ &nbsp; Compare</button>
+          <button class="btn primary" id="btnUpload">＋ &nbsp; Import evidence</button>
+        </div></div>
+        <div class="stats" id="stats">
+          <div class="stat"><div class="label">TASK CONDITION <span>◇</span></div><strong id="statTask">—</strong><small>Goal under selected contract</small></div>
+          <div class="stat"><div class="label">PROCESS VERDICT <span>◆</span></div><strong id="statVerdict">—</strong><small>Agent-independent trace check</small></div>
+          <div class="stat"><div class="label">VIOLATION EVENTS <span>⊗</span></div><strong id="statViolations">—</strong><small>Recorded geometric constraints</small></div>
+          <div class="stat"><div class="label">EVIDENCE SAMPLES <span>◷</span></div><strong id="statSamples">—</strong><small>Explicitly unattested source</small></div>
+        </div>
+        <div class="replay-grid">
+          <section class="panel camera-panel"><div class="panel-title"><span class="head-dot green"></span> Camera array <span class="small-sub">synchronized / synthetic reference</span><div class="panel-tools"><select id="cameraSource" class="small-select" aria-label="External media source"><option value="">SYNTHETIC ONLY</option></select></div></div><div class="camera-grid">
+            <div class="camera-feed"><canvas id="cam1"></canvas><span class="cam-label">CAM / FRONT LEFT</span><span class="cam-live">SYNTHETIC</span></div>
+            <div class="camera-feed"><canvas id="cam2"></canvas><span class="cam-label">CAM / FRONT</span><span class="cam-live">SYNTHETIC</span><div id="mediaOverlay" class="media-overlay hidden"></div></div>
+            <div class="camera-feed"><canvas id="cam3"></canvas><span class="cam-label">CAM / FRONT RIGHT</span><span class="cam-live">SYNTHETIC</span></div>
+          </div></section>
+          <section class="panel scene-panel"><div class="panel-title"><span class="head-dot green"></span> Digital twin viewport <span class="small-sub">CAD scene / projected 3D / uncalibrated</span><div class="panel-tools" id="sceneCoords">XYZ 11.8 × 9.6 m</div></div>
+            <div class="scene-stage" id="sceneStage"><canvas id="sceneCanvas" aria-label="Interactive isometric 3D warehouse scene with robot trajectory"></canvas>
+              <div class="viewport-badge"><span class="head-dot green"></span> WORLD / MAP FRAME</div>
+              <div class="viewport-badge right">SURROGATE GEOMETRY · NO PHYSICS</div>
+              <div class="viewport-controls"><button id="cameraReset" title="Reset camera">⟲</button><button id="togglePoints" class="selected" title="Toggle point cloud">⁙</button><button id="toggleBounds" class="selected" title="Toggle safety regions">◇</button></div>
+              <div class="viewport-axes"><b>Y</b><b>X</b><b>Z</b></div>
+              <div class="world-bottom"><span id="worldMode">M3 · WAREHOUSE</span><span class="mono" id="worldFrame">t = 0.00 s</span></div>
+            </div>
+          </section>
+          <section class="panel inspector-panel"><div class="panel-title"><span class="head-dot orange"></span> Assurance inspector <div class="panel-tools">⋯</div></div>
+            <div class="inspector-tabs"><button class="active" data-inspect="events">Events</button><button data-inspect="contract">Contract</button><button data-inspect="evidence">Evidence</button></div>
+            <div class="inspector-body" id="inspectorEvents"><div class="inspector-summary"><strong id="eventCount">0 events</strong><small>Click an event to seek</small></div><div id="eventList"></div></div>
+            <div class="inspector-body hidden" id="inspectorContract"><div class="property"><small>Contract version</small><strong>veap.contract.v0</strong></div><div class="property"><small>Prohibited zone</small><strong>Zone A — 3.75–5.65 m</strong></div><div class="property"><small>Speed ceiling</small><strong>1.20 m/s (demonstration)</strong></div><div class="property"><small>Max timestamp gap</small><strong>400 ms</strong></div><div class="property"><small>Assessment</small><strong id="contractVerdict">Pending</strong></div><p class="small-note">Contract parameters are a software demonstration, not a physical safety case.</p></div>
+            <div class="inspector-body hidden" id="inspectorEvidence"><div class="property"><small>Source SHA-256</small><strong id="sourceDigest" class="tiny-mono">—</strong></div><div class="property"><small>Source provenance</small><strong>UNATTESTED</strong></div><div class="property"><small>Reference sensor</small><strong>NOT CONNECTED</strong></div><div class="property"><small>External physical truth</small><strong>NOT AVAILABLE</strong></div><div class="property"><small>Native physics</small><strong>NOT EXECUTED HERE</strong></div></div>
+          </section>
+          <section class="panel chart-panel"><div class="panel-title"><span class="head-dot blue"></span> Time-series telemetry <span class="small-sub">speed / clearance / latency</span><div class="panel-tools">ƒ(t) &nbsp; ⋯</div></div><div class="chart-wrap"><canvas id="signalCanvas" aria-label="Telemetry signals over time"></canvas></div><div class="chart-legend"><span><i class="legend green"></i>velocity</span><span><i class="legend blue"></i>clearance</span><span><i class="legend orange"></i>latency</span></div></section>
+          <section class="panel compare-panel"><div class="panel-title"><span class="head-dot orange"></span> Cross-engine discrepancy <span class="small-sub">elapsed-time alignment</span><div class="panel-tools">⇄ &nbsp; ⋯</div></div><div class="compare-summary" id="compareSummary"><div><small>POSITION RMSE</small><strong id="compareRmse">—</strong></div><div><small>MAX DIVERGENCE</small><strong id="compareMax">—</strong></div><div><small>REFERENCE</small><strong id="compareRef">—</strong></div></div><div class="compare-controls"><label>Compare against</label><select id="compareSelect"></select><button id="runCompare" class="mini-btn">Evaluate</button></div><p class="small-note">Recorded discrepancies do not establish calibrated simulator equivalence.</p></section>
+        </div>
+        <section class="timeline panel"><div class="timeline-top"><div class="timeline-title"><span class="head-dot green"></span> Synchronized mission timeline <span id="timelineDuration">0–16 s</span></div><div class="transport"><button id="skipBack" aria-label="Restart">⏮</button><button id="playBtn" class="play" aria-label="Play">▶</button><button id="skipForward" aria-label="End">⏭</button><select id="playSpeed" aria-label="Playback speed"><option value="0.5">0.5×</option><option selected value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></div><div class="mono clock" id="timelineClock">00:00.000 / 00:16.000</div></div>
+        <div class="tracks" id="trackContainer"><div class="track-row"><label>ROBOT / POSE</label><div class="track"><div class="track-fill green-fill"></div><div class="track-cursor" id="cursor1"></div></div></div><div class="track-row"><label>CAMERAS</label><div class="track"><div class="track-fill purple-fill"></div><div class="track-cursor" id="cursor2"></div></div></div><div class="track-row"><label>CONTRACT EVENTS</label><div class="track"><div class="track-fill orange-fill" id="eventTrack"></div><div class="track-cursor" id="cursor3"></div></div></div></div>
+        <input type="range" id="scrub" min="0" max="160" value="0" step="1" aria-label="Replay frame"/>
+        <div class="timeline-foot"><span>FRAME <b id="frameText">000 / 160</b></span><span>LOCAL ANALYSIS · ORIGINAL SOURCE PRESERVED</span><button class="text-btn" id="exportReport">↗ EXPORT EVIDENCE REPORT</button></div>
+        </section>
+      </section>
+
+      <section id="pageWorld" class="page"><div class="page-header"><span class="eyebrow">DIGITAL TWIN / ASSET PIPELINE</span><h1>World Studio</h1><p>Import mechanical models, inspect scene assumptions and reconstruct bounded 3D samples. Native physics acceptance remains separate.</p></div>
+        <div class="cards-3"><div class="feature-card"><span class="feature-icon">⬡</span><h3>01 / Import geometry</h3><p>Attach M3 Pro or G1 URDF, STL, OBJ, glTF, USD or STEP assets. Preserve source hashes and format identity.</p><button class="btn primary" id="worldImport">Import robot model</button></div>
+        <div class="feature-card"><span class="feature-icon">⁙</span><h3>02 / Reconstruct environment</h3><p>Inspect LiDAR or point-cloud sources. Build an occupancy candidate after sensor calibration and reference-frame alignment.</p><button class="btn subtle" id="worldReconstruct">Inspect point clouds</button></div>
+        <div class="feature-card"><span class="feature-icon">⧉</span><h3>03 / Simulate & calibrate</h3><p>Export engine-specific scene descriptions to Isaac Lab, MuJoCo and Gazebo. GPU solver calibration remains pending.</p><button class="btn subtle" id="worldEngines">Engine compatibility</button></div></div>
+        <div class="page-split"><div class="panel"><div class="panel-title">Asset analysis and 3D preview</div><div class="model-choice"><select id="geometrySelect" aria-label="Select imported robot model or point cloud"></select><button id="previewGeometry" class="mini-btn">Inspect geometry</button></div><div class="world-preview"><canvas id="worldCanvas" aria-label="Interactive 3D-projected imported scene preview"></canvas><div class="viewport-badge">ORIGINAL MESH / POINT SAMPLES</div></div><div id="geometryReadout" class="small-note">Upload geometry to inspect its bounds, topology or ASCII point cloud occupancy.</div><div class="panel-title">Robot + scene asset registry</div><div id="modelRegistry" class="table-area"></div></div><div class="panel"><div class="panel-title">Engine capability ledger</div><div id="worldCapabilities"></div><button id="worldExportScene" class="btn primary" style="margin:15px">Export reference multi-engine scene</button><p class="small-note">VEAP can emit a bounded OpenUSD/MJCF/SDF reference scene. Native parser, dynamics and CAD equivalence require independent acceptance checks.</p></div></div>
+      </section>
+
+      <section id="pageData" class="page"><div class="page-header"><span class="eyebrow">RECORD / INGEST / ORGANIZE</span><h1>Evidence Registry</h1><p>Store original data, index topics and formats, preserve SHA-256 digests and keep derived artifacts distinguishable from raw acquisition.</p></div>
+        <div class="data-controls"><input id="registrySearch" placeholder="Search by file, format, source or hash..."/><button id="dataImport" class="btn primary">＋ Upload asset</button><button id="dataRecord" class="btn subtle">◎ ROS recording plan</button><button id="inspectInbox" class="btn subtle">▤ Scan local recording inbox</button></div><div id="inboxResults" class="small-note">Local inbox staging is available for recordings too large for browser upload.</div><div class="panel data-table-panel"><div class="panel-title">Recorded datasets & assets <span class="small-sub" id="registryCount">—</span></div><div class="table-area" id="registryTable"></div></div>
+        <div class="cards-3 foot-cards"><div class="feature-card"><h3>MCAP</h3><p>Source bytes are preserved and hashed. Optional ROS 2 decoder extracts odometry and synchronized commands with lineage and timing caveats.</p></div><div class="feature-card"><h3>LeRobotDataset</h3><p>Local conversion runs only with a compatible LeRobot environment and genuine recorded state/action vectors; derived datasets retain source digests.</p></div><div class="feature-card"><h3>Media & logs</h3><p>Images, videos, CSV, JSONL, CAD, point clouds and text logs accepted under bounded local-upload policy.</p></div></div>
+      </section>
+
+      <section id="pagePolicy" class="page"><div class="page-header"><span class="eyebrow">POLICY LAB / EVALUATION HARNESS</span><h1>Counterfactual Lab</h1><p>Reproducible analytic perturbations of stored traces. Does not execute physical faults or train VLA policies.</p></div>
+        <div class="page-split wide-left"><div class="panel"><div class="panel-title">Inject an analytic fault</div><div class="form-grid"><label>Input trajectory<select id="faultSource"></select></label><label>Fault family<select id="faultType"><option value="sensor_dropout">Sensor dropout</option><option value="actuator_stall">Actuator stall</option><option value="odometry_drift">Odometry drift</option><option value="command_delay">Command delay</option><option value="perception_noise">Perception noise</option></select></label><label>Severity<input id="faultSeverity" type="range" min="0.1" max="3" step="0.1" value="1"/><span id="faultSeverityValue">1.0</span></label><label>Deterministic seed<input id="faultSeed" type="number" value="17" min="0" max="100000"/></label></div><button class="btn primary" id="createFault">▶ Generate counterfactual</button><div id="faultResult" class="result-box">No perturbation has been generated yet.</div></div>
+        <div class="panel"><div class="panel-title">Training and baseline integration</div><div class="cap-row"><span>LeRobot ACT / Diffusion / SmolVLA</span><strong class="pending">NOT CONNECTED</strong></div><div class="cap-row"><span>Isaac Lab RL / Imitation</span><strong class="pending">NOT CONNECTED</strong></div><div class="cap-row"><span>MuJoCo rollouts</span><strong class="pending">NOT CONNECTED</strong></div><div class="cap-row"><span>Policy vs harness ablations</span><strong class="pending">PLANNED</strong></div><p class="small-note">Future evaluation must freeze task, seed, observations, tool permissions, compute budget, training split and policy weights.</p></div></div>
+      </section>
+
+      <section id="pageAssurance" class="page"><div class="page-header"><span class="eyebrow">VEAP CONTRACT / MONITOR / REPORT</span><h1>Assurance & Verification</h1><p>Agent-independent replay verdicts, evidence completeness checks and explicit claim boundaries.</p></div>
+        <div class="assurance-metrics" id="assuranceMetrics"></div><div class="page-split"><div class="panel"><div class="panel-title">Evidence-based assessment</div><div class="form-grid"><label>Record to assess<select id="assuranceSource"></select></label><label>Optional comparison<select id="assuranceCompare"></select></label></div><button id="buildReport" class="btn subtle">◆ Source evidence report</button>
+          <div class="contract-editor"><div class="panel-title">Bounded recorded-trajectory contract</div>
+          <label style="display:block;margin:12px 18px;color:#96b4b4;font-size:10px">Registered contract<select id="contractSelect" class="contract-select"><option value="">No matching contract</option></select></label>
+          <label style="display:block;margin:12px 18px;color:#96b4b4;font-size:10px">Editable contract JSON — user-authored, not calibrated automatically<textarea id="contractJson" rows="9" spellcheck="false">{
+  "schema_id": "veap.contract/1",
+  "name": "Synthetic warehouse contract — example only",
+  "frame": "map",
+  "goal": {"x": 10.5, "y": 7.2},
+  "goal_tolerance_m": 0.45,
+  "max_speed_m_s": 1.2,
+  "max_gap_s": 0.4,
+  "forbidden_zones": [{"label":"synthetic_keepout","x1":3.75,"y1":2.3,"x2":5.65,"y2":4.55}],
+  "require_actions": false,
+  "calibration": "UNVALIDATED_EXAMPLE"
+}</textarea></label>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin:10px 18px 18px"><button id="registerContract" class="btn subtle">Register immutable contract</button><button id="evaluateContract" class="btn primary">Run separate-process monitor</button></div>
+          </div><pre id="reportText" class="report-code">No report generated. Choose a trace and execute an analysis.</pre><button id="downloadJson" class="btn subtle" disabled>↗ Export JSON report</button></div>
+        <div class="panel"><div class="panel-title">Evidence claim ladder</div><div class="cap-row"><span>G0 · Implemented</span><strong class="status-ok">TESTED FEATURES</strong></div><div class="cap-row"><span>G1 · Controlled demonstration</span><strong class="status-ok">SYNTHETIC ONLY</strong></div><div class="cap-row"><span>G2 · Externally validated</span><strong class="pending">NOT ESTABLISHED</strong></div><div class="cap-row"><span>G3 · Operational assurance</span><strong class="pending">NOT ESTABLISHED</strong></div><div class="cap-row"><span>Certification</span><strong class="pending">NOT CLAIMED</strong></div><p class="small-note">An independent monitor must consume evidence from a separately trustworthy capture path. Hash integrity alone cannot establish sensor truth.</p></div></div>
+      </section>
+
+      <section id="pageConnectors" class="page"><div class="page-header"><span class="eyebrow">ENGINE / ROBOT / CLOUD CONNECTIVITY</span><h1>Engine Runtime &amp; Jobs</h1><p>Live, server-side module probing and bounded native experiment jobs. No physical robot commands or remote execution.</p></div>
+        <div class="studio-callout"><strong>VEAP NATIVE WORKBENCH</strong> · Own visualization, registry, playback, physics comparison and assurance tools. No third-party visualization panel dependency. Host detection is not evidence of validated physics.</div>
+        <div class="connector-toolbar"><button id="refreshIntegrations" class="btn subtle">↻ Probe local runtimes</button><button id="runMujoco" class="btn primary">▶ Run native MuJoCo test</button><button id="runGazebo" class="btn subtle">▶ Run native Gazebo test</button><button id="runIsaac" class="btn subtle">▶ Run native Isaac Lab test</button><button id="buildScene" class="btn subtle">⬡ Export USD / MJCF / SDF / glTF</button></div>
+        <div class="connector-grid" id="connectorGrid"></div>
+        <div class="panel" style="margin-top:14px"><div class="panel-title">Experiment execution ledger <span class="small-sub">LOCAL ONE-WORKER QUEUE · NO ACTUATOR AUTHORITY</span></div><div id="nativeJobTable" class="table-area">No job executed yet.</div><div id="jobArtifacts" class="small-note"></div><div class="data-controls" style="padding:0 15px"><button id="comparePhysics" class="btn subtle">Compare completed PhysX / MuJoCo runs</button></div><pre id="nativeCompareReport" class="report-code" style="max-height:180px">Native 3D comparison requires one completed run from each engine.</pre></div>
+        <div class="panel" style="margin-top:14px"><div class="panel-title">Evidence transformation / learning data</div><div class="form-grid"><label>Source MCAP<select id="mcapSource"></select></label><label>Source state-action trajectory<select id="lerobotSource"></select></label></div><div class="data-controls" style="padding:0 16px 14px"><button id="decodeMcap" class="btn subtle">Decode MCAP odometry</button><button id="makeLeRobot" class="btn subtle">Export local LeRobotDataset</button></div><p class="small-note">MCAP is retained unchanged; derived data requires genuine messages and recorded actions. No fabricated robot actions or cloud publishing.</p></div>
+        <div class="panel" style="margin-top:16px"><div class="panel-title">ROS 2 / MCAP recording plan</div><p class="small-note">Generate a read-only recording command for the qualified ROS 2 workstation. Does not execute commands from the browser.</p><pre class="report-code" id="recordPlan"></pre><button id="copyRecord" class="btn subtle">Copy command</button></div>
+      </section>
+    </main>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="overlay hidden" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><div class="modal-head"><h2 id="modalTitle">Import evidence</h2><button id="closeModal" class="iconbtn">×</button></div><div class="modal-body"><p>Upload original evidence or engineering assets into this local research workspace. Source authenticity is not established by upload.</p><label class="file-drop" for="fileInput"><span>▤</span><b>Choose a file to import</b><small>MCAP, JSONL, CSV, video, images, CAD, URDF, glTF, PLY and logs</small><input id="fileInput" type="file"/></label><div class="form-grid"><label>Asset classification<select id="fileClass"><option>UNKNOWN</option><option>ROBOT</option><option>SCENE</option><option>TELEMETRY</option><option>SIMULATOR</option></select></label><label>Source custody<input disabled value="UNATTESTED — local pilot"/></label></div><div id="uploadStatus" class="small-note">Maximum file size 128 MiB. Original input is copied into protected local storage.</div></div><div class="modal-actions"><button id="cancelModal" class="btn subtle">Cancel</button><button id="uploadNow" class="btn primary">Import selected file</button></div></div></div>
+<div class="overlay hidden" id="assetOverlay" role="dialog" aria-modal="true" aria-labelledby="assetModalTitle"><div class="modal"><div class="modal-head"><h2 id="assetModalTitle">Asset details</h2><button id="assetClose" class="iconbtn">×</button></div><div class="modal-body"><pre class="report-code" id="assetDetail" style="max-height:220px;margin:0 0 15px">No asset selected.</pre><div class="form-grid"><label>Tags (comma separated)<input id="assetTags" placeholder="M3, inspection, v1"/></label><label>Operator note<input id="assetNote" placeholder="Evidence review note"/></label></div><p class="small-note">Tags and notes are locally editable metadata; the original evidence bytes remain unchanged. This is not an immutable enterprise audit trail.</p></div><div class="modal-actions"><button id="assetCancel" class="btn subtle">Close</button><button id="assetSave" class="btn primary">Save local annotation</button></div></div></div>
+<script src="/assets/app.js" defer></script>
+</body></html>

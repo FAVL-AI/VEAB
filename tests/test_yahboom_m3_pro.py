@@ -1,6 +1,6 @@
 """Test Stage 5: Physical deployment safety gates for ROSMASTER Yahboom M3 Pro."""
 import pytest
-from veab.hardware.yahboom import (
+from veap.hardware.yahboom import (
     YahboomM3ProSpecs,
     SafetyGateParameters,
     YahboomSafetySupervisor,

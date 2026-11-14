@@ -4,7 +4,7 @@
 
 ## Capture first, control later
 
-Create a separate read-only ROS 2 node that subscribes to ground-truth pose, odometry, collision sensors, commanded and executed twist, obstacle observations, driver status, energy monitoring and e-stop, using synchronised timestamps. Record raw original MCAP and a provenance manifest **before** converting for VEAB. Never infer real-world forces or Joules from the toy simulator's velocity proxy.
+Create a separate read-only ROS 2 node that subscribes to ground-truth pose, odometry, collision sensors, commanded and executed twist, obstacle observations, driver status, energy monitoring and e-stop, using synchronised timestamps. Record raw original MCAP and a provenance manifest **before** converting for VEAP. Never infer real-world forces or Joules from the toy simulator's velocity proxy.
 
 Recommended future raw source topics (examples only; validate actual robot topics):
 

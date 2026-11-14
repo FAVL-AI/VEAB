@@ -1,21 +1,21 @@
 services:
-  veab:
+  veap:
     build: .
     environment:
-      VEAB_DATA_DIR: /app/artifacts
-      VEAB_ADMIN_TOKEN: ${VEAB_ADMIN_TOKEN:-}
-      VEAB_ATTESTATION_KEY: ${VEAB_ATTESTATION_KEY:-}
+      VEAP_DATA_DIR: /app/artifacts
+      VEAP_ADMIN_TOKEN: ${VEAP_ADMIN_TOKEN:-}
+      VEAP_ATTESTATION_KEY: ${VEAP_ATTESTATION_KEY:-}
     ports:
       - "127.0.0.1:8000:8000"
     read_only: true
     tmpfs:
       - /tmp:size=64m
     volumes:
-      - veab-evidence:/app/artifacts
+      - veap-evidence:/app/artifacts
     security_opt:
       - no-new-privileges:true
     cap_drop:
       - ALL
     restart: unless-stopped
 volumes:
-  veab-evidence:
+  veap-evidence:

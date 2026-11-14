@@ -1,4 +1,4 @@
-from veab.statistics import group_metrics, paired_bootstrap
+from veap.statistics import group_metrics, paired_bootstrap
 
 
 def test_paired_bootstrap_is_deterministic():

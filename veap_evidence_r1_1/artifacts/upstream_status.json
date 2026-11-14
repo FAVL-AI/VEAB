@@ -1,0 +1,13 @@
+{
+  "EAI": {
+    "status": "NOT_RUN",
+    "reason": "No local checkout provided",
+    "expected_sha": "531c62f8df2cb392bdf1907923c76da41cad4fe6"
+  },
+  "ABC": {
+    "status": "NOT_RUN",
+    "reason": "No local checkout provided",
+    "expected_sha": "ae1124758098876db04336e1d8c6e419a139c6e3"
+  },
+  "statement": "Source-pinning checks do not reproduce any upstream paper results."
+}

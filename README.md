@@ -1,16 +1,16 @@
-# VEAB — Verifiable Embodied Agent Benchmark
+# VEAP — Verifiable Embodied Agent Benchmark
 
 **Version 0.1.0 · Open, local research prototype · 11 November 2026**
 
 An executable **evidence-first benchmarking platform**: deterministic toy-world tasks; distinct baseline planners, control gates, and trace verifier; auditable trajectories; split-labelled scenarios; a live isometric 3D-projection dashboard; and a reproducible ablation CLI.
 
-> **Core Definition:** VEAB is a **model- and harness-agnostic evaluation protocol** that jointly measures **task success**, **constraint violations**, **recovery**, **resource cost**, and **independently checkable evidence** under **controlled faults**.
+> **Core Definition:** VEAP is a **model- and harness-agnostic evaluation protocol** that jointly measures **task success**, **constraint violations**, **recovery**, **resource cost**, and **independently checkable evidence** under **controlled faults**.
 
-> **Important boundaries:** VEAB v0.1 executes a simplified **2-D kinematic toy simulator**, displayed with a 3-D isometric renderer. It is **not** a real robot control system, Isaac Lab integration, physically validated simulator, formal CBF, enterprise-certified deployment, or demonstrated SOTA result. Default mode does not issue robot commands or access cloud services.
+> **Important boundaries:** VEAP v0.1 executes a simplified **2-D kinematic toy simulator**, displayed with a 3-D isometric renderer. It is **not** a real robot control system, Isaac Lab integration, physically validated simulator, formal CBF, enterprise-certified deployment, or demonstrated SOTA result. Default mode does not issue robot commands or access cloud services.
 
 ## Canonical Research Narrative: From Apparent Success to Verifiable Autonomy
 
-VEAB tests the value of process-level verification through empirical evidence rather than narrative dramatization. The central perspective is that of a **robotics validation engineer** deciding whether an autonomous agent is safe to deploy.
+VEAP tests the value of process-level verification through empirical evidence rather than narrative dramatization. The central perspective is that of a **robotics validation engineer** deciding whether an autonomous agent is safe to deploy.
 
 The core narrative anchor is drawn directly from the bundled 60-trial factorial evaluation (5 scenarios × 3 seeds × 2 policies × 2 safety gate settings):
 
@@ -43,11 +43,11 @@ For the complete nine-stage development narrative, see [docs/CANONICAL_NARRATIVE
 | **Physical evidence** | At least 30 supervised trajectories with independently checked provenance, latency and safety observations | Hardware safety rate | Open research gate |
 
 ### Next Milestone: Scientific Validation Release
-Treat the next development release as a scientific validation milestone: independent ground-truth fixtures, adversarial verifier tests, diagnostic value quantification, and an Isaac Lab integration contract. Those deliverables advance VEAB towards a defensible research contribution rather than narrative iteration alone.
+Treat the next development release as a scientific validation milestone: independent ground-truth fixtures, adversarial verifier tests, diagnostic value quantification, and an Isaac Lab integration contract. Those deliverables advance VEAP towards a defensible research contribution rather than narrative iteration alone.
 
 ## Strategic Focus: Autonomous & Embodied AI Engineering
 
-The VEAB project focuses exclusively on **autonomous and embodied AI engineering**, structured across seven technical pillars:
+The VEAP project focuses exclusively on **autonomous and embodied AI engineering**, structured across seven technical pillars:
 
 - **Simulation:** NVIDIA Isaac Lab, Isaac Sim, MuJoCo, Gazebo and Unreal Engine–quality 3D environments.
 - **Robotics:** ROS 2, robot control, navigation, manipulation and hardware-in-the-loop (HIL) testing.
@@ -60,19 +60,19 @@ The VEAB project focuses exclusively on **autonomous and embodied AI engineering
 ## Quick start — Linux, macOS or Windows with Python 3.10+
 
 ```bash
-cd veab-platform
+cd veap-platform
 python -m venv .venv
 source .venv/bin/activate             # Windows PowerShell: .venv\\Scripts\\Activate.ps1
 python -m pip install -e '.[test]'
 python -m pytest -q
-python -m uvicorn veab.api:app --host 127.0.0.1 --port 8000
+python -m uvicorn veap.api:app --host 127.0.0.1 --port 8000
 ```
 
 Open **http://127.0.0.1:8000**. Select a task, choose a baseline, enable/disable the geometric safety gate, and run the benchmark. Click a ledger row to inspect a specific run. Downloaded evidence JSON is independently verifiable.
 
 No JavaScript dependencies, package manager, GPU, robot, network connection or model API key are needed for the UI/benchmark once the Python dependencies have been installed.
 
-![VEAB research operations dashboard](docs/dashboard-after-run.png)
+![VEAP research operations dashboard](docs/dashboard-after-run.png)
 
 ## What is implemented
 
@@ -99,22 +99,22 @@ No JavaScript dependencies, package manager, GPU, robot, network connection or m
 
 ```bash
 # Discover available tasks and frozen split labels
-python -m veab scenarios
+python -m veap scenarios
 
 # Execute an auditable simulation trial with seed 17
-python -m veab run --scenario warehouse-transfer --policy route --seed 17 --out artifacts/warehouse.json
+python -m veap run --scenario warehouse-transfer --policy route --seed 17 --out artifacts/warehouse.json
 
 # Re-check a standalone bundle, independently of the execution harness
-python -m veab verify artifacts/warehouse.json
+python -m veap verify artifacts/warehouse.json
 
 # Counterfactual ablation: remove safety gate from the greedy baseline
-python -m veab run --scenario warehouse-transfer --policy greedy --no-shield --out artifacts/unsafe-baseline.json
+python -m veap run --scenario warehouse-transfer --policy greedy --no-shield --out artifacts/unsafe-baseline.json
 
 # All 5 tasks × 3 seeds × 2 policies × 2 shield settings = 60 trials
-python -m veab suite --seeds 0 1 2 --split all --out artifacts/suite-summary.json
+python -m veap suite --seeds 0 1 2 --split all --out artifacts/suite-summary.json
 
 # Read-only external telemetry import; provenance remains explicitly untrusted
-python -m veab ingest --scenario campus-patrol --trace samples/trajectory.jsonl --out artifacts/external.json
+python -m veap ingest --scenario campus-patrol --trace samples/trajectory.jsonl --out artifacts/external.json
 ```
 
 **External telemetry JSONL schema:** one observation per line with keys `tick`, `x`, `y`, `vx`, `vy`; continuous ticks beginning at 0; coordinates in metres, velocities in m/s, and timestep fixed by the scenario. The importer verifies file structure and computes geometric postconditions but **will not** claim authenticated real-world success. See [docs/ADAPTER_CONTRACT.md](docs/ADAPTER_CONTRACT.md).
@@ -142,11 +142,11 @@ curl -X POST http://127.0.0.1:8000/api/runs \
   -d '{"scenario_id":"warehouse-transfer","policy":"route","seed":17,"shield":true}'
 ```
 
-The job is queued and evaluated in a bounded worker pool. The dashboard polls the API to display in-progress trace records and verified outcomes. Records are persisted atomically to SQLite metadata and JSON bundles in `./artifacts` (change with `VEAB_DATA_DIR`).
+The job is queued and evaluated in a bounded worker pool. The dashboard polls the API to display in-progress trace records and verified outcomes. Records are persisted atomically to SQLite metadata and JSON bundles in `./artifacts` (change with `VEAP_DATA_DIR`).
 
 ### Security (development boundary)
 
-The default API has **no authentication** and binds **only 127.0.0.1**. **Never bind it to 0.0.0.0 on an untrusted network** without authentication, TLS, network isolation, a reverse proxy and independent security review. You can set `VEAB_ADMIN_TOKEN` to enable one local bearer token. This is not a multi-user RBAC implementation. For signed bundles, set a strong `VEAB_ATTESTATION_KEY` in the isolated process environment; do not store keys in repository, evidence JSON or UI. If a key is not supplied during offline verification, a recorded signature cannot be independently validated.
+The default API has **no authentication** and binds **only 127.0.0.1**. **Never bind it to 0.0.0.0 on an untrusted network** without authentication, TLS, network isolation, a reverse proxy and independent security review. You can set `VEAP_ADMIN_TOKEN` to enable one local bearer token. This is not a multi-user RBAC implementation. For signed bundles, set a strong `VEAP_ATTESTATION_KEY` in the isolated process environment; do not store keys in repository, evidence JSON or UI. If a key is not supplied during offline verification, a recorded signature cannot be independently validated.
 
 A local-only Docker Compose example is provided. It maps `127.0.0.1:8000:8000`; moving it to a public interface is **not** a production readiness guarantee.
 
@@ -155,7 +155,7 @@ A local-only Docker Compose example is provided. It maps `127.0.0.1:8000:8000`; 
 ```bash
 export OPENROUTER_API_KEY='...'
 export OPENROUTER_MODEL='provider/model-slug'
-python -m veab expert-review --scenario warehouse-transfer --out artifacts/optional-expert.json
+python -m veap expert-review --scenario warehouse-transfer --out artifacts/optional-expert.json
 ```
 
 This sends the **public task JSON** to a third-party model provider. It is explicitly an **advisory critique**, not a benchmark decision, oracle, model baselining result, or verified scientific evidence. It is disabled by default; no background or automatic paid calls occur.
@@ -163,9 +163,9 @@ This sends the **public task JSON** to a third-party model provider. It is expli
 ## Repository layout
 
 ```text
-veab/                    Validated spec, planners, simulator, ledger, verifier,
+veap/                    Validated spec, planners, simulator, ledger, verifier,
                          ingest adapter, ablations, API, persistent store
-veab/integrations/       Optional read-only external model analysis
+veap/integrations/       Optional read-only external model analysis
 scenarios/               Versioned public train / validation / test task contracts
 web/                     Offline vanilla JS dashboard + isometric world renderer
 artifacts/               Local evidence JSON and metadata (ignored by Git)

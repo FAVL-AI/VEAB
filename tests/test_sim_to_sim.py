@@ -1,7 +1,7 @@
 """Test Isaac Lab <-> MuJoCo sim-to-sim transfer validation."""
 import pytest
-from veab.spec import load_scenario
-from veab.cross_sim import evaluate_sim_to_sim_transfer
+from veap.spec import load_scenario
+from veap.cross_sim import evaluate_sim_to_sim_transfer
 
 def test_sim_to_sim_transfer_matching_trajectories():
     scenario = load_scenario("warehouse-transfer")

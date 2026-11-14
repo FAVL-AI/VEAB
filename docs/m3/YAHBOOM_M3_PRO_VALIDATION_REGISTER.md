@@ -1,7 +1,7 @@
 # Yahboom ROSMASTER M3 Pro — Historical & Prospective Validation Register
 
 **Date:** 2026-11-12  
-**Repository Branch:** `feat/veab-m3-replay-r01`  
+**Repository Branch:** `feat/veap-m3-replay-r01`  
 **Audit Principle:** Every historical and current validation record is classified strictly as a **software test**, **simulation experiment**, **physical-hardware observation**, or **pending/failed validation**. Test counts from separate repositories, revisions, or harnesses are never summed into a single combined claim, and unresolved or failed qualifications are preserved explicitly.
 
 ---
@@ -22,9 +22,9 @@
 | `M3-ODOM-001` | 27 Oct 2026 | Raw wheel odometry publication rate (`/odom_raw`) | **Previously measured (Historical hardware observation)** | `/odom_raw` measured at ~**11.1 Hz** on the physical robot (fused by `ekf_filter_node` at 7.0 Hz onto `/odom`). | Historical measurement; requires live re-verification and independent ground-truth comparison. |
 | `M3-RGBD-001` | 27 Oct 2026 | Orbbec DaBai DCW2 RGB-D camera streams (`dabai_dcw2.launch.py`) | **Previously measured (Historical hardware observation)** | `/camera/color/image_raw` (640×480 @ 30 FPS config) measured at ~**28.4 Hz**; `/camera/depth/image_raw` (640×400 @ 10 FPS config) measured at ~**9.6–10 Hz** over USB 2.0. Discovered `/rgb` is `std_msgs/msg/ColorRGBA`, **not** an image stream. | `/camera/ir/image_raw` rate was not recovered; high-bandwidth image streams excluded from initial low-footprint MCAP probe. |
 | `M3-ARM-001` | 3 Nov 2026 | 6-DOF arm command & feedback inspection (`/arm6_joints`, `/arm_joint`) | **Implemented interface; feedback unresolved (`FAIL` / Pending)** | Identified command topics `/arm6_joints` (`arm_msgs/msg/ArmJoints`) and `/arm_joint` (`arm_msgs/msg/ArmJoint`). | **No reliable measured joint-position feedback topic established**; commanded targets do not prove physical arm pose. |
-| `M3-REPLAY-001` | 12 Nov 2026 | VEAB-M3 Replay R0.1 contract & dual-monitor verification (`tests/test_m3_contract.py`, `contracts/m3_pro_bringup_v1.json`) | **Software test (`PASS` on synthetic controls)** | 44/44 unit tests and 11/11 synthetic controls (`7/7` invalid rejected, `4/4` valid accepted; 0 monitor disagreements). Provisional 9-channel M3 Pro contract generated (`SHA256: 2ce57e47b3745c046d9877ce212661a38bc4ec17f155e50aa43ed0b42fb2e093`). | Synthetic mechanism test only; early truncation under `window.mode="observed"` requires an explicit mission window to detect. |
+| `M3-REPLAY-001` | 12 Nov 2026 | VEAP-M3 Replay R0.1 contract & dual-monitor verification (`tests/test_m3_contract.py`, `contracts/m3_pro_bringup_v1.json`) | **Software test (`PASS` on synthetic controls)** | 44/44 unit tests and 11/11 synthetic controls (`7/7` invalid rejected, `4/4` valid accepted; 0 monitor disagreements). Provisional 9-channel M3 Pro contract generated (`SHA256: 2ce57e47b3745c046d9877ce212661a38bc4ec17f155e50aa43ed0b42fb2e093`). | Synthetic mechanism test only; early truncation under `window.mode="observed"` requires an explicit mission window to detect. |
 | `M3-MCAP-001` | 12 Nov 2026 | Native real-robot MCAP evidence capture & audit | **Not yet demonstrated (Blocked / Pending)** | `rosbag2_py` available in system Python (`/usr/bin/python3`), but `ros-humble-rosbag2-storage-mcap` requires interactive `sudo apt-get install` and live robot connection. | Blocked on `sudo` package install and live SSH/ROS 2 connection to `jetson@172.20.10.14` or `100.91.232.55`. |
-| `M3-SAFETY-001` | Pending | Physical emergency-stop latency, geofence intervention, and supervised hardware trial | **Not yet demonstrated** | Pre-deployment safety checklist and supervisor logic defined in `veab/hardware/yahboom.py`. | No physical hardware actuation or E-stop latency trial has been executed. |
+| `M3-SAFETY-001` | Pending | Physical emergency-stop latency, geofence intervention, and supervised hardware trial | **Not yet demonstrated** | Pre-deployment safety checklist and supervisor logic defined in `veap/hardware/yahboom.py`. | No physical hardware actuation or E-stop latency trial has been executed. |
 
 ---
 
@@ -58,5 +58,5 @@ Direct LAN SSH (`favl@172.20.10.2 -> jetson@172.20.10.14`) was established via t
 | `STOR-05` | Allocate unallocated NVMe capacity (`~142 GiB`) | **BLOCKED ON `STOR-04`** | Root partition `/dev/nvme0n1p1` is currently `98%` full (`87G / 93G`, `2.1G` free). |
 | `STOR-06` | Requalify Jetson storage for evidence recording | **BLOCKED ON `STOR-04`–`STOR-05`** | Required before physical sensor and MCAP recording qualification. |
 | `M3-HW-01` | Restore physical sensors (Orbbec RGB-D, dual Tmini Plus LiDAR) and micro-ROS communication | **ON HOLD** | Only `CP210x` (`/dev/myserial -> /dev/ttyUSB0`) enumerated during read-only audit. |
-| `VEAB-R01` | Capture first stationary real-robot ROS 2 MCAP evidence recording and audit with `veab.m3_replay.cli` | **ON HOLD** | Pending `STOR-04`–`STOR-06`, `M3-HW-01`, and `ros-humble-rosbag2-storage-mcap`. |
+| `VEAP-R01` | Capture first stationary real-robot ROS 2 MCAP evidence recording and audit with `veap.m3_replay.cli` | **ON HOLD** | Pending `STOR-04`–`STOR-06`, `M3-HW-01`, and `ros-humble-rosbag2-storage-mcap`. |
 

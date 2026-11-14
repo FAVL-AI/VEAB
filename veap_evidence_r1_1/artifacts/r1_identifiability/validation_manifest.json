@@ -1,0 +1,38 @@
+{
+  "actual_native_robot_or_simulator_execution": "NOT_RUN",
+  "browser_checks": "Playwright chromium set_content; slider, controls, comparator table; zero JS exceptions",
+  "environment": "isolated Python 3.13.5",
+  "file_hashes_sha256": {
+    "VEAP_R1_1_Offline_Identifiability_Lab.html": "05f1c2fb3fd003a6d9a266f2d5ee8e12751e6d4fef3ba5322bfa49faad76aaee",
+    "artifacts/r1_identifiability/stress_report.json": "a2119859c87bda04228820403d5d4e0ebc49c3a2d321680fb509f68e12c11b56",
+    "external_monitor/possible_worlds_checker.py": "88117907d9cfa97aaa953546669efd8af2bc74bdd3aabbd1b0e0e797f7ab03a6",
+    "scripts/run_r1_identifiability.py": "e126a81cd1207177915ed6934301c04fd77d8becd05d5e363a14e94e501bc671",
+    "tests/test_possible_worlds.py": "9f3bacef99f343d4bb401624a1b304488f9114d3afd66eae1e4a17c9529dcbc7",
+    "veap_evidence/possible_worlds.py": "ca33870e8aa84a11871650ae2e2a9e7efa4b33dc7f08ef7c9d7934124082cb17"
+  },
+  "local_tests_failed": 0,
+  "local_tests_passed": 63,
+  "release": "R1.1",
+  "schema": "veap.r1.local-release-evidence/1",
+  "source_authenticity": "UNATTESTED",
+  "stress_summary": {
+    "accepted_counterfactual_ambiguity_witnesses": 16,
+    "accepted_veap_certificates": 96,
+    "correct_by_method": {
+      "gap_aware": 80,
+      "goal_only": 48,
+      "sampled_safety": 80,
+      "separate_monitor": 96,
+      "veap": 96
+    },
+    "correlated_stress_cases_not_holdout_scenes": 96,
+    "expected_epistemic_verdicts": {
+      "COMPLIANT": 48,
+      "INCONCLUSIVE": 16,
+      "VIOLATING": 32
+    }
+  },
+  "stressed_author_constructed_cases": 96,
+  "upstream_abc_full_reproduction": "NOT_RUN",
+  "upstream_eai_full_reproduction": "NOT_RUN"
+}

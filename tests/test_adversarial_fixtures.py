@@ -1,4 +1,4 @@
-"""Preregistered adversarial fixtures for VEAB Verifier Hardening (Research Gate 1).
+"""Preregistered adversarial fixtures for VEAP Verifier Hardening (Research Gate 1).
 
 Acceptance Criterion:
 At least 30 preregistered adversarial fixtures; 100% detection of defined
@@ -8,10 +8,10 @@ from __future__ import annotations
 import copy
 import math
 import pytest
-from veab.ledger import Ledger
-from veab.sim import run_episode
-from veab.spec import digest, load_scenario
-from veab.verifier import verify_bundle
+from veap.ledger import Ledger
+from veap.sim import run_episode
+from veap.spec import digest, load_scenario
+from veap.verifier import verify_bundle
 
 
 def _get_clean_bundle(scenario_id: str = "warehouse-transfer", policy: str = "route", seed: int = 17, shield: bool = True):
@@ -107,7 +107,7 @@ def test_fixture_07_manifest_ledger_root_mismatch():
 def test_fixture_08_manifest_unknown_schema_version():
     """8. Manifest with unsupported schema version must be rejected."""
     b = _get_clean_bundle()
-    b["manifest"]["schema_version"] = "veab-bundle/999-unsupported"
+    b["manifest"]["schema_version"] = "veap-bundle/999-unsupported"
     result = verify_bundle(b)
     assert not result["verified"]
     assert any("unknown bundle schema" in r for r in result["failure_reasons"])

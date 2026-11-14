@@ -1,0 +1,55 @@
+{
+  "cases": [
+    {
+      "case_id": "compliant",
+      "evaluator_directory": "evaluator_inputs/compliant",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "physical_trace_not_attested": true,
+      "reference_directory": "reference_only",
+      "trace_sha256": "c6355562fbb067d437723c4dfaf8b3f81ed7cd61a34d0cd58b4ab4b2ba27bc4d"
+    },
+    {
+      "case_id": "observed_violation",
+      "evaluator_directory": "evaluator_inputs/observed_violation",
+      "expected_epistemic_verdict": "VIOLATING",
+      "physical_trace_not_attested": true,
+      "reference_directory": "reference_only",
+      "trace_sha256": "8272f35072e140077bf4f5c4c006768dc0a17a62c6b7e8c916c1a206608af3f2"
+    },
+    {
+      "case_id": "missing_critical_interval",
+      "evaluator_directory": "evaluator_inputs/missing_critical_interval",
+      "expected_epistemic_verdict": "INCONCLUSIVE",
+      "physical_trace_not_attested": true,
+      "reference_directory": "reference_only",
+      "trace_sha256": "3a1d2b9b23b60b022de8e8475d5ca7a7eda274ee825e901979d5a495e08962cd"
+    },
+    {
+      "case_id": "missing_irrelevant_camera",
+      "evaluator_directory": "evaluator_inputs/missing_irrelevant_camera",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "physical_trace_not_attested": true,
+      "reference_directory": "reference_only",
+      "trace_sha256": "29f93f6b5806e3b5cbb299b445d05434c56c63a2c0daec91a0265571fd0666ed"
+    },
+    {
+      "case_id": "violation_plus_missing",
+      "evaluator_directory": "evaluator_inputs/violation_plus_missing",
+      "expected_epistemic_verdict": "VIOLATING",
+      "physical_trace_not_attested": true,
+      "reference_directory": "reference_only",
+      "trace_sha256": "543bec71eee3d7376808b4b9191fe9f8fe17b60e59042a37fb3e27351822a721"
+    },
+    {
+      "case_id": "missing_safe_interval",
+      "evaluator_directory": "evaluator_inputs/missing_safe_interval",
+      "expected_epistemic_verdict": "COMPLIANT",
+      "physical_trace_not_attested": true,
+      "reference_directory": "reference_only",
+      "trace_sha256": "44b877754c565a2f10e9b016b75326c83fee7973bcc1c3e56695b79acd78218d"
+    }
+  ],
+  "not_a_human_or_hardware_ground_truth": true,
+  "schema": "veap.r1.synthetic-study/1",
+  "source": "SYNTHETIC_REFERENCE_ONLY"
+}

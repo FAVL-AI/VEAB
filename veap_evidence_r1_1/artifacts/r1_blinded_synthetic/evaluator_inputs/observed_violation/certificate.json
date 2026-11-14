@@ -1,0 +1,87 @@
+{
+  "assumptions": [
+    "Maximum translational speed bound applies over every unobserved interval",
+    "Position error is never greater than the stated uncertainty",
+    "Frame, clock and mission window are correct, and source records are genuine"
+  ],
+  "certificate_schema": "veap.evidence.sufficiency/1",
+  "certificate_sha256": "c4bb90fcf5a6dff2a263d1ccc46636962d9979f8aec4f2ec47fd1a5ae30807ed",
+  "confirmed_violations": [
+    {
+      "evidence_ref": "pose-2",
+      "signed_clearance_m": -0.2,
+      "t_s": 1.0,
+      "type": "confirmed_keepout_overlap"
+    }
+  ],
+  "contract_sha256": "4be94f3707d6952e187b39db97d612b7116ba8b2313e9e0491716dd82186deca",
+  "eligible_pose_samples": 5,
+  "evidence_witnesses": [
+    {
+      "evidence_ref": "pose-2",
+      "signed_clearance_m": -0.2,
+      "t_s": 1.0,
+      "type": "confirmed_keepout_overlap"
+    },
+    {
+      "distance_upper_bound_m": 0.02,
+      "evidence_ref": "pose-4",
+      "t_s": 2.0,
+      "type": "terminal_goal_certified"
+    }
+  ],
+  "missing_evidence_diagnostics": [],
+  "observed_samples": 5,
+  "requirements": {
+    "goal_at_deadline": {
+      "unresolved_intervals": [],
+      "verdict": "COMPLIANT",
+      "witnesses": [
+        {
+          "distance_upper_bound_m": 0.02,
+          "evidence_ref": "pose-4",
+          "t_s": 2.0,
+          "type": "terminal_goal_certified"
+        }
+      ]
+    },
+    "keepout_continuous": {
+      "unresolved_intervals": [
+        {
+          "interval_s": [
+            0.8035416,
+            1.1964584
+          ],
+          "request": "Obtain calibrated pose observations or tighter motion bounds",
+          "type": "unproven_keepout_coverage"
+        }
+      ],
+      "verdict": "VIOLATING",
+      "witnesses": [
+        {
+          "evidence_ref": "pose-2",
+          "signed_clearance_m": -0.2,
+          "t_s": 1.0,
+          "type": "confirmed_keepout_overlap"
+        }
+      ]
+    }
+  },
+  "scope": "Specified goal and exclusion-zone requirements under declared motion and pose-error bounds; no physical safety certification",
+  "source_authenticity": "UNATTESTED",
+  "source_hash_mode": "raw_bytes",
+  "source_kind": "synthetic",
+  "source_sha256": "8272f35072e140077bf4f5c4c006768dc0a17a62c6b7e8c916c1a206608af3f2",
+  "trace_canonical_sha256": "3e27b2bdea35ae07c11c76f96a2898ece46987d9cf4cc088eef945e6f5a2da6f",
+  "unresolved_coverage": [
+    {
+      "interval_s": [
+        0.8035416,
+        1.1964584
+      ],
+      "request": "Obtain calibrated pose observations or tighter motion bounds",
+      "type": "unproven_keepout_coverage"
+    }
+  ],
+  "verdict": "VIOLATING"
+}

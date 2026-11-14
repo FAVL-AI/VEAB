@@ -1,0 +1,15 @@
+VEAP Studio R0.3 — Local software validation (13 November 2026)
+Scope: current packaged source, local Python test environment, browser set_content isolated screenshot checks.
+
+Tests: 42 passed, 0 failed.
+Browser: 3 workspace views loaded, 0 JavaScript page errors, 9 synthetic connector cards in OFFLINE demo.
+Native MuJoCo on build container: NOT EXECUTED (dependency unavailable).
+Native Isaac Lab on build container: NOT EXECUTED (Isaac Sim/PhysX unavailable).
+Gazebo native: NOT EXECUTED.
+ROS2 MCAP real message corpus: NOT EXECUTED; API path mock-tested with ROS2-like decoded messages.
+LeRobotDataset output: NOT EXECUTED (separate runtime unavailable).
+OpenUSD native parser: NOT EXECUTED; USD ASCII emission tested as software, MJCF/SDF XML parsed.
+Physical robot: NOT EXECUTED; Yahboom storage/sensors remain recovery-gated.
+
+Native runtime paths and actual engine results must be collected on the Ubuntu RTX 4080 SUPER host.
+Formal scientific validity, physical safety, independent certification and enterprise production readiness are NOT CLAIMED.
