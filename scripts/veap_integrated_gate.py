@@ -20,6 +20,7 @@ REQUIRED_PATHS = (
     "veap_evidence_r1_1/r13/study_schema.py",
     "veap_evidence_r1_1/r13/split_integrity.py",
     "veap_evidence_r1_1/r13/blinded_runner.py",
+    "veap_evidence_r1_1/r13/custody.py",
     "veap_evidence_r1_1/r13/reference_scorer.py",
     "veap_evidence_r1_1/r13/certificate_audit.py",
     "veap_evidence_r1_1/r13/statistics.py",
@@ -105,6 +106,8 @@ def audit(root: Path, r12_report: Path | None = None, r13_report: Path | None = 
                 errors.append("R1.3 KPI or isolation gate failed")
             if not r13.get("strong_monitor_verdict_tie_preserved"):
                 errors.append("R1.3 strong monitor verdict tie not preserved")
+            if not r13.get("custody_receipt_verified"):
+                errors.append("R1.3 HMAC submission receipt not verified")
         except (ValueError, KeyError, TypeError, OSError) as exc:
             errors.append(f"R1.3 report error: {exc}")
 

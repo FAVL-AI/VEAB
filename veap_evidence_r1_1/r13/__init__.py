@@ -5,6 +5,7 @@ __all__ = [
     "study_schema",
     "split_integrity",
     "blinded_runner",
+    "custody",
     "certificate_audit",
     "reference_scorer",
     "statistics",

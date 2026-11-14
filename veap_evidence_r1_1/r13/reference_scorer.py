@@ -11,6 +11,7 @@ from typing import Any
 
 from veap_evidence.verdict import canonical_hash
 from .certificate_audit import audit_submission_certificates
+from .custody import CustodyVerificationError, verify_submission_receipt
 from .split_integrity import audit_split_integrity
 from .statistics import (
     prospective_scene_sample_size,
@@ -48,6 +49,9 @@ def score_submission(
     evaluator_bundle: dict[str, Any],
     submission: dict[str, Any],
     sealed_reference: dict[str, Any],
+    receipt: dict[str, Any] | None = None,
+    custody_key: str | None = None,
+    require_receipt: bool = False,
 ) -> dict[str, Any]:
     """Score a frozen blinded submission against sealed reference labels."""
     validate_evaluator_bundle(evaluator_bundle)
@@ -57,6 +61,17 @@ def score_submission(
     except Exception as exc:
         raise ScoringIntegrityError(str(exc)) from exc
     _verify_frozen_submission(evaluator_bundle, submission, sealed_reference)
+    receipt_verified = False
+    if require_receipt and (receipt is None or custody_key is None):
+        raise ScoringIntegrityError("HMAC submission receipt and custody key are required")
+    if receipt is not None or custody_key is not None:
+        if receipt is None or custody_key is None:
+            raise ScoringIntegrityError("Both receipt and custody_key must be supplied together")
+        try:
+            verify_submission_receipt(submission, evaluator_bundle, receipt, custody_key)
+        except CustodyVerificationError as exc:
+            raise ScoringIntegrityError(str(exc)) from exc
+        receipt_verified = True
     cert_report = audit_submission_certificates(evaluator_bundle, submission, fail_closed=True)
 
     ref_cases = sealed_reference["cases"]
@@ -157,6 +172,7 @@ def score_submission(
         "study_scope": evaluator_bundle.get("study_scope", "DEVELOPMENT_PILOT_SYNTHETIC_SEALED_HARNESS"),
         "independent_external_authorship": bool(evaluator_bundle.get("independent_external_authorship", False)),
         "physical_sensor_ground_truth": bool(evaluator_bundle.get("physical_sensor_ground_truth", False)),
+        "custody_receipt_verified": receipt_verified,
         "evaluator_bundle_sha256": sealed_reference["evaluator_bundle_sha256"],
         "submission_sha256": submission["submission_sha256"],
         "sealed_reference_sha256": canonical_hash(sealed_reference),

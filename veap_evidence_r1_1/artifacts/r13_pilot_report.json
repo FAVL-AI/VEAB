@@ -10,6 +10,7 @@
     "status": "PASS",
     "total_certificates": 120
   },
+  "custody_receipt_verified": true,
   "evaluator_bundle_sha256": "8b982ab1f4cb18b4fdce76670174f9e1318f0743fd9bf76cf5b91890855fbb69",
   "independent_external_authorship": false,
   "kpi_gate": {
