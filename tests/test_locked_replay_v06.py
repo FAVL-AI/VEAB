@@ -1,0 +1,243 @@
+"""Offline and retained-trace controls for locked cross-engine replay."""
+from __future__ import annotations
+
+import copy
+import hashlib
+import json
+import math
+from pathlib import Path
+import pytest
+
+from veap.spec import canonical, digest, load_scenario
+from veap.simulation.locked_replay import (
+    TAPE_SCHEMA,
+    create_tape,
+    paired_physics_report,
+    standard_tape,
+    validate_execution,
+    validate_tape,
+)
+from veap.simulation.telemetry import PhysicsRecorder, make_sample
+from veap.simulation.isaaclab_locked_collector import IsaacLabTapeCollector
+from veap.simulation.native_locked_runner import run_mujoco_tape
+
+ROOT = Path(__file__).resolve().parents[1]
+CANONICAL_TAPE_SHA256 = "ba0d2388943e76304dc21435b5ac2c1cd434258e75b3e90daece749bddd62d6e"
+
+
+def scenario():
+    return load_scenario("warehouse-transfer")
+
+
+def synthetic_trace(tape, *, engine="mujoco", x_shift=0.0, contact=None):
+    s = scenario()
+    r = PhysicsRecorder(s, engine, "synthetic-fixture-not-native", tape["scene_sha256"], seed=tape["seed"])
+    sx, sy = s.start.x, s.start.y
+    r.append(make_sample(0, 0, [sx, sy, 0.16]))
+    for i, cmd in enumerate(tape["commands_vx_vy_yaw"], 1):
+        x = sx + x_shift + 0.01 * i
+        r.append(make_sample(i, s.dt * i, [x, sy, 0.16], [0.05, 0, 0], command=cmd, contacts=contact))
+    return r.finish("unknown")
+
+
+def test_committed_v06_control_tape_loads_unchanged():
+    tape_path = ROOT / "artifacts" / "research" / "v06-control-tape.json"
+    tape = json.loads(tape_path.read_text(encoding="utf-8"))
+    s = scenario()
+    assert tape["schema_version"] == "veab-control-tape/1"
+    assert tape["schema_version"] == TAPE_SCHEMA
+    assert tape["tape_sha256"] == CANONICAL_TAPE_SHA256
+    assert tape["calibration_status"] == "unmeasured_research_surrogate"
+    validate_tape(s, tape)
+    assert tape == standard_tape(s, seed=17, steps=24)
+
+
+def test_tape_reproducible_and_referentially_bound():
+    s = scenario()
+    t = standard_tape(s, seed=17, steps=16)
+    validate_tape(s, t)
+    assert t == standard_tape(s, seed=17, steps=16)
+    assert t["calibration_status"] == "unmeasured_research_surrogate"
+    assert t["scene_sha256"]
+    assert t["tape_sha256"]
+    assert len(t["commands_vx_vy_yaw"]) == 16
+
+
+def test_tape_rejects_invalid_commands_and_metadata():
+    s = scenario()
+    bad = [[s.max_speed * 2, 0, 0]]
+    with pytest.raises(ValueError, match="velocity limit"):
+        create_tape(s, bad)
+    with pytest.raises(ValueError, match="finite"):
+        create_tape(s, [[math.nan, 0, 0]])
+    with pytest.raises(ValueError, match="yaw rate"):
+        create_tape(s, [[0, 0, 3]])
+    with pytest.raises(ValueError, match="command requires"):
+        create_tape(s, [[0, 0]])
+    t = standard_tape(s)
+    for key, value in [
+        ("scene_sha256", "f" * 64),
+        ("coordinate_frame", "NED"),
+        ("calibration_status", "calibrated"),
+        ("seed", -1),
+        ("dt_s", s.dt / 2),
+        ("tape_sha256", "0" * 64),
+    ]:
+        fake = copy.deepcopy(t)
+        fake[key] = value
+        with pytest.raises(ValueError):
+            validate_tape(s, fake)
+    fake = copy.deepcopy(t)
+    fake["commands_vx_vy_yaw"][0][0] = 0.8
+    with pytest.raises(ValueError):
+        validate_tape(s, fake)
+
+
+def test_locked_execution_accepts_synthetic_fixture_without_authenticity_claim():
+    t = standard_tape(scenario(), steps=12)
+    trace = synthetic_trace(t)
+    report = validate_execution(scenario(), t, trace)
+    assert report["tape_matches"]
+    assert report["physical_source_authenticity"] == "not_established"
+    assert report["trace_integrity"]
+
+
+def test_missing_and_changed_action_rejected():
+    t = standard_tape(scenario(), steps=12)
+    trace = synthetic_trace(t)
+    forged = copy.deepcopy(trace)
+    forged["samples"].pop()
+    forged["manifest"]["sample_count"] = len(forged["samples"])
+    root = "0" * 64
+    for s in forged["samples"]:
+        root = hashlib.sha256(bytes.fromhex(root) + canonical(s)).hexdigest()
+    forged["manifest"]["sample_chain_sha256"] = root
+    forged["manifest"]["manifest_sha256"] = digest({k: v for k, v in forged["manifest"].items() if k != "manifest_sha256"})
+    with pytest.raises(ValueError, match="missing or extra"):
+        validate_execution(scenario(), t, forged)
+    altered = copy.deepcopy(trace)
+    altered["samples"][3]["command_vx_vy_yaw"] = [0.0, 0.0, 0.0]
+    root = "0" * 64
+    for s in altered["samples"]:
+        root = hashlib.sha256(bytes.fromhex(root) + canonical(s)).hexdigest()
+    altered["manifest"]["sample_chain_sha256"] = root
+    altered["manifest"]["manifest_sha256"] = digest({k: v for k, v in altered["manifest"].items() if k != "manifest_sha256"})
+    with pytest.raises(ValueError, match="command differs"):
+        validate_execution(scenario(), t, altered)
+
+
+def test_reordered_commands_detected_in_tape_and_execution():
+    s = scenario()
+    t = standard_tape(s, steps=12)
+    reordered_tape = copy.deepcopy(t)
+    reordered_tape["commands_vx_vy_yaw"][0], reordered_tape["commands_vx_vy_yaw"][4] = (
+        reordered_tape["commands_vx_vy_yaw"][4],
+        reordered_tape["commands_vx_vy_yaw"][0],
+    )
+    with pytest.raises(ValueError, match="checksum mismatch"):
+        validate_tape(s, reordered_tape)
+
+    trace = synthetic_trace(t)
+    reordered_trace = copy.deepcopy(trace)
+    reordered_trace["samples"][1]["command_vx_vy_yaw"], reordered_trace["samples"][5]["command_vx_vy_yaw"] = (
+        reordered_trace["samples"][5]["command_vx_vy_yaw"],
+        reordered_trace["samples"][1]["command_vx_vy_yaw"],
+    )
+    root = "0" * 64
+    for sample in reordered_trace["samples"]:
+        root = hashlib.sha256(bytes.fromhex(root) + canonical(sample)).hexdigest()
+    reordered_trace["manifest"]["sample_chain_sha256"] = root
+    reordered_trace["manifest"]["manifest_sha256"] = digest(
+        {k: v for k, v in reordered_trace["manifest"].items() if k != "manifest_sha256"}
+    )
+    with pytest.raises(ValueError, match="command differs from frozen tape"):
+        validate_execution(s, t, reordered_trace)
+
+
+def test_paired_comparison_zero_error_remains_unvalidated():
+    t = standard_tape(scenario(), steps=12)
+    a = synthetic_trace(t, engine="mujoco", contact=None)
+    b = synthetic_trace(t, engine="isaaclab", contact=None)
+    result = paired_physics_report(scenario(), t, a, b)
+    assert result["position_rmse_m"] == 0
+    assert result["matched_controls"]
+    assert not result["contacts_comparable"]
+    assert result["calibration_status"] == "unmeasured_research_surrogate"
+    assert result["eligible_for_physics_equivalence_claim"] is False
+    assert not result["independently_attested_ground_truth"]
+
+
+def test_paired_comparison_detects_divergence_and_wrong_engines():
+    t = standard_tape(scenario(), steps=12)
+    a = synthetic_trace(t, engine="mujoco", contact=0)
+    b = synthetic_trace(t, engine="isaaclab", x_shift=0.2, contact=1)
+    r = paired_physics_report(scenario(), t, a, b, max_position_rmse_m=0.1)
+    assert r["position_rmse_m"] > 0.1
+    assert r["position_p90_m"] > 0.1
+    assert not r["position_rmse_within_target"]
+    assert r["contact_count_disagreement_samples"] == 12
+    assert r["calibration_status"] == "unmeasured_research_surrogate"
+    with pytest.raises(ValueError, match="distinct engines"):
+        paired_physics_report(scenario(), t, a, a)
+
+
+def test_isaac_bridge_uses_native_observation_contract_not_fabricated_engine():
+    s = scenario()
+    t = standard_tape(s, steps=4)
+    recorder = IsaacLabTapeCollector(s, t, engine_version="fixture")
+    recorder.append_state(
+        time_s=0,
+        position_xyz_m=[s.start.x, s.start.y, 0.16],
+        quaternion_xyzw=[0, 0, 0, 1],
+        velocity_xyz_m_s=[0, 0, 0],
+    )
+    for tick in range(1, 5):
+        recorder.append_state(
+            time_s=tick * s.dt,
+            position_xyz_m=[s.start.x + 0.01 * tick, s.start.y, 0.16],
+            quaternion_xyzw=[0, 0, 0, 1],
+            velocity_xyz_m_s=[0.05, 0, 0],
+        )
+    result = recorder.finish()
+    assert result["control_contract"]["tape_matches"]
+    assert not result["native_execution_asserted_by_veab"]
+    assert result["trace"]["manifest"]["engine"] == "isaaclab"
+
+
+def test_native_mujoco_never_falls_back_to_toy_world(tmp_path):
+    import importlib.util
+
+    if importlib.util.find_spec("mujoco") is None:
+        with pytest.raises(RuntimeError, match="Native MuJoCo is required"):
+            run_mujoco_tape(scenario(), standard_tape(scenario(), steps=4), tmp_path)
+    else:
+        pytest.skip("This is an offline missing-dependency control, not the native physics integration suite")
+
+
+def test_retained_workstation_mujoco_and_isaaclab_traces_match_committed_tape():
+    s = scenario()
+    tape = json.loads((ROOT / "artifacts" / "research" / "v06-control-tape.json").read_text(encoding="utf-8"))
+    mj_bundle = json.loads((ROOT / "artifacts" / "research" / "v06-mujoco-locked-replay.json").read_text(encoding="utf-8"))
+    is_bundle = json.loads((ROOT / "artifacts" / "research" / "v06-isaaclab-locked-replay.json").read_text(encoding="utf-8"))
+    paired_saved = json.loads((ROOT / "artifacts" / "research" / "v06-paired-physics-report.json").read_text(encoding="utf-8"))
+
+    assert mj_bundle["tape_sha256"] == CANONICAL_TAPE_SHA256
+    assert is_bundle["tape_sha256"] == CANONICAL_TAPE_SHA256
+
+    mj_check = validate_execution(s, tape, mj_bundle["trace"])
+    is_check = validate_execution(s, tape, is_bundle["trace"])
+    assert mj_check["tape_matches"] is True
+    assert is_check["tape_matches"] is True
+    assert mj_check["samples"] == len(tape["commands_vx_vy_yaw"]) + 1 == 25
+    assert is_check["samples"] == len(tape["commands_vx_vy_yaw"]) + 1 == 25
+    assert mj_check["engine"] == "mujoco"
+    assert is_check["engine"] == "isaaclab"
+
+    paired = paired_physics_report(s, tape, mj_bundle["trace"], is_bundle["trace"])
+    assert paired == paired_saved
+    assert paired["tape_sha256"] == CANONICAL_TAPE_SHA256
+    assert paired["matched_controls"] is True
+    assert paired["samples"] == 25
+    assert paired["calibration_status"] == "unmeasured_research_surrogate"
+    assert paired["eligible_for_physics_equivalence_claim"] is False
+    assert paired["independently_attested_ground_truth"] is False

@@ -1,0 +1,26 @@
+{
+  "calibration_status": "unmeasured_research_surrogate",
+  "contact_count_disagreement_samples": 0,
+  "contact_observed_samples": 0,
+  "contacts_comparable": false,
+  "control_timegrid_max_error_s": 0.0,
+  "eligible_for_physics_equivalence_claim": false,
+  "engine_left": "mujoco",
+  "engine_right": "isaaclab",
+  "engine_versions": [
+    "4.0.1",
+    "isaacsim-5.1.0.0/isaaclab-0.54.3"
+  ],
+  "independently_attested_ground_truth": false,
+  "matched_controls": true,
+  "position_max_m": 0.27508361,
+  "position_p90_m": 0.26211512,
+  "position_rmse_m": 0.20182817,
+  "position_rmse_tolerance_m": 0.1,
+  "position_rmse_within_target": false,
+  "samples": 25,
+  "scene_sha256": "3d71701f88f547f12beb35d4e9c7516e4bfd4f049f000fadd382543269fafce8",
+  "schema_version": "veab-locked-physics-comparison/1",
+  "scope": "paired cross-simulator trace discrepancy; not accuracy, reliability, real-world safety, or SOTA",
+  "tape_sha256": "ba0d2388943e76304dc21435b5ac2c1cd434258e75b3e90daece749bddd62d6e"
+}

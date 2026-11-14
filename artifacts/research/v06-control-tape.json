@@ -1,0 +1,138 @@
+{
+  "calibration_status": "unmeasured_research_surrogate",
+  "command_frame": "world_enu_velocity_reference",
+  "commands_vx_vy_yaw": [
+    [
+      0.2,
+      0.0,
+      0.0
+    ],
+    [
+      0.2,
+      0.0,
+      0.0
+    ],
+    [
+      0.2,
+      0.0,
+      0.0
+    ],
+    [
+      0.2,
+      0.0,
+      0.0
+    ],
+    [
+      0.2,
+      0.0,
+      0.0
+    ],
+    [
+      0.2,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.2,
+      0.0
+    ],
+    [
+      0.0,
+      0.2,
+      0.0
+    ],
+    [
+      0.0,
+      0.2,
+      0.0
+    ],
+    [
+      0.0,
+      0.2,
+      0.0
+    ],
+    [
+      0.0,
+      0.2,
+      0.0
+    ],
+    [
+      0.0,
+      0.2,
+      0.0
+    ],
+    [
+      -0.2,
+      0.0,
+      0.0
+    ],
+    [
+      -0.2,
+      0.0,
+      0.0
+    ],
+    [
+      -0.2,
+      0.0,
+      0.0
+    ],
+    [
+      -0.2,
+      0.0,
+      0.0
+    ],
+    [
+      -0.2,
+      0.0,
+      0.0
+    ],
+    [
+      -0.2,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "controller_id": "planar-force-pd/1",
+  "coordinate_frame": "ENU_z_up_m",
+  "dt_s": 0.2,
+  "evidence_warning": "Public toy scenes; no native engine, physical sensor or external provenance implied",
+  "robot_model": "veab-scout-surrogate-not-vendor-calibrated",
+  "scenario_id": "warehouse-transfer",
+  "scenario_sha256": "7803186e84f8e73d5d44098dab67ad351b01e1349a894a4c9a5423c5d6903e23",
+  "scene_sha256": "3d71701f88f547f12beb35d4e9c7516e4bfd4f049f000fadd382543269fafce8",
+  "schema_version": "veab-control-tape/1",
+  "seed": 17,
+  "source_split": "validation",
+  "tape_sha256": "ba0d2388943e76304dc21435b5ac2c1cd434258e75b3e90daece749bddd62d6e"
+}
